@@ -38,6 +38,7 @@ import MasterChefV1 from './pages/Yield/masterchefv1'
 import MiniChefV2 from './pages/Yield/minichefv2'
 import Positions from './pages/Positions'
 import Transactions from './pages/Transactions'
+import Stats from './pages/Stats'
 
 function Routes(): JSX.Element {
     const { chainId } = useActiveWeb3React()
@@ -80,6 +81,7 @@ function Routes(): JSX.Element {
             {/* Tools */}
             {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}
             {chainId === ChainId.MAINNET && <Route exact strict path="/saave" component={Saave} />}
+            {<Route exact strict path="/stats" component={Stats} />}
 
             {/* Pages */}
             <Route exact strict path="/tradingview" component={Trade} />
