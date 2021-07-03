@@ -138,7 +138,7 @@ export default function RemoveLiquidity({
                 { name: 'verifyingContract', type: 'address' }
             ]
             const domain = {
-                name: 'SushiSwap LP Token',
+                name: 'LuckySwap LP Token',
                 version: '1',
                 chainId: chainId,
                 verifyingContract: pair.liquidityToken.address
@@ -504,7 +504,7 @@ export default function RemoveLiquidity({
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Remove Liquidity`)} | Sushi</title>
+                <title>{i18n._(t`Remove Liquidity`)} | LuckyFinance</title>
             </Helmet>
 
             <div className="w-full max-w-2xl mb-5 px-4">

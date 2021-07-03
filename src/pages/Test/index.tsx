@@ -81,7 +81,7 @@ export default function Test() {
     // return (
     //     <>
     //         <Helmet>
-    //             <title>Migrate | Sushi</title>
+    //             <title>Migrate | LuckyFinance</title>
     //         </Helmet>
     //         <div>
     //             <div>

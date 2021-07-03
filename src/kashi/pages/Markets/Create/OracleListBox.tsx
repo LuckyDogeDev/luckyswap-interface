@@ -5,7 +5,7 @@ import AsyncOracleIcon from '../../../components/AsyncOracleIcon'
 
 const oracles = [
     { id: 1, name: 'Chainlink', unavailable: false },
-    { id: 2, name: 'SushiSwap', unavailable: false },
+    { id: 2, name: 'LuckySwap', unavailable: false },
     { id: 3, name: 'Pegged', unavailable: true }
 ]
 

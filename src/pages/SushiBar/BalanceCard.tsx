@@ -9,13 +9,13 @@ import { useLingui } from '@lingui/react'
 
 interface BalanceCardProps {
     sushiEarnings?: number
-    xSushiBalance: BalanceProps
+    PlatinumNuggetBalance: BalanceProps
     sushiBalance: BalanceProps
     weightedApr?: number
 }
 
 export default function BalanceCard({
-    xSushiBalance,
+    PlatinumNuggetBalance,
     sushiBalance,
     sushiEarnings = 0,
     weightedApr = 0
@@ -33,7 +33,7 @@ export default function BalanceCard({
                         <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={XSushiImage} alt="sushi" />
                         <div className="flex flex-col justify-center">
                             <p className="text-caption2 md:text-lg font-bold text-high-emphesis">
-                                {formatFromBalance(xSushiBalance.value)}
+                                {formatFromBalance(PlatinumNuggetBalance.value)}
                             </p>
                             <p className="text-caption2 md:text-caption text-primary">xSUSHI</p>
                         </div>

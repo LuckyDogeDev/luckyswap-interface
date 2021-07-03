@@ -129,7 +129,7 @@ const CreatePair = () => {
             }
         >
             <Helmet>
-                <title>Create Market | Sushi</title>
+                <title>Create Market | LuckyFinance</title>
             </Helmet>
             <Card
                 className="h-full bg-dark-900"
@@ -141,7 +141,7 @@ const CreatePair = () => {
             >
                 <div className="space-y-6">
                     <p>
-                        Currently only Chainlink oracles are available. Support for more oracles, such as SushiSwap
+                        Currently only Chainlink oracles are available. Support for more oracles, such as LuckySwap
                         on-chain time weighted average pricing (TWAP) oracles will be added later.
                     </p>
 

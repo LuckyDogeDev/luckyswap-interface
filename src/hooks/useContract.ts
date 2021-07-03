@@ -236,7 +236,7 @@ export function useKashiPairContract(withSignerIfPossible?: boolean): Contract |
     return useContract(chainId && KASHI_ADDRESS[chainId], KASHIPAIR_ABI, withSignerIfPossible)
 }
 
-export function useSushiSwapSwapper(): Contract | null {
+export function useLuckySwapSwapper(): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && SUSHISWAP_SWAPPER_ADDRESS[chainId], BASE_SWAPPER_ABI, false)
 }
@@ -442,7 +442,7 @@ export function useDashboard2Contract(): Contract | null {
     return useContract(address, DASHBOARD2_ABI, false)
 }
 
-export function useSushiSwapMultiSwapper(): Contract | null {
+export function useLuckySwapMultiSwapper(): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && SUSHISWAP_MULTISWAPPER_ADDRESS[chainId], SUSHISWAP_MULTISWAPPER_ABI)
 }

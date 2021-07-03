@@ -1,17 +1,17 @@
-# SushiSwap Interface
+# LuckyFinance Interface
 
 [![Styled With Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 
-An open source interface for SushiSwap -- a protocol for decentralized exchange of Ethereum tokens.
+An open source interface for LuckySwap -- a protocol for decentralized exchange of Ethereum tokens.
 
 - Website: [sushi.com](https://sushi.com/)
 - Interface: [app.sushi.com](https://app.sushi.com)
 - Docs: [sushiswap.gitbook.io](https://sushiswap.gitbook.io)
-- Twitter: [@SushiSwap](https://twitter.com/sushiswap)
-- Reddit: [/r/SushiSwap](https://www.reddit.com/r/SushiSwap)
-- Discord: [SushiSwap](https://discord.gg/Y7TF6QA)
+- Twitter: [@LuckySwap](https://twitter.com/sushiswap)
+- Reddit: [/r/LuckySwap](https://www.reddit.com/r/LuckySwap)
+- Discord: [LuckySwap](https://discord.gg/Y7TF6QA)
 
-## Accessing the SushiSwap Interface
+## Accessing the LuckyFinance Interface
 
 To access the Sushiswap Interface, use an IPFS gateway link from the
 [latest release](https://github.com/sushiswap/sushiswap-interface/releases/latest),

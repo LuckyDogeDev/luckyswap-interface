@@ -19,12 +19,12 @@ export default function XSushi() {
     const { account, chainId } = useActiveWeb3React()
 
     const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
-    const xSushiBalance = useTokenBalance(XSUSHI?.address ?? '')
+    const PlatinumNuggetBalance = useTokenBalance(XSUSHI?.address ?? '')
 
     return (
         <>
             <Helmet>
-                <title>xSUSHI | Sushi</title>
+                <title>xSUSHI | LuckyFinance</title>
             </Helmet>
             <div className="flex flex-col w-full min-h-fitContent">
                 <div className="flex mb-6 justify-center">
@@ -39,13 +39,13 @@ export default function XSushi() {
                             <APRCard />
                         </div>
                         <div>
-                            <StakeCard sushiBalance={sushiBalance} xSushiBalance={xSushiBalance} />
+                            <StakeCard sushiBalance={sushiBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
                         </div>
                     </div>
                     <div className="hidden md:block w-72 ml-6">
                         <BalanceCard
                             sushiEarnings={mockData.sushiEarnings}
-                            xSushiBalance={xSushiBalance}
+                            PlatinumNuggetBalance={PlatinumNuggetBalance}
                             sushiBalance={sushiBalance}
                             weightedApr={mockData.weightedApr}
                         />
@@ -55,7 +55,7 @@ export default function XSushi() {
                     <div className="md:hidden flex justify-center w-full max-w-xl mt-6 mb-20">
                         <BalanceCard
                             sushiEarnings={mockData.sushiEarnings}
-                            xSushiBalance={xSushiBalance}
+                            PlatinumNuggetBalance={PlatinumNuggetBalance}
                             sushiBalance={sushiBalance}
                             weightedApr={mockData.weightedApr}
                         />

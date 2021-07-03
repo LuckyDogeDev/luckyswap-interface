@@ -1,6 +1,6 @@
 {
     "name": "@sushiswap/interface",
-    "description": "SushiSwap Interface",
+    "description": "LuckyFinance Interface",
     "homepage": "https://app.sushi.com",
     "private": true,
     "lint-staged": {

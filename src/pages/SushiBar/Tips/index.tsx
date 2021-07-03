@@ -76,7 +76,7 @@ export default function SushiBarTips() {
     return (
         <>
             <Helmet>
-                <title>xSUSHI | Sushi</title>
+                <title>xSUSHI | LuckyFinance</title>
             </Helmet>
             <div className="w-full max-w-2xl mb-4">
                 <Button size="small" className="flex items-center pl-0 mb-4" onClick={goBack}>

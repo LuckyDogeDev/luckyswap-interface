@@ -50,10 +50,10 @@ const buttonStyleConnectWallet = `${buttonStyle} text-high-emphesis bg-cyan-blue
 
 interface StakeCardProps {
     sushiBalance: BalanceProps
-    xSushiBalance: BalanceProps
+    PlatinumNuggetBalance: BalanceProps
 }
 
-export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProps) {
+export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: StakeCardProps) {
     const { i18n } = useLingui()
     const { account } = useActiveWeb3React()
 
@@ -68,7 +68,7 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
         fetchData()
     }, [])
 
-    const xSushiPerSushi = parseFloat(exchangeRate)
+    const PlatinumNuggetPerSushi = parseFloat(exchangeRate)
 
     const walletConnected = !!account
     const toggleWalletModal = useWalletModalToggle()
@@ -76,7 +76,7 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
     const [activeTab, setActiveTab] = useState(0)
     const [modalOpen, setModalOpen] = useState(false)
 
-    const balance: BalanceProps = activeTab === 0 ? sushiBalance : xSushiBalance
+    const balance: BalanceProps = activeTab === 0 ? sushiBalance : PlatinumNuggetBalance
     const formattedBalance = formatFromBalance(balance.value)
 
     const [input, setInput] = useState<string>('')
@@ -93,7 +93,7 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
         setUsingBalance(true)
     }
 
-    const insufficientFunds = (activeTab === 0 ? sushiBalance : xSushiBalance).value.lt(parsedInput.value)
+    const insufficientFunds = (activeTab === 0 ? sushiBalance : PlatinumNuggetBalance).value.lt(parsedInput.value)
     const inputError = insufficientFunds
 
     const [pendingTx, setPendingTx] = useState(false)
@@ -181,7 +181,7 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                         {activeTab === 0 ? i18n._(t`Stake SUSHI`) : i18n._(t`Unstake`)}
                     </p>
                     <div className="border-gradient-r-pink-red-light-brown-dark-pink-red border-transparent border-solid border rounded-3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-caption md:font-normal">
-                        {`1 xSUSHI = ${xSushiPerSushi.toFixed(4)} SUSHI`}
+                        {`1 xSUSHI = ${PlatinumNuggetPerSushi.toFixed(4)} SUSHI`}
                     </div>
                 </div>
 

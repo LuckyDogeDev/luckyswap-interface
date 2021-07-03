@@ -116,7 +116,7 @@ export default function BorrowPair({
             }
         >
             <Helmet>
-                <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)}| Sushi</title>
+                <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)}| LuckyFinance</title>
             </Helmet>
             <Card
                 className="h-full bg-dark-900"

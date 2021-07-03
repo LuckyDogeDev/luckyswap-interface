@@ -188,7 +188,7 @@ function AppBar(): JSX.Element {
                                             library.provider.isMetaMask && (
                                                 <>
                                                     <QuestionHelper
-                                                        text={i18n._(t`Add xSushi to your Metamask wallet`)}
+                                                        text={i18n._(t`Add PlatinumNugget to your Metamask wallet`)}
                                                     >
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
