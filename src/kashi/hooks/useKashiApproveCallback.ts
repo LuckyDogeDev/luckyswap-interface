@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ethers } from 'ethers'
 import { useDispatch } from 'react-redux'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import { useBentoBoxContract } from 'hooks/useContract'
+import { useAlpineContract } from 'hooks/useContract'
 import { KASHI_ADDRESS } from 'kashi/constants'
 import { KashiCooker, signMasterContractApproval } from 'kashi/entities'
 import { setKashiApprovalPending } from 'state/application/actions'
@@ -69,7 +69,7 @@ function useKashiApproveCallback(): [
         return currentAllowed ? BentoApprovalState.APPROVED : BentoApprovalState.NOT_APPROVED
     }, [masterContract, currentAllowed, pendingApproval])
 
-    const bentoBoxContract = useBentoBoxContract()
+    const bentoBoxContract = useAlpineContract()
 
     const approve = useCallback(async (): Promise<BentoApproveResult> => {
         if (approvalState !== BentoApprovalState.NOT_APPROVED) {

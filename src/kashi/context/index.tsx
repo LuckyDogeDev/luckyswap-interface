@@ -4,7 +4,7 @@ import { bentobox } from '@sushiswap/sushi-data'
 import { ethers } from 'ethers'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useAllTokens } from 'hooks/Tokens'
-import { useBoringHelperContract, useBentoBoxContract } from 'hooks/useContract'
+import { useBoringHelperContract, useAlpineContract } from 'hooks/useContract'
 import { e10, maximum, minimum, ZERO } from 'kashi/functions/math'
 import { rpcToObj } from 'kashi/functions/utils'
 import { toAmount, toShare } from 'kashi/functions/bentobox'
@@ -160,7 +160,7 @@ export function KashiProvider({ children }: { children: JSX.Element }) {
     const curreny: any = getCurrency(chain).address
 
     const boringHelperContract = useBoringHelperContract()
-    const bentoBoxContract = useBentoBoxContract()
+    const bentoBoxContract = useAlpineContract()
 
     // Default token list fine for now, might want to more to the broader collection later.
     const tokens = useAllTokens()

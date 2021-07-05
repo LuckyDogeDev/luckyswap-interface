@@ -329,7 +329,7 @@ export default function ClaimModal() {
                                                 <AutoRow>
                                                     <AutoRow marginBottom="2px">
                                                         <TYPE.body fontWeight={500}>
-                                                            {i18n._(t`Deposit SUSHI into BentoBox`)}
+                                                            {i18n._(t`Deposit SUSHI into Alpine`)}
                                                         </TYPE.body>
                                                     </AutoRow>
                                                     <AutoRow>

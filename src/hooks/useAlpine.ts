@@ -3,15 +3,15 @@ import { WETH } from '@sushiswap/sdk'
 import { ethers } from 'ethers'
 import { useCallback } from 'react'
 import { useActiveWeb3React } from './useActiveWeb3React'
-import { useBentoBoxContract } from './useContract'
+import { useAlpineContract } from './useContract'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { isAddress } from '../utils'
 
-function useBentoBox() {
+function useAlpine() {
     const { account, chainId } = useActiveWeb3React()
 
     const addTransaction = useTransactionAdder()
-    const bentoBoxContract = useBentoBoxContract()
+    const bentoBoxContract = useAlpineContract()
 
     const deposit = useCallback(
         async (tokenAddress: string, value: BigNumber) => {
@@ -65,4 +65,4 @@ function useBentoBox() {
     return { deposit, withdraw }
 }
 
-export default useBentoBox
+export default useAlpine

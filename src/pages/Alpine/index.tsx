@@ -1,5 +1,5 @@
-import BentoBoxHero from '../../assets/kashi/bentobox-hero.jpg'
-import BentoBoxLogo from '../../assets/kashi/bentobox-logo.svg'
+import AlpineHero from '../../assets/kashi/bentobox-hero.jpg'
+import AlpineLogo from '../../assets/kashi/bentobox-logo.svg'
 import { Card } from 'kashi/components'
 import ComingSoon from '../../assets/kashi/coming-soon.png'
 import { Helmet } from 'react-helmet'
@@ -11,7 +11,7 @@ import { t } from '@lingui/macro'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
 
-function BentoBox(): JSX.Element {
+function Alpine(): JSX.Element {
     const { i18n } = useLingui()
 
     const { account } = useActiveWeb3React()
@@ -20,7 +20,7 @@ function BentoBox(): JSX.Element {
         <>
             {' '}
             <Helmet>
-                <title>BentoBox | LuckyFinance</title>
+                <title>Alpine | LuckyFinance</title>
             </Helmet>
             <div>
                 <div
@@ -32,21 +32,21 @@ function BentoBox(): JSX.Element {
                 >
                     <img
                         className="h-full w-full object-cover object-bottom opacity-50 -mt-32"
-                        src={BentoBoxHero}
+                        src={AlpineHero}
                         alt=""
                     />
                 </div>
 
                 <div className="relative flex flex-col items-center">
-                    <img alt="" src={BentoBoxLogo} className="object-scale-down w-40 md:w-60 h-auto" />
+                    <img alt="" src={AlpineLogo} className="object-scale-down w-40 md:w-60 h-auto" />
 
                     <div className="container mx-auto max-w-3xl">
                         <div className="font-bold text-center text-3xl md:text-5xl text-high-emphesis">
-                            {i18n._(t`BentoBox Apps`)}
+                            {i18n._(t`Alpine Apps`)}
                         </div>
                         <div className="font-medium text-base md:text-lg lg:text-xl text-center text-high-emphesis mt-0 md:mt-4 mb-8 p-4">
                             {i18n._(
-                                t`BentoBox is an innovative way to use dapps gas-efficiently and gain extra yield.`
+                                t`Alpine is an innovative way to use dapps gas-efficiently and gain extra yield.`
                             )}
                         </div>
                     </div>
@@ -87,4 +87,4 @@ function BentoBox(): JSX.Element {
     )
 }
 
-export default BentoBox
+export default Alpine

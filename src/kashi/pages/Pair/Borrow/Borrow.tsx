@@ -106,7 +106,7 @@ export default function Borrow({ pair }: BorrowProps) {
     const collateralWarnings = new Warnings().add(
         collateralBalance?.lt(collateralValue.toBigNumber(pair.collateral.decimals)),
         `Please make sure your ${
-            useBentoCollateral ? 'BentoBox' : 'wallet'
+            useBentoCollateral ? 'Alpine' : 'wallet'
         } balance is sufficient to deposit and then try again.`,
         true
     )

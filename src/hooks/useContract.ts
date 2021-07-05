@@ -226,7 +226,7 @@ export function useTimelockContract(): Contract | null {
     return useContract(chainId && TIMELOCK_ADDRESS[chainId], TIMELOCK_ABI, false)
 }
 
-export function useBentoBoxContract(withSignerIfPossible?: boolean): Contract | null {
+export function useAlpineContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && BENTOBOX_ADDRESS[chainId], BENTOBOX_ABI, withSignerIfPossible)
 }

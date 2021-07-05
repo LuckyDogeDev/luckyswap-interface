@@ -3,12 +3,12 @@ import Fraction from '../entities/Fraction'
 import { useCallback, useEffect, useState } from 'react'
 import ERC20_ABI from '../constants/abis/erc20.json'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
-import { useBentoBoxContract, useContract } from '../hooks/useContract'
+import { useAlpineContract, useContract } from '../hooks/useContract'
 import { isAddress } from '../utils'
 
 const useAllowance = (tokenAddress: string) => {
     const { account } = useActiveWeb3React()
-    const bentoBoxContract = useBentoBoxContract(true) // withSigner
+    const bentoBoxContract = useAlpineContract(true) // withSigner
     const tokenAddressChecksum = isAddress(tokenAddress)
     const tokenContract = useContract(tokenAddressChecksum ? tokenAddressChecksum : undefined, ERC20_ABI, true) // withSigner
 

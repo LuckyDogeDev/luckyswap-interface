@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { useFuse, useSortableData } from 'hooks'
 
 import AsyncTokenIcon from '../../../kashi/components/AsyncTokenIcon'
-import BentoBoxImage from 'assets/kashi/bento-illustration.png'
+import AlpineImage from 'assets/kashi/bento-illustration.png'
 import Deposit from './Deposit'
 import { Helmet } from 'react-helmet'
 import { Paper } from 'components'
@@ -33,16 +33,16 @@ export default function BentoBalances(): JSX.Element {
     return (
         <>
             <Helmet>
-                <title>BentoBox Balances | LuckyFinance</title>
+                <title>Alpine Balances | LuckyFinance</title>
             </Helmet>
             <Layout
                 left={
                     <Card
                         className="h-full bg-dark-900"
-                        backgroundImage={BentoBoxImage}
-                        title={i18n._(t`Deposit tokens into BentoBox for all the yields`)}
+                        backgroundImage={AlpineImage}
+                        title={i18n._(t`Deposit tokens into Alpine for all the yields`)}
                         description={i18n._(
-                            t`BentoBox provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets`
+                            t`Alpine provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets`
                         )}
                     />
                 }
@@ -53,7 +53,7 @@ export default function BentoBalances(): JSX.Element {
                         <CardHeader className="flex justify-between items-center bg-dark-800">
                             <div className="flex flex-col md:flex-row items-center justify-between w-full">
                                 <div className="flex items-baseline">
-                                    <div className="text-3xl text-high-emphesis mr-4">{i18n._(t`BentoBox`)}</div>
+                                    <div className="text-3xl text-high-emphesis mr-4">{i18n._(t`Alpine`)}</div>
                                 </div>
                                 <div className="flex justify-end w-full py-4 md:py-0">
                                     <Search search={search} term={term} />
@@ -66,7 +66,7 @@ export default function BentoBalances(): JSX.Element {
                         <div className="px-4 grid grid-cols-3 text-sm  text-secondary select-none">
                             <div>{i18n._(t`Token`)}</div>
                             <div className="text-right">{i18n._(t`Wallet`)}</div>
-                            <div className="text-right">{i18n._(t`BentoBox`)}</div>
+                            <div className="text-right">{i18n._(t`Alpine`)}</div>
                         </div>
                         {items &&
                             items.length > 0 &&

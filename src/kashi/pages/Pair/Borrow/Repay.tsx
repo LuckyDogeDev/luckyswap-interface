@@ -124,7 +124,7 @@ export default function Repay({ pair }: RepayProps) {
     const warnings = new Warnings()
         .addError(
             assetNative && !useBentoRepay && pinRepayMax,
-            `You cannot MAX repay ${pair.asset.symbol} directly from your wallet. Please deposit your ${pair.asset.symbol} into the BentoBox first, then repay. Because your debt is slowly accrueing interest we can't predict how much it will be once your transaction gets mined.`
+            `You cannot MAX repay ${pair.asset.symbol} directly from your wallet. Please deposit your ${pair.asset.symbol} into the Alpine first, then repay. Because your debt is slowly accrueing interest we can't predict how much it will be once your transaction gets mined.`
         )
         .addError(
             displayRemoveValue.toBigNumber(pair.collateral.decimals).gt(pair.userCollateralAmount.value),
@@ -136,7 +136,7 @@ export default function Repay({ pair }: RepayProps) {
             new Warning(
                 balance?.lt(displayRepayValue.toBigNumber(pair.asset.decimals)),
                 `Please make sure your ${
-                    useBentoRepay ? 'BentoBox' : 'wallet'
+                    useBentoRepay ? 'Alpine' : 'wallet'
                 } balance is sufficient to repay and then try again.`,
                 true
             )

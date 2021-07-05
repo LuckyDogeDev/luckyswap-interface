@@ -67,7 +67,7 @@ export default function SmartNumberInput({
                             }}
                             disabled={switchDisabled}
                         >
-                            {useBento ? 'BentoBox' : 'Wallet'}
+                            {useBento ? 'Alpine' : 'Wallet'}
                         </Button>
                     </span>
                 </div>

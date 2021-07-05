@@ -21,10 +21,10 @@ interface Tip {
 
 const tips: readonly Tip[] = [
     {
-        title: 'Deposit into BentoBox',
+        title: 'Deposit into Alpine',
         image: BentoSquare,
         description:
-            'Deposit your xSUSHI into BentoBox to passively earn yield through an xSUSHI investment strategy, or use as collateral within Kashi and future Bento dapps.',
+            'Deposit your xSUSHI into Alpine to passively earn yield through an xSUSHI investment strategy, or use as collateral within Kashi and future Bento dapps.',
         href: '#'
     },
     {
@@ -95,7 +95,7 @@ export default function AlchemyBenchTips() {
                                 <div className="flex items-center">
                                     <img
                                         src={image}
-                                        alt="BentoBox"
+                                        alt="Alpine"
                                         style={{
                                             filter: 'drop-shadow(0px 3px 6px rgba(15, 15, 15, 0.25))'
                                         }}

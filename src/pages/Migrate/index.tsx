@@ -167,17 +167,17 @@ const MigrateButtons = ({ state, exchange }: { state: MigrateState; exchange: st
     const { i18n } = useLingui()
 
     const [error, setError] = useState<MetamaskError>({})
-    const sushiRollContract = useIngotContract(
+    const inGotContract = useIngotContract(
         state.selectedLPToken?.version ? state.selectedLPToken?.version : undefined
     )
     console.log(
-        'sushiRollContract address',
-        sushiRollContract?.address,
+        'inGotContract address',
+        inGotContract?.address,
         state.selectedLPToken?.balance,
         state.selectedLPToken?.version
     )
 
-    const [approval, approve] = useApproveCallback(state.selectedLPToken?.balance, sushiRollContract?.address)
+    const [approval, approve] = useApproveCallback(state.selectedLPToken?.balance, inGotContract?.address)
     const noLiquidityTokens = !!state.selectedLPToken?.balance && state.selectedLPToken?.balance.equalTo(ZERO)
     const isButtonDisabled = !state.amount
 

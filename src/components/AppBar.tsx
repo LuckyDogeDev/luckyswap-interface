@@ -89,7 +89,7 @@ function AppBar(): JSX.Element {
                                                     chainId
                                                 ) && (
                                                     <NavLink id={`bento-nav-link`} to={'/bento'}>
-                                                        {i18n._(t`BentoBox`)}
+                                                        {i18n._(t`Alpine`)}
                                                     </NavLink>
                                                 )}
                                             {chainId === ChainId.MAINNET && (
@@ -413,7 +413,7 @@ function AppBar(): JSX.Element {
                                 {chainId &&
                                     [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
                                         <NavLink id={`bento-nav-link`} to={'/bento'}>
-                                            {i18n._(t`BentoBox`)}
+                                            {i18n._(t`Alpine`)}
                                         </NavLink>
                                     )}
                                 {chainId === ChainId.MAINNET && (

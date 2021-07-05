@@ -14,8 +14,8 @@ import {
     RedirectOldAddLiquidityPathStructure,
     RedirectToAddLiquidity
 } from './pages/AddLiquidity/redirects'
-import Bento from './pages/BentoBox'
-import BentoBalances from './pages/BentoBox/Balances'
+import Bento from './pages/Alpine'
+import BentoBalances from './pages/Alpine/Balances'
 import Migrate from './pages/Migrate'
 import Pool from './pages/Pool'
 import PoolFinder from './pages/PoolFinder'

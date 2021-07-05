@@ -96,7 +96,7 @@ export default function BorrowPair({
                             <div className="text-lg text-high-emphesis">75%</div>
                         </div>
                         <div className="flex justify-between pt-3">
-                            <div className="text-xl text-high-emphesis">{i18n._(t`BentoBox`)}</div>
+                            <div className="text-xl text-high-emphesis">{i18n._(t`Alpine`)}</div>
                         </div>
                         <div className="flex justify-between">
                             <div className="text-lg text-secondary">
@@ -106,7 +106,7 @@ export default function BorrowPair({
                                 {i18n._(t`None`)}
                                 <QuestionHelper
                                     text={i18n._(
-                                        t`BentoBox strategies can create yield for your collateral tokens. This token does not yet have a strategy in the BentoBox.`
+                                        t`Alpine strategies can create yield for your collateral tokens. This token does not yet have a strategy in the Alpine.`
                                     )}
                                 />
                             </div>

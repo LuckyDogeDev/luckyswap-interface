@@ -9,7 +9,7 @@
       { "internalType": "contract IFactory", "name": "sushiFactory_", "type": "address" },
       { "internalType": "contract IFactory", "name": "uniV2Factory_", "type": "address" },
       { "internalType": "contract IERC20", "name": "bar_", "type": "address" },
-      { "internalType": "contract IBentoBox", "name": "bentoBox_", "type": "address" }
+      { "internalType": "contract IAlpine", "name": "bentoBox_", "type": "address" }
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
@@ -38,7 +38,7 @@
   {
     "inputs": [],
     "name": "bentoBox",
-    "outputs": [{ "internalType": "contract IBentoBox", "name": "", "type": "address" }],
+    "outputs": [{ "internalType": "contract IAlpine", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -374,7 +374,7 @@
       { "internalType": "contract IFactory", "name": "sushiFactory_", "type": "address" },
       { "internalType": "contract IFactory", "name": "uniV2Factory_", "type": "address" },
       { "internalType": "contract IERC20", "name": "bar_", "type": "address" },
-      { "internalType": "contract IBentoBox", "name": "bentoBox_", "type": "address" }
+      { "internalType": "contract IAlpine", "name": "bentoBox_", "type": "address" }
     ],
     "name": "setContracts",
     "outputs": [],

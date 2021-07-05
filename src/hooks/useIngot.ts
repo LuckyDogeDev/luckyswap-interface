@@ -9,7 +9,7 @@ import LPToken from '../types/LPToken'
 
 const useIngot = (version: 'v1' | 'v2' = 'v2') => {
     const { chainId, library, account } = useActiveWeb3React()
-    const sushiRoll = useIngotContract(version)
+    const inGot = useIngotContract(version)
     const ttl = 60 * 20
 
     let from = ''
@@ -22,7 +22,7 @@ const useIngot = (version: 'v1' | 'v2' = 'v2') => {
 
     const migrate = useCallback(
         async (lpToken: LPToken, amount: ethers.BigNumber) => {
-            if (sushiRoll) {
+            if (inGot) {
                 const deadline = Math.floor(new Date().getTime() / 1000) + ttl
                 const args = [
                     lpToken.tokenA.address,
@@ -33,8 +33,8 @@ const useIngot = (version: 'v1' | 'v2' = 'v2') => {
                     deadline
                 ]
 
-                const gasLimit = await sushiRoll.estimateGas.migrate(...args)
-                const tx = sushiRoll.migrate(...args, {
+                const gasLimit = await inGot.estimateGas.migrate(...args)
+                const tx = inGot.migrate(...args, {
                     gasLimit: gasLimit.mul(120).div(100)
                 })
 
@@ -47,18 +47,18 @@ const useIngot = (version: 'v1' | 'v2' = 'v2') => {
                 return tx
             }
         },
-        [sushiRoll, ttl, from]
+        [inGot, ttl, from]
     )
 
     const migrateWithPermit = useCallback(
         async (lpToken: LPToken, amount: ethers.BigNumber) => {
-            if (account && sushiRoll) {
+            if (account && inGot) {
                 const deadline = Math.floor(new Date().getTime() / 1000) + ttl
                 const permit = await signERC2612Permit(
                     library,
                     lpToken.address,
                     account,
-                    sushiRoll.address,
+                    inGot.address,
                     amount.toString(),
                     deadline
                 )
@@ -76,8 +76,8 @@ const useIngot = (version: 'v1' | 'v2' = 'v2') => {
 
                 console.log('migrate with permit', args)
 
-                const gasLimit = await sushiRoll.estimateGas.migrateWithPermit(...args)
-                const tx = await sushiRoll.migrateWithPermit(...args, {
+                const gasLimit = await inGot.estimateGas.migrateWithPermit(...args)
+                const tx = await inGot.migrateWithPermit(...args, {
                     gasLimit: gasLimit.mul(120).div(100)
                 })
 
@@ -90,7 +90,7 @@ const useIngot = (version: 'v1' | 'v2' = 'v2') => {
                 return tx
             }
         },
-        [account, library, sushiRoll, ttl, from]
+        [account, library, inGot, ttl, from]
     )
 
     return {

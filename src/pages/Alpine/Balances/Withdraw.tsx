@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'components'
-import useBentoBox from 'hooks/useBentoBox'
+import useAlpine from 'hooks/useAlpine'
 import { formattedNum } from 'utils'
 import { Input as NumericalInput } from 'components/NumericalInput'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
@@ -12,7 +12,7 @@ function Withdraw({ tokenAddress, tokenSymbol }: { tokenAddress: string; tokenSy
     const { i18n } = useLingui()
     const { account } = useActiveWeb3React()
 
-    const { withdraw } = useBentoBox()
+    const { withdraw } = useAlpine()
 
     const balance = useBentoBalance(tokenAddress)
 

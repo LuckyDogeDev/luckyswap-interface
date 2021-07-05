@@ -16,12 +16,12 @@ import TokenListBox from './TokenListBox'
 import { e10 } from 'kashi/functions/math'
 import { ethers } from 'ethers'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import { useBentoBoxContract } from 'hooks/useContract'
+import { useAlpineContract } from 'hooks/useContract'
 import { useTransactionAdder } from 'state/transactions/hooks'
 
 const CreatePair = () => {
     const { chainId } = useActiveWeb3React()
-    const bentoBoxContract = useBentoBoxContract()
+    const bentoBoxContract = useAlpineContract()
     const addTransaction = useTransactionAdder()
 
     const tokens: ChainlinkToken[] = CHAINLINK_TOKENS[chainId || 1] || []

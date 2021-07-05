@@ -3,7 +3,7 @@ import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
 import { BENTOBOX_ADDRESS } from 'kashi'
 import { Button } from 'components'
 import React, { useState } from 'react'
-import useBentoBox from 'hooks/useBentoBox'
+import useAlpine from 'hooks/useAlpine'
 import useTokenBalance from 'hooks/useTokenBalance'
 import { Input as NumericalInput } from 'components/NumericalInput'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
@@ -22,7 +22,7 @@ export default function Deposit({
     const { i18n } = useLingui()
     const { account, chainId } = useActiveWeb3React()
 
-    const { deposit } = useBentoBox()
+    const { deposit } = useAlpine()
 
     const balance = useTokenBalance(tokenAddress)
 

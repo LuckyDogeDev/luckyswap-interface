@@ -33,7 +33,7 @@ export default function LendDepositAction({ pair }: any): JSX.Element {
     const warnings = new Warnings().add(
         balance?.lt(value.toBigNumber(pair.asset.decimals)),
         `Please make sure your ${
-            useBento ? 'BentoBox' : 'wallet'
+            useBento ? 'Alpine' : 'wallet'
         } balance is sufficient to deposit and then try again.`,
         true
     )

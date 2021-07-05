@@ -1,6 +1,6 @@
 import { Currency, Token, WETH } from '@sushiswap/sdk'
 import { ZERO, e10, easyAmount, toAmount } from 'kashi/functions'
-import { useBentoBoxContract, useBoringHelperContract, useContract } from '../../hooks/useContract'
+import { useAlpineContract, useBoringHelperContract, useContract } from '../../hooks/useContract'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
 import { BigNumber } from '@ethersproject/bignumber'
@@ -30,7 +30,7 @@ export function useBentoBalances(): BentoBalance[] {
     const blockNumber = useBlockNumber()
 
     const boringHelperContract = useBoringHelperContract()
-    const bentoBoxContract = useBentoBoxContract()
+    const bentoBoxContract = useAlpineContract()
 
     const [balances, setBalances] = useState<any>()
     const tokens = Object.values(useDefaultTokens()).filter((token: Token) => token.chainId === chainId)
@@ -80,7 +80,7 @@ export function useBentoBalance(tokenAddress: string): { value: BigNumber; decim
     const { account } = useActiveWeb3React()
 
     const boringHelperContract = useBoringHelperContract()
-    const bentoBoxContract = useBentoBoxContract()
+    const bentoBoxContract = useAlpineContract()
     const tokenAddressChecksum = isAddress(tokenAddress)
     const tokenContract = useContract(tokenAddressChecksum ? tokenAddressChecksum : undefined, ERC20_ABI)
 
@@ -114,7 +114,7 @@ export function useBentoBalance(tokenAddress: string): { value: BigNumber; decim
 }
 
 export function useBentoMasterContractAllowed(masterContract?: string, user?: string): boolean | undefined {
-    const contract = useBentoBoxContract()
+    const contract = useAlpineContract()
 
     const inputs = useMemo(() => [masterContract, user], [masterContract, user])
     const allowed = useSingleCallResult(contract, 'masterContractApproved', inputs).result

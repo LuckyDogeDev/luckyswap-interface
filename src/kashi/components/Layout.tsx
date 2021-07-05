@@ -1,6 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 
-import { ReactComponent as BentoBoxLogo } from 'assets/kashi/bento-symbol.svg'
+import { ReactComponent as AlpineLogo } from 'assets/kashi/bento-symbol.svg'
 import KashiLogo from 'assets/kashi/logo.png'
 import React from 'react'
 import { Zero } from '@ethersproject/constants'
@@ -85,8 +85,8 @@ export default function Layout({
                                         : 'text-secondary hover:text-primary'
                                 }`}
                             >
-                                <BentoBoxLogo className="fill-current h-auto w-6 mr-2" />
-                                <div className="whitespace-nowrap text-base">BentoBox</div>
+                                <AlpineLogo className="fill-current h-auto w-6 mr-2" />
+                                <div className="whitespace-nowrap text-base">Alpine</div>
                                 <div className="whitespace-nowrap text-base ml-2">
                                     {formattedNum(
                                         balances
