@@ -148,7 +148,7 @@ export default function Pool() {
                                     <RowFixed>
                                         {/* <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin={true} size={20} /> */}
                                         <Text fontWeight={500} fontSize={14}>
-                                            {i18n._(t`One click SUSHI → xSUSHI → aPLAN`)}
+                                            {i18n._(t`One click GOLN → PLAN → aPLAN`)}
                                         </Text>
                                     </RowFixed>
                                     <RowFixed>

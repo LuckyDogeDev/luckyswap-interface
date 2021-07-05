@@ -21,7 +21,7 @@ import { useTransactionAdder } from 'state/transactions/hooks'
 
 const CreatePair = () => {
     const { chainId } = useActiveWeb3React()
-    const bentoBoxContract = useAlpineContract()
+    const alPineContract = useAlpineContract()
     const addTransaction = useTransactionAdder()
 
     const tokens: ChainlinkToken[] = CHAINLINK_TOKENS[chainId || 1] || []
@@ -105,7 +105,7 @@ const CreatePair = () => {
 
             console.log(kashiData)
 
-            addTransaction(await bentoBoxContract?.deploy(chainId && KASHI_ADDRESS[chainId], kashiData, true), {
+            addTransaction(await alPineContract?.deploy(chainId && KASHI_ADDRESS[chainId], kashiData, true), {
                 summary: `Add Kashi market ${selectedAsset.symbol}/${selectedCollateral.symbol} Chainlink`
             })
             setSelectedAsset(empty)

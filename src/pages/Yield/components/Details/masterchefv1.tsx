@@ -216,7 +216,7 @@ export default function InputGroup({
                                 setPendingTx(false)
                             }}
                         >
-                            {i18n._(t`Harvest ${formattedNum(pending)} SUSHI`)}
+                            {i18n._(t`Harvest ${formattedNum(pending)} GOLN`)}
                         </Button>
                     </div>
                 )}

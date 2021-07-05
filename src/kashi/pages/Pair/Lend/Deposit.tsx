@@ -19,21 +19,21 @@ export default function LendDepositAction({ pair }: any): JSX.Element {
     const assetToken = useCurrency(pair.asset.address) || undefined
 
     // State
-    const [useBento, setUseBento] = useState<boolean>(pair.asset.bentoBalance.gt(0))
+    const [useAlp, setUseAlp] = useState<boolean>(pair.asset.bentoBalance.gt(0))
     const [value, setValue] = useState('')
 
     const info = useContext(KashiContext).state.info
 
     // Calculated
     const assetNative = WETH[chainId || 1].address == pair.asset.address
-    const balance = useBento ? pair.asset.bentoBalance : assetNative ? info?.ethBalance : pair.asset.balance
+    const balance = useAlp ? pair.asset.bentoBalance : assetNative ? info?.ethBalance : pair.asset.balance
 
-    const max = useBento ? pair.asset.bentoBalance : assetNative ? info?.ethBalance : pair.asset.balance
+    const max = useAlp ? pair.asset.bentoBalance : assetNative ? info?.ethBalance : pair.asset.balance
 
     const warnings = new Warnings().add(
         balance?.lt(value.toBigNumber(pair.asset.decimals)),
         `Please make sure your ${
-            useBento ? 'Alpine' : 'wallet'
+            useAlp ? 'Alpine' : 'wallet'
         } balance is sufficient to deposit and then try again.`,
         true
     )
@@ -63,7 +63,7 @@ export default function LendDepositAction({ pair }: any): JSX.Element {
         if (pair.currentExchangeRate.isZero()) {
             cooker.updateExchangeRate(false, ZERO, ZERO)
         }
-        cooker.addAsset(value.toBigNumber(pair.asset.decimals), useBento)
+        cooker.addAsset(value.toBigNumber(pair.asset.decimals), useAlp)
         return `Deposit ${pair.asset.symbol}`
     }
 
@@ -76,10 +76,10 @@ export default function LendDepositAction({ pair }: any): JSX.Element {
                 token={pair.asset}
                 value={value}
                 setValue={setValue}
-                useBentoTitleDirection="down"
-                useBentoTitle="from"
-                useBento={useBento}
-                setUseBento={setUseBento}
+                useAlpTitleDirection="down"
+                useAlpTitle="from"
+                useAlp={useAlp}
+                setUseAlp={setUseAlp}
                 maxTitle="Balance"
                 max={max}
                 showMax={true}
@@ -91,7 +91,7 @@ export default function LendDepositAction({ pair }: any): JSX.Element {
             <KashiApproveButton
                 color="blue"
                 content={(onCook: any) => (
-                    <TokenApproveButton value={value} token={assetToken} needed={!useBento}>
+                    <TokenApproveButton value={value} token={assetToken} needed={!useAlp}>
                         <Button
                             onClick={() => onCook(pair, onExecute)}
                             disabled={value.toBigNumber(pair.asset.decimals).lte(0) || warnings.broken}

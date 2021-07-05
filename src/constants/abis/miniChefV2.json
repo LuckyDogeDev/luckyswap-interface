@@ -99,7 +99,7 @@
         "type": "function",
         "stateMutability": "view",
         "outputs": [{ "type": "address", "name": "", "internalType": "contract IERC20" }],
-        "name": "SUSHI",
+        "name": "GOLN",
         "inputs": []
     },
     {

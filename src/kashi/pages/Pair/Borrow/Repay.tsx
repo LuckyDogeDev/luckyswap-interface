@@ -18,7 +18,7 @@ import { useTradeExactIn, useTradeExactOut } from 'hooks/Trades'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from 'utils/prices'
 import { Field } from 'state/swap/actions'
 import { KashiApproveButton, TokenApproveButton } from 'kashi/components/Button'
-import { SUSHISWAP_MULTISWAPPER_ADDRESS, SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS } from 'kashi/constants'
+import { GOLNSWAP_MULTISWAPPER_ADDRESS, GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS } from 'kashi/constants'
 import { ethers } from 'ethers'
 import { defaultAbiCoder } from '@ethersproject/abi'
 
@@ -31,8 +31,8 @@ export default function Repay({ pair }: RepayProps) {
     const info = useContext(KashiContext).state.info
 
     // State
-    const [useBentoRepay, setUseBentoRepay] = useState<boolean>(pair.asset.bentoBalance.gt(0))
-    const [useBentoRemove, setUseBentoRemoveCollateral] = useState<boolean>(true)
+    const [useAlpRepay, setUseAlpRepay] = useState<boolean>(pair.asset.bentoBalance.gt(0))
+    const [useAlpRemove, setUseAlpRemoveCollateral] = useState<boolean>(true)
 
     const [repayValue, setRepayAssetValue] = useState('')
     const [removeValue, setRemoveCollateralValue] = useState('')
@@ -47,7 +47,7 @@ export default function Repay({ pair }: RepayProps) {
     // Calculated
     const assetNative = WETH[chainId || 1].address === pair.asset.address
 
-    const balance = useBentoRepay
+    const balance = useAlpRepay
         ? toAmount(pair.asset, pair.asset.bentoBalance)
         : assetNative
         ? info?.ethBalance
@@ -123,7 +123,7 @@ export default function Repay({ pair }: RepayProps) {
 
     const warnings = new Warnings()
         .addError(
-            assetNative && !useBentoRepay && pinRepayMax,
+            assetNative && !useAlpRepay && pinRepayMax,
             `You cannot MAX repay ${pair.asset.symbol} directly from your wallet. Please deposit your ${pair.asset.symbol} into the Alpine first, then repay. Because your debt is slowly accrueing interest we can't predict how much it will be once your transaction gets mined.`
         )
         .addError(
@@ -136,7 +136,7 @@ export default function Repay({ pair }: RepayProps) {
             new Warning(
                 balance?.lt(displayRepayValue.toBigNumber(pair.asset.decimals)),
                 `Please make sure your ${
-                    useBentoRepay ? 'Alpine' : 'wallet'
+                    useAlpRepay ? 'Alpine' : 'wallet'
                 } balance is sufficient to repay and then try again.`,
                 true
             )
@@ -198,7 +198,7 @@ export default function Repay({ pair }: RepayProps) {
         setRepayAssetValue('')
     }
 
-    console.log('useBentoRemove', useBentoRemove)
+    console.log('useAlpRemove', useAlpRemove)
 
     // Handlers
     async function onExecute(cooker: KashiCooker) {
@@ -212,7 +212,7 @@ export default function Repay({ pair }: RepayProps) {
             cooker.removeCollateral(pair.userCollateralShare, true)
             cooker.bentoTransferCollateral(
                 pair.userCollateralShare,
-                SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1]
+                GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1]
             )
             cooker.repayShare(pair.userBorrowPart)
 
@@ -244,7 +244,7 @@ export default function Repay({ pair }: RepayProps) {
             console.log('encoded', data)
 
             cooker.action(
-                SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1],
+                GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1],
                 ZERO,
                 ethers.utils.hexConcat([ethers.utils.hexlify('0x3087d742'), data]),
                 true,
@@ -254,17 +254,17 @@ export default function Repay({ pair }: RepayProps) {
 
             cooker.repayPart(pair.userBorrowPart, true)
 
-            if (!useBentoRemove) {
+            if (!useAlpRemove) {
                 cooker.bentoWithdrawCollateral(ZERO, BigNumber.from(-1))
             }
 
             summary = 'Repay All'
         } else {
             if (pinRepayMax && pair.userBorrowPart.gt(0) && balance.gte(pair.currentUserBorrowAmount.value)) {
-                cooker.repayPart(pair.userBorrowPart, useBentoRepay)
+                cooker.repayPart(pair.userBorrowPart, useAlpRepay)
                 summary = 'Repay Max'
             } else if (displayRepayValue.toBigNumber(pair.asset.decimals).gt(0)) {
-                cooker.repay(displayRepayValue.toBigNumber(pair.asset.decimals), useBentoRepay)
+                cooker.repay(displayRepayValue.toBigNumber(pair.asset.decimals), useAlpRepay)
                 summary = 'Repay'
             }
             if (
@@ -278,7 +278,7 @@ export default function Repay({ pair }: RepayProps) {
                         ? pair.userCollateralShare
                         : toShare(pair.collateral, displayRemoveValue.toBigNumber(pair.collateral.decimals))
 
-                cooker.removeCollateral(share, useBentoRemove)
+                cooker.removeCollateral(share, useAlpRemove)
                 summary += (summary ? ' and ' : '') + 'Remove Collateral'
             }
         }
@@ -297,10 +297,10 @@ export default function Repay({ pair }: RepayProps) {
                 token={pair.asset}
                 value={displayRepayValue}
                 setValue={setRepayAssetValue}
-                useBentoTitleDirection="down"
-                useBentoTitle={`Repay ${pair.asset.symbol} from`}
-                useBento={useBentoRepay}
-                setUseBento={setUseBentoRepay}
+                useAlpTitleDirection="down"
+                useAlpTitle={`Repay ${pair.asset.symbol} from`}
+                useAlp={useAlpRepay}
+                setUseAlp={setUseAlpRepay}
                 maxTitle="Balance"
                 max={balance}
                 pinMax={pinRepayMax}
@@ -315,10 +315,10 @@ export default function Repay({ pair }: RepayProps) {
                 token={pair.collateral}
                 value={displayRemoveValue}
                 setValue={setRemoveCollateralValue}
-                useBentoTitleDirection="up"
-                useBentoTitle={`Remove ${pair.collateral.symbol} to`}
-                useBento={useBentoRemove}
-                setUseBento={setUseBentoRemoveCollateral}
+                useAlpTitleDirection="up"
+                useAlpTitle={`Remove ${pair.collateral.symbol} to`}
+                useAlp={useAlpRemove}
+                setUseAlp={setUseAlpRemoveCollateral}
                 max={nextMaxRemoveCollateral}
                 pinMax={pinRemoveMax}
                 setPinMax={setPinRemoveMax}
@@ -364,7 +364,7 @@ export default function Repay({ pair }: RepayProps) {
             <KashiApproveButton
                 color="pink"
                 content={(onCook: any) => (
-                    <TokenApproveButton value={displayRepayValue} token={assetToken} needed={!useBentoRepay}>
+                    <TokenApproveButton value={displayRepayValue} token={assetToken} needed={!useAlpRepay}>
                         <Button onClick={() => onCook(pair, onExecute)} disabled={actionDisabled}>
                             {actionName}
                         </Button>

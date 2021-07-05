@@ -14,7 +14,7 @@ import { useDefaultTokens } from 'hooks/Tokens'
 import { useSingleCallResult } from 'state/multicall/hooks'
 import useTransactionStatus from '../../hooks/useTransactionStatus'
 
-export interface BentoBalance {
+export interface AlpBalance {
     address: string
     name: string
     symbol: string
@@ -25,12 +25,12 @@ export interface BentoBalance {
     bento: any
 }
 
-export function useBentoBalances(): BentoBalance[] {
+export function useAlpBalances(): AlpBalance[] {
     const { chainId, library, account } = useActiveWeb3React()
     const blockNumber = useBlockNumber()
 
     const boringHelperContract = useBoringHelperContract()
-    const bentoBoxContract = useAlpineContract()
+    const alPineContract = useAlpineContract()
 
     const [balances, setBalances] = useState<any>()
     const tokens = Object.values(useDefaultTokens()).filter((token: Token) => token.chainId === chainId)
@@ -38,7 +38,7 @@ export function useBentoBalances(): BentoBalance[] {
     const weth = WETH[chainId || 1].address
     const info = useContext(KashiContext).state.info
 
-    const fetchBentoBalances = useCallback(async () => {
+    const fetchAlpBalances = useCallback(async () => {
         const balanceData = await boringHelperContract?.getBalances(
             account,
             tokens.map((token: any) => token.address)
@@ -68,19 +68,19 @@ export function useBentoBalances(): BentoBalance[] {
     }, [account, boringHelperContract, chainId, info, tokens, weth])
 
     useEffect(() => {
-        if (account && bentoBoxContract && library) {
-            fetchBentoBalances()
+        if (account && alPineContract && library) {
+            fetchAlpBalances()
         }
-    }, [account, blockNumber, bentoBoxContract, fetchBentoBalances, info, library])
+    }, [account, blockNumber, alPineContract, fetchAlpBalances, info, library])
 
     return balances
 }
 
-export function useBentoBalance(tokenAddress: string): { value: BigNumber; decimals: number } {
+export function useAlpBalance(tokenAddress: string): { value: BigNumber; decimals: number } {
     const { account } = useActiveWeb3React()
 
     const boringHelperContract = useBoringHelperContract()
-    const bentoBoxContract = useAlpineContract()
+    const alPineContract = useAlpineContract()
     const tokenAddressChecksum = isAddress(tokenAddress)
     const tokenContract = useContract(tokenAddressChecksum ? tokenAddressChecksum : undefined, ERC20_ABI)
 
@@ -88,7 +88,7 @@ export function useBentoBalance(tokenAddress: string): { value: BigNumber; decim
 
     const [balance, setBalance] = useState<any>()
 
-    const fetchBentoBalance = useCallback(async () => {
+    const fetchAlpBalance = useCallback(async () => {
         const balances = await boringHelperContract?.getBalances(account, [tokenAddressChecksum])
         const decimals = await tokenContract?.decimals()
 
@@ -105,15 +105,15 @@ export function useBentoBalance(tokenAddress: string): { value: BigNumber; decim
     }, [account, tokenAddressChecksum, tokenContract, boringHelperContract])
 
     useEffect(() => {
-        if (account && bentoBoxContract && boringHelperContract && tokenContract) {
-            fetchBentoBalance()
+        if (account && alPineContract && boringHelperContract && tokenContract) {
+            fetchAlpBalance()
         }
-    }, [account, bentoBoxContract, currentTransactionStatus, fetchBentoBalance, tokenContract, boringHelperContract])
+    }, [account, alPineContract, currentTransactionStatus, fetchAlpBalance, tokenContract, boringHelperContract])
 
     return balance
 }
 
-export function useBentoMasterContractAllowed(masterContract?: string, user?: string): boolean | undefined {
+export function useAlpMasterContractAllowed(masterContract?: string, user?: string): boolean | undefined {
     const contract = useAlpineContract()
 
     const inputs = useMemo(() => [masterContract, user], [masterContract, user])

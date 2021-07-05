@@ -4,7 +4,7 @@ import BalanceCard from './BalanceCard'
 import { Button } from '../../components'
 import { ChevronLeft } from 'react-feather'
 import { ChainId } from '@sushiswap/sdk'
-import { SUSHI, PLAN } from '../../constants'
+import { GOLN, PLAN } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 import { useHistory } from 'react-router-dom'
 import TransactionsPanel from './TransactionsPanel'
@@ -17,7 +17,7 @@ const mock = {
 export default function AlchemyBenchTransactions() {
     const theme = useContext(ThemeContext)
 
-    const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
+    const sushiBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
     const PlatinumNuggetBalance = useTokenBalance(PLAN?.address ?? '')
 
     const history = useHistory()
@@ -52,11 +52,11 @@ export default function AlchemyBenchTransactions() {
                     <div className="hidden md:flex justify-between text-caption mt-4">
                         <div className="flex items-center">
                             <p className="text-primary font-bold">Total gain:&nbsp;</p>
-                            <p className="text-high-emphesis font-bold">{`${mock.totalGain} SUSHI`}</p>
+                            <p className="text-high-emphesis font-bold">{`${mock.totalGain} GOLN`}</p>
                         </div>
                         <div className="flex items-center">
                             <p className="text-primary">Time weighted average balance staked:&nbsp;</p>
-                            <p className="text-high-emphesis font-bold">{`${mock.avgBalStaked} SUSHI`}</p>
+                            <p className="text-high-emphesis font-bold">{`${mock.avgBalStaked} GOLN`}</p>
                         </div>
                     </div>
                 </div>

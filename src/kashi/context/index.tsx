@@ -102,12 +102,12 @@ const reducer: React.Reducer<State, Reducer> = (state: any, action: any) => {
     }
 }
 
-async function GetPairs(bentoBoxContract: any, chainId: ChainId) {
+async function GetPairs(alPineContract: any, chainId: ChainId) {
     let logs = []
     let success = false
     const masterAddress = KASHI_ADDRESS[chainId]
     if (chainId !== ChainId.BSC && chainId !== ChainId.MATIC) {
-        logs = await bentoBoxContract.queryFilter(bentoBoxContract.filters.LogDeploy(masterAddress))
+        logs = await alPineContract.queryFilter(alPineContract.filters.LogDeploy(masterAddress))
         success = true
     }
     if (!success) {
@@ -160,7 +160,7 @@ export function KashiProvider({ children }: { children: JSX.Element }) {
     const curreny: any = getCurrency(chain).address
 
     const boringHelperContract = useBoringHelperContract()
-    const bentoBoxContract = useAlpineContract()
+    const alPineContract = useAlpineContract()
 
     // Default token list fine for now, might want to more to the broader collection later.
     const tokens = useAllTokens()
@@ -174,7 +174,7 @@ export function KashiProvider({ children }: { children: JSX.Element }) {
             ) {
                 return
             }
-            if (boringHelperContract && bentoBoxContract) {
+            if (boringHelperContract && alPineContract) {
                 console.log('READY TO RUMBLE')
                 const info = rpcToObj(
                     await boringHelperContract.getUIInfo(account, [], getCurrency(chainId).address, [
@@ -183,7 +183,7 @@ export function KashiProvider({ children }: { children: JSX.Element }) {
                 )
 
                 // Get the deployed pairs from the logs and decode
-                const logPairs = await GetPairs(bentoBoxContract, chainId || 1)
+                const logPairs = await GetPairs(alPineContract, chainId || 1)
 
                 console.log({ logPairs })
 
@@ -457,7 +457,7 @@ export function KashiProvider({ children }: { children: JSX.Element }) {
                 })
             }
         },
-        [boringHelperContract, bentoBoxContract, chainId, chain, account, tokens]
+        [boringHelperContract, alPineContract, chainId, chain, account, tokens]
     )
 
     useEffect(() => {

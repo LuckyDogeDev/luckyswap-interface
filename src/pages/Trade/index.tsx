@@ -17,7 +17,7 @@ export default function TradeLayout() {
             </Helmet>
             <div className="w-full">
                 <TradingViewWidget
-                    symbol="BINANCE:SUSHIUSDT"
+                    symbol="BINANCE:GOLNUSDT"
                     theme={Themes.DARK}
                     locale="en"
                     autosize={false}

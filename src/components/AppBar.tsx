@@ -272,7 +272,7 @@ function AppBar(): JSX.Element {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address: address,
-                                                                        symbol: 'SUSHI',
+                                                                        symbol: 'GOLN',
                                                                         decimals: 18,
                                                                         image:
                                                                             'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png'
@@ -292,7 +292,7 @@ function AppBar(): JSX.Element {
                                                                         .then(success => {
                                                                             if (success) {
                                                                                 console.log(
-                                                                                    'Successfully added SUSHI to MetaMask'
+                                                                                    'Successfully added GOLN to MetaMask'
                                                                                 )
                                                                             } else {
                                                                                 throw new Error('Something went wrong.')

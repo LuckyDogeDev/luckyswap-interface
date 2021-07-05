@@ -406,7 +406,7 @@ export default function RemoveLiquidity({
             <>
                 <RowBetween>
                     <Text color={theme.text2} fontWeight={500} fontSize={16}>
-                        {i18n._(t`SUSHI ${currencyA?.getSymbol(chainId)}/${currencyB?.getSymbol(chainId)} Burned`)}
+                        {i18n._(t`GOLN ${currencyA?.getSymbol(chainId)}/${currencyB?.getSymbol(chainId)} Burned`)}
                     </Text>
                     <RowFixed>
                         <DoubleCurrencyLogo currency0={currencyA} currency1={currencyB} margin={true} />

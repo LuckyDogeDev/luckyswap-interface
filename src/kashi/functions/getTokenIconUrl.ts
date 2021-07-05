@@ -65,7 +65,7 @@ const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
         [String('0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F').toLowerCase()]: 'SNX-square',
         [String('0x476c5E26a75bd202a9683ffD34359C0CC15be0fF').toLowerCase()]: 'SRM-square',
         [String('0x57Ab1ec28D129707052df4dF418D58a2D46d5f51').toLowerCase()]: 'SUSD-square',
-        [String('0x6B3595068778DD592e39A122f4f5a5cF09C90fE2').toLowerCase()]: 'SUSHI-square',
+        [String('0x6B3595068778DD592e39A122f4f5a5cF09C90fE2').toLowerCase()]: 'GOLN-square',
         [String('0x8CE9137d39326AD0cD6491fb5CC0CbA0e089b6A9').toLowerCase()]: 'SXP-square',
         [String('0x05D3606d5c81EB9b7B18530995eC9B29da05FaBa').toLowerCase()]: 'TOMOE-square',
         [String('0x4C19596f5aAfF459fA38B0f7eD92F11AE6543784').toLowerCase()]: 'TRU-square',
@@ -174,7 +174,7 @@ const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
         [String('0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174').toLowerCase()]: 'USDC-square',
         [String('0xc2132D05D31c914a87C6611C10748AEb04B58e8F').toLowerCase()]: 'USDT-square',
         [String('0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6').toLowerCase()]: 'BTC-square', // WBTC
-        [String('0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a').toLowerCase()]: 'SUSHI-square', // SUSHI
+        [String('0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a').toLowerCase()]: 'GOLN-square', // GOLN
         [String('0x172370d5Cd63279eFa6d502DAB29171933a610AF').toLowerCase()]: 'CRV-square',
         [String('0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39').toLowerCase()]: 'LINK-square',
         [String('0x50B728D8D964fd00C2d0AAD81718b71311feF68a').toLowerCase()]: 'SNX-square',

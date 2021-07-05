@@ -8,7 +8,7 @@ import { isAddress } from '../utils'
 
 const useAllowance = (tokenAddress: string) => {
     const { account } = useActiveWeb3React()
-    const bentoBoxContract = useAlpineContract(true) // withSigner
+    const alPineContract = useAlpineContract(true) // withSigner
     const tokenAddressChecksum = isAddress(tokenAddress)
     const tokenContract = useContract(tokenAddressChecksum ? tokenAddressChecksum : undefined, ERC20_ABI, true) // withSigner
 
@@ -16,7 +16,7 @@ const useAllowance = (tokenAddress: string) => {
     const fetchAllowance = useCallback(async () => {
         if (account) {
             try {
-                const allowance = await tokenContract?.allowance(account, bentoBoxContract?.address)
+                const allowance = await tokenContract?.allowance(account, alPineContract?.address)
                 const formatted = Fraction.from(BigNumber.from(allowance), BigNumber.from(10).pow(18)).toString()
                 setAllowance(formatted)
             } catch (error) {
@@ -24,14 +24,14 @@ const useAllowance = (tokenAddress: string) => {
                 throw error
             }
         }
-    }, [account, bentoBoxContract?.address, tokenContract])
+    }, [account, alPineContract?.address, tokenContract])
     useEffect(() => {
-        if (account && bentoBoxContract && tokenContract) {
+        if (account && alPineContract && tokenContract) {
             fetchAllowance()
         }
         const refreshInterval = setInterval(fetchAllowance, 10000)
         return () => clearInterval(refreshInterval)
-    }, [account, bentoBoxContract, fetchAllowance, tokenContract])
+    }, [account, alPineContract, fetchAllowance, tokenContract])
 
     return allowance
 }

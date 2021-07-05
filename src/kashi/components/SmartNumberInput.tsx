@@ -11,10 +11,10 @@ type SmartNumberInputProps = {
     value: string
     setValue: any
 
-    useBentoTitleDirection: 'up' | 'down'
-    useBentoTitle: string
-    useBento: boolean
-    setUseBento: any
+    useAlpTitleDirection: 'up' | 'down'
+    useAlpTitle: string
+    useAlp: boolean
+    setUseAlp: any
 
     maxTitle?: string
     max: BigNumber
@@ -31,10 +31,10 @@ export default function SmartNumberInput({
     value,
     setValue,
 
-    useBentoTitleDirection = 'down',
-    useBentoTitle = '',
-    useBento,
-    setUseBento,
+    useAlpTitleDirection = 'down',
+    useAlpTitle = '',
+    useAlp,
+    setUseAlp,
 
     maxTitle = 'Max',
     max,
@@ -49,13 +49,13 @@ export default function SmartNumberInput({
             <div className="flex items-center justify-between my-4">
                 <div className="flex items-center text-base text-secondary">
                     <span>
-                        {useBentoTitleDirection == 'down' ? (
+                        {useAlpTitleDirection == 'down' ? (
                             <ArrowDownRight size="1rem" style={{ display: 'inline' }} />
                         ) : (
                             <ArrowUpRight size="1rem" style={{ display: 'inline' }} />
                         )}
                     </span>
-                    <span className="mx-2">{useBentoTitle}</span>
+                    <span className="mx-2">{useAlpTitle}</span>
                     <span>
                         <Button
                             variant="outlined"
@@ -63,11 +63,11 @@ export default function SmartNumberInput({
                             color={color}
                             className={'disabled:cursor-not-allowed focus:ring focus:ring-' + color}
                             onClick={() => {
-                                setUseBento(!useBento)
+                                setUseAlp(!useAlp)
                             }}
                             disabled={switchDisabled}
                         >
-                            {useBento ? 'Alpine' : 'Wallet'}
+                            {useAlp ? 'Alpine' : 'Wallet'}
                         </Button>
                     </span>
                 </div>

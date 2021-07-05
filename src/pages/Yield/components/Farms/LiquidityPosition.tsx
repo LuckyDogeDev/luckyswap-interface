@@ -29,7 +29,7 @@ const LiquidityPosition = ({ farm }: any) => {
                         </div>
                         <div className="hidden md:block text-sm sm:text-base ml-4 text-gray-500 text-right">
                             {/* TODO: remove hard coding */}
-                            {farm && farm.contract === 'masterchefv2' ? 'SUSHI & ALCX' : 'SUSHI'}
+                            {farm && farm.contract === 'masterchefv2' ? 'GOLN & ALCX' : 'GOLN'}
                         </div>
                         <div className="text-gray-500 text-sm sm:text-base text-right">
                             {formattedNum(farm.tvl, true)}
@@ -79,7 +79,7 @@ const LiquidityPosition = ({ farm }: any) => {
                                 {farm && farm.contract === 'minichef' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
-                                            {formattedNum(farm.sushiRewardPerDay)} SUSHI per day
+                                            {formattedNum(farm.sushiRewardPerDay)} GOLN per day
                                         </div>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
                                             {formattedNum(farm.secondaryRewardPerDay)} WMATIC per day
@@ -89,7 +89,7 @@ const LiquidityPosition = ({ farm }: any) => {
                                 {farm && farm.contract === 'masterchefv2' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
-                                            {formattedNum(farm.sushiRewardPerDay)} SUSHI per day
+                                            {formattedNum(farm.sushiRewardPerDay)} GOLN per day
                                         </div>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
                                             {formattedNum(farm.secondaryRewardPerDay)} ALCX per day
@@ -99,7 +99,7 @@ const LiquidityPosition = ({ farm }: any) => {
                                 {farm && farm.contract === 'masterchefv1' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-sm sm:text-sm">
-                                            {formattedNum(farm.sushiRewardPerDay)} SUSHI
+                                            {formattedNum(farm.sushiRewardPerDay)} GOLN
                                         </div>
                                         <div className="text-gray-500 text-right text-xs">per day</div>
                                     </>

@@ -9,7 +9,7 @@ import TransactionReviewView from 'kashi/components/TransactionReview'
 import { KASHI_ADDRESS } from '../../../constants'
 import { KashiCooker } from 'kashi/entities/KashiCooker'
 import { useKashiApprovalPending } from 'state/application/hooks'
-import { useKashiApproveCallback, BentoApprovalState } from 'kashi/hooks'
+import { useKashiApproveCallback, AlpApprovalState } from 'kashi/hooks'
 import { formattedNum } from 'utils'
 import SmartNumberInput from 'kashi/components/SmartNumberInput'
 import WarningsView from 'kashi/components/Warnings'
@@ -20,7 +20,7 @@ export default function LendWithdrawAction({ pair }: any): JSX.Element {
     const pendingApprovalMessage = useKashiApprovalPending()
 
     // State
-    const [useBento, setUseBento] = useState<boolean>(pair.asset.bentoBalance.gt(0))
+    const [useAlp, setUseAlp] = useState<boolean>(pair.asset.bentoBalance.gt(0))
     const [value, setValue] = useState('')
     const [pinMax, setPinMax] = useState(false)
 
@@ -38,7 +38,7 @@ export default function LendWithdrawAction({ pair }: any): JSX.Element {
         .add(
             pair.currentUserAssetAmount.value.lt(value.toBigNumber(pair.asset.decimals)),
             `Please make sure your ${
-                useBento ? 'Alpine' : 'wallet'
+                useAlp ? 'Alpine' : 'wallet'
             } balance is sufficient to withdraw and then try again.`,
             true
         )
@@ -65,7 +65,7 @@ export default function LendWithdrawAction({ pair }: any): JSX.Element {
             ? minimum(pair.userAssetFraction, pair.maxAssetAvailableFraction)
             : value.toBigNumber(pair.asset.decimals).muldiv(pair.currentTotalAsset.base, pair.currentAllAssets.value)
 
-        cooker.removeAsset(fraction, useBento)
+        cooker.removeAsset(fraction, useAlp)
         return `Withdraw ${pair.asset.symbol}`
     }
 
@@ -78,10 +78,10 @@ export default function LendWithdrawAction({ pair }: any): JSX.Element {
                 token={pair.asset}
                 value={displayValue}
                 setValue={setValue}
-                useBentoTitleDirection="up"
-                useBentoTitle="to"
-                useBento={useBento}
-                setUseBento={setUseBento}
+                useAlpTitleDirection="up"
+                useAlpTitle="to"
+                useAlp={useAlp}
+                setUseAlp={setUseAlp}
                 max={max}
                 pinMax={pinMax}
                 setPinMax={setPinMax}

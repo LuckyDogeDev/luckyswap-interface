@@ -7,7 +7,7 @@ import APRCard from './APRCard'
 import StakeCard from './StakeCard'
 import BalanceCard from './BalanceCard'
 import { ChainId } from '@sushiswap/sdk'
-import { SUSHI, PLAN } from '../../constants'
+import { GOLN, PLAN } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 
 const mockData = {
@@ -18,13 +18,13 @@ const mockData = {
 export default function PLatinumNugget() {
     const { account, chainId } = useActiveWeb3React()
 
-    const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
+    const sushiBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
     const PlatinumNuggetBalance = useTokenBalance(PLAN?.address ?? '')
 
     return (
         <>
             <Helmet>
-                <title>xSUSHI | LuckyFinance</title>
+                <title>PLAN | LuckyFinance</title>
             </Helmet>
             <div className="flex flex-col w-full min-h-fitContent">
                 <div className="flex mb-6 justify-center">

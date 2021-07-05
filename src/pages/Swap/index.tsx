@@ -656,7 +656,7 @@ export default function Swap() {
                                     <Trans>Missed the Auction?</Trans>
                                 </div>
                                 <div className="text-xs">
-                                    <Trans>Swap for SAK3 token on SUSHI now. Click here to swap.</Trans>
+                                    <Trans>Swap for SAK3 token on GOLN now. Click here to swap.</Trans>
                                 </div>
                             </div>
                         </div>
@@ -664,7 +664,7 @@ export default function Swap() {
                             <span className="text-high-emphesis font-normal" style={{ lineHeight: 1.3, maxWidth: 250 }}>
                                 <Trans>
                                     Pour a hot bowl of MISO, the new <span className="font-bold">token launchpad</span>{' '}
-                                    from SUSHI
+                                    from GOLN
                                 </Trans>
                             </span>
                             <div style={{ maxWidth: 195 }}>

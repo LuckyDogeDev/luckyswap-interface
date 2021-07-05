@@ -11,7 +11,7 @@ function useAlpine() {
     const { account, chainId } = useActiveWeb3React()
 
     const addTransaction = useTransactionAdder()
-    const bentoBoxContract = useAlpineContract()
+    const alPineContract = useAlpineContract()
 
     const deposit = useCallback(
         async (tokenAddress: string, value: BigNumber) => {
@@ -19,7 +19,7 @@ function useAlpine() {
             if (value && chainId) {
                 try {
                     if (tokenAddressChecksum === WETH[chainId].address) {
-                        const tx = await bentoBoxContract?.deposit(
+                        const tx = await alPineContract?.deposit(
                             ethers.constants.AddressZero,
                             account,
                             account,
@@ -27,10 +27,10 @@ function useAlpine() {
                             0,
                             { value }
                         )
-                        return addTransaction(tx, { summary: 'Deposit to Bentobox' })
+                        return addTransaction(tx, { summary: 'Deposit to Alpine' })
                     } else {
-                        const tx = await bentoBoxContract?.deposit(tokenAddressChecksum, account, account, value, 0)
-                        return addTransaction(tx, { summary: 'Deposit to Bentobox' })
+                        const tx = await alPineContract?.deposit(tokenAddressChecksum, account, account, value, 0)
+                        return addTransaction(tx, { summary: 'Deposit to Alpine' })
                     }
                 } catch (e) {
                     console.log('bentobox deposit error:', e)
@@ -38,7 +38,7 @@ function useAlpine() {
                 }
             }
         },
-        [account, addTransaction, bentoBoxContract, chainId]
+        [account, addTransaction, alPineContract, chainId]
     )
 
     const withdraw = useCallback(
@@ -51,15 +51,15 @@ function useAlpine() {
                         tokenAddressChecksum === WETH[chainId].address
                             ? '0x0000000000000000000000000000000000000000'
                             : tokenAddressChecksum
-                    const tx = await bentoBoxContract?.withdraw(tokenAddressChecksum, account, account, value, 0)
-                    return addTransaction(tx, { summary: 'Withdraw from Bentobox' })
+                    const tx = await alPineContract?.withdraw(tokenAddressChecksum, account, account, value, 0)
+                    return addTransaction(tx, { summary: 'Withdraw from Alpine' })
                 } catch (e) {
                     console.log('bentobox withdraw error:', e)
                     return e
                 }
             }
         },
-        [account, addTransaction, bentoBoxContract, chainId]
+        [account, addTransaction, alPineContract, chainId]
     )
 
     return { deposit, withdraw }

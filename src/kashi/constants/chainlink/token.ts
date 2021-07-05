@@ -150,7 +150,7 @@ export const CHAINLINK_TOKENS: { [chainId in ChainId]?: ChainlinkToken[] } = {
         },
         { symbol: 'SRM', name: 'Serum', address: '0x476c5E26a75bd202a9683ffD34359C0CC15be0fF', decimals: 6 },
         { symbol: 'sUSD', name: 'Synth sUSD', address: '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51', decimals: 18 },
-        { symbol: 'SUSHI', name: 'GoldNugget', address: '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', decimals: 18 },
+        { symbol: 'GOLN', name: 'GoldNugget', address: '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', decimals: 18 },
         { symbol: 'SXP', name: 'Swipe', address: '0x8CE9137d39326AD0cD6491fb5CC0CbA0e089b6A9', decimals: 18 },
         { symbol: 'TOMOE', name: 'TomoChain', address: '0x05D3606d5c81EB9b7B18530995eC9B29da05FaBa', decimals: 18 },
         { symbol: 'TRU', name: 'TrueFi', address: '0x4C19596f5aAfF459fA38B0f7eD92F11AE6543784', decimals: 8 },
@@ -176,7 +176,7 @@ export const CHAINLINK_TOKENS: { [chainId in ChainId]?: ChainlinkToken[] } = {
         { symbol: 'WBTC', name: 'Wrapped BTC', address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', decimals: 8 },
         { symbol: 'wNXM', name: 'Wrapped NXM', address: '0x0d438F3b5175Bebc262bF23753C1E53d03432bDE', decimals: 18 },
         { symbol: 'WOM', name: 'WOM Token', address: '0xBd356a39BFf2cAda8E9248532DD879147221Cf76', decimals: 18 },
-        { symbol: 'xSUSHI', name: 'AlchemyBench', address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', decimals: 18 },
+        { symbol: 'PLAN', name: 'AlchemyBench', address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', decimals: 18 },
         { symbol: 'YFI', name: 'yearn.finance', address: '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e', decimals: 18 },
         { symbol: 'YFII', name: 'YFII.finance', address: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83', decimals: 18 },
         {

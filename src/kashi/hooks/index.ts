@@ -1,1 +1,1 @@
-export { default as useKashiApproveCallback, BentoApprovalState } from './useKashiApproveCallback'
+export { default as useKashiApproveCallback, AlpApprovalState } from './useKashiApproveCallback'

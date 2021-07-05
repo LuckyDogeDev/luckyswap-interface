@@ -7,7 +7,7 @@ import Badge from 'components/Badge'
 import TransactionReviewView from 'kashi/components/TransactionReview'
 import { KashiCooker } from 'kashi/entities/KashiCooker'
 import { Warning, Warnings } from 'kashi/entities/Warnings'
-import { SUSHISWAP_MULTISWAPPER_ADDRESS } from 'kashi/constants'
+import { GOLNSWAP_MULTISWAPPER_ADDRESS } from 'kashi/constants'
 import { KashiContext } from 'kashi/context'
 import WarningsView from 'kashi/components/Warnings'
 import { useExpertModeManager, useUserSlippageTolerance } from 'state/user/hooks'
@@ -34,8 +34,8 @@ export default function Borrow({ pair }: BorrowProps) {
     const info = useContext(KashiContext).state.info
 
     // State
-    const [useBentoCollateral, setUseBentoCollateral] = useState<boolean>(pair.collateral.bentoBalance.gt(0))
-    const [useBentoBorrow, setUseBentoBorrow] = useState<boolean>(true)
+    const [useAlpCollateral, setUseAlpCollateral] = useState<boolean>(pair.collateral.bentoBalance.gt(0))
+    const [useAlpBorrow, setUseAlpBorrow] = useState<boolean>(true)
     const [collateralValue, setCollateralValue] = useState('')
     const [borrowValue, setBorrowValue] = useState('')
     const [swapBorrowValue, setSwapBorrowValue] = useState('')
@@ -50,7 +50,7 @@ export default function Borrow({ pair }: BorrowProps) {
 
     console.log({ assetNative: assetNative })
 
-    const collateralBalance = useBentoCollateral
+    const collateralBalance = useAlpCollateral
         ? pair.collateral.bentoBalance
         : assetNative
         ? info?.ethBalance
@@ -106,7 +106,7 @@ export default function Borrow({ pair }: BorrowProps) {
     const collateralWarnings = new Warnings().add(
         collateralBalance?.lt(collateralValue.toBigNumber(pair.collateral.decimals)),
         `Please make sure your ${
-            useBentoCollateral ? 'Alpine' : 'wallet'
+            useAlpCollateral ? 'Alpine' : 'wallet'
         } balance is sufficient to deposit and then try again.`,
         true
     )
@@ -234,14 +234,14 @@ export default function Borrow({ pair }: BorrowProps) {
                 cooker.updateExchangeRate(true, ZERO, ZERO)
             }
 
-            if (swap && !useBentoCollateral) {
+            if (swap && !useAlpCollateral) {
                 cooker.bentoDepositCollateral(collateralValue.toBigNumber(pair.collateral.decimals))
             }
 
             cooker.borrow(
                 borrowValue.toBigNumber(pair.asset.decimals),
-                swap || useBentoBorrow,
-                swap ? SUSHISWAP_MULTISWAPPER_ADDRESS[chainId || 1] : ''
+                swap || useAlpBorrow,
+                swap ? GOLNSWAP_MULTISWAPPER_ADDRESS[chainId || 1] : ''
             )
         }
         if (borrowValueSet && trade) {
@@ -275,7 +275,7 @@ export default function Borrow({ pair }: BorrowProps) {
             )
 
             cooker.action(
-                SUSHISWAP_MULTISWAPPER_ADDRESS[chainId || 1],
+                GOLNSWAP_MULTISWAPPER_ADDRESS[chainId || 1],
                 ZERO,
                 ethers.utils.hexConcat([ethers.utils.hexlify('0x3087d742'), data]),
                 false,
@@ -286,7 +286,7 @@ export default function Borrow({ pair }: BorrowProps) {
         if (collateralValueSet) {
             cooker.addCollateral(
                 swap ? BigNumber.from(-1) : collateralValue.toBigNumber(pair.collateral.decimals),
-                useBentoCollateral || swap
+                useAlpCollateral || swap
             )
         }
 
@@ -340,10 +340,10 @@ export default function Borrow({ pair }: BorrowProps) {
                 token={pair.collateral}
                 value={collateralValue}
                 setValue={setCollateralValue}
-                useBentoTitleDirection="down"
-                useBentoTitle={`Add ${pair.collateral.symbol} collateral from`}
-                useBento={useBentoCollateral}
-                setUseBento={setUseBentoCollateral}
+                useAlpTitleDirection="down"
+                useAlpTitle={`Add ${pair.collateral.symbol} collateral from`}
+                useAlp={useAlpCollateral}
+                setUseAlp={setUseAlpCollateral}
                 maxTitle="Balance"
                 max={collateralBalance}
                 showMax={true}
@@ -354,10 +354,10 @@ export default function Borrow({ pair }: BorrowProps) {
                 token={pair.asset}
                 value={borrowValue}
                 setValue={setBorrowValue}
-                useBentoTitleDirection="up"
-                useBentoTitle={`Borrow ${pair.asset.symbol} to`}
-                useBento={useBentoBorrow}
-                setUseBento={setUseBentoBorrow}
+                useAlpTitleDirection="up"
+                useAlpTitle={`Borrow ${pair.asset.symbol} to`}
+                useAlp={useAlpBorrow}
+                setUseAlp={setUseAlpBorrow}
                 maxTitle="Max"
                 max={nextMaxBorrowPossible}
             />
@@ -437,7 +437,7 @@ export default function Borrow({ pair }: BorrowProps) {
             <KashiApproveButton
                 color="pink"
                 content={(onCook: any) => (
-                    <TokenApproveButton value={collateralValue} token={collateralToken} needed={!useBentoCollateral}>
+                    <TokenApproveButton value={collateralValue} token={collateralToken} needed={!useAlpCollateral}>
                         <Button onClick={() => onCook(pair, onExecute)} disabled={actionDisabled}>
                             {actionName}
                         </Button>

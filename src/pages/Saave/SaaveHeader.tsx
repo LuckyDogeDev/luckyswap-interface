@@ -15,7 +15,7 @@ export default function SwapHeader() {
     return (
         <StyledSwapHeader>
             <RowBetween>
-                <TYPE.black fontWeight={500}>SUSHI → xSUSHI → aPLAN</TYPE.black>
+                <TYPE.black fontWeight={500}>GOLN → PLAN → aPLAN</TYPE.black>
             </RowBetween>
         </StyledSwapHeader>
     )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BENTOBOX_ADDRESS, KASHI_ADDRESS } from 'kashi/constants'
-import { BentoApprovalState, useKashiApproveCallback } from 'kashi/hooks'
+import { AlpApprovalState, useKashiApproveCallback } from 'kashi/hooks'
 import { Alert, Button } from 'components'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
@@ -15,9 +15,9 @@ export function KashiApproveButton({ content, color }: any): any {
     const { chainId } = useActiveWeb3React()
     const [kashiApprovalState, approveKashiFallback, kashiPermit, onApprove, onCook] = useKashiApproveCallback()
     const showApprove =
-        (kashiApprovalState === BentoApprovalState.NOT_APPROVED || kashiApprovalState === BentoApprovalState.PENDING) &&
+        (kashiApprovalState === AlpApprovalState.NOT_APPROVED || kashiApprovalState === AlpApprovalState.PENDING) &&
         !kashiPermit
-    const showChildren = kashiApprovalState === BentoApprovalState.APPROVED || kashiPermit
+    const showChildren = kashiApprovalState === AlpApprovalState.APPROVED || kashiPermit
 
     return (
         <>

@@ -26,7 +26,7 @@
       { "indexed": true, "internalType": "address", "name": "token1", "type": "address" },
       { "indexed": false, "internalType": "uint256", "name": "amount0", "type": "uint256" },
       { "indexed": false, "internalType": "uint256", "name": "amount1", "type": "uint256" },
-      { "indexed": false, "internalType": "uint256", "name": "amountSUSHI", "type": "uint256" }
+      { "indexed": false, "internalType": "uint256", "name": "amountGOLN", "type": "uint256" }
     ],
     "name": "LogConvert",
     "type": "event"

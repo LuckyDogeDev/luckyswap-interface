@@ -151,7 +151,7 @@ const useFarms = () => {
                     slpBalance: pool.slpBalance,
                     liquidityPair: pair,
                     rewardTokens: [
-                        '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', //SUSHI on Matic
+                        '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', //GOLN on Matic
                         '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270' // MATIC on Matic
                     ],
                     sushiRewardPerDay: rewardPerDay,

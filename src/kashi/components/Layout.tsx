@@ -7,7 +7,7 @@ import { Zero } from '@ethersproject/constants'
 import { formattedNum } from 'utils'
 import { getCurrency } from 'kashi'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useBentoBalances } from 'state/bentobox/hooks'
+import { useAlpBalances } from 'state/bentobox/hooks'
 
 interface LayoutProps {
     left?: JSX.Element
@@ -22,7 +22,7 @@ export default function Layout({
     right = undefined
 }: LayoutProps): JSX.Element {
     const location = useLocation()
-    const balances = useBentoBalances()
+    const balances = useAlpBalances()
     const { chainId } = useActiveWeb3React()
     return (
         <div className="container mx-auto px-0 sm:px-4">

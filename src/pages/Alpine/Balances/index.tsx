@@ -1,4 +1,4 @@
-import { BentoBalance, useBentoBalances } from 'state/bentobox/hooks'
+import { AlpBalance, useAlpBalances } from 'state/bentobox/hooks'
 import { Card, CardHeader, Layout, Search } from '../../../kashi/components'
 import React, { useState } from 'react'
 import { useFuse, useSortableData } from 'hooks'
@@ -16,10 +16,10 @@ import { t } from '@lingui/macro'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
 
-export default function BentoBalances(): JSX.Element {
+export default function AlpBalances(): JSX.Element {
     const { i18n } = useLingui()
     const { chainId } = useActiveWeb3React()
-    const balances = useBentoBalances()
+    const balances = useAlpBalances()
 
     // Search Setup
     const options = { keys: ['symbol', 'name'], threshold: 0.1 }
@@ -70,7 +70,7 @@ export default function BentoBalances(): JSX.Element {
                         </div>
                         {items &&
                             items.length > 0 &&
-                            items.map((balance: BentoBalance, i: number) => {
+                            items.map((balance: AlpBalance, i: number) => {
                                 return <TokenBalance key={balance.address + '_' + i} balance={balance} />
                             })}
                     </div>
@@ -80,7 +80,7 @@ export default function BentoBalances(): JSX.Element {
     )
 }
 
-const TokenBalance = ({ balance }: { balance: BentoBalance }) => {
+const TokenBalance = ({ balance }: { balance: AlpBalance }) => {
     const [expand, setExpand] = useState<boolean>(false)
     const { chainId } = useActiveWeb3React()
     return (

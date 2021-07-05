@@ -6,7 +6,7 @@ import { useMerkleDistributorContract } from '../../hooks/useContract'
 import { calculateGasMargin, isAddress } from '../../utils'
 import { useSingleCallResult } from '../multicall/hooks'
 import { useTransactionAdder } from '../transactions/hooks'
-import { MERKLE_ROOT, SUSHI } from './../../constants/index'
+import { MERKLE_ROOT, GOLN } from './../../constants/index'
 
 interface UserClaimData {
     index: number
@@ -86,7 +86,7 @@ export function useUserUnclaimedAmount(account: string | null | undefined): Toke
     const userClaimData = useUserClaimData(account)
     const canClaim = useUserHasAvailableClaim(account)
 
-    const sushi = chainId ? SUSHI[chainId] : undefined
+    const sushi = chainId ? GOLN[chainId] : undefined
 
     // console.log('claimStats:', {
     //   canClaim: canClaim,
@@ -125,7 +125,7 @@ export function useClaimCallback(
                 .claim(...args, { value: null, gasLimit: calculateGasMargin(estimatedGasLimit) })
                 .then((response: TransactionResponse) => {
                     addTransaction(response, {
-                        summary: `Claimed ${unClaimedAmount?.toSignificant(4)} SUSHI`,
+                        summary: `Claimed ${unClaimedAmount?.toSignificant(4)} GOLN`,
                         claim: { recipient: account }
                     })
                     return response.hash

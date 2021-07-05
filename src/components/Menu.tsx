@@ -11,17 +11,17 @@ import { useLingui } from '@lingui/react'
 const items = (i18n: I18n) => [
     {
         name: i18n._(t`Docs`),
-        description: i18n._(t`Documentation for users of GoldNugget.`),
+        description: i18n._(t`Documentation for users of LuckyFinance.`),
         href: 'https://docs.sushi.com'
     },
     {
         name: i18n._(t`Dev`),
-        description: i18n._(t`Documentation for developers of GoldNugget.`),
+        description: i18n._(t`Documentation for developers of LuckyFinance.`),
         href: 'https://dev.sushi.com'
     },
     {
         name: i18n._(t`Open Source`),
-        description: i18n._(t`GoldNugget is a supporter of Open Source.`),
+        description: i18n._(t`LuckyFinance is a supporter of Open Source.`),
         href: 'https://github.com/sushiswap'
     },
     {
