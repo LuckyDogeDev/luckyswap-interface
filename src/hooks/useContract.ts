@@ -165,7 +165,7 @@ export function useMulticallContract(): Contract | null {
     return useContract(chainId && MULTICALL_NETWORKS[chainId], MULTICALL_ABI, false)
 }
 
-export function useSushiContract(withSignerIfPossible = true): Contract | null {
+export function useGoldNuggetContract(withSignerIfPossible = true): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && SUSHI_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
 }
@@ -211,7 +211,7 @@ export function useRouterContract(): Contract | null {
     return useContract(chainId && ROUTER_ADDRESS[chainId], ROUTER_ABI, false)
 }
 
-export function useSushiBarContract(withSignerIfPossible?: boolean): Contract | null {
+export function useAlchemyBenchContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && BAR_ADDRESS[chainId], BAR_ABI, withSignerIfPossible)
 }
@@ -370,7 +370,7 @@ export function usePancakeV1FactoryContract(): Contract | null {
     )
 }
 
-export function useSushiRollContract(version: 'v1' | 'v2' = 'v2'): Contract | null {
+export function useIngotContract(version: 'v1' | 'v2' = 'v2'): Contract | null {
     const { chainId } = useActiveWeb3React()
     let address: string | undefined
     if (chainId) {

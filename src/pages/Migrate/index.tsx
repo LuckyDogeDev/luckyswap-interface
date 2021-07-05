@@ -21,7 +21,7 @@ import Typography from 'components/Typography'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
-import { useSushiRollContract } from 'hooks/useContract'
+import { useIngotContract } from 'hooks/useContract'
 
 const ZERO = JSBI.BigInt(0)
 
@@ -167,7 +167,7 @@ const MigrateButtons = ({ state, exchange }: { state: MigrateState; exchange: st
     const { i18n } = useLingui()
 
     const [error, setError] = useState<MetamaskError>({})
-    const sushiRollContract = useSushiRollContract(
+    const sushiRollContract = useIngotContract(
         state.selectedLPToken?.version ? state.selectedLPToken?.version : undefined
     )
     console.log(
@@ -312,7 +312,7 @@ const MigrateV2 = () => {
         <>
             <Helmet>
                 <title>Migrate LP tokens | LuckyFinance</title>
-                <meta name="description" content="Migrate LP tokens to Sushi LP tokens" />
+                <meta name="description" content="Migrate LP tokens to GoldNugget LP tokens" />
             </Helmet>
 
             <div className="text-2xl text-center mb-8">{i18n._(t`Migrate ${exchange} Liquidity`)}</div>

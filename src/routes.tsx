@@ -22,9 +22,9 @@ import PoolFinder from './pages/PoolFinder'
 import RemoveLiquidity from './pages/RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './pages/RemoveLiquidity/redirects'
 import Saave from './pages/Saave'
-import SushiBar from './pages/SushiBar'
-import SushiBarTransactions from './pages/SushiBar/SushiBarTransactions'
-import SushiBarTips from './pages/SushiBar/Tips'
+import AlchemyBench from './pages/AlchemyBench'
+import AlchemyBenchTransactions from './pages/AlchemyBench/AlchemyBenchTransactions'
+import AlchemyBenchTips from './pages/AlchemyBench/Tips'
 import Trade from './pages/Trade'
 import Swap from './pages/Swap'
 import {
@@ -79,13 +79,13 @@ function Routes(): JSX.Element {
                 <Route exact strict path="/migrate" component={Migrate} />
             )}
 
-            {/* SushiBar Staking */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={SushiBar} />}
+            {/* AlchemyBench Staking */}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={AlchemyBench} />}
             {chainId === ChainId.MAINNET && (
-                <Route exact strict path="/sushibar/transactions" component={SushiBarTransactions} />
+                <Route exact strict path="/sushibar/transactions" component={AlchemyBenchTransactions} />
             )}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={SushiBar} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={AlchemyBenchTips} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={AlchemyBench} />}
             {/* Tools */}
             {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}
             {chainId === ChainId.MAINNET && <Route exact strict path="/saave" component={Saave} />}

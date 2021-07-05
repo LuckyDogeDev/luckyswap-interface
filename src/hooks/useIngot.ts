@@ -4,12 +4,12 @@ import { ethers } from 'ethers'
 import { useCallback } from 'react'
 import ReactGA from 'react-ga'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
-import { useSushiRollContract } from '../hooks/useContract'
+import { useIngotContract } from '../hooks/useContract'
 import LPToken from '../types/LPToken'
 
-const useSushiRoll = (version: 'v1' | 'v2' = 'v2') => {
+const useIngot = (version: 'v1' | 'v2' = 'v2') => {
     const { chainId, library, account } = useActiveWeb3React()
-    const sushiRoll = useSushiRollContract(version)
+    const sushiRoll = useIngotContract(version)
     const ttl = 60 * 20
 
     let from = ''
@@ -40,7 +40,7 @@ const useSushiRoll = (version: 'v1' | 'v2' = 'v2') => {
 
                 ReactGA.event({
                     category: 'Migrate',
-                    action: `${from}->Sushiswap`,
+                    action: `${from}->Luckyswap`,
                     label: 'migrate'
                 })
 
@@ -83,7 +83,7 @@ const useSushiRoll = (version: 'v1' | 'v2' = 'v2') => {
 
                 ReactGA.event({
                     category: 'Migrate',
-                    action: `${from}->Sushiswap`,
+                    action: `${from}->Luckyswap`,
                     label: 'migrateWithPermit'
                 })
 
@@ -99,4 +99,4 @@ const useSushiRoll = (version: 'v1' | 'v2' = 'v2') => {
     }
 }
 
-export default useSushiRoll
+export default useIngot

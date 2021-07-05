@@ -38,7 +38,7 @@ const tips: readonly Tip[] = [
         title: 'Stack Yields with Aave',
         image: AaveSquare,
         description:
-            'Deposit your xSUSHI into Aave to receive aXSUSHI to earn collateral interest and borrowing power.',
+            'Deposit your xSUSHI into Aave to receive aPLAN to earn collateral interest and borrowing power.',
         href: '#'
     },
     {
@@ -65,7 +65,7 @@ const tips: readonly Tip[] = [
     }
 ]
 
-export default function SushiBarTips() {
+export default function AlchemyBenchTips() {
     const theme = useContext(ThemeContext)
     const history = useHistory()
 

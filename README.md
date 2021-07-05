@@ -13,7 +13,7 @@ An open source interface for LuckySwap -- a protocol for decentralized exchange 
 
 ## Accessing the LuckyFinance Interface
 
-To access the Sushiswap Interface, use an IPFS gateway link from the
+To access the Luckyswap Interface, use an IPFS gateway link from the
 [latest release](https://github.com/sushiswap/sushiswap-interface/releases/latest),
 or visit [app.sushi.com](https://app.sushi.com).
 
@@ -38,7 +38,7 @@ yarn start
 ```
 
 Note that the interface only works on networks where both
-[(Uni|Sushi)swap V2](https://github.com/sushiswap/sushiswap/tree/master/contracts/uniswapv2) and
+[(Uni|GoldNugget)swap V2](https://github.com/sushiswap/sushiswap/tree/master/contracts/uniswapv2) and
 [multicall](https://github.com/makerdao/multicall) are deployed.
 The interface will not work on other networks.
 

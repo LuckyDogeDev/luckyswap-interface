@@ -80,7 +80,7 @@ import UST from '../../assets/kashi/tokens/ust-square.jpg'
 import WAVES from '../../assets/kashi/tokens/waves-square.jpg'
 import WNXM from '../../assets/kashi/tokens/wnxm-square.jpg'
 import XRP from '../../assets/kashi/tokens/xrp-square.jpg'
-import XSUSHI from '../../assets/kashi/tokens/xsushi-square.jpg'
+import PLAN from '../../assets/kashi/tokens/xsushi-square.jpg'
 import XTZ from '../../assets/kashi/tokens/xtz-square.jpg'
 import XVS from '../../assets/kashi/tokens/xvs-square.jpg'
 import YFI from '../../assets/kashi/tokens/yfi-square.jpg'
@@ -195,7 +195,7 @@ const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
         [String('0x1cF4592ebfFd730c7dc92c1bdFFDfc3B9EfCf29a').toLowerCase()]: WAVES,
         [String('0x0d438F3b5175Bebc262bF23753C1E53d03432bDE').toLowerCase()]: WNXM,
         // [String('').toLowerCase()]: XRP,
-        [String('0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272').toLowerCase()]: XSUSHI,
+        [String('0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272').toLowerCase()]: PLAN,
         [String('0x23693431dE4CcCAe05d0CAF63bE0f1dcFcDf4906').toLowerCase()]: XTZ,
         [String('0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e').toLowerCase()]: YFI,
         [String('0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83').toLowerCase()]: YFII,

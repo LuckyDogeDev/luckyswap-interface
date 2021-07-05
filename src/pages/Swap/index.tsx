@@ -309,7 +309,7 @@ export default function Swap() {
                 <title>{i18n._(t`Swap`)} | LuckyFinance</title>
                 <meta
                     name="description"
-                    content="Sushi allows for swapping of ERC20 compatible tokens across multiple networks"
+                    content="GoldNugget allows for swapping of ERC20 compatible tokens across multiple networks"
                 />
             </Helmet>
             <TokenWarningModal
@@ -618,7 +618,7 @@ export default function Swap() {
                     {/*                <img src={PolygonLogo} className="w-24 h-24 absolute top-2" alt="" />*/}
                     {/*                <div className="pl-32">*/}
                     {/*                    <div className="text-high-emphesis">*/}
-                    {/*                        {i18n._(t`Check out Sushi on Polygon (Matic)`)}*/}
+                    {/*                        {i18n._(t`Check out GoldNugget on Polygon (Matic)`)}*/}
                     {/*                    </div>*/}
                     {/*                    <div className="text-high-emphesis text-sm">*/}
                     {/*                        {i18n._(t`Click here to switch to Polygon using Metamask`)}*/}

@@ -4,7 +4,7 @@ import BalanceCard from './BalanceCard'
 import { Button } from '../../components'
 import { ChevronLeft } from 'react-feather'
 import { ChainId } from '@sushiswap/sdk'
-import { SUSHI, XSUSHI } from '../../constants'
+import { SUSHI, PLAN } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 import { useHistory } from 'react-router-dom'
 import TransactionsPanel from './TransactionsPanel'
@@ -14,11 +14,11 @@ const mock = {
     avgBalStaked: 468.48
 }
 
-export default function SushiBarTransactions() {
+export default function AlchemyBenchTransactions() {
     const theme = useContext(ThemeContext)
 
     const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
-    const PlatinumNuggetBalance = useTokenBalance(XSUSHI?.address ?? '')
+    const PlatinumNuggetBalance = useTokenBalance(PLAN?.address ?? '')
 
     const history = useHistory()
 

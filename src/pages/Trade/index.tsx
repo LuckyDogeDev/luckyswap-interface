@@ -12,7 +12,7 @@ export default function TradeLayout() {
                 <title>{i18n._(t`Trade`)} | LuckyFinance</title>
                 <meta
                     name="description"
-                    content={i18n._(t`Sushi allows for swapping of ERC20 compatible tokens across multiple networks`)}
+                    content={i18n._(t`GoldNugget allows for swapping of ERC20 compatible tokens across multiple networks`)}
                 />
             </Helmet>
             <div className="w-full">

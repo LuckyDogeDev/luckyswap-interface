@@ -15,7 +15,7 @@ import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
 import useMasterChefV2 from '../../hooks/masterchefv2/useMasterChefV2'
 import usePendingReward from '../../hooks/masterchefv2/usePendingReward'
-import usePendingSushi from '../../hooks/masterchefv2/usePendingSushi'
+import usePendingGoldNugget from '../../hooks/masterchefv2/usePendingGoldNugget'
 import useStakedBalance from '../../hooks/masterchefv2/useStakedBalance'
 import useTokenBalance from '../../../../hooks/useTokenBalance'
 
@@ -55,7 +55,7 @@ export default function InputGroup({
     //const { deposit } = useBentoBox()
     const balance = useTokenBalance(pairAddressChecksum)
     const staked = useStakedBalance(pid, assetDecimals) // kMP depends on decimals of asset, SLP is always 18
-    const pending = usePendingSushi(pid)
+    const pending = usePendingGoldNugget(pid)
     const reward = usePendingReward(pid)
 
     // console.log('balance:', balance)

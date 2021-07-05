@@ -2,17 +2,17 @@ import { ethers } from 'ethers'
 import { useCallback, useEffect, useState } from 'react'
 import Fraction from '../entities/Fraction'
 import { useActiveWeb3React } from './useActiveWeb3React'
-import { useSushiBarContract, useSushiContract } from '../hooks/useContract'
+import { useAlchemyBenchContract, useGoldNuggetContract } from '../hooks/useContract'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { BalanceProps } from './useTokenBalance'
 
 const { BigNumber } = ethers
 
-const useSushiBar = () => {
+const useAlchemyBench = () => {
     const { account } = useActiveWeb3React()
     const addTransaction = useTransactionAdder()
-    const sushiContract = useSushiContract(true) // withSigner
-    const barContract = useSushiBarContract(true) // withSigner
+    const sushiContract = useGoldNuggetContract(true) // withSigner
+    const barContract = useAlchemyBenchContract(true) // withSigner
 
     const [allowance, setAllowance] = useState('0')
 
@@ -52,7 +52,7 @@ const useSushiBar = () => {
             if (amount?.value) {
                 try {
                     const tx = await barContract?.enter(amount?.value)
-                    return addTransaction(tx, { summary: 'Enter SushiBar' })
+                    return addTransaction(tx, { summary: 'Enter AlchemyBench' })
                 } catch (e) {
                     return e
                 }
@@ -68,7 +68,7 @@ const useSushiBar = () => {
                 try {
                     const tx = await barContract?.leave(amount?.value)
                     //const tx = await barContract?.leave(ethers.utils.parseUnits(amount)) // where amount is string
-                    return addTransaction(tx, { summary: 'Leave SushiBar' })
+                    return addTransaction(tx, { summary: 'Leave AlchemyBench' })
                 } catch (e) {
                     return e
                 }
@@ -80,4 +80,4 @@ const useSushiBar = () => {
     return { allowance, approve, enter, leave }
 }
 
-export default useSushiBar
+export default useAlchemyBench

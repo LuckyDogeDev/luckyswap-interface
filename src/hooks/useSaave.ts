@@ -2,7 +2,7 @@ import { Fraction } from '../entities'
 import { ethers } from 'ethers'
 import { useCallback, useEffect, useState } from 'react'
 import useActiveWeb3React from '../hooks/useActiveWeb3React'
-import { useSaaveContract, useSushiContract } from '../hooks/useContract'
+import { useSaaveContract, useGoldNuggetContract } from '../hooks/useContract'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { BalanceProps } from './useTokenBalance'
 
@@ -12,7 +12,7 @@ const useMaker = () => {
     const { account } = useActiveWeb3React()
 
     const addTransaction = useTransactionAdder()
-    const sushiContract = useSushiContract(true) // withSigner
+    const sushiContract = useGoldNuggetContract(true) // withSigner
     const saaveContract = useSaaveContract(true) // withSigner
 
     // Allowance
@@ -48,13 +48,13 @@ const useMaker = () => {
         }
     }, [addTransaction, saaveContract?.address, sushiContract])
 
-    // Saave Sushi - xSUSHI - aXSUSHI
+    // Saave GoldNugget - xSUSHI - aPLAN
     const saave = useCallback(
         async (amount: BalanceProps | undefined) => {
             if (amount?.value) {
                 try {
                     const tx = await saaveContract?.saave(amount?.value)
-                    return addTransaction(tx, { summary: 'SUSHI → xSUSHI → aXSUSHI' })
+                    return addTransaction(tx, { summary: 'SUSHI → xSUSHI → aPLAN' })
                 } catch (e) {
                     return e
                 }

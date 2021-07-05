@@ -6,9 +6,9 @@ import { RowBetween } from '../../components/Row'
 import { Wrapper } from '../../components/swap/styleds'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { ExternalLink, TYPE } from '../../theme'
-import AXSushiBalancePanel from './AXSushiBalancePanel'
+import APLatinumNuggetBalancePanel from './APLatinumNuggetBalancePanel'
 import SaaveHeader from './SaaveHeader'
-import SushiInputPanel from './SushiInputPanel'
+import GoldNuggetInputPanel from './GoldNuggetInputPanel'
 import { Helmet } from 'react-helmet'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -61,7 +61,7 @@ export default function Saave() {
                             <RowBetween>
                                 <TYPE.white fontSize={14} color={theme.text2}>
                                     {i18n._(
-                                        t`Stake your SUSHI into xSUSHI for ~5% APY. Deposit your xSUSHI into Aave as aXSUSHI to earn collateral interest and borrowing power. All in one click.`
+                                        t`Stake your SUSHI into xSUSHI for ~5% APY. Deposit your xSUSHI into Aave as aPLAN to earn collateral interest and borrowing power. All in one click.`
                                     )}
                                 </TYPE.white>
                             </RowBetween>
@@ -86,7 +86,7 @@ export default function Saave() {
                             <RowBetween>
                                 <TYPE.white fontSize={14} color={theme.text2}>
                                     {i18n._(
-                                        t`To withdraw into SUSHI, go to Aave and remove axSUSHI as collateral and then to SushiBar to unstake. A full unwind will be avaialble soon.`
+                                        t`To withdraw into SUSHI, go to Aave and remove axSUSHI as collateral and then to AlchemyBench to unstake. A full unwind will be avaialble soon.`
                                     )}
                                 </TYPE.white>
                             </RowBetween>
@@ -97,7 +97,7 @@ export default function Saave() {
                     <SaaveHeader />
                     <Wrapper id="swap-page">
                         <AutoColumn style={{ paddingBottom: '10px' }}>
-                            <SushiInputPanel
+                            <GoldNuggetInputPanel
                                 label={''}
                                 disableCurrencySelect={true}
                                 customBalanceText={'Available to deposit: '}
@@ -105,8 +105,8 @@ export default function Saave() {
                                 buttonText="Deposit"
                                 cornerRadiusBottomNone={true}
                             />
-                            <AXSushiBalancePanel
-                                label={'aXSUSHI Balance'}
+                            <APLatinumNuggetBalancePanel
+                                label={'aPLAN Balance'}
                                 disableCurrencySelect={true}
                                 id="ax-token-balance"
                                 cornerRadiusTopNone={true}

@@ -28,25 +28,25 @@ export const SUSHI: ChainTokenMap = {
         '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2',
         18,
         'SUSHI',
-        'SushiToken'
+        'GoldNugget'
     ),
     [ChainId.ROPSTEN]: new Token(
         ChainId.ROPSTEN,
         '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F',
         18,
         'SUSHI',
-        'SushiToken'
+        'GoldNugget'
     ),
     [ChainId.RINKEBY]: new Token(
         ChainId.RINKEBY,
         '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F',
         18,
         'SUSHI',
-        'SushiToken'
+        'GoldNugget'
     ),
-    [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F', 18, 'SUSHI', 'SushiToken'),
-    [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F', 18, 'SUSHI', 'SushiToken'),
-    [ChainId.FANTOM]: new Token(ChainId.FANTOM, '0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC', 18, 'SUSHI', 'SushiToken')
+    [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F', 18, 'SUSHI', 'GoldNugget'),
+    [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F', 18, 'SUSHI', 'GoldNugget'),
+    [ChainId.FANTOM]: new Token(ChainId.FANTOM, '0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC', 18, 'SUSHI', 'GoldNugget')
 }
 
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {
@@ -134,7 +134,7 @@ export const MATIC: { [key: string]: Token } = {
     WETH: new Token(ChainId.MATIC, '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619', 18, 'WETH', 'Wrapped Ether'),
     USDT: new Token(ChainId.MATIC, '0xc2132D05D31c914a87C6611C10748AEb04B58e8F', 6, 'USDT', 'Tether USD'),
     TEL: new Token(ChainId.MATIC, '0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32', 2, 'TEL', 'Telcoin'),
-    SUSHI: new Token(ChainId.MATIC, '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', 18, 'SUSHI', 'SushiToken'),
+    SUSHI: new Token(ChainId.MATIC, '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', 18, 'SUSHI', 'GoldNugget'),
     AAVE: new Token(ChainId.MATIC, '0xD6DF932A45C0f255f85145f286eA0b292B21C90B', 18, 'AAVE', 'Aave'),
     FRAX: new Token(ChainId.MATIC, '0x104592a158490a9228070E0A8e5343B499e125D0', 18, 'FRAX', 'Frax'),
     FXS: new Token(ChainId.MATIC, '0x3e121107F6F22DA4911079845a470757aF4e1A1b', 18, 'FXS', 'Frax Share'),
@@ -214,15 +214,15 @@ export const PLAY = new Token(
     'Metaverse NFT Index'
 )
 
-export const XSUSHI_CALL = new Token(
+export const PLAN_CALL = new Token(
     ChainId.MAINNET,
     '0xada279f9301C01A4eF914127a6C2a493Ad733924',
     18,
     'XSUc25-0531',
-    'XSUSHI 25 Call [31 May 2021]'
+    'PLAN 25 Call [31 May 2021]'
 )
 
-export const XSUSHI = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSUSHI', 'SushiBar')
+export const PLAN = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSUSHI', 'AlchemyBench')
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
     ChainId.MAINNET,
@@ -249,7 +249,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
         [PONT.address]: [PWING, WETH[ChainId.MAINNET]],
         [UMA_CALL.address]: [UMA, WETH[ChainId.MAINNET]],
         [PLAY.address]: [DOUGH, WETH[ChainId.MAINNET]],
-        [XSUSHI_CALL.address]: [XSUSHI, WETH[ChainId.MAINNET]],
+        [PLAN_CALL.address]: [PLAN, WETH[ChainId.MAINNET]],
         [LIFT.address]: [LFBTC, WETH[ChainId.MAINNET]],
         [CVXCRV.address]: [CRV, WETH[ChainId.MAINNET]]
     },

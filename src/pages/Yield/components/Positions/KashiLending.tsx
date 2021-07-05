@@ -36,7 +36,7 @@ const KashiLending = ({ farm }: any) => {
                         </div>
                         <div className="flex justify-end items-center">
                             <div>
-                                <div className="text-right">{formattedNum(farm.pendingSushi)} </div>
+                                <div className="text-right">{formattedNum(farm.pendingGoldNugget)} </div>
                                 <div className="text-secondary text-right">SUSHI</div>
                             </div>
                         </div>

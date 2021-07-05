@@ -7,7 +7,7 @@ import { ApprovalState, useApproveCallback } from '../../../../hooks/useApproveC
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import useMiniChefV2 from '../../hooks/minichef/useMiniChefV2'
-import usePendingSushi from '../../hooks/minichef/usePendingSushi'
+import usePendingGoldNugget from '../../hooks/minichef/usePendingGoldNugget'
 import usePendingReward from '../../hooks/minichef/usePendingReward'
 import useStakedBalance from '../../hooks/minichef/useStakedBalance'
 import useTokenBalance from '../../../../hooks/useTokenBalance'
@@ -54,7 +54,7 @@ export default function InputGroup({
     //const { deposit } = useBentoBox()
     const balance = useTokenBalance(pairAddressChecksum)
     const staked = useStakedBalance(pid, assetDecimals) // kMP depends on decimals of asset, SLP is always 18
-    const pending = usePendingSushi(pid)
+    const pending = usePendingGoldNugget(pid)
     const reward = usePendingReward(pid)
 
     // console.log('balance:', balance)

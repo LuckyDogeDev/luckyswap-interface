@@ -1,7 +1,7 @@
 import { BalanceProps } from '../../hooks/useTokenBalance'
 import React from 'react'
-import SushiImage from '../../assets/images/sushi.png'
-import XSushiImage from '../../assets/images/xsushi.png'
+import GoldNuggetImage from '../../assets/images/sushi.png'
+import PLatinumNuggetImage from '../../assets/images/xsushi.png'
 import { formatFromBalance } from '../../utils'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
@@ -30,7 +30,7 @@ export default function BalanceCard({
                         {i18n._(t`Balance`)}
                     </p>
                     <div className="flex items-center">
-                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={XSushiImage} alt="sushi" />
+                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={PLatinumNuggetImage} alt="sushi" />
                         <div className="flex flex-col justify-center">
                             <p className="text-caption2 md:text-lg font-bold text-high-emphesis">
                                 {formatFromBalance(PlatinumNuggetBalance.value)}
@@ -48,7 +48,7 @@ export default function BalanceCard({
                         {/* <img className="cursor-pointer ml-2 w-4" src={MoreInfoSymbol} alt={'more info'} /> */}
                     </div>
                     <div className="flex items-center ml-8 md:ml-0">
-                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={SushiImage} alt="sushi" />
+                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={GoldNuggetImage} alt="sushi" />
                         <div className="flex flex-col justify-center">
                             <p className="text-caption2 md:text-lg font-bold text-high-emphesis">
                                 {formatFromBalance(sushiBalance.value)}
@@ -82,7 +82,7 @@ export default function BalanceCard({
                                 text-caption2 font-bold cursor-pointer
                             `}
                         >
-                            {i18n._(t`Your SushiBar Stats`)}
+                            {i18n._(t`Your AlchemyBench Stats`)}
                         </a>
                     )}
                 </div>

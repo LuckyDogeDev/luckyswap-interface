@@ -198,7 +198,7 @@ const useFarms = (address: string) => {
                         type: farmDetails.type, // KMP or SLP
                         depositedLP: deposited,
                         depositedUSD: depositedUSD,
-                        pendingSushi: pending
+                        pendingGoldNugget: pending
                     }
                 })
             setFarms({ farms: sorted, userFarms: userFarms })

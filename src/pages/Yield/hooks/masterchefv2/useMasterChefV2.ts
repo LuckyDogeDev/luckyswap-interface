@@ -1,4 +1,4 @@
-import { useMasterChefV2Contract, useSushiContract } from '../../../../hooks/useContract'
+import { useMasterChefV2Contract, useGoldNuggetContract } from '../../../../hooks/useContract'
 
 import { ethers } from 'ethers'
 import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'
@@ -7,7 +7,7 @@ import { useTransactionAdder } from '../../../../state/transactions/hooks'
 
 const useMasterChefV2 = () => {
     const addTransaction = useTransactionAdder()
-    const sushiTokenContract = useSushiContract()
+    const sushiTokenContract = useGoldNuggetContract()
     const masterChefV2Contract = useMasterChefV2Contract()
 
     const { account } = useActiveWeb3React()
@@ -57,10 +57,10 @@ const useMasterChefV2 = () => {
                 console.log('harvest:', pid, account)
                 console.log({ masterChefV2Contract })
 
-                const pendingSushi = await masterChefV2Contract?.pendingSushi(pid, account)
+                const pendingGoldNugget = await masterChefV2Contract?.pendingGoldNugget(pid, account)
                 const balanceOf = await sushiTokenContract?.balanceOf(masterChefV2Contract?.address)
 
-                const tx = pendingSushi.gt(balanceOf)
+                const tx = pendingGoldNugget.gt(balanceOf)
                     ? await masterChefV2Contract?.batch(
                           [
                               masterChefV2Contract.interface.encodeFunctionData('harvestFromMasterChef'),

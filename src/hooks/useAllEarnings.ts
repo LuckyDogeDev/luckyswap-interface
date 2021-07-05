@@ -15,9 +15,9 @@ const useAllPending = () => {
     const fetchAllPending = useCallback(async () => {
         const numberOfPools = await masterChefContract?.poolLength()
         const pids = [...Array(parseInt(numberOfPools)).keys()]
-        const results = await pendingContract?.functions.getPendingSushi(account, pids)
+        const results = await pendingContract?.functions.getPendingGoldNugget(account, pids)
         const allPending = results[1]
-            .map((p: any) => p.pendingSushi)
+            .map((p: any) => p.pendingGoldNugget)
             .reduce((a: any, b: any) => BigNumber.from(a).add(BigNumber.from(b)), BigNumber.from(0))
 
         setBalance(

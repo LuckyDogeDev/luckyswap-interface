@@ -8,7 +8,7 @@ import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { BalanceProps } from '../../hooks/useTokenBalance'
 import { formatFromBalance, formatToBalance } from '../../utils'
-import useSushiBar from '../../hooks/useSushiBar'
+import useAlchemyBench from '../../hooks/useAlchemyBench'
 import TransactionFailedModal from './TransactionFailedModal'
 import { Button, Dots } from '../../components'
 import { t } from '@lingui/macro'
@@ -57,7 +57,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
     const { i18n } = useLingui()
     const { account } = useActiveWeb3React()
 
-    const { allowance, enter, leave } = useSushiBar()
+    const { allowance, enter, leave } = useAlchemyBench()
 
     const [exchangeRate, setExchangeRate] = useState<any>()
     useEffect(() => {
@@ -68,7 +68,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
         fetchData()
     }, [])
 
-    const PlatinumNuggetPerSushi = parseFloat(exchangeRate)
+    const PlatinumNuggetPerGoldNugget = parseFloat(exchangeRate)
 
     const walletConnected = !!account
     const toggleWalletModal = useWalletModalToggle()
@@ -181,7 +181,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
                         {activeTab === 0 ? i18n._(t`Stake SUSHI`) : i18n._(t`Unstake`)}
                     </p>
                     <div className="border-gradient-r-pink-red-light-brown-dark-pink-red border-transparent border-solid border rounded-3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-caption md:font-normal">
-                        {`1 xSUSHI = ${PlatinumNuggetPerSushi.toFixed(4)} SUSHI`}
+                        {`1 xSUSHI = ${PlatinumNuggetPerGoldNugget.toFixed(4)} SUSHI`}
                     </div>
                 </div>
 

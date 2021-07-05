@@ -103,8 +103,8 @@ export default function CurrencyInputPanel({
     const { account } = useActiveWeb3React()
     const theme = useTheme()
 
-    const aXSushiBalanceBigInt = useTokenBalance('0xF256CC7847E919FAc9B808cC216cAc87CCF2f47a')
-    const aXSushiBalance = formatFromBalance(aXSushiBalanceBigInt?.value, aXSushiBalanceBigInt?.decimals)
+    const aPLatinumNuggetBalanceBigInt = useTokenBalance('0xF256CC7847E919FAc9B808cC216cAc87CCF2f47a')
+    const aPLatinumNuggetBalance = formatFromBalance(aPLatinumNuggetBalanceBigInt?.value, aPLatinumNuggetBalanceBigInt?.decimals)
 
     return (
         <>
@@ -132,7 +132,7 @@ export default function CurrencyInputPanel({
                             <>
                                 <NumericalInput
                                     className="token-amount-input"
-                                    value={aXSushiBalance}
+                                    value={aPLatinumNuggetBalance}
                                     onUserInput={() => null}
                                 />
                             </>

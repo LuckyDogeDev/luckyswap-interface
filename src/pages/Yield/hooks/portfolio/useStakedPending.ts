@@ -20,10 +20,10 @@ export function useStaked(contract: Contract | null | undefined) {
         [numberOfPools, account]
     )
 
-    const pendingSushi = useSingleContractMultipleData(contract, 'pendingSushi', args)
+    const pendingGoldNugget = useSingleContractMultipleData(contract, 'pendingGoldNugget', args)
     const userInfo = useSingleContractMultipleData(contract, 'userInfo', args)
 
-    return useMemo(() => [pendingSushi, userInfo], [pendingSushi, userInfo])
+    return useMemo(() => [pendingGoldNugget, userInfo], [pendingGoldNugget, userInfo])
 }
 
 export default useStaked

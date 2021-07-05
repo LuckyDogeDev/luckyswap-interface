@@ -46,7 +46,7 @@ function AppBar(): JSX.Element {
                             <div className="flex items-center justify-between h-16">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
-                                        <img src={Logo} alt="Sushi" className="h-10 w-auto" />
+                                        <img src={Logo} alt="GoldNugget" className="h-10 w-auto" />
                                     </div>
                                     <div className="hidden sm:block sm:ml-4">
                                         <div className="flex space-x-2">
@@ -73,7 +73,7 @@ function AppBar(): JSX.Element {
                                             )}
                                             {chainId === ChainId.MAINNET && (
                                                 <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
-                                                    {i18n._(t`SushiBar`)}
+                                                    {i18n._(t`AlchemyBench`)}
                                                 </NavLink>
                                             )}
                                             {chainId &&
@@ -198,7 +198,7 @@ function AppBar(): JSX.Element {
                                                                     options: {
                                                                         address:
                                                                             '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                                                        symbol: 'XSUSHI',
+                                                                        symbol: 'PLAN',
                                                                         decimals: 18,
                                                                         image:
                                                                             'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png'
@@ -218,7 +218,7 @@ function AppBar(): JSX.Element {
                                                                         .then(success => {
                                                                             if (success) {
                                                                                 console.log(
-                                                                                    'Successfully added XSUSHI to MetaMask'
+                                                                                    'Successfully added PLAN to MetaMask'
                                                                                 )
                                                                             } else {
                                                                                 throw new Error('Something went wrong.')
@@ -249,7 +249,7 @@ function AppBar(): JSX.Element {
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
-                                                    <QuestionHelper text={i18n._(t`Add Sushi to your Metamask wallet`)}>
+                                                    <QuestionHelper text={i18n._(t`Add GoldNugget to your Metamask wallet`)}>
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
@@ -418,7 +418,7 @@ function AppBar(): JSX.Element {
                                     )}
                                 {chainId === ChainId.MAINNET && (
                                     <NavLink id={`stake-nav-link`} to={'/sushibar'}>
-                                        {i18n._(t`SushiBar`)}
+                                        {i18n._(t`AlchemyBench`)}
                                     </NavLink>
                                 )}
                                 {chainId === ChainId.MAINNET && (

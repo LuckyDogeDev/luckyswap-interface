@@ -123,7 +123,7 @@ export default function LendingPair({
         >
             <Helmet>
                 <title>
-                    Lend {pair?.asset?.symbol}-{pair?.collateral?.symbol} | Sushi
+                    Lend {pair?.asset?.symbol}-{pair?.collateral?.symbol} | GoldNugget
                 </title>
             </Helmet>
             <Card

@@ -7,7 +7,7 @@ import { ApprovalState, useApproveCallback } from '../../../../hooks/useApproveC
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import useMasterChef from '../../hooks/masterchefv1/useMasterChef'
-import usePendingSushi from '../../hooks/masterchefv1/usePendingSushi'
+import usePendingGoldNugget from '../../hooks/masterchefv1/usePendingGoldNugget'
 import useStakedBalance from '../../hooks/masterchefv1/useStakedBalance'
 import useTokenBalance from '../../hooks/masterchefv1/useTokenBalance'
 import { formattedNum, isAddressString, isWETH } from 'utils'
@@ -53,7 +53,7 @@ export default function InputGroup({
     //const { deposit } = useBentoBox()
     const balance = useTokenBalance(pairAddressChecksum)
     const staked = useStakedBalance(pid, assetDecimals) // kMP depends on decimals of asset, SLP is always 18
-    const pending = usePendingSushi(pid)
+    const pending = usePendingGoldNugget(pid)
 
     //console.log('pending:', pending, pid)
 

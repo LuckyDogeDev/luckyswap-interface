@@ -4,7 +4,7 @@ import { useActiveWeb3React } from './useActiveWeb3React'
 import { useMasterChefContract } from './useContract'
 import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from 'state/multicall/hooks'
 
-export function useAllPendingSushi(): number {
+export function useAllPendingGoldNugget(): number {
     const { account } = useActiveWeb3React()
     const masterChef = useMasterChefContract()
     const numberOfPools = useSingleCallResult(masterChef, 'poolLength', undefined, NEVER_RELOAD)
@@ -18,7 +18,7 @@ export function useAllPendingSushi(): number {
         [numberOfPools, account]
     )
 
-    const data = useSingleContractMultipleData(masterChef, 'pendingSushi', args)
+    const data = useSingleContractMultipleData(masterChef, 'pendingGoldNugget', args)
 
     return useMemo(
         () =>

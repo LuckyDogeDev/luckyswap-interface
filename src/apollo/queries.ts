@@ -61,7 +61,7 @@ export const miniChefPoolQuery = gql`
             }
             allocPoint
             lastRewardTime
-            accSushiPerShare
+            accGoldNuggetPerShare
             slpBalance
             userCount
             miniChef {
@@ -85,7 +85,7 @@ export const poolsQuery = gql`
             pair
             allocPoint
             lastRewardBlock
-            accSushiPerShare
+            accGoldNuggetPerShare
             balance
             userCount
             owner {
@@ -246,7 +246,7 @@ const poolUserFragment = gql`
             id
             pair
             balance
-            accSushiPerShare
+            accGoldNuggetPerShare
             lastRewardBlock
         }
         amount

@@ -39,7 +39,7 @@ interface State {
               ethRate: BigNumber
               sushiRate: BigNumber
               btcRate: BigNumber
-              pendingSushi: BigNumber
+              pendingGoldNugget: BigNumber
               blockTimeStamp: BigNumber
               masterContractApproved: boolean[]
           }
@@ -59,7 +59,7 @@ const initialState: State = {
         ethRate: ZERO,
         sushiRate: ZERO,
         btcRate: ZERO,
-        pendingSushi: ZERO,
+        pendingGoldNugget: ZERO,
         blockTimeStamp: ZERO,
         masterContractApproved: []
     },

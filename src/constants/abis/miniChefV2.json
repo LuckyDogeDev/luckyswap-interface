@@ -60,7 +60,7 @@
     },
     {
         "type": "event",
-        "name": "LogSushiPerSecond",
+        "name": "LogGoldNuggetPerSecond",
         "inputs": [{ "type": "uint256", "name": "sushiPerSecond", "internalType": "uint256", "indexed": false }],
         "anonymous": false
     },
@@ -71,7 +71,7 @@
             { "type": "uint256", "name": "pid", "internalType": "uint256", "indexed": true },
             { "type": "uint64", "name": "lastRewardTime", "internalType": "uint64", "indexed": false },
             { "type": "uint256", "name": "lpSupply", "internalType": "uint256", "indexed": false },
-            { "type": "uint256", "name": "accSushiPerShare", "internalType": "uint256", "indexed": false }
+            { "type": "uint256", "name": "accGoldNuggetPerShare", "internalType": "uint256", "indexed": false }
         ],
         "anonymous": false
     },
@@ -204,7 +204,7 @@
         "type": "function",
         "stateMutability": "view",
         "outputs": [{ "type": "uint256", "name": "pending", "internalType": "uint256" }],
-        "name": "pendingSushi",
+        "name": "pendingGoldNugget",
         "inputs": [
             { "type": "uint256", "name": "_pid", "internalType": "uint256" },
             { "type": "address", "name": "_user", "internalType": "address" }
@@ -230,7 +230,7 @@
         "type": "function",
         "stateMutability": "view",
         "outputs": [
-            { "type": "uint128", "name": "accSushiPerShare", "internalType": "uint128" },
+            { "type": "uint128", "name": "accGoldNuggetPerShare", "internalType": "uint128" },
             { "type": "uint64", "name": "lastRewardTime", "internalType": "uint64" },
             { "type": "uint64", "name": "allocPoint", "internalType": "uint64" }
         ],
@@ -274,7 +274,7 @@
         "type": "function",
         "stateMutability": "nonpayable",
         "outputs": [],
-        "name": "setSushiPerSecond",
+        "name": "setGoldNuggetPerSecond",
         "inputs": [{ "type": "uint256", "name": "_sushiPerSecond", "internalType": "uint256" }]
     },
     {
@@ -311,7 +311,7 @@
                 "name": "pool",
                 "internalType": "struct MiniChefV2.PoolInfo",
                 "components": [
-                    { "type": "uint128", "name": "accSushiPerShare", "internalType": "uint128" },
+                    { "type": "uint128", "name": "accGoldNuggetPerShare", "internalType": "uint128" },
                     { "type": "uint64", "name": "lastRewardTime", "internalType": "uint64" },
                     { "type": "uint64", "name": "allocPoint", "internalType": "uint64" }
                 ]

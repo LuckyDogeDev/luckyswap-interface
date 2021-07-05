@@ -230,7 +230,7 @@
           { "internalType": "uint256", "name": "ethRate", "type": "uint256" },
           { "internalType": "uint256", "name": "sushiRate", "type": "uint256" },
           { "internalType": "uint256", "name": "btcRate", "type": "uint256" },
-          { "internalType": "uint256", "name": "pendingSushi", "type": "uint256" },
+          { "internalType": "uint256", "name": "pendingGoldNugget", "type": "uint256" },
           { "internalType": "uint256", "name": "blockTimeStamp", "type": "uint256" },
           { "internalType": "bool[]", "name": "masterContractApproved", "type": "bool[]" }
         ],

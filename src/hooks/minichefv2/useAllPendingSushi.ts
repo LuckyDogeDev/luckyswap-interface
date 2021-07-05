@@ -4,7 +4,7 @@ import { useActiveWeb3React } from '../useActiveWeb3React'
 import { useMiniChefV2Contract } from '../useContract'
 import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from '../../state/multicall/hooks'
 
-export function useAllPendingSushi(): number {
+export function useAllPendingGoldNugget(): number {
     const { account } = useActiveWeb3React()
     const miniChef = useMiniChefV2Contract()
     const numberOfPools = useSingleCallResult(miniChef, 'poolLength', undefined, NEVER_RELOAD)
@@ -18,7 +18,7 @@ export function useAllPendingSushi(): number {
         [numberOfPools, account]
     )
 
-    const data = useSingleContractMultipleData(miniChef, 'pendingSushi', args)
+    const data = useSingleContractMultipleData(miniChef, 'pendingGoldNugget', args)
 
     return useMemo(
         () =>

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useActiveWeb3React } from './useActiveWeb3React'
 import { useIsTransactionPending, useTransactionAdder } from '../state/transactions/hooks'
 import useLPTokensState, { LPTokensState } from './useLPTokensState'
-import useSushiRoll from './useSushiRoll'
+import useIngot from './useIngot'
 import { ChainId } from '@sushiswap/sdk'
 
 export type MigrateMode = 'permit' | 'approve'
@@ -21,7 +21,7 @@ export interface MigrateState extends LPTokensState {
 const useMigrateState: () => MigrateState = () => {
     const { library, account, chainId } = useActiveWeb3React()
     const state = useLPTokensState()
-    const { migrate, migrateWithPermit } = useSushiRoll(state?.selectedLPToken?.version)
+    const { migrate, migrateWithPermit } = useIngot(state?.selectedLPToken?.version)
     const [mode, setMode] = useState<MigrateMode>()
     const [amount, setAmount] = useState('')
     const addTransaction = useTransactionAdder()
