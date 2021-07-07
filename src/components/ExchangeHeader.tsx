@@ -17,8 +17,8 @@ export default function SwapHeader({ input = undefined, output = undefined }: an
         <div className="flex justify-between space-x-3 pt-4 px-4">
             <div className="grid grid-cols-2 rounded-md p-3px md:bg-dark-800">
                 <NavLink
-                    className="flex items-center justify-center px-4 md:px-10 rounded-md text-center text-secondary hover:text-high-emphesis text-base font-medium"
-                    activeClassName="font-bold text-high-emphesis md:bg-dark-900 md:border-gradient"
+                    className="flex items-center justify-center px-4 rounded-lg md:px-10 text-center text-secondary hover:text-high-emphesis text-base font-medium"
+                    activeClassName="font-bold bg-transparent border-4 rounded text-high-emphesis border-transparent md:border-gradient-r-blue-pink-dark-800"
                     to={{
                         pathname: '/swap',
                         search: `?inputCurrency=${input && input.address ? input.address : 'ETH'}${
@@ -37,7 +37,7 @@ export default function SwapHeader({ input = undefined, output = undefined }: an
                 </NavLink> */}
                 <NavLink
                     className="flex items-center justify-center px-4 md:px-10 rounded-md text-center text-secondary hover:text-high-emphesis text-base font-medium"
-                    activeClassName="text-high-emphesis font-bold md:bg-dark-900 md:border-gradient"
+                    activeClassName="font-bold bg-transparent border-4 rounded text-high-emphesis border-transparent md:border-gradient-r-blue-pink-dark-800"
                     to={`/add/${input && input.address ? input.address : 'ETH'}${
                         output && output.address ? `/${output.address}` : ''
                     }`}

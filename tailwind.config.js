@@ -18,14 +18,15 @@ module.exports = {
                 tl: 'to top left'
             },
             colors: {
-                'blue-pink': ['#27B0E6', '#FA52A0'],
-                'pink-red-light-brown': ['#FE5A75', '#FEC464']
+                'blue-pink': ['#88d7b0', '#1e9ab6'],
+                'pink-red-light-brown': ['#88d7b0', '#1e9ab6', '#044d29'],
+                'light-blue-dark': ['#044d29', '#1e9ab6', '#88d7b0']
             },
             background: {
-                'dark-1000': '#0D0415',
-                'dark-900': '#161522',
-                'dark-800': '#202231',
-                'dark-pink-red': '#4e3034'
+                'dark-1000': '#044d29',
+                'dark-900': '#c1ead6',
+                'dark-800': '#c1ead6',
+                'dark-pink-red': '#e7f7ef'
             },
             border: {
                 // defaults to these values (optional)
@@ -37,32 +38,33 @@ module.exports = {
         colors: {
             ...defaultTheme.colors,
             red: '#FF3838',
-            blue: '#27B0E6',
-            pink: '#FA52A0',
-            purple: '#A755DD',
-            green: '#7CFF6B',
+            blue: '#1E9AB6',
+            pink: '#223b55',
+            purple: '#c1ead6',
+            green: '#BEDECB',
+            darkgreen: '#044d29',
+            yellow: '#fbc309',
 
             'pink-red': '#FE5A75',
             'light-brown': '#FEC464',
             'light-yellow': '#FFD166',
-            'cyan-blue': '#0993EC',
-            pink: '#F338C3',
-
-            'dark-pink': '#221825',
-            'dark-blue': '#0F182A',
-            'dark-1000': '#0D0415',
-            'dark-950': '#0d0d1f',
-            'dark-900': '#161522',
-            'dark-850': '#1d1e2c',
-            'dark-800': '#202231',
-            'dark-700': '#2E3348',
+            'cyan-blue': '#1e9ab6',
+            'dark-blue': '#0f4d5b',
+            'l-blue': '#a5d6e1',
+            'dark-pink': '#FE5A75',
+            'dark-1000': '#bedecb',
+            'dark-900': '#f5fbf8',
+            'dark-850': '#ecf8f2',
+            'dark-800': '#e7f7ef',
+            'dark-700': '#c1ead6',
             'dark-600': '#1C2D49',
             'dark-500': '#223D5E',
-
+            'dark-400': '#88d7b0',
+            'dark-300': '#044d29',
             // TODO: bad... these are causing issues with text colors
-            // 'high-emphesis': '#E3E3E3',
-            primary: '#BFBFBF',
-            secondary: '#7F7F7F',
+            // 'high-emphesis': '#044D29',
+            primary: '#044D29',
+            secondary: '#223B55',
             'low-emphesis': '#575757'
         },
         screens: {
@@ -164,23 +166,23 @@ module.exports = {
             textColor: {
                 ...defaultTheme.textColor,
                 'low-emphesis': '#575757',
-                primary: '#BFBFBF',
-                secondary: '#7F7F7F',
-                'high-emphesis': '#E3E3E3'
+                primary: '#044D29',
+                secondary: '#223B55',
+                'high-emphesis': '#044D29'
             },
             backgroundColor: {
                 ...defaultTheme.backgroundColor,
-                input: '#2E3348'
+                input: '#ecf8f2'
             },
             boxShadow: {
                 ...defaultTheme.boxShadow,
                 'pink-glow': '0px 57px 90px -47px rgba(250, 82, 160, 0.15)',
                 'blue-glow': '0px 57px 90px -47px rgba(39, 176, 230, 0.17)',
                 'pink-glow-hovered': '0px 57px 90px -47px rgba(250, 82, 160, 0.30)',
-                'blue-glow-hovered': '0px 57px 90px -47px rgba(39, 176, 230, 0.34)',
+                'blue-glow-hovered': '0px 57px 90px -47px rgba(251, 195, 9, 0.34)',
 
-                'swap-blue-glow': '0px 50px 250px -47px rgba(39, 176, 230, 0.29)',
-                'liquidity-purple-glow': '0px 50px 250px -47px rgba(123, 97, 255, 0.23);'
+                'swap-blue-glow': '0px 50px 250px -47px rgba(251, 195, 9, 0.38)',
+                'liquidity-purple-glow': '0px 50px 250px -47px rgba(251, 195, 9, 0.29);'
             },
             ringWidth: {
                 ...defaultTheme.ringWidth,
