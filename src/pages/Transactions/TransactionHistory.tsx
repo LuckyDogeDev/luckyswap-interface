@@ -24,7 +24,7 @@ export default function TransactionHistory({ transactions }: any) {
     return (
         <>
             <div className="flex justify-between mb-6 flex-col sm:flex-row items-start">
-                <div className="text-xl font-medium text-white">
+                <div className="text-xl font-medium text-primary">
                     {i18n._(t`Your Transaction History on ${chainId && NETWORK_LABEL[chainId]}`)}
                 </div>
                 {/* <LinkStyledButton>

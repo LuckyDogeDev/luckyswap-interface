@@ -229,12 +229,12 @@ export default function BorrowMarkets(): JSX.Element {
                                                         <div className="font-semibold">{pair.asset.symbol} / </div>
                                                         <div>{pair.collateral.symbol}</div>
                                                     </div>
-                                                    <div className="mt-0 text-left text-white-500 text-xs block lg:hidden">
+                                                    <div className="mt-0 text-left text-primary-500 text-xs block lg:hidden">
                                                         {pair.oracle.name}
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="text-white hidden md:block">
+                                            <div className="text-primary hidden md:block">
                                                 <strong>{pair.asset.symbol}</strong>
                                             </div>
                                             <div className="hidden md:block">{pair.collateral.symbol}</div>

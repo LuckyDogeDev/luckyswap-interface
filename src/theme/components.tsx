@@ -119,7 +119,7 @@ export const StyledInternalLink = styled(Link)`
 const StyledLink = styled.a`
     text-decoration: none;
     cursor: pointer;
-    color: #0094ec;
+    color: #044D29;
     font-weight: 500;
 
     :hover {

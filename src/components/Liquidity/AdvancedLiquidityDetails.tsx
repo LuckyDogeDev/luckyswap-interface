@@ -11,7 +11,7 @@ function TradeSummary() {
                         <div className="text-secondary">Your Pool Tokens</div>
                     </RowFixed>
                     <RowFixed>
-                        <div className="text-white">
+                        <div className="text-primary">
                             1.576 →&nbsp;
                             <span className="text-green">1.787 ETH/GOLN SLP</span>
                         </div>
@@ -22,7 +22,7 @@ function TradeSummary() {
                         <div className="text-secondary">Your Pool Share</div>
                     </RowFixed>
                     <RowFixed>
-                        <div className="text-white">
+                        <div className="text-primary">
                             &lt; 0.01% →&nbsp;
                             <span className="text-green">0.01%</span>
                         </div>
@@ -33,7 +33,7 @@ function TradeSummary() {
                         <div className="text-secondary">Liquidity Provider Fee</div>
                     </RowFixed>
                     <RowFixed>
-                        <div className="text-white">0.00283 ETH</div>
+                        <div className="text-primary">0.00283 ETH</div>
                     </RowFixed>
                 </RowBetween>
                 <RowBetween>
@@ -41,7 +41,7 @@ function TradeSummary() {
                         <div className="text-secondary">Network Fee</div>
                     </RowFixed>
                     <RowFixed>
-                        <div className="text-white">0.008654 ETH</div>
+                        <div className="text-primary">0.008654 ETH</div>
                     </RowFixed>
                 </RowBetween>
             </AutoColumn>

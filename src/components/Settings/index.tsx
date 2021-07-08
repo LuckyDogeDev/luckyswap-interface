@@ -157,7 +157,7 @@ export default function SettingsTab() {
             {open && (
                 <ExtendedMenuFlyout>
                     <AutoColumn gap="md" style={{ padding: '1rem' }}>
-                        <div className="text-base font-semibold text-high-emphesis">
+                        <div className="text-base font-semibold text-high-emphesis bg-dark-700">
                             {i18n._(t`Transaction Settings`)}
                         </div>
                         <TransactionSettings

@@ -374,10 +374,10 @@ function AppBar(): JSX.Element {
 
                         <Disclosure.Panel className="sm:hidden">
                             <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">
-                                {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+                                {/* Current: "bg-gray-900 text-primary", Default: "text-gray-300 hover:bg-gray-700 hover:text-primary" */}
                                 {/* <a
                                 href="#"
-                                className="bg-gray-1000 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                className="bg-gray-1000 text-primary block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 Dashboard
                             </a> */}

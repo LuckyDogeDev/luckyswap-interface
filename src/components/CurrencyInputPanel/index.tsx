@@ -248,7 +248,7 @@ export default function CurrencyInputPanel({
                                                       currency.symbol.length
                                                   )
                                                 : currency?.getSymbol(chainId)) || (
-                                                <div className="bg-transparent hover:bg-primary border border-low-emphesis rounded-full px-2 py-1 text-secondary text-xs font-medium mt-1 whitespace-nowrap ">
+                                                <div className="bg-transparent hover:bg-dark-700 border border-low-emphesis rounded-full px-2 py-1 text-secondary text-xs font-medium mt-1 whitespace-nowrap ">
                                                     {i18n._(t`Select a token`)}
                                                 </div>
                                             )}
@@ -282,7 +282,7 @@ export default function CurrencyInputPanel({
                                 <Button
                                     onClick={onMax}
                                     size="small"
-                                    className="bg-transparent hover:bg-primary border border-low-emphesis rounded-full text-secondary text-xs font-medium whitespace-nowrap"
+                                    className="bg-transparent hover:bg-dark-700 border border-low-emphesis rounded-full text-secondary text-xs font-medium whitespace-nowrap"
                                 >
                                     {i18n._(t`Max`)}
                                 </Button>

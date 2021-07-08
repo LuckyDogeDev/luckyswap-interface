@@ -7,7 +7,7 @@ export default function Search({ term, search }: any) {
             <input
                 className="py-3 pl-4 pr-14 rounded w-full focus:outline-none focus:ring"
                 onChange={e => search(e.target.value)}
-                style={{ background: '#161522' }}
+                style={{ background: '#c1ead6' }}
                 value={term}
                 placeholder="Search by symbol"
             />

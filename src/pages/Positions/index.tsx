@@ -39,7 +39,7 @@ export default function Positions() {
                     <span className="ml-1">Go Back</span>
                 </Button>
                 <div className="px-4 mb-5">
-                    <div className="text-xl font-medium text-white">Your History & Positions</div>
+                    <div className="text-xl font-medium text-primary">Your History & Positions</div>
                 </div>
             </div> */}
 

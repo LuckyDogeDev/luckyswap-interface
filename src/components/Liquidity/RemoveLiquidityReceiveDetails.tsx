@@ -31,7 +31,7 @@ export default function RemoveLiquidityReceiveDetails({
     return (
         <div id={id} className="rounded bg-dark-800 p-5">
             <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row justify-between">
-                <div className="w-full sm:w-2/5 text-white" style={{ margin: 'auto 0px' }}>
+                <div className="w-full sm:w-2/5 text-primary" style={{ margin: 'auto 0px' }}>
                     <AutoColumn>
                         <div>You Will Receive:</div>
                         <RowBetween className="text-sm">
@@ -66,14 +66,14 @@ export default function RemoveLiquidityReceiveDetails({
                     <div className="flex flex-row items-center rounded bg-dark-900 w-full p-3">
                         <CurrencyLogo currency={currencyA} size="46px" style={{ marginRight: '12px' }} />
                         <AutoColumn>
-                            <div className="text-white">{amountA}</div>
+                            <div className="text-primary">{amountA}</div>
                             <div className="text-sm">{currencyA?.getSymbol(chainId)}</div>
                         </AutoColumn>
                     </div>
                     <div className="flex flex-row items-center rounded bg-dark-900 w-full p-3">
                         <CurrencyLogo currency={currencyB} size="46px" style={{ marginRight: '12px' }} />
                         <AutoColumn>
-                            <div className="text-white">{amountB}</div>
+                            <div className="text-primary">{amountB}</div>
                             <div className="text-sm">{currencyB?.getSymbol(chainId)}</div>
                         </AutoColumn>
                     </div>
