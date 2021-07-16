@@ -41,13 +41,13 @@ export function colors(darkMode: boolean): Colors {
 
         // text
         text1: darkMode ? '#044D29' : '#044D29',
-        text2: darkMode ? '#044D29' : '#044D29',
-        text3: darkMode ? '#6C7284' : '#888D9B',
-        text4: darkMode ? '#565A69' : '#C3C5CB',
-        text5: darkMode ? '#2C2F36' : '#EDEEF2',
+        text2: darkMode ? '#575757' : '#044D29',
+        text3: darkMode ? '#044D29' : '#044D29',
+        text4: darkMode ? '#ecf8f2' : '#C3C5CB',
+        text5: darkMode ? '#88d7b0' : '#EDEEF2',
 
         // backgrounds / greys
-        bg1: darkMode ? '#c1ead6' : '#FFFFFF',
+        bg1: darkMode ? '#e7f7ef' : '#FFFFFF',
         bg2: darkMode ? 'rgb(194,234,214)' : '#F7F8FA',
         bg3: darkMode ? '#89d7b0' : '#EDEEF2',
         bg4: darkMode ? '#3a506f' : '#CED0D9',
@@ -171,7 +171,7 @@ export const TYPE = {
 
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
-  color: #BFBFBF;
+  color: #044D29;
   background-color: #ecf8f2;
 }
 

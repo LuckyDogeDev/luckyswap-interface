@@ -219,8 +219,8 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
                                 className={`
                                     pointer-events-auto
                                     focus:outline-none focus:ring hover:bg-opacity-40
-                                    md:bg-cyan-blue md:bg-opacity-30
-                                    border border-secondary md:border-cyan-blue
+                                    md:bg-dark-700 md:bg-opacity-30
+                                    border border-secondary md:border-dark-700
                                     rounded-2xl py-1 px-2 md:py-1 md:px-3 ml-3 md:ml-4
                                     text-xs md:text-caption2 font-bold md:font-normal md:text-cyan-blue
                                 `}
