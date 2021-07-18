@@ -12,7 +12,7 @@ const FILLED = {
     default: 'bg-transparent',
     blue: 'bg-blue bg-opacity-80 w-full rounded text-base text-high-emphesis hover:bg-opacity-100',
     pink: 'bg-pink bg-opacity-80 w-full rounded text-base text-high-emphesis hover:bg-opacity-100',
-    gradient: 'w-full text-high-emphesis bg-gradient-to-r from-blue to-pink'
+    gradient: 'w-full text-white bg-gradient-to-r from-purple to-blue'
 }
 
 const OUTLINED = {

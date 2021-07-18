@@ -106,7 +106,7 @@ function AppBar(): JSX.Element {
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
-                                                    <QuestionHelper text={i18n._(t`Add SAK3 to your Metamask wallet`)}>
+                                                    <QuestionHelper text={i18n._(t`Add LuckyDoge to your Metamask wallet`)}>
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer border border-gray-400"
                                                             onClick={() => {
@@ -114,11 +114,11 @@ function AppBar(): JSX.Element {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address:
-                                                                            '0xe9F84dE264E91529aF07Fa2C746e934397810334',
-                                                                        symbol: 'SAK3',
-                                                                        decimals: 18,
+                                                                            '0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18',
+                                                                        symbol: 'LDOGE',
+                                                                        decimals: 9,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0xe9F84dE264E91529aF07Fa2C746e934397810334/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18/logo.png'
                                                                     }
                                                                 }
 
@@ -135,7 +135,7 @@ function AppBar(): JSX.Element {
                                                                         .then(success => {
                                                                             if (success) {
                                                                                 console.log(
-                                                                                    'Successfully added SAK3 to MetaMask'
+                                                                                    'Successfully added LDOGE to MetaMask'
                                                                                 )
                                                                             } else {
                                                                                 throw new Error('Something went wrong.')
@@ -146,7 +146,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0xe9F84dE264E91529aF07Fa2C746e934397810334/logo.png`}
+                                                                src={`https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18/logo.png`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -175,11 +175,11 @@ function AppBar(): JSX.Element {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address:
-                                                                            '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
+                                                                            '0xCfbB59ba22F0B0dB768A7C00e8177bBB9b35B8B4',
                                                                         symbol: 'PLAN',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png'
                                                                     }
                                                                 }
 
@@ -235,7 +235,7 @@ function AppBar(): JSX.Element {
                                                                 switch (chainId) {
                                                                     case ChainId.MAINNET:
                                                                         address =
-                                                                            '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2'
+                                                                            '0xc6D69475f115F61B1e8C4e78c20C49201c869DB4'
                                                                         break
                                                                     case ChainId.BSC:
                                                                         address =
