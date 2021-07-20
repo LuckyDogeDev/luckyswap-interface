@@ -22,7 +22,7 @@ const ExtendedStyledMenuButton = styled(StyledMenuButton)`
     height: 40px;
 
     &:hover {
-        border-color: rgb(193, 234, 214);
+        border-color: dark-600;
     }
 `
 
@@ -65,6 +65,7 @@ const MenuButtonFlag = styled.img`
     width: 22px;
     height: 22px;
     vertical-align: middle;
+    border: dark-1000;
 `
 
 // Use https://onlineunicodetools.com/convert-unicode-to-image to convert

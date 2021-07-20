@@ -144,11 +144,11 @@ export default function ClaimModal() {
 
     let VaultImage
     if (!pendingTreasurySignature && Number(unclaimedAmount?.toFixed(8)) > 0) {
-        VaultImage = 'https://raw.githubusercontent.com/sushiswap/sushi-content/master/images/sushi-vault-reverse.png'
+        VaultImage = 'https://raw.githubusercontent.com/LuckyDogeDev/lucky-content/master/images/sushi-vault-reverse.png'
     } else if (!pendingTreasurySignature && Number(unclaimedAmount?.toFixed(8)) <= 0) {
-        VaultImage = 'https://raw.githubusercontent.com/sushiswap/sushi-content/master/images/vesting-safe-off.png'
+        VaultImage = 'https://raw.githubusercontent.com/LuckyDogeDev/lucky-content/master/images/vesting-safe-off.png'
     } else if (pendingTreasurySignature) {
-        VaultImage = 'https://raw.githubusercontent.com/sushiswap/sushi-content/master/images/vesting-safe-closed.png'
+        VaultImage = 'https://raw.githubusercontent.com/LuckyDogeDev/lucky-content/master/images/vesting-safe-closed.png'
     }
 
     return (
@@ -299,11 +299,7 @@ export default function ClaimModal() {
                                             </RowBetween>
                                         </AutoColumn>
                                     </LightCard>
-                                    <LightCard
-                                        as={Link}
-                                        to={`/saave`}
-                                        style={{ color: 'inherit', textDecoration: 'none' }}
-                                    >
+                                    <LightCard style={{ color: 'inherit', textDecoration: 'none' }}>
                                         <AutoColumn gap="12px">
                                             <RowBetween>
                                                 <AutoRow>
@@ -314,12 +310,12 @@ export default function ClaimModal() {
                                                     </AutoRow>
                                                     <AutoRow>
                                                         <TYPE.darkGray fontSize=".75rem">
-                                                            {t`Stake into PLAN add collateral as aPLAN on Aave all in
+                                                            {t` (COMING SOON) Stake into PLAN add collateral as aPLAN on Aave all in
                                                             one click`}
                                                         </TYPE.darkGray>
                                                     </AutoRow>
                                                 </AutoRow>
-                                                <ChevronRight />
+                                                { /* <ChevronRight /> */ }
                                             </RowBetween>
                                         </AutoColumn>
                                     </LightCard>

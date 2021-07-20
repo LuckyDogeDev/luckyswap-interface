@@ -80,11 +80,11 @@ function Routes(): JSX.Element {
             )}
 
             {/* AlchemyBench Staking */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={AlchemyBench} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/alchemybench" component={AlchemyBench} />}
             {chainId === ChainId.MAINNET && (
-                <Route exact strict path="/sushibar/transactions" component={AlchemyBenchTransactions} />
+                <Route exact strict path="/alchemybench/transactions" component={AlchemyBenchTransactions} />
             )}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={AlchemyBenchTips} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/alchemybench/tips" component={AlchemyBenchTips} />}
             {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={AlchemyBench} />}
             {/* Tools */}
             {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}

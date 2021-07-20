@@ -91,7 +91,7 @@ export default function PoolFinder() {
                 <AutoColumn style={{ padding: '1rem' }} gap="md">
                     <BlueCard>
                         <AutoColumn gap="10px">
-                            <TYPE.link fontWeight={400} color={'primaryText1'}>
+                            <TYPE.link fontWeight={400} color={'primary1'}>
                                 <Trans>
                                     <b>Tip:</b> Use this tool to find pairs that don&apos;t automatically appear in the
                                     interface
@@ -164,7 +164,7 @@ export default function PoolFinder() {
                     {currency0 && currency1 ? (
                         pairState === PairState.EXISTS ? (
                             hasPosition && pair ? (
-                                <MinimalPositionCard pair={pair} border="1px solid #CED0D9" />
+                                <MinimalPositionCard pair={pair} border="1px solid #e7f7ef" />
                             ) : (
                                 <LightCard padding="45px 10px">
                                     <AutoColumn gap="sm" justify="center">

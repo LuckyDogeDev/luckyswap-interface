@@ -24,7 +24,7 @@ function AppBar(): JSX.Element {
     const { pathname } = useLocation()
 
     const [navClassList, setNavClassList] = useState(
-        'w-screen bg-transparent gradiant-border-bottom z-10 backdrop-filter backdrop-blur'
+        'w-screen bg-transparent gradient-border-bottom z-10 backdrop-filter backdrop-blur'
     )
 
     const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
@@ -33,7 +33,7 @@ function AppBar(): JSX.Element {
         if (pathname === '/trade') {
             setNavClassList('w-screen bg-transparent z-10 backdrop-filter backdrop-blur')
         } else {
-            setNavClassList('w-screen bg-transparent gradiant-border-bottom z-10 backdrop-filter backdrop-blur')
+            setNavClassList('w-screen bg-transparent gradient-border-bottom z-10 backdrop-filter backdrop-blur')
         }
     }, [pathname])
 
@@ -68,7 +68,7 @@ function AppBar(): JSX.Element {
                                             </NavLink>
 
                                             {chainId === ChainId.MAINNET && (
-                                                <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
+                                                <NavLink id={`sushibar-nav-link`} to={'/alchemybench'}>
                                                     {i18n._(t`AlchemyBench`)}
                                                 </NavLink>
                                             )}
@@ -99,7 +99,7 @@ function AppBar(): JSX.Element {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
+                                <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-700 lg:relative lg:p-0 lg:bg-transparent">
                                     <div className="flex items-center justify-between sm:justify-end space-x-2 w-full">
                                         {chainId &&
                                             [ChainId.MAINNET].includes(chainId) &&
@@ -108,7 +108,7 @@ function AppBar(): JSX.Element {
                                                 <>
                                                     <QuestionHelper text={i18n._(t`Add LuckyDoge to your Metamask wallet`)}>
                                                         <div
-                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer border border-gray-400"
+                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
                                                                 const params: any = {
                                                                     type: 'ERC20',
@@ -146,7 +146,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18/logo.png`}
+                                                                src={`${process.env.PUBLIC_URL}/images/tokens/ldoge-square.jpg`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -303,7 +303,7 @@ function AppBar(): JSX.Element {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <div className="grid grid-flow-col auto-cols-max items-center rounded-lg bg-dark-1000 text-sm text-secondary py-2 px-3 pointer-events-auto">
+                                                    <div className="grid grid-flow-col auto-cols-max items-center rounded-lg bg-dark-700 text-sm text-secondary py-2 px-3 pointer-events-auto">
                                                         <div className="text-primary">{i18n._(t`Bridge Assets`)}</div>
                                                     </div>
                                                 </a>
@@ -353,12 +353,12 @@ function AppBar(): JSX.Element {
                         <Disclosure.Panel className="sm:hidden">
                             <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">
                                 {/* Current: "bg-gray-900 text-primary", Default: "text-gray-300 hover:bg-gray-700 hover:text-primary" */}
-                                {/* <a
+                                 <a
                                 href="#"
                                 className="bg-gray-1000 text-primary block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 Dashboard
-                            </a> */}
+                            </a>
 
                                 <NavLink id={`swap-nav-link`} to={'/swap'}>
                                     {i18n._(t`Swap`)}
@@ -395,7 +395,7 @@ function AppBar(): JSX.Element {
                                         </NavLink>
                                     )}
                                 {chainId === ChainId.MAINNET && (
-                                    <NavLink id={`stake-nav-link`} to={'/sushibar'}>
+                                    <NavLink id={`stake-nav-link`} to={'/alchemybench'}>
                                         {i18n._(t`AlchemyBench`)}
                                     </NavLink>
                                 )}

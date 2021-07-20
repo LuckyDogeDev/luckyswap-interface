@@ -234,9 +234,9 @@ module.exports = {
         require('tailwindcss-border-gradient-radius'),
         plugin(function({ addUtilities }) {
             addUtilities({
-                '.gradiant-border-bottom': {
+                '.gradient-border-bottom': {
                     background:
-                        'linear-gradient(to right, rgba(39, 176, 230, 0.2) 0%, rgba(250, 82, 160, 0.2) 100%) left bottom no-repeat',
+                        'linear-gradient(to right, rgba(136, 215, 176, 0.2) 0%, rgba(30, 154, 182, 0.2) 0%, rgba(4, 77, 41, 0.2) 100%) left bottom no-repeat',
                     backgroundSize: '100% 1px'
                 }
             })
@@ -248,7 +248,7 @@ module.exports = {
                         border: 'double 1px transparent',
                         borderRadius: '0.375rem',
                         backgroundImage:
-                            'linear-gradient(#202231, #202231), linear-gradient(to right, #0993EC, #F338C3)',
+                            'linear-gradient(#88d7b0, #1e9ab6), linear-gradient(to right, #88d7b0, #1e9ab6)',
                         backgroundOrigin: 'border-box',
                         backgroundClip: 'padding-box, border-box'
                     }

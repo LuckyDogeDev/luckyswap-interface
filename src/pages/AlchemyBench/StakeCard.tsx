@@ -207,7 +207,9 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
                                     input ? 'text-high-emphesis' : 'text-secondary'
                                 }`}
                             >
-                                {`${input ? input : '0'} ${activeTab === 0 ? '' : 'x'}GOLN`}
+                                {`${input ? input : "0"} ${
+                                    activeTab === 0 ? "GOLN" : "PLAN"
+                                }`}
                             </p>
                         </div>
                         <div className="flex items-center text-secondary text-caption2 md:text-caption">
