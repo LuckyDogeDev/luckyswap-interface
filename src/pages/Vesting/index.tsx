@@ -299,7 +299,7 @@ export default function ClaimModal() {
                                             </RowBetween>
                                         </AutoColumn>
                                     </LightCard>
-                                    <LightCard style={{ color: 'inherit', textDecoration: 'none' }}>
+                                    { /* <LightCard style={{ color: 'inherit', textDecoration: 'none' }}>
                                         <AutoColumn gap="12px">
                                             <RowBetween>
                                                 <AutoRow>
@@ -315,10 +315,10 @@ export default function ClaimModal() {
                                                         </TYPE.darkGray>
                                                     </AutoRow>
                                                 </AutoRow>
-                                                { /* <ChevronRight /> */ }
+                                                { /* <ChevronRight />
                                             </RowBetween>
                                         </AutoColumn>
-                                    </LightCard>
+                                    </LightCard> */ }
                                     <LightCard style={{ color: 'inherit', textDecoration: 'none' }}>
                                         <AutoColumn gap="12px">
                                             <RowBetween>
