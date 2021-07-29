@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WETH } from '@sushiswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WETH } from '@luckyfinance/sdk'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import { useMemo } from 'react'
 import { DAI, GOLN, USDC, USDT, WBTC } from '../../constants'

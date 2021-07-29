@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@sushiswap/sdk'
+import { ChainId, Currency } from '@luckyfinance/sdk'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Logo from '../assets/images/logo.png'

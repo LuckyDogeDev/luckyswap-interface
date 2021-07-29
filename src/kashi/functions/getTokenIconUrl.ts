@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@luckyfinance/sdk'
 
 const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
     [ChainId.MAINNET]: {

@@ -4,7 +4,7 @@ import { useActiveWeb3React } from './useActiveWeb3React'
 import { useIsTransactionPending, useTransactionAdder } from '../state/transactions/hooks'
 import useLPTokensState, { LPTokensState } from './useLPTokensState'
 import useIngot from './useIngot'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@luckyfinance/sdk'
 
 export type MigrateMode = 'permit' | 'approve'
 

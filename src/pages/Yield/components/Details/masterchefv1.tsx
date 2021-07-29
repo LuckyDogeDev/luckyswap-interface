@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { MASTERCHEF_ADDRESS, Token } from '@sushiswap/sdk'
+import { GOLDMINER_ADDRESS, Token } from '@luckyfinance/sdk'
 import { Input as NumericalInput } from '../../../../components/NumericalInput'
 import { Fraction } from '../../../../entities'
 import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'
@@ -59,7 +59,7 @@ export default function InputGroup({
 
     const [approvalState, approve] = useApproveCallback(
         tryParseAmount(depositValue, new Token(chainId || 1, pairAddressChecksum, balance.decimals, pairSymbol, '')),
-        MASTERCHEF_ADDRESS[1]
+        GOLDMINER_ADDRESS[1]
     )
 
     const { deposit, withdraw, harvest } = useMasterChef()

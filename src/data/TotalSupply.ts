@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token, TokenAmount } from '@sushiswap/sdk'
+import { Token, TokenAmount } from '@luckyfinance/sdk'
 import { useTokenContract } from '../hooks/useContract'
 import { useSingleCallResult } from '../state/multicall/hooks'
 

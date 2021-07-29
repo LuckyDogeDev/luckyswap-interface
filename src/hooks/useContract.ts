@@ -3,16 +3,16 @@ import {
     ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS
 } from '../constants/abis/argent-wallet-detector'
 import {
-    BAR_ADDRESS,
+    ALCHEMYBENCH_ADDRESS,
     ChainId,
     FACTORY_ADDRESS,
-    MAKER_ADDRESS,
-    MASTERCHEF_ADDRESS,
+    SMELTER_ADDRESS,
+    GOLDMINER_ADDRESS,
     ROUTER_ADDRESS,
-    SUSHI_ADDRESS,
+    GOLN_ADDRESS,
     TIMELOCK_ADDRESS,
     WETH
-} from '@sushiswap/sdk'
+} from '@luckyfinance/sdk'
 import {
     BENTOBOX_ADDRESS,
     BORING_HELPER_ADDRESS,
@@ -27,7 +27,7 @@ import { MIGRATOR_ABI, MIGRATOR_ADDRESS } from '../constants/abis/migrator'
 import { MULTICALL_ABI, MULTICALL_NETWORKS } from '../constants/multicall'
 import { V1_EXCHANGE_ABI, V1_FACTORY_ABI, V1_FACTORY_ADDRESSES } from '../constants/v1'
 
-import BAR_ABI from '../constants/abis/bar.json'
+import ALCHEMYBENCH_ABI from '../constants/abis/bar.json'
 import BASE_SWAPPER_ABI from '../constants/abis/swapper.json'
 import BENTOBOX_ABI from '../constants/abis/bentobox.json'
 import BORING_HELPER_ABI from '../constants/abis/boring-helper.json'
@@ -42,18 +42,18 @@ import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'
 import FACTORY_ABI from '../constants/abis/factory.json'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import KASHIPAIR_ABI from '../constants/abis/kashipair.json'
-import MAKER_ABI from '../constants/abis/maker.json'
-import MASTERCHEFV2_ABI from '../constants/abis/masterchefv2.json'
-import MASTERCHEF_ABI from '../constants/abis/masterchef.json'
+import SMELTER_ABI from '../constants/abis/maker.json'
+import GOLDMINERV2_ABI from '../constants/abis/masterchefv2.json'
+import GOLDMINER_ABI from '../constants/abis/masterchef.json'
 import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
 import MINICHEFV2_ABI from '../constants/abis/miniChefV2.json'
 import PENDING_ABI from '../constants/abis/pending.json'
 import ROUTER_ABI from '../constants/abis/router.json'
 import SAAVE_ABI from '../constants/abis/saave.json'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
-import GOLNROLL_ABI from '@sushiswap/core/abi/SushiRoll.json'
+import GOLNROLL_ABI from '@luckyfinance/core/abi/Ingot.json'
 import GOLNSWAP_MULTISWAPPER_ABI from '../constants/abis/sushiswapmultiswapper.json'
-import SUSHI_ABI from '../constants/abis/sushi.json'
+import GOLN_ABI from '../constants/abis/sushi.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
 import { abi as UNI_ABI } from '@uniswap/governance/build/Uni.json'
 import { abi as UNI_FACTORY_ABI } from '@uniswap/v2-core/build/UniswapV2Factory.json'
@@ -167,12 +167,12 @@ export function useMulticallContract(): Contract | null {
 
 export function useGoldNuggetContract(withSignerIfPossible = true): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && SUSHI_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
+    return useContract(chainId && GOLN_ADDRESS[chainId], GOLN_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && MASTERCHEF_ADDRESS[chainId], MASTERCHEF_ABI, withSignerIfPossible)
+    return useContract(chainId && GOLDMINER_ADDRESS[chainId], GOLDMINER_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefV2Contract(withSignerIfPossible?: boolean): Contract | null {
@@ -185,7 +185,7 @@ export function useMasterChefV2Contract(withSignerIfPossible?: boolean): Contrac
                 break
         }
     }
-    return useContract(address, MASTERCHEFV2_ABI, withSignerIfPossible)
+    return useContract(address, GOLDMINERV2_ABI, withSignerIfPossible)
 }
 
 export function useMiniChefV2Contract(withSignerIfPossible?: boolean): Contract | null {
@@ -213,12 +213,12 @@ export function useRouterContract(): Contract | null {
 
 export function useAlchemyBenchContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && BAR_ADDRESS[chainId], BAR_ABI, withSignerIfPossible)
+    return useContract(chainId && ALCHEMYBENCH_ADDRESS[chainId], ALCHEMYBENCH_ABI, withSignerIfPossible)
 }
 
 export function useMakerContract(): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && MAKER_ADDRESS[chainId], MAKER_ABI, false)
+    return useContract(chainId && SMELTER_ADDRESS[chainId], SMELTER_ABI, false)
 }
 
 export function useTimelockContract(): Contract | null {

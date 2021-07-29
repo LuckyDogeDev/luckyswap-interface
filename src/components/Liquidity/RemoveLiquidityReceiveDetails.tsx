@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, currencyEquals, ETHER, WETH } from '@sushiswap/sdk'
+import { Currency, currencyEquals, ETHER, WETH } from '@luckyfinance/sdk'
 import { AutoColumn } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { AutoRow, RowBetween } from '../../components/Row'

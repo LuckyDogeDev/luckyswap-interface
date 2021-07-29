@@ -1,7 +1,7 @@
 {
-    "name": "@sushiswap/interface",
+    "name": "@luckyfinance/interface",
     "description": "LuckyFinance Interface",
-    "homepage": "https://app.sushi.com",
+    "homepage": "https://app.luckydoge.finance",
     "private": true,
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
@@ -30,9 +30,9 @@
         "@reach/dialog": "^0.10.3",
         "@reach/portal": "^0.10.3",
         "@reduxjs/toolkit": "^1.3.5",
-        "@sushiswap/core": "2.0.0-canary.0",
+        "@luckyfinance/core": "^1.5.0",
         "@sushiswap/default-token-list": "6.48.0",
-        "@sushiswap/sdk": "5.0.0-canary.7",
+        "@luckyfinance/sdk": "^3.0.6",
         "@sushiswap/sushi-data": "1.0.26",
         "@tailwindcss/aspect-ratio": "^0.2.0",
         "@tailwindcss/forms": "^0.2.1",

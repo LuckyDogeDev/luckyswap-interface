@@ -1,4 +1,4 @@
-import { Currency, Pair, ChainId } from '@sushiswap/sdk'
+import { Currency, Pair, ChainId } from '@luckyfinance/sdk'
 import { darken } from 'polished'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'

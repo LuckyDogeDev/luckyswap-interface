@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Input as NumericalInput } from '../../components/NumericalInput'
 import ErrorTriangle from '../../assets/images/error-triangle.svg'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BAR_ADDRESS, Token, TokenAmount } from '@sushiswap/sdk'
+import { ALCHEMYBENCH_ADDRESS, Token, TokenAmount } from '@luckyfinance/sdk'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { BalanceProps } from '../../hooks/useTokenBalance'
@@ -142,7 +142,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
             new Token(1, '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', 18, 'GOLN', ''),
             parsedInput.value.toString()
         ),
-        BAR_ADDRESS[1]
+        ALCHEMYBENCH_ADDRESS[1]
     )
 
     console.log('approvalState:', approvalState, parsedInput.value.toString())

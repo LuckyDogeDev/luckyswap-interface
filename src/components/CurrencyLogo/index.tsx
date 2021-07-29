@@ -1,4 +1,4 @@
-import { ChainId, Currency, ETHER, Token } from '@sushiswap/sdk'
+import { ChainId, Currency, ETHER, Token } from '@luckyfinance/sdk'
 import React, { useMemo } from 'react'
 
 import AvalancheLogo from '../../assets/images/avalanche-logo.png'

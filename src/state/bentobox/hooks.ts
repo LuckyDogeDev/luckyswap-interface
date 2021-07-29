@@ -1,4 +1,4 @@
-import { Currency, Token, WETH } from '@sushiswap/sdk'
+import { Currency, Token, WETH } from '@luckyfinance/sdk'
 import { ZERO, e10, easyAmount, toAmount } from 'kashi/functions'
 import { useAlpineContract, useBoringHelperContract, useContract } from '../../hooks/useContract'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'

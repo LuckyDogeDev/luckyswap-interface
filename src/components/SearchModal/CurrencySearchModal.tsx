@@ -1,4 +1,4 @@
-import { Currency, Token } from '@sushiswap/sdk'
+import { Currency, Token } from '@luckyfinance/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import usePrevious from 'hooks/usePrevious'
 import React, { useCallback, useEffect, useState } from 'react'
