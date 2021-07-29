@@ -9,7 +9,7 @@ import concat from 'lodash/concat'
 import { getAverageBlockTime } from 'apollo/getAverageBlockTime'
 import orderBy from 'lodash/orderBy'
 import range from 'lodash/range'
-import sushiData from '@sushiswap/sushi-data'
+import golnData from '@luckyfinance/lucky-data'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useBoringHelperContract } from 'hooks/useContract'
 
@@ -31,8 +31,8 @@ const useFarms = (address: string) => {
                 variables: { user: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd' }
             }),
             getAverageBlockTime(), // results[2]
-            sushiData.sushi.priceUSD(), // results[3]
-            sushiData.bentobox.kashiStakedInfo() //results[4]
+            golnData.goln.priceUSD(), // results[3]
+            golnData.alpine.goldveinStakedInfo() //results[4]
         ])
         const pools = results[0]?.data.pools
         const pairAddresses = pools
@@ -48,12 +48,12 @@ const useFarms = (address: string) => {
         const liquidityPositions = results[1]?.data.liquidityPositions
         const averageBlockTime = results[2]
         const sushiPrice = results[3]
-        const kashiPairs = results[4].filter(result => result !== undefined) // filter out undefined (not in onsen) from all kashiPairs
+        const goldveinPairs = results[4].filter(result => result !== undefined) // filter out undefined (not in onsen) from all goldveinPairs
 
         const pairs = pairsQuery?.data.pairs
         const KASHI_PAIRS = pools
             .filter((pool: any) => {
-                const hasPair = kashiPairs.find((kashiPair: any) => kashiPair?.id === pool?.pair)
+                const hasPair = goldveinPairs.find((goldveinPair: any) => goldveinPair?.id === pool?.pair)
                 console.log('pool.pair:', pool.pair, pool.id, hasPair)
 
                 return hasPair
@@ -61,8 +61,8 @@ const useFarms = (address: string) => {
             .map((pool: any) => {
                 return Number(pool.id)
             })
-        //const KASHI_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // kashiPair pids 190-229, 245-249
-        //console.log('kashiPairs:', KASHI_PAIRS.length, kashiPairs.length, kashiPairs, KASHI_PAIRS)
+        //const KASHI_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // goldveinPair pids 190-229, 245-249
+        //console.log('goldveinPairs:', KASHI_PAIRS.length, goldveinPairs.length, goldveinPairs, KASHI_PAIRS)
 
         const farms = pools
             .filter((pool: any) => {
@@ -74,7 +74,7 @@ const useFarms = (address: string) => {
             })
             .map((pool: any) => {
                 if (KASHI_PAIRS.includes(Number(pool?.id))) {
-                    const pair = kashiPairs.find((pair: any) => pair?.id === pool?.pair)
+                    const pair = goldveinPairs.find((pair: any) => pair?.id === pool?.pair)
                     //console.log('kpair:', pair, pool)
                     return {
                         ...pool,

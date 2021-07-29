@@ -13,7 +13,7 @@ import TransactionFailedModal from './TransactionFailedModal'
 import { Button, Dots } from '../../components'
 import { t } from '@lingui/macro'
 
-import sushiData from '@sushiswap/sushi-data'
+import golnData from '@luckyfinance/lucky-data'
 import { useLingui } from '@lingui/react'
 
 const INPUT_CHAR_LIMIT = 18
@@ -62,7 +62,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
     const [exchangeRate, setExchangeRate] = useState<any>()
     useEffect(() => {
         const fetchData = async () => {
-            const results = await Promise.all([sushiData.bar.info()])
+            const results = await Promise.all([golnData.alchemybench.info()])
             setExchangeRate(results[0].ratio)
         }
         fetchData()

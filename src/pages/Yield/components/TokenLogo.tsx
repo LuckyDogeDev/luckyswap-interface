@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PlaceHolder from 'assets/images/placeholder.png'
-import KashiLogo from 'assets/kashi/kashi-neon.png'
+import GoldVeinLogo from 'assets/goldvein/goldvein-neon.png'
 import { getAddress } from '@ethersproject/address'
 import styled from 'styled-components'
 //import EthereumLogo from "../../assets/img/eth.png";
@@ -69,10 +69,10 @@ export default function TokenLogo({ address, header = false, size, ...rest }: an
         )
     }
 
-    if (address === 'kashiLogo') {
+    if (address === 'goldveinLogo') {
         return (
             <Inline>
-                <Image {...rest} alt={''} src={KashiLogo} size={size} />
+                <Image {...rest} alt={''} src={GoldVeinLogo} size={size} />
             </Inline>
         )
     }

@@ -1,6 +1,6 @@
 import { Token, TokenAmount, WETH } from '@luckyfinance/sdk'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
-import { BENTOBOX_ADDRESS } from 'kashi'
+import { BENTOBOX_ADDRESS } from 'goldvein'
 import { Button } from 'components'
 import React, { useState } from 'react'
 import useAlpine from 'hooks/useAlpine'

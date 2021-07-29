@@ -5,7 +5,7 @@ import { formatUnits, parseUnits } from '@ethersproject/units'
 import useMigrateState, { MigrateState } from '../../hooks/useMigrateState'
 
 import { AddressZero } from '@ethersproject/constants'
-import Badge from 'kashi/components/Badge'
+import Badge from 'goldvein/components/Badge'
 import { Button } from '../../components'
 import { ButtonConfirmed } from '../../components/ButtonLegacy'
 import { ChevronRight } from 'react-feather'

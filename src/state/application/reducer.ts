@@ -4,7 +4,7 @@ import {
     ApplicationModal,
     PopupContent,
     removePopup,
-    setKashiApprovalPending,
+    setGoldVeinApprovalPending,
     setOpenModal,
     updateBlockNumber
 } from './actions'
@@ -15,14 +15,14 @@ export interface ApplicationState {
     readonly blockNumber: { readonly [chainId: number]: number }
     readonly popupList: PopupList
     readonly openModal: ApplicationModal | null
-    kashiApprovalPending: string
+    goldveinApprovalPending: string
 }
 
 const initialState: ApplicationState = {
     blockNumber: {},
     popupList: [],
     openModal: null,
-    kashiApprovalPending: ''
+    goldveinApprovalPending: ''
 }
 
 export default createReducer(initialState, builder =>
@@ -55,7 +55,7 @@ export default createReducer(initialState, builder =>
                 }
             })
         })
-        .addCase(setKashiApprovalPending, (state, action) => {
-            state.kashiApprovalPending = action.payload
+        .addCase(setGoldVeinApprovalPending, (state, action) => {
+            state.goldveinApprovalPending = action.payload
         })
 )

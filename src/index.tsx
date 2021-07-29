@@ -4,7 +4,7 @@ import 'react-tabs/style/react-tabs.css'
 import './bootstrap'
 
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
-import { KashiProvider } from 'kashi'
+import { GoldVeinProvider } from 'goldvein'
 import React, { StrictMode } from 'react'
 import { isMobile } from 'react-device-detect'
 import ReactDOM from 'react-dom'
@@ -73,11 +73,11 @@ ReactDOM.render(
                         <LanguageProvider>
                             <ThemeProvider>
                                 <ThemedGlobalStyle />
-                                <KashiProvider>
+                                <GoldVeinProvider>
                                     <Router>
                                         <App />
                                     </Router>
-                                </KashiProvider>
+                                </GoldVeinProvider>
                             </ThemeProvider>
                         </LanguageProvider>
                     </Provider>

@@ -20,7 +20,7 @@ import {
     KASHI_ADDRESS,
     GOLNSWAP_MULTISWAPPER_ADDRESS,
     GOLNSWAP_SWAPPER_ADDRESS
-} from 'kashi'
+} from 'goldvein'
 import { FAUCET_ABI, FAUCET_ADDRESS } from '../constants/abis/faucet'
 import { MERKLE_DISTRIBUTOR_ADDRESS, GOLN } from '../constants'
 import { MIGRATOR_ABI, MIGRATOR_ADDRESS } from '../constants/abis/migrator'
@@ -29,7 +29,7 @@ import { V1_EXCHANGE_ABI, V1_FACTORY_ABI, V1_FACTORY_ADDRESSES } from '../consta
 
 import ALCHEMYBENCH_ABI from '../constants/abis/bar.json'
 import BASE_SWAPPER_ABI from '../constants/abis/swapper.json'
-import BENTOBOX_ABI from '../constants/abis/bentobox.json'
+import BENTOBOX_ABI from '../constants/abis/alpine.json'
 import BORING_HELPER_ABI from '../constants/abis/boring-helper.json'
 import CHAINLINK_ORACLE_ABI from '../constants/abis/chainlink-oracle.json'
 import { Contract } from '@ethersproject/contracts'
@@ -41,8 +41,8 @@ import ERC20_ABI from '../constants/abis/erc20.json'
 import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'
 import FACTORY_ABI from '../constants/abis/factory.json'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
-import KASHIPAIR_ABI from '../constants/abis/kashipair.json'
-import SMELTER_ABI from '../constants/abis/maker.json'
+import KASHIPAIR_ABI from '../constants/abis/goldveinpair.json'
+import SMELTER_ABI from '../constants/abis/smelter.json'
 import GOLDMINERV2_ABI from '../constants/abis/masterchefv2.json'
 import GOLDMINER_ABI from '../constants/abis/masterchef.json'
 import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
@@ -231,7 +231,7 @@ export function useAlpineContract(withSignerIfPossible?: boolean): Contract | nu
     return useContract(chainId && BENTOBOX_ADDRESS[chainId], BENTOBOX_ABI, withSignerIfPossible)
 }
 
-export function useKashiPairContract(withSignerIfPossible?: boolean): Contract | null {
+export function useGoldVeinPairContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && KASHI_ADDRESS[chainId], KASHIPAIR_ABI, withSignerIfPossible)
 }

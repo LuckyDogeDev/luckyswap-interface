@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import sushiData from '@sushiswap/sushi-data'
+import golnData from '@luckyfinance/lucky-data'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useBoringHelperContract } from 'hooks/useContract'
 import orderBy from 'lodash/orderBy'
@@ -33,14 +33,14 @@ const useFarms = () => {
                 query: liquidityPositionSubsetQuery,
                 variables: { user: String('0x0769fd68dFb93167989C6f7254cd0D766Fb2841F').toLowerCase() } //minichef
             }),
-            sushiData.sushi.priceUSD(),
+            golnData.goln.priceUSD(),
             exchange_matic.query({
                 query: tokenQuery,
                 variables: { id: String('0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270').toLowerCase() } //matic
             }),
-            sushiData.exchange.ethPrice()
+            golnData.exchange.ethPrice()
             //getAverageBlockTime(chainId),
-            //sushiData.exchange.token({ token_address: '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0' }) // matic
+            //golnData.exchange.token({ token_address: '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0' }) // matic
         ])
 
         const pools = results[0]?.data.pools

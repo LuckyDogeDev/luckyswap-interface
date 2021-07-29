@@ -1,13 +1,13 @@
 import { Card, CardHeader, Search } from './components'
 import { ChevronDown, ChevronUp } from 'react-feather'
-import { Header, KashiLending, LiquidityPosition } from './components/Farms'
+import { Header, GoldVeinLending, LiquidityPosition } from './components/Farms'
 import React, { useEffect, useState } from 'react'
 import { formattedNum, formattedPercent } from '../../utils'
 import { useFuse, useSortableData } from 'hooks'
 import { useMasterChefContract, useMiniChefV2Contract } from '../../hooks/useContract'
 
 import { ChainId } from '@luckyfinance/sdk'
-import { SimpleDots as Dots } from 'kashi/components'
+import { SimpleDots as Dots } from 'goldvein/components'
 import { Helmet } from 'react-helmet'
 import Menu from './Menu'
 import { RowBetween } from '../../components/Row'
@@ -172,7 +172,7 @@ export default function Yield(): JSX.Element {
                                                 portfolio.map((farm: any, i: number) => {
                                                     console.log('portfolio farm:', farm, portfolio)
                                                     if (farm.type === 'KMP') {
-                                                        return <KashiLending key={farm.address + '_' + i} farm={farm} />
+                                                        return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
                                                     } else if (farm.type === 'SLP') {
                                                         return (
                                                             <LiquidityPosition
@@ -209,7 +209,7 @@ export default function Yield(): JSX.Element {
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
                                             if (farm.type === 'KMP') {
-                                                return <KashiLending key={farm.address + '_' + i} farm={farm} />
+                                                return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
                                             } else if (farm.type === 'SLP') {
                                                 return <LiquidityPosition key={farm.address + '_' + i} farm={farm} />
                                             } else {
@@ -263,7 +263,7 @@ export default function Yield(): JSX.Element {
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
                                             if (farm.type === 'KMP') {
-                                                return <KashiLending key={farm.address + '_' + i} farm={farm} />
+                                                return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null
                                             }

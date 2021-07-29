@@ -12,7 +12,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { ChainId } from '@luckyfinance/sdk'
 import orderBy from 'lodash/orderBy'
-import sushiData from '@sushiswap/sushi-data'
+import golnData from '@luckyfinance/lucky-data'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useBoringHelperContract } from 'hooks/useContract'
 
@@ -35,12 +35,12 @@ const useFarms = () => {
                 query: liquidityPositionSubsetQuery,
                 variables: { user: String('0xEF0881eC094552b2e128Cf945EF17a6752B4Ec5d').toLowerCase() } //masterchefv2
             }),
-            sushiData.sushi.priceUSD(),
+            golnData.goln.priceUSD(),
             exchange.query({
                 query: tokenQuery,
                 variables: { id: String('0xdbdb4d16eda451d0503b854cf79d55697f90c8df').toLowerCase() } // alcx
             }),
-            sushiData.exchange.ethPrice(),
+            golnData.exchange.ethPrice(),
             getAverageBlockTime()
         ])
 

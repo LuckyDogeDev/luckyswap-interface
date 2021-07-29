@@ -150,8 +150,8 @@ module.exports = {
             },
             backgroundImage: theme => ({
                 ...defaultTheme.backgroundImage,
-                'bentobox-hero': "url('/src/assets/kashi/bentobox-hero.jpg')",
-                'bentobox-logo': "url('/src/assets/kashi/bentobox-logo.png')"
+                'alpine-hero': "url('/src/assets/goldvein/alpine-hero.jpg')",
+                'alpine-logo': "url('/src/assets/goldvein/alpine-logo.png')"
             }),
             fontFamily: {
                 sans: ['DM Sans', ...defaultTheme.fontFamily.sans]

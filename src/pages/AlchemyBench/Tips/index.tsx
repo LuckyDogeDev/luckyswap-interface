@@ -24,7 +24,7 @@ const tips: readonly Tip[] = [
         title: 'Deposit into Alpine',
         image: AlpSquare,
         description:
-            'Deposit your PLAN into Alpine to passively earn yield through an PLAN investment strategy, or use as collateral within Kashi and future Alp dapps.',
+            'Deposit your PLAN into Alpine to passively earn yield through an PLAN investment strategy, or use as collateral within GoldVein and future Alp dapps.',
         href: '#'
     },
     {

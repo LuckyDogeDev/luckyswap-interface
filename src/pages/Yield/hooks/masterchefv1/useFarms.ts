@@ -7,7 +7,7 @@ import { getAverageBlockTime } from 'apollo/getAverageBlockTime'
 import _ from 'lodash'
 import orderBy from 'lodash/orderBy'
 //import range from 'lodash/range'
-import sushiData from '@sushiswap/sushi-data'
+import golnData from '@luckyfinance/lucky-data'
 
 import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'
 import { ChainId } from '@luckyfinance/sdk'
@@ -27,7 +27,7 @@ const useFarms = () => {
                 variables: { user: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd' }
             }),
             getAverageBlockTime(),
-            sushiData.sushi.priceUSD()
+            golnData.goln.priceUSD()
         ])
         const pools = results[0]?.data.pools
         const pairAddresses = pools
@@ -103,28 +103,28 @@ const useFarms = () => {
             masterchef.query({
                 query: poolsQuery
             }),
-            sushiData.bentobox.kashiStakedInfo(),
+            golnData.alpine.goldveinStakedInfo(),
             getAverageBlockTime()
         ])
         const pools = results[0]?.data.pools
-        const kashiPairs = results[1].filter(result => result !== undefined) // filter out undefined (not in onsen) from all kashiPairs
+        const goldveinPairs = results[1].filter(result => result !== undefined) // filter out undefined (not in onsen) from all goldveinPairs
         const averageBlockTime = results[2]
 
         const KASHI_PAIRS = pools
             .filter((pool: any) => {
-                const hasPair = kashiPairs.find((kashiPair: any) => kashiPair?.id === pool?.pair)
+                const hasPair = goldveinPairs.find((goldveinPair: any) => goldveinPair?.id === pool?.pair)
                 return hasPair
             })
             .map((pool: any) => {
                 return Number(pool.id)
             })
-        //const KASHI_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // kashiPair pids 190-229, 245-249
+        //const KASHI_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // goldveinPair pids 190-229, 245-249
         const farms = pools
             .filter((pool: any) => {
                 return !POOL_DENY.includes(pool?.id) && KASHI_PAIRS.includes(Number(pool?.id))
             })
             .map((pool: any) => {
-                const pair = kashiPairs.find((pair: any) => pair?.id === pool?.pair)
+                const pair = goldveinPairs.find((pair: any) => pair?.id === pool?.pair)
                 console.log('pair:', pair)
 
                 const blocksPerHour = 3600 / Number(averageBlockTime)

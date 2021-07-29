@@ -2,12 +2,12 @@ import { ChainId } from '@luckyfinance/sdk'
 import React from 'react'
 import { Redirect, Route, RouteComponentProps, useLocation, Switch } from 'react-router-dom'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import Connect from './kashi/pages/Connect'
-import BorrowMarkets from './kashi/pages/Markets/Borrow'
-import CreateMarkets from './kashi/pages/Markets/Create'
-import LendMarkets from './kashi/pages/Markets/Lending'
-import BorrowPair from './kashi/pages/Pair/Borrow'
-import LendPair from './kashi/pages/Pair/Lend'
+import Connect from './goldvein/pages/Connect'
+import BorrowMarkets from './goldvein/pages/Markets/Borrow'
+import CreateMarkets from './goldvein/pages/Markets/Create'
+import LendMarkets from './goldvein/pages/Markets/Lending'
+import BorrowPair from './goldvein/pages/Pair/Borrow'
+import LendPair from './goldvein/pages/Pair/Lend'
 import AddLiquidity from './pages/AddLiquidity'
 import {
     RedirectDuplicateTokenIds,
@@ -51,18 +51,18 @@ function Routes(): JSX.Element {
             <Route exact strict path="/bento" component={Alp} />
             <WalletRoute exact strict path="/bento/balances" component={AlpBalances} />
 
-            {/* Kashi */}
+            {/* GoldVein */}
             <Route
                 exact
                 strict
-                path="/bento/kashi"
-                render={props => <Redirect to="/bento/kashi/borrow" {...props} />}
+                path="/bento/goldvein"
+                render={props => <Redirect to="/bento/goldvein/borrow" {...props} />}
             />
-            <WalletRoute exact strict path="/bento/kashi/lend" component={LendMarkets} />
-            <WalletRoute exact strict path="/bento/kashi/borrow" component={BorrowMarkets} />
-            <WalletRoute exact strict path="/bento/kashi/create" component={CreateMarkets} />
-            <WalletRoute exact strict path="/bento/kashi/lend/:pairAddress" component={LendPair} />
-            <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} />
+            <WalletRoute exact strict path="/bento/goldvein/lend" component={LendMarkets} />
+            <WalletRoute exact strict path="/bento/goldvein/borrow" component={BorrowMarkets} />
+            <WalletRoute exact strict path="/bento/goldvein/create" component={CreateMarkets} />
+            <WalletRoute exact strict path="/bento/goldvein/lend/:pairAddress" component={LendPair} />
+            <WalletRoute exact strict path="/bento/goldvein/borrow/:pairAddress" component={BorrowPair} />
 
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />

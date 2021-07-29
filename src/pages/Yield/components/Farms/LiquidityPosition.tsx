@@ -4,7 +4,7 @@ import { DoubleLogo, Paper } from '../../components'
 import { MasterChefV1Details, MasterChefV2Details, MiniChefDetails } from '../Details'
 import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'
 import { ChainId } from '@luckyfinance/sdk'
-import AsyncTokenIcon from '../../../../kashi/components/AsyncTokenIcon'
+import AsyncTokenIcon from '../../../../goldvein/components/AsyncTokenIcon'
 
 const LiquidityPosition = ({ farm }: any) => {
     const [expand, setExpand] = useState<boolean>(false)

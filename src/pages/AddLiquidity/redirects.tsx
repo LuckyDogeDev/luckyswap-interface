@@ -12,7 +12,7 @@ export function RedirectPairToLiquidity({ location }: RouteComponentProps) {
         return <Redirect to={'/add/'} />
     } else {
         try {
-            //await sushiData.exchange.pair({ pair_address: String(paths?.[1]).toLowerCase() })
+            //await golnData.exchange.pair({ pair_address: String(paths?.[1]).toLowerCase() })
             return <Redirect to={'/add/'} />
         } catch (e) {
             return <Redirect to={'/add/'} />

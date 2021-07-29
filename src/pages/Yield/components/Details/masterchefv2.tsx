@@ -246,13 +246,13 @@ export default function InputGroup({
                         <>
                             <Button
                                 color="default"
-                                onClick={() => history.push(`/bento/kashi/lend/${isWETH(pairAddress)}`)}
+                                onClick={() => history.push(`/bento/goldvein/lend/${isWETH(pairAddress)}`)}
                             >
                                 {i18n._(t`Lend`)} {assetSymbol}
                             </Button>
                             <Button
                                 color="default"
-                                onClick={() => history.push(`/bento/kashi/lend/${isWETH(pairAddress)}`)}
+                                onClick={() => history.push(`/bento/goldvein/lend/${isWETH(pairAddress)}`)}
                             >
                                 {i18n._(t`Withdraw`)} {assetSymbol}
                             </Button>
