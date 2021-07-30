@@ -31,7 +31,7 @@ export default function InfoCard() {
                     {i18n._(t`Maximize yield by staking GOLN for PLAN`)}
                 </div>
                 {/* <div className="pl-6 pr-3 mb-1 min-w-max self-start md:hidden">
-                    <img src={PLatinumNuggetSignSmall} alt="xsushi sign" />
+                    <img src={PLatinumNuggetSignSmall} alt="plan sign" />
                 </div> */}
             </div>
             <div className="text-gray-500 text-sm leading-5 md:text-caption max-w-lg mb-2 md:mb-4 pr-3 md:pr-0">

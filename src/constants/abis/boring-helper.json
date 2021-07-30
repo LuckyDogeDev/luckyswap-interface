@@ -215,8 +215,8 @@
           { "internalType": "uint256", "name": "ethBalance", "type": "uint256" },
           { "internalType": "uint256", "name": "sushiBalance", "type": "uint256" },
           { "internalType": "uint256", "name": "sushiBarBalance", "type": "uint256" },
-          { "internalType": "uint256", "name": "xsushiBalance", "type": "uint256" },
-          { "internalType": "uint256", "name": "xsushiSupply", "type": "uint256" },
+          { "internalType": "uint256", "name": "planBalance", "type": "uint256" },
+          { "internalType": "uint256", "name": "planSupply", "type": "uint256" },
           { "internalType": "uint256", "name": "sushiBarAllowance", "type": "uint256" },
           {
             "components": [

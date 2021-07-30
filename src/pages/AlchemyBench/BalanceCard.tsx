@@ -1,7 +1,7 @@
 import { BalanceProps } from '../../hooks/useTokenBalance'
 import React from 'react'
 import GoldNuggetImage from '../../assets/images/sushi.png'
-import PLatinumNuggetImage from '../../assets/images/xsushi.png'
+import PLatinumNuggetImage from '../../assets/images/plan.png'
 import { formatFromBalance } from '../../utils'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'

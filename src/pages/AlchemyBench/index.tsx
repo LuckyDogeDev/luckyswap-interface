@@ -1,7 +1,7 @@
 import React from 'react'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { Helmet } from 'react-helmet'
-import PLatinumNuggetSign from '../../assets/images/xsushi-text-sign.png'
+import PLatinumNuggetSign from '../../assets/images/plan-text-sign.png'
 import InfoCard from './InfoCard'
 import APRCard from './APRCard'
 import StakeCard from './StakeCard'
@@ -30,7 +30,7 @@ export default function PLatinumNugget() {
                 <div className="flex mb-6 justify-center">
                     <InfoCard />
                     <div className="hidden md:flex justify-center align-center w-72 ml-6">
-                        <img src={PLatinumNuggetSign} alt={'xsushi sign'} />
+                        <img src={PLatinumNuggetSign} alt={'plan sign'} />
                     </div>
                 </div>
                 <div className="flex justify-center">

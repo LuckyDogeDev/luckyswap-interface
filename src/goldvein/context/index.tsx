@@ -32,8 +32,8 @@ interface State {
               ethBalance: BigNumber
               sushiBalance: BigNumber
               sushiBarBalance: BigNumber
-              xsushiBalance: BigNumber
-              xsushiSupply: BigNumber
+              planBalance: BigNumber
+              planSupply: BigNumber
               sushiBarAllowance: BigNumber
               factories: {}[]
               ethRate: BigNumber
@@ -52,8 +52,8 @@ const initialState: State = {
         ethBalance: ZERO,
         sushiBalance: ZERO,
         sushiBarBalance: ZERO,
-        xsushiBalance: ZERO,
-        xsushiSupply: ZERO,
+        planBalance: ZERO,
+        planSupply: ZERO,
         sushiBarAllowance: ZERO,
         factories: [],
         ethRate: ZERO,
