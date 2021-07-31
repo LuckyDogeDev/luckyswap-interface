@@ -44,7 +44,7 @@ const GoldVeinLending = ({ farm }: any) => {
                         <div className="md:col-span-1 hidden md:flex flex-row space-x-2 justify-end items-center ml-4">
                             <div>
                                 <div className="text-gray-500 text-right font-semibold text-sm sm:text-sm">
-                                    {formattedNum(farm.sushiRewardPerDay)} GOLN
+                                    {formattedNum(farm.golnRewardPerDay)} GOLN
                                 </div>
                                 <div className="text-gray-500 text-right text-xs">per day</div>
                             </div>

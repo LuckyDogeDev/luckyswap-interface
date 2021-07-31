@@ -11,7 +11,7 @@ import { getMaticTokenLogoURL } from '../../../constants/maticTokenMapping'
 const getTokenLogoURL = (address: string, chainId: any) => {
     let imageURL
     if (chainId === ChainId.MAINNET) {
-        imageURL = `https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/${isAddress(
+        imageURL = `https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/${isAddress(
             address
         )}/logo.png`
     } else if (chainId === ChainId.BSC) {
@@ -19,7 +19,7 @@ const getTokenLogoURL = (address: string, chainId: any) => {
     } else if (chainId === ChainId.MATIC) {
         imageURL = getMaticTokenLogoURL(address)
     } else {
-        imageURL = `https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/${isAddress(
+        imageURL = `https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/${isAddress(
             address
         )}/logo.png`
     }

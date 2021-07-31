@@ -7,7 +7,7 @@ import { useTransactionAdder } from '../../../../state/transactions/hooks'
 
 const useMasterChefV2 = () => {
     const addTransaction = useTransactionAdder()
-    const sushiTokenContract = useGoldNuggetContract()
+    const golnTokenContract = useGoldNuggetContract()
     const masterChefV2Contract = useMasterChefV2Contract()
 
     const { account } = useActiveWeb3React()
@@ -58,7 +58,7 @@ const useMasterChefV2 = () => {
                 console.log({ masterChefV2Contract })
 
                 const pendingGoldNugget = await masterChefV2Contract?.pendingGoldNugget(pid, account)
-                const balanceOf = await sushiTokenContract?.balanceOf(masterChefV2Contract?.address)
+                const balanceOf = await golnTokenContract?.balanceOf(masterChefV2Contract?.address)
 
                 const tx = pendingGoldNugget.gt(balanceOf)
                     ? await masterChefV2Contract?.batch(

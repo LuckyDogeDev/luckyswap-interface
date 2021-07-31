@@ -3,7 +3,7 @@
     "inputs": [
       { "internalType": "address", "name": "_factory", "type": "address" },
       { "internalType": "address", "name": "_bar", "type": "address" },
-      { "internalType": "address", "name": "_sushi", "type": "address" },
+      { "internalType": "address", "name": "_goln", "type": "address" },
       { "internalType": "address", "name": "_weth", "type": "address" }
     ],
     "stateMutability": "nonpayable",

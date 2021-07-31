@@ -49,11 +49,11 @@ const buttonStyleDisabled = `${buttonStyle} text-secondary bg-dark-700`
 const buttonStyleConnectWallet = `${buttonStyle} text-high-emphesis bg-cyan-blue hover:bg-opacity-90`
 
 interface StakeCardProps {
-    sushiBalance: BalanceProps
+    golnBalance: BalanceProps
     PlatinumNuggetBalance: BalanceProps
 }
 
-export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: StakeCardProps) {
+export default function StakeCard({ golnBalance, PlatinumNuggetBalance }: StakeCardProps) {
     const { i18n } = useLingui()
     const { account } = useActiveWeb3React()
 
@@ -76,7 +76,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
     const [activeTab, setActiveTab] = useState(0)
     const [modalOpen, setModalOpen] = useState(false)
 
-    const balance: BalanceProps = activeTab === 0 ? sushiBalance : PlatinumNuggetBalance
+    const balance: BalanceProps = activeTab === 0 ? golnBalance : PlatinumNuggetBalance
     const formattedBalance = formatFromBalance(balance.value)
 
     const [input, setInput] = useState<string>('')
@@ -93,7 +93,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
         setUsingBalance(true)
     }
 
-    const insufficientFunds = (activeTab === 0 ? sushiBalance : PlatinumNuggetBalance).value.lt(parsedInput.value)
+    const insufficientFunds = (activeTab === 0 ? golnBalance : PlatinumNuggetBalance).value.lt(parsedInput.value)
     const inputError = insufficientFunds
 
     const [pendingTx, setPendingTx] = useState(false)

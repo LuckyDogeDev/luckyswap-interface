@@ -137,7 +137,7 @@
     "Removing {0} {1} and {2} {3}": "{0} {1} और {2} {3} निकालना",
     "Request Tool": "अनुरोध उपकरण",
     "SAAVE: Stack your yields in one transaction": "SAAVE: अपने पैदावार को एक लेन-देन में ढेर करें",
-    "GOLN Balance: {sushiBalance}": "GOLN संतुलन: {sushiBalance}",
+    "GOLN Balance: {golnBalance}": "GOLN संतुलन: {golnBalance}",
     "GOLN {0}/{1} Burned": "GOLN {0} / {1} जल गया",
     "Select a token to find your liquidity": "अपनी तरलता को खोजने के लिए एक टोकन का चयन करें",
     "Share of Pool": "पूल का हिस्सा",

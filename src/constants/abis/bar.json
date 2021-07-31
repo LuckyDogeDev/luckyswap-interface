@@ -1,6 +1,6 @@
 [
   {
-    "inputs": [{ "internalType": "contract IERC20", "name": "_sushi", "type": "address" }],
+    "inputs": [{ "internalType": "contract IERC20", "name": "_goln", "type": "address" }],
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
@@ -101,7 +101,7 @@
   },
   {
     "inputs": [],
-    "name": "sushi",
+    "name": "goln",
     "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"

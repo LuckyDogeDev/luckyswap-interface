@@ -30,7 +30,7 @@ interface State {
     info:
         | {
               ethBalance: BigNumber
-              sushiBalance: BigNumber
+              golnBalance: BigNumber
               sushiBarBalance: BigNumber
               planBalance: BigNumber
               planSupply: BigNumber
@@ -50,7 +50,7 @@ interface State {
 const initialState: State = {
     info: {
         ethBalance: ZERO,
-        sushiBalance: ZERO,
+        golnBalance: ZERO,
         sushiBarBalance: ZERO,
         planBalance: ZERO,
         planSupply: ZERO,

@@ -69,7 +69,7 @@ const useFarms = () => {
             }
         })
         const liquidityPositions = results[1]?.data.liquidityPositions
-        const sushiPrice = results[2]
+        const golnPrice = results[2]
         //const averageBlockTime = results[3]
         const pairs = pairsQuery?.data.pairs
         const maticPrice = results[3].data.token.derivedETH * results[4]
@@ -93,13 +93,13 @@ const useFarms = () => {
 
                 const totalAllocPoint = 1000 //pool.miniChef.totalAllocPoint
 
-                const balance = Number(pool.slpBalance / 1e18)
+                const balance = Number(pool.llpBalance / 1e18)
                 const balanceUSD = (balance / Number(pair.totalSupply)) * Number(pair.reserveUSD)
 
-                const rewardPerSecond = ((pool.allocPoint / totalAllocPoint) * pool.miniChef.sushiPerSecond) / 1e18
+                const rewardPerSecond = ((pool.allocPoint / totalAllocPoint) * pool.miniChef.golnPerSecond) / 1e18
                 const rewardPerDay = rewardPerSecond * 86400
 
-                //console.log('pool:', pool.allocPoint, totalAllocPoint, pool.miniChef.sushiPerSecond)
+                //console.log('pool:', pool.allocPoint, totalAllocPoint, pool.miniChef.golnPerSecond)
 
                 const secondaryRewardPerSecond =
                     ((pool.allocPoint / totalAllocPoint) * pool.rewarder.rewardPerSecond) / 1e18
@@ -108,10 +108,10 @@ const useFarms = () => {
                 // const secondaryRewardPerSecond = pool.rewarder.rewardPerSecond / 1e18
                 //console.log('rewardsPerDay:', rewardPerDay * 10, secondaryRewardPerDay * 10)
 
-                // const roiPerSecond = (rewardPerSecond * 2 * sushiPrice) / balanceUSD // *2 with matic rewards
+                // const roiPerSecond = (rewardPerSecond * 2 * golnPrice) / balanceUSD // *2 with matic rewards
                 // console.log('rewardPerSecond:', rewardPerSecond)
                 // console.log('secondaryRewardPerSecond:', secondaryRewardPerSecond)
-                const roiPerSecond = (rewardPerSecond * sushiPrice + secondaryRewardPerSecond * maticPrice) / balanceUSD // *2 with matic rewards
+                const roiPerSecond = (rewardPerSecond * golnPrice + secondaryRewardPerSecond * maticPrice) / balanceUSD // *2 with matic rewards
                 const roiPerHour = roiPerSecond * 3600
                 const roiPerDay = roiPerHour * 24
                 const roiPerMonth = roiPerDay * 30
@@ -131,7 +131,7 @@ const useFarms = () => {
                 // }
                 //const roiPerYear = (1 + ((roiPerDay + feeFactorAnnualized / 365) * 365) / 365) ** 365 - 1 // compounding daily APY
                 //const roiPerYear = roiPerMonth * 12
-                //console.log('pool:', pool.slpBalance)
+                //console.log('pool:', pool.llpBalance)
                 //console.log(pair.token0.symbol + '-' + pair.token1.symbol, roiPerYear)
 
                 return {
@@ -142,20 +142,20 @@ const useFarms = () => {
                     name: pair.token0.name + ' ' + pair.token1.name,
                     pid: Number(pool.id),
                     pairAddress: pair.id,
-                    slpBalance: pool.slpBalance,
+                    llpBalance: pool.llpBalance,
                     liquidityPair: pair,
                     rewardTokens: [
                         '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', //GOLN on Matic
                         '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270' // MATIC on Matic
                     ],
-                    sushiRewardPerDay: rewardPerDay,
+                    golnRewardPerDay: rewardPerDay,
                     secondaryRewardPerDay: secondaryRewardPerDay,
                     roiPerSecond,
                     roiPerHour,
                     roiPerDay,
                     roiPerMonth,
                     roiPerYear,
-                    rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                    rewardPerThousand: 1 * roiPerDay * (1000 / golnPrice),
                     tvl: liquidityPosition?.liquidityTokenBalance
                         ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                         : 0.1

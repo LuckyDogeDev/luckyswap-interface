@@ -42,7 +42,7 @@ const useFarms = () => {
 
         const liquidityPositions = results[1]?.data.liquidityPositions
         const averageBlockTime = results[2]
-        const sushiPrice = results[3]
+        const golnPrice = results[3]
 
         const pairs = pairsQuery?.data.pairs
 
@@ -61,9 +61,9 @@ const useFarms = () => {
                 const reserveUSD = pair.reserveUSD > 0 ? pair.reserveUSD : 0.1
                 const balanceUSD = (balance / Number(totalSupply)) * Number(reserveUSD)
                 const rewardPerBlock =
-                    ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.sushiPerBlock) / 1e18
+                    ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.golnPerBlock) / 1e18
 
-                const roiPerBlock = (rewardPerBlock * sushiPrice) / balanceUSD
+                const roiPerBlock = (rewardPerBlock * golnPrice) / balanceUSD
                 const roiPerHour = roiPerBlock * blocksPerHour
                 const roiPerDay = roiPerHour * 24
                 const roiPerMonth = roiPerDay * 30
@@ -79,15 +79,15 @@ const useFarms = () => {
                     name: pair.token0.name + ' ' + pair.token1.name,
                     pid: Number(pool.id),
                     pairAddress: pair.id,
-                    slpBalance: pool.balance,
-                    sushiRewardPerDay: rewardPerDay,
+                    llpBalance: pool.balance,
+                    golnRewardPerDay: rewardPerDay,
                     liquidityPair: pair,
                     roiPerBlock,
                     roiPerHour,
                     roiPerDay,
                     roiPerMonth,
                     roiPerYear,
-                    rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                    rewardPerThousand: 1 * roiPerDay * (1000 / golnPrice),
                     tvl: liquidityPosition?.liquidityTokenBalance
                         ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                         : 0.1
@@ -130,7 +130,7 @@ const useFarms = () => {
                 const blocksPerHour = 3600 / Number(averageBlockTime)
                 const rewardPerBlock = pair?.rewardPerBlock
 
-                const sushiRewardPerDay = rewardPerBlock ? rewardPerBlock * blocksPerHour * 24 : 0
+                const golnRewardPerDay = rewardPerBlock ? rewardPerBlock * blocksPerHour * 24 : 0
 
                 return {
                     ...pool,
@@ -148,7 +148,7 @@ const useFarms = () => {
                         },
                         asset: { id: pair?.asset, symbol: pair?.assetSymbol, decimals: pair?.assetDecimals }
                     },
-                    sushiRewardPerDay: sushiRewardPerDay,
+                    golnRewardPerDay: golnRewardPerDay,
                     roiPerYear: pair?.roiPerYear,
                     totalAssetStaked: pair?.totalAssetStaked
                         ? pair?.totalAssetStaked / Math.pow(10, pair?.assetDecimals)

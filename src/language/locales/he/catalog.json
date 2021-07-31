@@ -210,7 +210,7 @@
   "Routing through these tokens resulted in the best price for your trade.": "",
   "SAAVE: Stack your yields in one transaction": "",
   "GOLN Balance": "",
-  "GOLN Balance: {sushiBalance}": "",
+  "GOLN Balance: {golnBalance}": "",
   "GOLN {0}/{1} Burned": "",
   "Search by name, symbol, address": "חפש לפי שם, סמל, כתובת",
   "Search name or paste address": "",

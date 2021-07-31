@@ -3,13 +3,13 @@
     "inputs": [
       {
         "internalType": "contract GoldNugget",
-        "name": "_sushi",
+        "name": "_goln",
         "type": "address"
       },
       { "internalType": "address", "name": "_devaddr", "type": "address" },
       {
         "internalType": "uint256",
-        "name": "_sushiPerBlock",
+        "name": "_golnPerBlock",
         "type": "uint256"
       },
       { "internalType": "uint256", "name": "_startBlock", "type": "uint256" },
@@ -203,14 +203,14 @@
   },
   {
     "inputs": [],
-    "name": "sushi",
+    "name": "goln",
     "outputs": [{ "internalType": "contract GoldNugget", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "sushiPerBlock",
+    "name": "golnPerBlock",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"

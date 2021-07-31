@@ -72,7 +72,7 @@ const useFarms = () => {
             }
         })
         const liquidityPositions = results[1]?.data.liquidityPositions
-        const sushiPrice = results[2]
+        const golnPrice = results[2]
         const pairs = pairsQuery?.data.pairs
         const ethPrice = results[4]
         const alcxPrice = results[3].data.token.derivedETH * ethPrice
@@ -95,17 +95,17 @@ const useFarms = () => {
 
                 const totalAllocPoint = 100 //pool.masterchefv2.totalAllocPoint
 
-                const balance = Number(pool.slpBalance / 1e18)
+                const balance = Number(pool.llpBalance / 1e18)
                 const balanceUSD = (balance / Number(pair.totalSupply)) * Number(pair.reserveUSD)
 
-                const sushiPerBlock = 18.6
+                const golnPerBlock = 18.6
 
-                const rewardPerBlock = (pool.allocPoint / 26480) * sushiPerBlock
+                const rewardPerBlock = (pool.allocPoint / 26480) * golnPerBlock
                 const secondaryRewardPerBlock = 217544236043011000 / 1e18
 
                 const blocksPerHour = 3600 / Number(averageBlockTime)
                 const roiPerBlock =
-                    (rewardPerBlock * sushiPrice) / balanceUSD + (secondaryRewardPerBlock * alcxPrice) / balanceUSD // TODO: include alcx pricing
+                    (rewardPerBlock * golnPrice) / balanceUSD + (secondaryRewardPerBlock * alcxPrice) / balanceUSD // TODO: include alcx pricing
                 const roiPerHour = roiPerBlock * blocksPerHour
                 const roiPerDay = roiPerHour * 24
                 const roiPerMonth = roiPerDay * 30
@@ -123,20 +123,20 @@ const useFarms = () => {
                     name: pair.token0.name + ' ' + pair.token1.name,
                     pid: Number(pool.id),
                     pairAddress: pair.id,
-                    slpBalance: pool.slpBalance,
+                    llpBalance: pool.llpBalance,
                     liquidityPair: pair,
                     rewardTokens: [
                         '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', //GOLN on Mainnet
                         '0xdBdb4d16EdA451D0503b854CF79D55697F90c8DF' // ALCX on Mainnet
                     ],
-                    sushiRewardPerDay: rewardPerDay,
+                    golnRewardPerDay: rewardPerDay,
                     secondaryRewardPerDay: secondaryRewardPerDay,
                     roiPerBlock,
                     roiPerHour,
                     roiPerDay,
                     roiPerMonth,
                     roiPerYear,
-                    rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                    rewardPerThousand: 1 * roiPerDay * (1000 / golnPrice),
                     tvl: liquidityPosition?.liquidityTokenBalance
                         ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                         : 0.1

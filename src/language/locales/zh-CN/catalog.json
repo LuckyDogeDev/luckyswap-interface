@@ -208,7 +208,7 @@
   "Routing through these tokens resulted in the best price for your trade.": "路由经过这些代币将给您的交易带来最好的价格。",
   "SAAVE: Stack your yields in one transaction": "SAAVE：在一次交易中叠加您的收益率",
   "GOLN Balance": "GOLN余额",
-  "GOLN Balance: {sushiBalance}": "GOLN余额： {sushiBalance}",
+  "GOLN Balance: {golnBalance}": "GOLN余额： {golnBalance}",
   "GOLN {0}/{1} Burned": "GOLN {0} / {1}被销毁",
   "Search by name, symbol, address": "通过名字、代号或地址搜索",
   "Search name or paste address": "搜索名称或粘贴地址",

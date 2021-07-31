@@ -10,7 +10,7 @@ export const masterchefv2PoolsQuery = gql`
             id
             pair
             allocPoint
-            slpBalance
+            llpBalance
             rewarder
             masterChef {
                 totalAllocPoint
@@ -62,11 +62,11 @@ export const miniChefPoolQuery = gql`
             allocPoint
             lastRewardTime
             accGoldNuggetPerShare
-            slpBalance
+            llpBalance
             userCount
             miniChef {
                 id
-                sushiPerSecond
+                golnPerSecond
                 totalAllocPoint
             }
         }
@@ -90,7 +90,7 @@ export const poolsQuery = gql`
             userCount
             owner {
                 id
-                sushiPerBlock
+                golnPerBlock
                 totalAllocPoint
             }
         }
@@ -253,10 +253,10 @@ const poolUserFragment = gql`
         rewardDebt
         entryUSD
         exitUSD
-        sushiHarvested
-        sushiHarvestedUSD
-        sushiHarvestedSinceLockup
-        sushiHarvestedSinceLockupUSD
+        golnHarvested
+        golnHarvestedUSD
+        golnHarvestedSinceLockup
+        golnHarvestedSinceLockupUSD
     }
 `
 

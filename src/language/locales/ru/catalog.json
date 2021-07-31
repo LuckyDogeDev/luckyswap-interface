@@ -208,7 +208,7 @@
   "Routing through these tokens resulted in the best price for your trade.": "Маршрутизация через эти токены привела к лучшей цене для вашей сделки.",
   "SAAVE: Stack your yields in one transaction": "ЭКОНОМИЯ: получайте доход за одну транзакцию",
   "GOLN Balance": "СУШИ Баланс",
-  "GOLN Balance: {sushiBalance}": "СУШИ Баланс: {sushiBalance}",
+  "GOLN Balance: {golnBalance}": "СУШИ Баланс: {golnBalance}",
   "GOLN {0}/{1} Burned": "СУШИ {0} / {1} Сожженный",
   "Search by name, symbol, address": "Поиск по имени, символу, адресу",
   "Search name or paste address": "Найдите имя или вставьте адрес",

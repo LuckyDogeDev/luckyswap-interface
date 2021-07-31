@@ -8,16 +8,16 @@ import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
 
 interface BalanceCardProps {
-    sushiEarnings?: number
+    golnEarnings?: number
     PlatinumNuggetBalance: BalanceProps
-    sushiBalance: BalanceProps
+    golnBalance: BalanceProps
     weightedApr?: number
 }
 
 export default function BalanceCard({
     PlatinumNuggetBalance,
-    sushiBalance,
-    sushiEarnings = 0,
+    golnBalance,
+    golnEarnings = 0,
     weightedApr = 0
 }: BalanceCardProps) {
     const { i18n } = useLingui()
@@ -30,7 +30,7 @@ export default function BalanceCard({
                         {i18n._(t`Balance`)}
                     </p>
                     <div className="flex items-center">
-                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={PLatinumNuggetImage} alt="sushi" />
+                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={PLatinumNuggetImage} alt="goln" />
                         <div className="flex flex-col justify-center">
                             <p className="text-caption2 md:text-lg font-bold text-high-emphesis">
                                 {formatFromBalance(PlatinumNuggetBalance.value)}
@@ -48,11 +48,11 @@ export default function BalanceCard({
                         {/* <img className="cursor-pointer ml-2 w-4" src={MoreInfoSymbol} alt={'more info'} /> */}
                     </div>
                     <div className="flex items-center ml-8 md:ml-0">
-                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={GoldNuggetImage} alt="sushi" />
+                        <img className="w-10 md:w-16 -ml-1 mr-1 md:mr-2 -mb-1.5" src={GoldNuggetImage} alt="goln" />
                         <div className="flex flex-col justify-center">
                             <p className="text-caption2 md:text-lg font-bold text-high-emphesis">
-                                {formatFromBalance(sushiBalance.value)}
-                                {/* {sushiEarnings.toPrecision(7)} */}
+                                {formatFromBalance(golnBalance.value)}
+                                {/* {golnEarnings.toPrecision(7)} */}
                             </p>
                             <p className="text-caption2 md:text-caption text-primary">GOLN</p>
                         </div>

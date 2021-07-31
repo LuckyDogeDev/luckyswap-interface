@@ -208,7 +208,7 @@
   "Routing through these tokens resulted in the best price for your trade.": "다음 토큰들을 통한 라우팅을 통해 최적의 가격이 산출되었습니다.",
   "SAAVE: Stack your yields in one transaction": "SAAVE : 한 번의 거래로 수익을 쌓으세요",
   "GOLN Balance": "GOLN 밸런스",
-  "GOLN Balance: {sushiBalance}": "GOLN 잔액 : {sushiBalance}",
+  "GOLN Balance: {golnBalance}": "GOLN 잔액 : {golnBalance}",
   "GOLN {0}/{1} Burned": "GOLN {0} / {1} 굽기",
   "Search by name, symbol, address": "이름, 심볼, 주소로 검색",
   "Search name or paste address": "이름 검색 또는 주소 붙여 넣기",

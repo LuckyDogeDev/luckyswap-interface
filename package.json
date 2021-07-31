@@ -176,9 +176,5 @@
             "last 1 safari version"
         ]
     },
-    "license": "GPL-3.0-or-later",
-    "dependencies": {
-        "@lufycz/sushi-data": "^2.0.0-canary-21",
-        "yarn": "^1.22.11"
-    }
+    "license": "GPL-3.0-or-later"
 }

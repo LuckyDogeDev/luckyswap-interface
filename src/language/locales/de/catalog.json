@@ -208,7 +208,7 @@
   "Routing through these tokens resulted in the best price for your trade.": "Das Weiterleiten durch diese Token ergab den besten Preis für Ihren Handel.",
   "SAAVE: Stack your yields in one transaction": "SAAVE: Stapeln Sie Ihre Renditen in einer Transaktion",
   "GOLN Balance": "GOLN Balance",
-  "GOLN Balance: {sushiBalance}": "GOLN Balance: {sushiBalance}",
+  "GOLN Balance: {golnBalance}": "GOLN Balance: {golnBalance}",
   "GOLN {0}/{1} Burned": "GOLN {0} / {1} verbrannt",
   "Search by name, symbol, address": "Suche nach Name, Symbol, Adresse",
   "Search name or paste address": "Suchen Sie den Namen oder fügen Sie die Adresse ein",

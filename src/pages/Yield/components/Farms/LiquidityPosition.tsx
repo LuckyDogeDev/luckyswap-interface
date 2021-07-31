@@ -79,7 +79,7 @@ const LiquidityPosition = ({ farm }: any) => {
                                 {farm && farm.contract === 'minichef' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
-                                            {formattedNum(farm.sushiRewardPerDay)} GOLN per day
+                                            {formattedNum(farm.golnRewardPerDay)} GOLN per day
                                         </div>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
                                             {formattedNum(farm.secondaryRewardPerDay)} WMATIC per day
@@ -89,7 +89,7 @@ const LiquidityPosition = ({ farm }: any) => {
                                 {farm && farm.contract === 'masterchefv2' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
-                                            {formattedNum(farm.sushiRewardPerDay)} GOLN per day
+                                            {formattedNum(farm.golnRewardPerDay)} GOLN per day
                                         </div>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
                                             {formattedNum(farm.secondaryRewardPerDay)} ALCX per day
@@ -99,7 +99,7 @@ const LiquidityPosition = ({ farm }: any) => {
                                 {farm && farm.contract === 'masterchefv1' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-sm sm:text-sm">
-                                            {formattedNum(farm.sushiRewardPerDay)} GOLN
+                                            {formattedNum(farm.golnRewardPerDay)} GOLN
                                         </div>
                                         <div className="text-gray-500 text-right text-xs">per day</div>
                                     </>
@@ -110,7 +110,7 @@ const LiquidityPosition = ({ farm }: any) => {
                             <div>
                                 {/* <div className="text-right">{formattedNum(farm.tvl, true)} </div> */}
                                 <div className="text-gray-500 text-right font-semibold text-sm sm:text-sm">
-                                    {formattedNum(farm.slpBalance / 1e18, false)} LLP
+                                    {formattedNum(farm.llpBalance / 1e18, false)} LLP
                                 </div>
                                 <div className="text-gray-500 text-right text-xs">Market Staked</div>
                             </div>

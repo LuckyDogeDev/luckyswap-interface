@@ -144,13 +144,13 @@ export default function CurrencyInputPanel({
 
     const { allowance, approve, saave } = useSaave()
 
-    const sushiBalanceBigInt = useTokenBalance('0x6b3595068778dd592e39a122f4f5a5cf09c90fe2')
-    const sushiBalance = formatFromBalance(sushiBalanceBigInt?.value, sushiBalanceBigInt?.decimals)
-    const decimals = sushiBalanceBigInt?.decimals
+    const golnBalanceBigInt = useTokenBalance('0x6b3595068778dd592e39a122f4f5a5cf09c90fe2')
+    const golnBalance = formatFromBalance(golnBalanceBigInt?.value, golnBalanceBigInt?.decimals)
+    const decimals = golnBalanceBigInt?.decimals
 
-    console.log('sushi allowance:', allowance)
+    console.log('goln allowance:', allowance)
 
-    console.log('sushiBalance:', sushiBalance, sushiBalanceBigInt, decimals)
+    console.log('golnBalance:', golnBalance, golnBalanceBigInt, decimals)
 
     // handle approval
     const [requestedApproval, setRequestedApproval] = useState(false)
@@ -179,11 +179,11 @@ export default function CurrencyInputPanel({
         setDepositValue(depositValue)
     }, [])
     // used for max input button
-    const maxDepositAmountInput = sushiBalanceBigInt
+    const maxDepositAmountInput = golnBalanceBigInt
     //const atMaxDepositAmount = true
     const handleMaxDeposit = useCallback(() => {
-        maxDepositAmountInput && onUserDepositInput(sushiBalance, true)
-    }, [maxDepositAmountInput, onUserDepositInput, sushiBalance])
+        maxDepositAmountInput && onUserDepositInput(golnBalance, true)
+    }, [maxDepositAmountInput, onUserDepositInput, golnBalance])
 
     return (
         <>
@@ -208,7 +208,7 @@ export default function CurrencyInputPanel({
                                         fontSize={14}
                                         style={{ display: 'inline', cursor: 'pointer' }}
                                     >
-                                        {i18n._(t`GOLN Balance: ${sushiBalance}`)}
+                                        {i18n._(t`GOLN Balance: ${golnBalance}`)}
                                     </TYPE.body>
                                 )}
                             </RowBetween>
@@ -242,10 +242,10 @@ export default function CurrencyInputPanel({
                             <ButtonSelect
                                 disabled={
                                     pendingTx ||
-                                    !sushiBalance ||
+                                    !golnBalance ||
                                     Number(depositValue) === 0 ||
                                     // todo this should be a bigInt comparison
-                                    Number(depositValue) > Number(sushiBalance)
+                                    Number(depositValue) > Number(golnBalance)
                                 }
                                 onClick={async () => {
                                     setPendingTx(true)
@@ -264,7 +264,7 @@ export default function CurrencyInputPanel({
                         )}
                         {/* <ButtonSelect
               disabled={
-                pendingTx || !sushiBalance || Number(depositValue) === 0 || Number(depositValue) > Number(sushiBalance)
+                pendingTx || !golnBalance || Number(depositValue) === 0 || Number(depositValue) > Number(golnBalance)
               }
               onClick={async () => {
                 setPendingTx(true)

@@ -68,7 +68,7 @@ function AppBar(): JSX.Element {
                                             </NavLink>
 
                                             {chainId === ChainId.MAINNET && (
-                                                <NavLink id={`sushibar-nav-link`} to={'/alchemybench'}>
+                                                <NavLink id={`alchemybench-nav-link`} to={'/alchemybench'}>
                                                     {i18n._(t`AlchemyBench`)}
                                                 </NavLink>
                                             )}
@@ -357,7 +357,7 @@ function AppBar(): JSX.Element {
                                 href="#"
                                 className="bg-gray-1000 text-primary block px-3 py-2 rounded-md text-base font-medium"
                             >
-                                Dashboard
+
                             </a>
 
                                 <NavLink id={`swap-nav-link`} to={'/swap'}>

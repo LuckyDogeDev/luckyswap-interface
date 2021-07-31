@@ -2681,19 +2681,6 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@lufycz/sushi-data@^2.0.0-canary-21":
-  version "2.0.0-canary-21"
-  resolved "https://registry.yarnpkg.com/@lufycz/sushi-data/-/sushi-data-2.0.0-canary-21.tgz#125e7d9a82d44cad2f85e60f62814fb33be4d6e2"
-  integrity sha512-BSx/uc9E5HEPpPCawDlDmAjfHWsr4kT7wsfuH/9zl0uGOXXyMIqt/EmGydVvBefrHD62vTj+wuuWqIb3/qQWdQ==
-  dependencies:
-    date-fns "^2.17.0"
-    graph-results-pager LufyCZ/graph-results-pager#types
-    graphql "14.5.8"
-    graphql-request "^3.4.0"
-    isomorphic-ws "^4.0.1"
-    subscriptions-transport-ws "0.9.16"
-    ws "^7.4.4"
-
 "@metamask/safe-event-emitter@2.0.0", "@metamask/safe-event-emitter@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@metamask/safe-event-emitter/-/safe-event-emitter-2.0.0.tgz#af577b477c683fad17c619a78208cede06f9605c"
@@ -10476,12 +10463,6 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
-
-graph-results-pager@LufyCZ/graph-results-pager#types:
-  version "1.0.3"
-  resolved "https://codeload.github.com/LufyCZ/graph-results-pager/tar.gz/d8667ea547e338b09026acef3e5b25da3e7208b7"
-  dependencies:
-    node-fetch "2.6.1"
 
 "graph-results-pager@git+https://github.com/LufyCZ/graph-results-pager.git":
   version "1.0.3"
@@ -21031,11 +21012,6 @@ yargs@^16.2.0:
     string-width "^4.2.0"
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
-
-yarn@^1.22.11:
-  version "1.22.11"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.11.tgz#d0104043e7349046e0e2aec977c24be106925ed6"
-  integrity sha512-AWje4bzqO9RUn3sdnM5N8n4ZJ0BqCc/kqFJvpOI5/EVkINXui0yuvU7NDCEF//+WaxHuNay2uOHxA4+tq1P3cg==
 
 yauzl@^2.10.0:
   version "2.10.0"

@@ -11,14 +11,14 @@ import { GOLN, PLAN } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 
 const mockData = {
-    sushiEarnings: 345.27898,
+    golnEarnings: 345.27898,
     weightedApr: 15.34
 }
 
 export default function PLatinumNugget() {
     const { account, chainId } = useActiveWeb3React()
 
-    const sushiBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
+    const golnBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
     const PlatinumNuggetBalance = useTokenBalance(PLAN?.address ?? '')
 
     return (
@@ -38,15 +38,15 @@ export default function PLatinumNugget() {
                         <div className="mb-4">
                             <APRCard />
                         </div>
-                        <div>
-                            <StakeCard sushiBalance={sushiBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
+                         <div>
+                            <StakeCard golnBalance={golnBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
                         </div>
                     </div>
                     <div className="hidden md:block w-72 ml-6">
                         <BalanceCard
-                            sushiEarnings={mockData.sushiEarnings}
+                            golnEarnings={mockData.golnEarnings}
                             PlatinumNuggetBalance={PlatinumNuggetBalance}
-                            sushiBalance={sushiBalance}
+                            golnBalance={golnBalance}
                             weightedApr={mockData.weightedApr}
                         />
                     </div>
@@ -54,9 +54,9 @@ export default function PLatinumNugget() {
                 <div className="flex justify-center w-full">
                     <div className="md:hidden flex justify-center w-full max-w-xl mt-6 mb-20">
                         <BalanceCard
-                            sushiEarnings={mockData.sushiEarnings}
+                            golnEarnings={mockData.golnEarnings}
                             PlatinumNuggetBalance={PlatinumNuggetBalance}
-                            sushiBalance={sushiBalance}
+                            golnBalance={golnBalance}
                             weightedApr={mockData.weightedApr}
                         />
                     </div>
