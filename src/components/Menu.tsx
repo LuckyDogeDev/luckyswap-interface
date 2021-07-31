@@ -32,12 +32,17 @@ const items = (i18n: I18n) => [
     {
         name: i18n._(t`Discord`),
         description: i18n._(t`Join the community on Discord.`),
-        href: 'https://discord.gg/NVPXN4e'
+        href: 'https://discord.gg/kCuMCYzqTE'
     },
     {
         name: i18n._(t`Telegram`),
         description: i18n._(t`Join the community on Discord.`),
         href: 'https://t.me/OfficialLuckyDoge'
+    },
+    {
+        name: i18n._(t`Twitter`),
+        description: i18n._(t`Join the community on Twitter.`),
+        href: 'https://twitter.com/LDOGEofficial?s=09'
     }
 ]
 
