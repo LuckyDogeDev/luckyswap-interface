@@ -3,7 +3,7 @@ import {
     CHAINLINK_ORACLE_ADDRESS,
     CHAINLINK_TOKENS,
     ChainlinkToken,
-    KASHI_ADDRESS
+    GOLDVEIN_ADDRESS
 } from 'goldvein/constants'
 import { Card, CardHeader, Layout } from 'goldvein/components'
 import React, { useEffect, useState } from 'react'
@@ -105,7 +105,7 @@ const CreatePair = () => {
 
             console.log(goldveinData)
 
-            addTransaction(await alPineContract?.deploy(chainId && KASHI_ADDRESS[chainId], goldveinData, true), {
+            addTransaction(await alPineContract?.deploy(chainId && GOLDVEIN_ADDRESS[chainId], goldveinData, true), {
                 summary: `Add GoldVein market ${selectedAsset.symbol}/${selectedCollateral.symbol} Chainlink`
             })
             setSelectedAsset(empty)

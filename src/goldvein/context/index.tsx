@@ -12,7 +12,7 @@ import { accrue, accrueTotalAssetWithFee, easyAmount, getUSDValue, interestAccru
 import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react'
 import { useBlockNumber } from 'state/application/hooks'
 import { Fraction } from '../../entities'
-import { getCurrency, KASHI_ADDRESS } from '../constants'
+import { getCurrency, GOLDVEIN_ADDRESS } from '../constants'
 import { getOracle } from '../entities'
 import { takeFee, toElastic } from '../functions'
 
@@ -105,7 +105,7 @@ const reducer: React.Reducer<State, Reducer> = (state: any, action: any) => {
 async function GetPairs(alPineContract: any, chainId: ChainId) {
     let logs = []
     let success = false
-    const masterAddress = KASHI_ADDRESS[chainId]
+    const masterAddress = GOLDVEIN_ADDRESS[chainId]
     if (chainId !== ChainId.BSC && chainId !== ChainId.MATIC) {
         logs = await alPineContract.queryFilter(alPineContract.filters.LogDeploy(masterAddress))
         success = true
@@ -178,7 +178,7 @@ export function GoldVeinProvider({ children }: { children: JSX.Element }) {
                 console.log('READY TO RUMBLE')
                 const info = rpcToObj(
                     await boringHelperContract.getUIInfo(account, [], getCurrency(chainId).address, [
-                        KASHI_ADDRESS[chainId]
+                        GOLDVEIN_ADDRESS[chainId]
                     ])
                 )
 

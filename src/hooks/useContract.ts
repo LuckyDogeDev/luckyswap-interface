@@ -14,12 +14,12 @@ import {
     WETH
 } from '@luckyfinance/sdk'
 import {
-    BENTOBOX_ADDRESS,
+    ALPINE_ADDRESS,
     BORING_HELPER_ADDRESS,
     CHAINLINK_ORACLE_ADDRESS,
-    KASHI_ADDRESS,
-    GOLNSWAP_MULTISWAPPER_ADDRESS,
-    GOLNSWAP_SWAPPER_ADDRESS
+    GOLDVEIN_ADDRESS,
+    LUCKYSWAP_MULTISWAPPER_ADDRESS,
+    LUCKYSWAP_SWAPPER_ADDRESS
 } from 'goldvein'
 import { FAUCET_ABI, FAUCET_ADDRESS } from '../constants/abis/faucet'
 import { MERKLE_DISTRIBUTOR_ADDRESS, GOLN } from '../constants'
@@ -29,7 +29,7 @@ import { V1_EXCHANGE_ABI, V1_FACTORY_ABI, V1_FACTORY_ADDRESSES } from '../consta
 
 import ALCHEMYBENCH_ABI from '../constants/abis/bar.json'
 import BASE_SWAPPER_ABI from '../constants/abis/swapper.json'
-import BENTOBOX_ABI from '../constants/abis/alpine.json'
+import ALPINE_ABI from '../constants/abis/alpine.json'
 import BORING_HELPER_ABI from '../constants/abis/boring-helper.json'
 import CHAINLINK_ORACLE_ABI from '../constants/abis/chainlink-oracle.json'
 import { Contract } from '@ethersproject/contracts'
@@ -41,18 +41,18 @@ import ERC20_ABI from '../constants/abis/erc20.json'
 import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'
 import FACTORY_ABI from '../constants/abis/factory.json'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
-import KASHIPAIR_ABI from '../constants/abis/goldveinpair.json'
+import GOLDVEINPAIR_ABI from '../constants/abis/goldveinpair.json'
 import SMELTER_ABI from '../constants/abis/smelter.json'
 import GOLDMINERV2_ABI from '../constants/abis/masterchefv2.json'
 import GOLDMINER_ABI from '../constants/abis/masterchef.json'
 import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
-import MINICHEFV2_ABI from '../constants/abis/miniChefV2.json'
+import MINIMINERV2_ABI from '../constants/abis/miniChefV2.json'
 import PENDING_ABI from '../constants/abis/pending.json'
 import ROUTER_ABI from '../constants/abis/router.json'
 import SAAVE_ABI from '../constants/abis/saave.json'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
 import GOLNROLL_ABI from '@luckyfinance/core/abi/Ingot.json'
-import GOLNSWAP_MULTISWAPPER_ABI from '../constants/abis/sushiswapmultiswapper.json'
+import LUCKYSWAP_MULTISWAPPER_ABI from '../constants/abis/sushiswapmultiswapper.json'
 import GOLN_ABI from '../constants/abis/sushi.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
 import { abi as UNI_ABI } from '@uniswap/governance/build/Uni.json'
@@ -198,7 +198,7 @@ export function useMiniChefV2Contract(withSignerIfPossible?: boolean): Contract 
                 break
         }
     }
-    return useContract(address, MINICHEFV2_ABI, withSignerIfPossible)
+    return useContract(address, MINIMINERV2_ABI, withSignerIfPossible)
 }
 
 export function useFactoryContract(): Contract | null {
@@ -228,17 +228,17 @@ export function useTimelockContract(): Contract | null {
 
 export function useAlpineContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && BENTOBOX_ADDRESS[chainId], BENTOBOX_ABI, withSignerIfPossible)
+    return useContract(chainId && ALPINE_ADDRESS[chainId], ALPINE_ABI, withSignerIfPossible)
 }
 
 export function useGoldVeinPairContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && KASHI_ADDRESS[chainId], KASHIPAIR_ABI, withSignerIfPossible)
+    return useContract(chainId && GOLDVEIN_ADDRESS[chainId], GOLDVEINPAIR_ABI, withSignerIfPossible)
 }
 
 export function useLuckySwapSwapper(): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && GOLNSWAP_SWAPPER_ADDRESS[chainId], BASE_SWAPPER_ABI, false)
+    return useContract(chainId && LUCKYSWAP_SWAPPER_ADDRESS[chainId], BASE_SWAPPER_ABI, false)
 }
 
 export function useChainlinkOracle(): Contract | null {
@@ -444,7 +444,7 @@ export function useDashboard2Contract(): Contract | null {
 
 export function useLuckySwapMultiSwapper(): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && GOLNSWAP_MULTISWAPPER_ADDRESS[chainId], GOLNSWAP_MULTISWAPPER_ABI)
+    return useContract(chainId && LUCKYSWAP_MULTISWAPPER_ADDRESS[chainId], LUCKYSWAP_MULTISWAPPER_ABI)
 }
 
 export function useQuickSwapFactoryContract(): Contract | null {

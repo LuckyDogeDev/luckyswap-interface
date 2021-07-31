@@ -80,7 +80,7 @@ const useFarms = () => {
 
         const farms = pools
             .filter((pool: any) => {
-                //console.log(KASHI_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
+                //console.log(GOLDVEIN_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
                 //console.log(pool.id, Number(pool.miniChef.totalAllocPoint) > 0)
                 return pairs.find((pair: any) => pair?.id === pool?.pair) && ['0'].includes(pool?.id)
                 // && Number(pool.miniChef.totalAllocPoint) > 0
@@ -117,7 +117,7 @@ const useFarms = () => {
 
                 return {
                     ...pool,
-                    type: 'SLP',
+                    type: 'LLP',
                     contract: 'masterchefv2',
                     symbol: pair.token0.symbol + '-' + pair.token1.symbol,
                     name: pair.token0.name + ' ' + pair.token1.name,

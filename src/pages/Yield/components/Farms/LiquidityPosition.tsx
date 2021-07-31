@@ -12,7 +12,7 @@ const LiquidityPosition = ({ farm }: any) => {
 
     return (
         <>
-            {farm.type === 'SLP' && (
+            {farm.type === 'LLP' && (
                 <Paper className="bg-dark-800">
                     {process.env.NODE_ENV === 'development' && (
                         <div className="text-xs">
@@ -110,7 +110,7 @@ const LiquidityPosition = ({ farm }: any) => {
                             <div>
                                 {/* <div className="text-right">{formattedNum(farm.tvl, true)} </div> */}
                                 <div className="text-gray-500 text-right font-semibold text-sm sm:text-sm">
-                                    {formattedNum(farm.slpBalance / 1e18, false)} SLP
+                                    {formattedNum(farm.slpBalance / 1e18, false)} LLP
                                 </div>
                                 <div className="text-gray-500 text-right text-xs">Market Staked</div>
                             </div>
@@ -144,7 +144,7 @@ const LiquidityPosition = ({ farm }: any) => {
                             pairSymbol={farm.symbol}
                             token0Address={farm.liquidityPair.token0.id}
                             token1Address={farm.liquidityPair.token1.id}
-                            type={'SLP'}
+                            type={'LLP'}
                         />
                     )}
                     {expand && farm.contract === 'minichef' && (
@@ -154,7 +154,7 @@ const LiquidityPosition = ({ farm }: any) => {
                             pairSymbol={farm.symbol}
                             token0Address={farm.liquidityPair.token0.id}
                             token1Address={farm.liquidityPair.token1.id}
-                            type={'SLP'}
+                            type={'LLP'}
                         />
                     )}
                 </Paper>

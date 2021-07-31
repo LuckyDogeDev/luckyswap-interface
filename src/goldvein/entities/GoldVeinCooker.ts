@@ -4,7 +4,7 @@ import { Contract, ethers } from 'ethers'
 import { ZERO, e10, maximum, minimum, toElastic } from 'goldvein/functions'
 import { getProviderOrSigner, getSigner } from 'utils'
 
-import KASHIPAIR_ABI from '../../constants/abis/goldveinpair.json'
+import GOLDVEINPAIR_ABI from '../../constants/abis/goldveinpair.json'
 import { GoldVeinPermit } from 'goldvein/hooks/useGoldVeinApproveCallback'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { toShare } from 'goldvein/functions/alpine'
@@ -64,11 +64,11 @@ enum Action {
     UPDATE_EXCHANGE_RATE = 11,
 
     // Function on Alpine
-    BENTO_DEPOSIT = 20,
-    BENTO_WITHDRAW = 21,
-    BENTO_TRANSFER = 22,
-    BENTO_TRANSFER_MULTIPLE = 23,
-    BENTO_SETAPPROVAL = 24,
+    ALP_DEPOSIT = 20,
+    ALP_WITHDRAW = 21,
+    ALP_TRANSFER = 22,
+    ALP_TRANSFER_MULTIPLE = 23,
+    ALP_SETAPPROVAL = 24,
 
     // Any external call (except to Alpine)
     CALL = 30
@@ -109,7 +109,7 @@ export class GoldVeinCooker {
     approve(permit: GoldVeinPermit): void {
         if (permit) {
             this.add(
-                Action.BENTO_SETAPPROVAL,
+                Action.ALP_SETAPPROVAL,
                 ethers.utils.defaultAbiCoder.encode(
                     ['address', 'address', 'bool', 'uint8', 'bytes32', 'bytes32'],
                     [permit.account, permit.masterContract, true, permit.v, permit.r, permit.s]
@@ -130,7 +130,7 @@ export class GoldVeinCooker {
         const useNative = this.pair.collateral.address === WETH[this.chainId].address
 
         this.add(
-            Action.BENTO_DEPOSIT,
+            Action.ALP_DEPOSIT,
             defaultAbiCoder.encode(
                 ['address', 'address', 'int256', 'int256'],
                 [useNative ? ethers.constants.AddressZero : this.pair.collateral.address, this.account, amount, 0]
@@ -145,7 +145,7 @@ export class GoldVeinCooker {
         const useNative = this.pair.collateral.address === WETH[this.chainId].address
 
         this.add(
-            Action.BENTO_WITHDRAW,
+            Action.ALP_WITHDRAW,
             defaultAbiCoder.encode(
                 ['address', 'address', 'int256', 'int256'],
                 [useNative ? ethers.constants.AddressZero : this.pair.collateral.address, this.account, amount, share]
@@ -158,7 +158,7 @@ export class GoldVeinCooker {
 
     bentoTransferCollateral(share: BigNumber, toAddress: string): GoldVeinCooker {
         this.add(
-            Action.BENTO_TRANSFER,
+            Action.ALP_TRANSFER,
             defaultAbiCoder.encode(['address', 'address', 'int256'], [this.pair.collateral.address, toAddress, share])
         )
 
@@ -179,7 +179,7 @@ export class GoldVeinCooker {
             const useNative = this.pair.collateral.address === WETH[this.chainId].address
 
             this.add(
-                Action.BENTO_DEPOSIT,
+                Action.ALP_DEPOSIT,
                 defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [useNative ? ethers.constants.AddressZero : this.pair.collateral.address, this.account, amount, 0]
@@ -204,7 +204,7 @@ export class GoldVeinCooker {
             const useNative = this.pair.asset.address === WETH[this.chainId].address
 
             this.add(
-                Action.BENTO_DEPOSIT,
+                Action.ALP_DEPOSIT,
                 defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [useNative ? ethers.constants.AddressZero : this.pair.asset.address, this.account, amount, 0]
@@ -227,7 +227,7 @@ export class GoldVeinCooker {
             const useNative = this.pair.asset.address === WETH[this.chainId].address
 
             this.add(
-                Action.BENTO_WITHDRAW,
+                Action.ALP_WITHDRAW,
                 ethers.utils.defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [useNative ? ethers.constants.AddressZero : this.pair.asset.address, this.account, 0, -1]
@@ -246,7 +246,7 @@ export class GoldVeinCooker {
             const useNative = this.pair.collateral.address === WETH[this.chainId].address
 
             this.add(
-                Action.BENTO_WITHDRAW,
+                Action.ALP_WITHDRAW,
                 ethers.utils.defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [useNative ? ethers.constants.AddressZero : this.pair.collateral.address, this.account, 0, share]
@@ -265,7 +265,7 @@ export class GoldVeinCooker {
             const useNative = this.pair.collateral.address === WETH[this.chainId].address
 
             this.add(
-                Action.BENTO_WITHDRAW,
+                Action.ALP_WITHDRAW,
                 ethers.utils.defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [useNative ? ethers.constants.AddressZero : this.pair.collateral.address, this.account, 0, -1]
@@ -285,7 +285,7 @@ export class GoldVeinCooker {
             const useNative = this.pair.asset.address === WETH[this.chainId].address
 
             this.add(
-                Action.BENTO_WITHDRAW,
+                Action.ALP_WITHDRAW,
                 ethers.utils.defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [
@@ -305,7 +305,7 @@ export class GoldVeinCooker {
             const useNative = this.pair.asset.address === WETH[this.chainId].address
 
             this.add(
-                Action.BENTO_DEPOSIT,
+                Action.ALP_DEPOSIT,
                 defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [useNative ? ethers.constants.AddressZero : this.pair.asset.address, this.account, amount, 0]
@@ -324,7 +324,7 @@ export class GoldVeinCooker {
 
             this.add(Action.GET_REPAY_SHARE, defaultAbiCoder.encode(['int256'], [part]))
             this.add(
-                Action.BENTO_DEPOSIT,
+                Action.ALP_DEPOSIT,
                 defaultAbiCoder.encode(
                     ['address', 'address', 'int256', 'int256'],
                     [useNative ? ethers.constants.AddressZero : this.pair.asset.address, this.account, 0, -1]
@@ -370,7 +370,7 @@ export class GoldVeinCooker {
 
         const goldveinPairCloneContract = new Contract(
             this.pair.address,
-            KASHIPAIR_ABI,
+            GOLDVEINPAIR_ABI,
             getProviderOrSigner(this.library, this.account) as any
         )
 

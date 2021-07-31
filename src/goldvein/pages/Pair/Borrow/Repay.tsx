@@ -18,7 +18,7 @@ import { useTradeExactIn, useTradeExactOut } from 'hooks/Trades'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from 'utils/prices'
 import { Field } from 'state/swap/actions'
 import { GoldVeinApproveButton, TokenApproveButton } from 'goldvein/components/Button'
-import { GOLNSWAP_MULTISWAPPER_ADDRESS, GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS } from 'goldvein/constants'
+import { LUCKYSWAP_MULTISWAPPER_ADDRESS, LUCKYSWAP_MULTI_EXACT_SWAPPER_ADDRESS } from 'goldvein/constants'
 import { ethers } from 'ethers'
 import { defaultAbiCoder } from '@ethersproject/abi'
 
@@ -212,7 +212,7 @@ export default function Repay({ pair }: RepayProps) {
             cooker.removeCollateral(pair.userCollateralShare, true)
             cooker.bentoTransferCollateral(
                 pair.userCollateralShare,
-                GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1]
+                LUCKYSWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1]
             )
             cooker.repayShare(pair.userBorrowPart)
 
@@ -244,7 +244,7 @@ export default function Repay({ pair }: RepayProps) {
             console.log('encoded', data)
 
             cooker.action(
-                GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1],
+                LUCKYSWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1],
                 ZERO,
                 ethers.utils.hexConcat([ethers.utils.hexlify('0x3087d742'), data]),
                 true,

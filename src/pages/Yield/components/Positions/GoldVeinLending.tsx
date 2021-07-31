@@ -7,7 +7,7 @@ const GoldVeinLending = ({ farm }: any) => {
     const [expand, setExpand] = useState<boolean>(false)
     return (
         <>
-            {farm.type === 'SLP' && (
+            {farm.type === 'LLP' && (
                 <Paper className="bg-dark-800">
                     <div
                         className="grid grid-cols-3 py-4 px-4 cursor-pointer select-none rounded text-sm"
@@ -30,7 +30,7 @@ const GoldVeinLending = ({ farm }: any) => {
                             <div>
                                 <div className="text-right">{formattedNum(farm.depositedUSD, true)} </div>
                                 <div className="text-secondary text-right">
-                                    {formattedNum(farm.depositedLP, false)} SLP
+                                    {formattedNum(farm.depositedLP, false)} LLP
                                 </div>
                             </div>
                         </div>

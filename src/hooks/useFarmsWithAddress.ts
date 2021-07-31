@@ -51,7 +51,7 @@ const useFarms = (address: string) => {
         const goldveinPairs = results[4].filter(result => result !== undefined) // filter out undefined (not in onsen) from all goldveinPairs
 
         const pairs = pairsQuery?.data.pairs
-        const KASHI_PAIRS = pools
+        const GOLDVEIN_PAIRS = pools
             .filter((pool: any) => {
                 const hasPair = goldveinPairs.find((goldveinPair: any) => goldveinPair?.id === pool?.pair)
                 console.log('pool.pair:', pool.pair, pool.id, hasPair)
@@ -61,19 +61,19 @@ const useFarms = (address: string) => {
             .map((pool: any) => {
                 return Number(pool.id)
             })
-        //const KASHI_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // goldveinPair pids 190-229, 245-249
-        //console.log('goldveinPairs:', KASHI_PAIRS.length, goldveinPairs.length, goldveinPairs, KASHI_PAIRS)
+        //const GOLDVEIN_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // goldveinPair pids 190-229, 245-249
+        //console.log('goldveinPairs:', GOLDVEIN_PAIRS.length, goldveinPairs.length, goldveinPairs, GOLDVEIN_PAIRS)
 
         const farms = pools
             .filter((pool: any) => {
-                //console.log(KASHI_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
+                //console.log(GOLDVEIN_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
                 return (
                     !POOL_DENY.includes(pool?.id) &&
-                    (pairs.find((pair: any) => pair?.id === pool?.pair) || KASHI_PAIRS.includes(Number(pool?.id)))
+                    (pairs.find((pair: any) => pair?.id === pool?.pair) || GOLDVEIN_PAIRS.includes(Number(pool?.id)))
                 )
             })
             .map((pool: any) => {
-                if (KASHI_PAIRS.includes(Number(pool?.id))) {
+                if (GOLDVEIN_PAIRS.includes(Number(pool?.id))) {
                     const pair = goldveinPairs.find((pair: any) => pair?.id === pool?.pair)
                     //console.log('kpair:', pair, pool)
                     return {
@@ -132,7 +132,7 @@ const useFarms = (address: string) => {
 
                     return {
                         ...pool,
-                        type: 'SLP',
+                        type: 'LLP',
                         symbol: pair.token0.symbol + '-' + pair.token1.symbol,
                         name: pair.token0.name + ' ' + pair.token1.name,
                         pid: Number(pool.id),
@@ -195,7 +195,7 @@ const useFarms = (address: string) => {
 
                     return {
                         ...farmDetails,
-                        type: farmDetails.type, // KMP or SLP
+                        type: farmDetails.type, // KMP or LLP
                         depositedLP: deposited,
                         depositedUSD: depositedUSD,
                         pendingGoldNugget: pending

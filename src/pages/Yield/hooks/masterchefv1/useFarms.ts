@@ -17,7 +17,7 @@ const useFarms = () => {
     const { account, chainId } = useActiveWeb3React()
     const [farms, setFarms] = useState<any | undefined>()
 
-    const fetchSLPFarms = useCallback(async () => {
+    const fetchLLPFarms = useCallback(async () => {
         const results = await Promise.all([
             masterchef.query({
                 query: poolsQuery
@@ -74,7 +74,7 @@ const useFarms = () => {
                 return {
                     ...pool,
                     contract: 'masterchefv1',
-                    type: 'SLP',
+                    type: 'LLP',
                     symbol: pair.token0.symbol + '-' + pair.token1.symbol,
                     name: pair.token0.name + ' ' + pair.token1.name,
                     pid: Number(pool.id),
@@ -110,7 +110,7 @@ const useFarms = () => {
         const goldveinPairs = results[1].filter(result => result !== undefined) // filter out undefined (not in onsen) from all goldveinPairs
         const averageBlockTime = results[2]
 
-        const KASHI_PAIRS = pools
+        const GOLDVEIN_PAIRS = pools
             .filter((pool: any) => {
                 const hasPair = goldveinPairs.find((goldveinPair: any) => goldveinPair?.id === pool?.pair)
                 return hasPair
@@ -118,10 +118,10 @@ const useFarms = () => {
             .map((pool: any) => {
                 return Number(pool.id)
             })
-        //const KASHI_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // goldveinPair pids 190-229, 245-249
+        //const GOLDVEIN_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // goldveinPair pids 190-229, 245-249
         const farms = pools
             .filter((pool: any) => {
-                return !POOL_DENY.includes(pool?.id) && KASHI_PAIRS.includes(Number(pool?.id))
+                return !POOL_DENY.includes(pool?.id) && GOLDVEIN_PAIRS.includes(Number(pool?.id))
             })
             .map((pool: any) => {
                 const pair = goldveinPairs.find((pair: any) => pair?.id === pool?.pair)
@@ -164,7 +164,7 @@ const useFarms = () => {
     useEffect(() => {
         const fetchData = async () => {
             if (chainId === ChainId.MAINNET || !account) {
-                const results = await Promise.all([fetchSLPFarms(), fetchKMPFarms()])
+                const results = await Promise.all([fetchLLPFarms(), fetchKMPFarms()])
                 const combined = _.concat(results[0], results[1])
                 const sorted = orderBy(combined, ['pid'], ['desc'])
                 setFarms(sorted)
@@ -173,7 +173,7 @@ const useFarms = () => {
             }
         }
         fetchData()
-    }, [account, chainId, fetchKMPFarms, fetchSLPFarms])
+    }, [account, chainId, fetchKMPFarms, fetchLLPFarms])
 
     return farms
 }

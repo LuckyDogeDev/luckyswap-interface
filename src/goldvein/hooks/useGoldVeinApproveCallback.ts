@@ -3,7 +3,7 @@ import { ethers } from 'ethers'
 import { useDispatch } from 'react-redux'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useAlpineContract } from 'hooks/useContract'
-import { KASHI_ADDRESS } from 'goldvein/constants'
+import { GOLDVEIN_ADDRESS } from 'goldvein/constants'
 import { GoldVeinCooker, signMasterContractApproval } from 'goldvein/entities'
 import { setGoldVeinApprovalPending } from 'state/application/actions'
 import { useGoldVeinApprovalPending } from 'state/application/hooks'
@@ -55,7 +55,7 @@ function useGoldVeinApproveCallback(): [
         setGoldVeinPermit(undefined)
     }, [account, chainId])
 
-    const masterContract = chainId && KASHI_ADDRESS[chainId]
+    const masterContract = chainId && GOLDVEIN_ADDRESS[chainId]
 
     const pendingApproval = useGoldVeinApprovalPending()
     const currentAllowed = useAlpMasterContractAllowed(masterContract, account || ethers.constants.AddressZero)

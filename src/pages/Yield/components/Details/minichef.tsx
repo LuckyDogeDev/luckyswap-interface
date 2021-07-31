@@ -53,7 +53,7 @@ export default function InputGroup({
 
     //const { deposit } = useAlpine()
     const balance = useTokenBalance(pairAddressChecksum)
-    const staked = useStakedBalance(pid, assetDecimals) // kMP depends on decimals of asset, SLP is always 18
+    const staked = useStakedBalance(pid, assetDecimals) // kMP depends on decimals of asset, LLP is always 18
     const pending = usePendingGoldNugget(pid)
     const reward = usePendingReward(pid)
 
@@ -97,12 +97,12 @@ export default function InputGroup({
                                 <p>
                                     <Trans>
                                         <b>Tip:</b> In order to start earning rewards, you will need to first acquire
-                                        some SLP by adding liquidity to the specified pair or{' '}
+                                        some LLP by adding liquidity to the specified pair or{' '}
                                         <Link to="/migrate" className="underline text-blue">
                                             migrating existing liquidity.
                                         </Link>{' '}
-                                        Once you have SLP you can stake it into this yield farm to start earning
-                                        rewards. Unstake anytime and then you can convert your SLP back to base tokens
+                                        Once you have LLP you can stake it into this yield farm to start earning
+                                        rewards. Unstake anytime and then you can convert your LLP back to base tokens
                                         by clicking Remove Liquidity. Click Harvest to receive your rewards at any time.
                                     </Trans>
                                 </p>
@@ -211,7 +211,7 @@ export default function InputGroup({
                     </div>
                 </div>
                 <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 px-4">
-                    {type === 'SLP' && (
+                    {type === 'LLP' && (
                         <>
                             <Button
                                 color="default"

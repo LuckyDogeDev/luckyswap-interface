@@ -17,11 +17,11 @@ export const ACTION_ADD_COLLATERAL = 10
 export const ACTION_UPDATE_EXCHANGE_RATE = 11
 
 // Function on Alpine
-export const ACTION_BENTO_DEPOSIT = 20
-export const ACTION_BENTO_WITHDRAW = 21
-export const ACTION_BENTO_TRANSFER = 22
-export const ACTION_BENTO_TRANSFER_MULTIPLE = 23
-export const ACTION_BENTO_SETAPPROVAL = 24
+export const ACTION_ALP_DEPOSIT = 20
+export const ACTION_ALP_WITHDRAW = 21
+export const ACTION_ALP_TRANSFER = 22
+export const ACTION_ALP_TRANSFER_MULTIPLE = 23
+export const ACTION_ALP_SETAPPROVAL = 24
 
 // Any external call (except to Alpine)
 export const ACTION_CALL = 30
@@ -62,9 +62,9 @@ export const PROTOCOL_FEE = BigNumber.from('10000') // 10%
 
 export const PROTOCOL_FEE_DIVISOR = BigNumber.from('100000')
 
-// export const BENTOBOX_ADDRESS = '0xF5BCE5077908a1b7370B9ae04AdC565EBd643966'
+// export const ALPINE_ADDRESS = '0xF5BCE5077908a1b7370B9ae04AdC565EBd643966'
 
-export const BENTOBOX_ADDRESS: {
+export const ALPINE_ADDRESS: {
     [chainId in ChainId]: string
 } = {
     [ChainId.MAINNET]: '0xF5BCE5077908a1b7370B9ae04AdC565EBd643966',
@@ -91,7 +91,7 @@ export const BENTOBOX_ADDRESS: {
     [ChainId.OKEX_TESTNET]: ''
 }
 
-export const KASHI_ADDRESS: {
+export const GOLDVEIN_ADDRESS: {
     [chainId in ChainId]: string
 } = {
     [ChainId.MAINNET]: '0x2cBA6Ab6574646Badc84F0544d05059e57a5dc42',
@@ -118,9 +118,9 @@ export const KASHI_ADDRESS: {
     [ChainId.OKEX_TESTNET]: ''
 }
 
-// export const KASHI_ADDRESS = '0x2cBA6Ab6574646Badc84F0544d05059e57a5dc42'
+// export const GOLDVEIN_ADDRESS = '0x2cBA6Ab6574646Badc84F0544d05059e57a5dc42'
 
-export const GOLNSWAP_SWAPPER_ADDRESS: {
+export const LUCKYSWAP_SWAPPER_ADDRESS: {
     [chainId in ChainId]: string
 } = {
     [ChainId.MAINNET]: '0x1766733112408b95239aD1951925567CB1203084',
@@ -147,7 +147,7 @@ export const GOLNSWAP_SWAPPER_ADDRESS: {
     [ChainId.OKEX_TESTNET]: ''
 }
 
-export const GOLNSWAP_MULTISWAPPER_ADDRESS: {
+export const LUCKYSWAP_MULTISWAPPER_ADDRESS: {
     [chainId in ChainId]: string
 } = {
     [ChainId.MAINNET]: '0x545820d5Cc05248da112419fEfb18522c63C8e12',
@@ -174,7 +174,7 @@ export const GOLNSWAP_MULTISWAPPER_ADDRESS: {
     [ChainId.OKEX_TESTNET]: ''
 }
 
-export const GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS = {
+export const LUCKYSWAP_MULTI_EXACT_SWAPPER_ADDRESS = {
     [ChainId.MAINNET]: '0xB527C5295c4Bc348cBb3a2E96B2494fD292075a7',
     [ChainId.ROPSTEN]: '',
     [ChainId.RINKEBY]: '',
@@ -201,9 +201,9 @@ export const GOLNSWAP_MULTI_EXACT_SWAPPER_ADDRESS = {
 
 export const PEGGED_ORACLE_ADDRESS = '0x6cbfbB38498Df0E1e7A4506593cDB02db9001564'
 
-export const GOLNSWAP_TWAP_0_ORACLE_ADDRESS = '0x66F03B0d30838A3fee971928627ea6F59B236065'
+export const LUCKYSWAP_TWAP_0_ORACLE_ADDRESS = '0x66F03B0d30838A3fee971928627ea6F59B236065'
 
-export const GOLNSWAP_TWAP_1_ORACLE_ADDRESS = '0x0D51b575591F8f74a2763Ade75D3CDCf6789266f'
+export const LUCKYSWAP_TWAP_1_ORACLE_ADDRESS = '0x0D51b575591F8f74a2763Ade75D3CDCf6789266f'
 
 export const CHAINLINK_ORACLE_ADDRESS = '0x00632CFe43d8F9f8E6cD0d39Ffa3D4fa7ec73CFB'
 
@@ -236,7 +236,7 @@ export const BORING_HELPER_ADDRESS = {
 
 type Currency = { address: string; decimals: number }
 
-// Pricing currency
+// Pricing currency - USDT
 // TODO: Check decimals and finish table
 export const USD_CURRENCY: { [chainId in ChainId]?: Currency } = {
     [ChainId.MAINNET]: { address: '0xdAC17F958D2ee523a2206206994597C13D831ec7', decimals: 6 },

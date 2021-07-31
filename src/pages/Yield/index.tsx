@@ -173,7 +173,7 @@ export default function Yield(): JSX.Element {
                                                     console.log('portfolio farm:', farm, portfolio)
                                                     if (farm.type === 'KMP') {
                                                         return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
-                                                    } else if (farm.type === 'SLP') {
+                                                    } else if (farm.type === 'LLP') {
                                                         return (
                                                             <LiquidityPosition
                                                                 key={farm.address + '_' + i}
@@ -210,7 +210,7 @@ export default function Yield(): JSX.Element {
                                         items.map((farm: any, i: number) => {
                                             if (farm.type === 'KMP') {
                                                 return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
-                                            } else if (farm.type === 'SLP') {
+                                            } else if (farm.type === 'LLP') {
                                                 return <LiquidityPosition key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null
@@ -236,7 +236,7 @@ export default function Yield(): JSX.Element {
                                 <div className="flex-col space-y-2">
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
-                                            if (farm.type === 'SLP') {
+                                            if (farm.type === 'LLP') {
                                                 return <LiquidityPosition key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null
@@ -288,7 +288,7 @@ export default function Yield(): JSX.Element {
                                 <div className="flex-col space-y-2">
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
-                                            if (farm.type === 'SLP' && farm.contract === 'masterchefv2') {
+                                            if (farm.type === 'LLP' && farm.contract === 'masterchefv2') {
                                                 return <LiquidityPosition key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null

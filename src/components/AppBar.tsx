@@ -377,12 +377,12 @@ function AppBar(): JSX.Element {
                                     {i18n._(t`Pool`)}
                                 </NavLink>
 
-                                {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
+                                { /* {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
                                     <NavLink id={`yield-nav-link`} to={'/yield'}>
                                         {i18n._(t`Yield`)}
                                     </NavLink>
-                                )}
-                                {chainId &&
+                                )} */ }
+                                { /* {chainId &&
                                     [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
                                         <NavLink id={`goldvein-nav-link`} to={'/bento/goldvein/lend'}>
                                             {i18n._(t`GoldVein Lending`)}
@@ -393,17 +393,17 @@ function AppBar(): JSX.Element {
                                         <NavLink id={`bento-nav-link`} to={'/bento'}>
                                             {i18n._(t`Alpine`)}
                                         </NavLink>
-                                    )}
+                                    )} */ }
                                 {chainId === ChainId.MAINNET && (
                                     <NavLink id={`stake-nav-link`} to={'/alchemybench'}>
                                         {i18n._(t`AlchemyBench`)}
                                     </NavLink>
                                 )}
-                                {chainId === ChainId.MAINNET && (
+                                { /*{chainId === ChainId.MAINNET && (
                                     <ExternalLink id={`stake-nav-link`} href={'https://miso.sushi.com'}>
                                         {i18n._(t`Miso`)}
                                     </ExternalLink>
-                                )}
+                                )}*/ }
                                 {chainId === ChainId.MAINNET && (
                                     <NavLink id={`vesting-nav-link`} to={'/vesting'}>
                                         {i18n._(t`Vesting`)}

@@ -15,7 +15,7 @@ const useMasterChefV2 = () => {
     // Deposit
     const deposit = useCallback(
         async (pid: number, amount: string, name: string, decimals = 18) => {
-            // KMP decimals depend on asset, SLP is always 18
+            // KMP decimals depend on asset, LLP is always 18
             console.log(
                 'depositing...',
                 pid,

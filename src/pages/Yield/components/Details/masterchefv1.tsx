@@ -52,7 +52,7 @@ export default function InputGroup({
 
     //const { deposit } = useAlpine()
     const balance = useTokenBalance(pairAddressChecksum)
-    const staked = useStakedBalance(pid, assetDecimals) // kMP depends on decimals of asset, SLP is always 18
+    const staked = useStakedBalance(pid, assetDecimals) // kMP depends on decimals of asset, LLP is always 18
     const pending = usePendingGoldNugget(pid)
 
     //console.log('pending:', pending, pid)

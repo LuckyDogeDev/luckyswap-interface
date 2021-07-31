@@ -1,5 +1,5 @@
 import React from 'react'
-import { BENTOBOX_ADDRESS, KASHI_ADDRESS } from 'goldvein/constants'
+import { ALPINE_ADDRESS, GOLDVEIN_ADDRESS } from 'goldvein/constants'
 import { AlpApprovalState, useGoldVeinApproveCallback } from 'goldvein/hooks'
 import { Alert, Button } from 'components'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
@@ -46,7 +46,7 @@ export function TokenApproveButton({ children, value, token, needed, color }: an
     const { chainId } = useActiveWeb3React()
     const [approvalState, approve] = useApproveCallback(
         tryParseAmount(value, token),
-        chainId && BENTOBOX_ADDRESS[chainId]
+        chainId && ALPINE_ADDRESS[chainId]
     )
 
     const showApprove =

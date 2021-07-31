@@ -7,7 +7,7 @@ import Badge from 'components/Badge'
 import TransactionReviewView from 'goldvein/components/TransactionReview'
 import { GoldVeinCooker } from 'goldvein/entities/GoldVeinCooker'
 import { Warning, Warnings } from 'goldvein/entities/Warnings'
-import { GOLNSWAP_MULTISWAPPER_ADDRESS } from 'goldvein/constants'
+import { LUCKYSWAP_MULTISWAPPER_ADDRESS } from 'goldvein/constants'
 import { GoldVeinContext } from 'goldvein/context'
 import WarningsView from 'goldvein/components/Warnings'
 import { useExpertModeManager, useUserSlippageTolerance } from 'state/user/hooks'
@@ -241,7 +241,7 @@ export default function Borrow({ pair }: BorrowProps) {
             cooker.borrow(
                 borrowValue.toBigNumber(pair.asset.decimals),
                 swap || useAlpBorrow,
-                swap ? GOLNSWAP_MULTISWAPPER_ADDRESS[chainId || 1] : ''
+                swap ? LUCKYSWAP_MULTISWAPPER_ADDRESS[chainId || 1] : ''
             )
         }
         if (borrowValueSet && trade) {
@@ -275,7 +275,7 @@ export default function Borrow({ pair }: BorrowProps) {
             )
 
             cooker.action(
-                GOLNSWAP_MULTISWAPPER_ADDRESS[chainId || 1],
+                LUCKYSWAP_MULTISWAPPER_ADDRESS[chainId || 1],
                 ZERO,
                 ethers.utils.hexConcat([ethers.utils.hexlify('0x3087d742'), data]),
                 false,

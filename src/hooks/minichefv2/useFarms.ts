@@ -82,7 +82,7 @@ const useFarms = () => {
         //console.log('pools:', pools)
         const farms = pools
             .filter((pool: any) => {
-                //console.log(KASHI_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
+                //console.log(GOLDVEIN_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
                 //console.log(pool.id, Number(pool.miniChef.totalAllocPoint) > 0)
                 return (
                     //!POOL_DENY.includes(pool?.id) &&
@@ -143,7 +143,7 @@ const useFarms = () => {
 
                 return {
                     ...pool,
-                    type: 'SLP',
+                    type: 'LLP',
                     symbol: pair.token0.symbol + '-' + pair.token1.symbol,
                     name: pair.token0.name + ' ' + pair.token1.name,
                     pid: Number(pool.id),
@@ -196,7 +196,7 @@ const useFarms = () => {
 
         //             return {
         //                 ...farmDetails,
-        //                 type: farmDetails.type, // KMP or SLP
+        //                 type: farmDetails.type, // KMP or LLP
         //                 depositedLP: deposited,
         //                 depositedUSD: depositedUSD,
         //                 pendingGoldNugget: pending
