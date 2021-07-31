@@ -179,7 +179,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'PLAN',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xCfbB59ba22F0B0dB768A7C00e8177bBB9b35B8B4/logo.png'
                                                                     }
                                                                 }
 
@@ -253,7 +253,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'GOLN',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xc6D69475f115F61B1e8C4e78c20C49201c869DB4/logo.png'
                                                                     }
                                                                 }
 

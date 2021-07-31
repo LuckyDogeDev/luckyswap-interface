@@ -20,7 +20,7 @@ or visit [app.sushi.com](https://app.sushi.com).
 ## Listing a token
 
 Please see the
-[@sushiswap/default-token-list](https://github.com/LuckyDogeDev/default-token-list)
+[@luckyfinance/default-token-list](https://github.com/LuckyDogeDev/default-token-list)
 repository.
 
 ## Development
