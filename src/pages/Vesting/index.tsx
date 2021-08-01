@@ -178,33 +178,22 @@ export default function ClaimModal() {
                                         style={{ maxWidth: '300px', minHeight: '150px' }}
                                     >
                                         <Trans>
-                                            Vesting is executed within the guidelines selected by the community in{' '}
+                                            Vesting will be executed within the guidelines selected by the community in{' '}
                                             <a
-                                                target="_blank"
+                                                /*target="_blank"
                                                 rel="noreferrer noopener"
-                                                href="https://snapshot.org/#/sushi/proposal/QmPwBGy98NARoEcUfuWPgzMdJdiaZub1gVic67DcSs6NZQ"
+                                                href="https://snapshot.org/#/sushi/proposal/QmPwBGy98NARoEcUfuWPgzMdJdiaZub1gVic67DcSs6NZQ"*/
                                             >
-                                                SIMP3
+                                                LIMP3
                                             </a>
                                             .
-                                            <br />
-                                            <br />
-                                            Please refer to the{' '}
-                                            <a
-                                                target="_blank"
-                                                rel="noreferrer noopener"
-                                                href="https://forum.sushiswapclassic.org/t/simp-3-vesting-and-the-future-of-sushiswap/1794"
-                                            >
-                                                forum discussion
-                                            </a>{' '}
-                                            for deliberations on additional points.
                                             <br />
                                             <br />
                                             Additional records and weekly merkle updates can be found on{' '}
                                             <a
                                                 target="_blank"
                                                 rel="noreferrer noopener"
-                                                href="https://github.com/sushiswap/sushi-vesting"
+                                                href="https://github.com/LuckyDogeDev/lucky-vesting"
                                             >
                                                 Github
                                             </a>

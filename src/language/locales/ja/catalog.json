@@ -273,7 +273,7 @@
   "Use any tool below to optimize your workflow. Please note, some tools are experimental so use with discretion. If theres a smart contract involved for the tool, read the code and confirm the keys have been burned.": "以下のツールを使用して、ワークフローを最適化します。一部のツールは実験的なものであるため、慎重に使用してください。ツールにスマートコントラクトが含まれている場合は、コードを読み、キーが焼き付けられていることを確認します。",
   "V2 Rewarder": "V2リワーダー",
   "Vesting": "権利確定",
-  "Vesting is executed within the guidelines selected by the community in <0>SIMP3</0>.<1/><2/>Please refer to the <3>forum discussion</3> for deliberations on additional points.<4/><5/>Additional records and weekly merkle updates can be found on <6>Github</6>": "<0> SIMP3 </0>選択したガイドラインの範囲内で実行されます。 <1/> <2/>追加のポイントに関する審議<3>フォーラムディスカッション</3>を参照してください。 <4/> <5/>追加のレコードと毎週のマークルの更新は<6> Github </6>",
+  "Vesting is executed within the guidelines selected by the community in <0>LIMP3</0>.<1/><2/>Please refer to the <3>forum discussion</3> for deliberations on additional points.<4/><5/>Additional records and weekly merkle updates can be found on <6>Github</6>": "<0> LIMP3 </0>選択したガイドラインの範囲内で実行されます。 <1/> <2/>追加のポイントに関する審議<3>フォーラムディスカッション</3>を参照してください。 <4/> <5/>追加のレコードと毎週のマークルの更新は<6> Github </6>",
   "View Stats": "統計を見る",
   "View AlchemyBench Stats": "AlchemyBenchの統計を見る",
   "View Your Liquidity Positions": "流動性ポジションを表示する",
