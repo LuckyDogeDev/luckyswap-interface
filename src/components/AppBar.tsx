@@ -80,7 +80,7 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Vesting`)}
                                                 </NavLink>
                                             )}
-                                            {chainId &&
+                                            { /*  {chainId &&
                                                 [
                                                     ChainId.MAINNET,
                                                     ChainId.BSC,
@@ -90,11 +90,11 @@ function AppBar(): JSX.Element {
                                                 ].includes(chainId) && (
                                                     <ExternalLink
                                                         id={`analytics-nav-link`}
-                                                        href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
+                                                        href={ANALYTICS_URL[chainId] || 'https://analytics.luckydoge.finance'}
                                                     >
                                                         {i18n._(t`Analytics`)}
                                                     </ExternalLink>
-                                                )}
+                                                )} */ }
                                         </div>
                                     </div>
                                 </div>
@@ -409,7 +409,7 @@ function AppBar(): JSX.Element {
                                         {i18n._(t`Vesting`)}
                                     </NavLink>
                                 )}
-                                {chainId &&
+                                { /* {chainId &&
                                     [
                                         ChainId.MAINNET,
                                         ChainId.BSC,
@@ -419,11 +419,11 @@ function AppBar(): JSX.Element {
                                     ].includes(chainId) && (
                                         <ExternalLink
                                             id={`analytics-nav-link`}
-                                            href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
+                                            href={ANALYTICS_URL[chainId] || 'https://analytics.luckydoge.finance'}
                                         >
                                             {i18n._(t`Analytics`)}
                                         </ExternalLink>
-                                    )}
+                                    )} */ }
                             </div>
                         </Disclosure.Panel>
                     </>
