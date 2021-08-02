@@ -312,7 +312,7 @@ const MigrateV2 = () => {
         <>
             <Helmet>
                 <title>Migrate LP tokens | LuckyFinance</title>
-                <meta name="description" content="Migrate LP tokens to GoldNugget LP tokens" />
+                <meta name="description" content="Migrate LP tokens to LuckySwap LP tokens" />
             </Helmet>
 
             <div className="text-2xl text-center mb-8">{i18n._(t`Migrate ${exchange} Liquidity`)}</div>

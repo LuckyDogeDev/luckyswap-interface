@@ -31,7 +31,7 @@
         "@reach/portal": "^0.10.3",
         "@reduxjs/toolkit": "^1.3.5",
         "@luckyfinance/core": "^1.5.0",
-        "@luckyfinance/default-token-list": "^11.3.2",
+        "@luckyfinance/default-token-list": "^11.3.3",
         "@luckyfinance/sdk": "^3.2.0",
         "@luckyfinance/lucky-data": "^1.1.0",
         "@tailwindcss/aspect-ratio": "^0.2.0",

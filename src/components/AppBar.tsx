@@ -175,11 +175,11 @@ function AppBar(): JSX.Element {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address:
-                                                                            '0xCfbB59ba22F0B0dB768A7C00e8177bBB9b35B8B4',
+                                                                            '0x210e8B3600aea3943D2e45a913723931c97895Fe',
                                                                         symbol: 'PLAN',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xCfbB59ba22F0B0dB768A7C00e8177bBB9b35B8B4/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0x210e8B3600aea3943D2e45a913723931c97895Fe/logo.png'
                                                                     }
                                                                 }
 
@@ -235,7 +235,7 @@ function AppBar(): JSX.Element {
                                                                 switch (chainId) {
                                                                     case ChainId.MAINNET:
                                                                         address =
-                                                                            '0xc6D69475f115F61B1e8C4e78c20C49201c869DB4'
+                                                                            '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E'
                                                                         break
                                                                     case ChainId.BSC:
                                                                         address =
@@ -253,7 +253,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'GOLN',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xc6D69475f115F61B1e8C4e78c20C49201c869DB4/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E/logo.png'
                                                                     }
                                                                 }
 
