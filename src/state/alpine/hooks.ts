@@ -20,9 +20,9 @@ export interface AlpBalance {
     symbol: string
     decimals: number | string
     balance: any
-    bentoBalance: any
+    alpBalance: any
     wallet: any
-    bento: any
+    alp: any
 }
 
 export function useAlpBalances(): AlpBalance[] {
@@ -58,12 +58,12 @@ export function useAlpBalances(): AlpBalance[] {
                     symbol: token.address === weth ? Currency.getNativeCurrencySymbol(chainId) : token.symbol,
                     decimals: token.decimals,
                     balance: token.address === weth ? info?.ethBalance : balanceData[i].balance,
-                    bentoBalance: balanceData[i].bentoBalance,
+                    alpBalance: balanceData[i].alpBalance,
                     wallet: easyAmount(token.address === weth ? info?.ethBalance : balanceData[i].balance, fullToken),
-                    bento: easyAmount(toAmount(fullToken, balanceData[i].bentoBalance), fullToken)
+                    alp: easyAmount(toAmount(fullToken, balanceData[i].alpBalance), fullToken)
                 }
             })
-            .filter(token => token.balance.gt('0') || token.bentoBalance.gt('0'))
+            .filter(token => token.balance.gt('0') || token.alpBalance.gt('0'))
         setBalances(orderBy(balancesWithDetails, ['name'], ['asc']))
     }, [account, boringHelperContract, chainId, info, tokens, weth])
 
@@ -92,11 +92,11 @@ export function useAlpBalance(tokenAddress: string): { value: BigNumber; decimal
         const balances = await boringHelperContract?.getBalances(account, [tokenAddressChecksum])
         const decimals = await tokenContract?.decimals()
 
-        const amount = BigNumber.from(balances[0].bentoShare).isZero()
+        const amount = BigNumber.from(balances[0].alpShare).isZero()
             ? BigNumber.from(0)
-            : BigNumber.from(balances[0].bentoBalance)
-                  .mul(BigNumber.from(balances[0].bentoAmount))
-                  .div(BigNumber.from(balances[0].bentoShare))
+            : BigNumber.from(balances[0].alpBalance)
+                  .mul(BigNumber.from(balances[0].alpAmount))
+                  .div(BigNumber.from(balances[0].alpShare))
 
         setBalance({
             value: amount,

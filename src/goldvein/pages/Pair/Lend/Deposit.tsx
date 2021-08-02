@@ -19,16 +19,16 @@ export default function LendDepositAction({ pair }: any): JSX.Element {
     const assetToken = useCurrency(pair.asset.address) || undefined
 
     // State
-    const [useAlp, setUseAlp] = useState<boolean>(pair.asset.bentoBalance.gt(0))
+    const [useAlp, setUseAlp] = useState<boolean>(pair.asset.alpBalance.gt(0))
     const [value, setValue] = useState('')
 
     const info = useContext(GoldVeinContext).state.info
 
     // Calculated
     const assetNative = WETH[chainId || 1].address == pair.asset.address
-    const balance = useAlp ? pair.asset.bentoBalance : assetNative ? info?.ethBalance : pair.asset.balance
+    const balance = useAlp ? pair.asset.alpBalance : assetNative ? info?.ethBalance : pair.asset.balance
 
-    const max = useAlp ? pair.asset.bentoBalance : assetNative ? info?.ethBalance : pair.asset.balance
+    const max = useAlp ? pair.asset.alpBalance : assetNative ? info?.ethBalance : pair.asset.balance
 
     const warnings = new Warnings().add(
         balance?.lt(value.toBigNumber(pair.asset.decimals)),

@@ -1,13 +1,13 @@
 import { BigNumber } from 'ethers'
 import { useMemo } from 'react'
 import { useActiveWeb3React } from './useActiveWeb3React'
-import { useMasterChefContract } from './useContract'
+import { useGoldMinerContract } from './useContract'
 import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from 'state/multicall/hooks'
 
 export function useAllPendingGoldNugget(): number {
     const { account } = useActiveWeb3React()
-    const masterChef = useMasterChefContract()
-    const numberOfPools = useSingleCallResult(masterChef, 'poolLength', undefined, NEVER_RELOAD)
+    const masterMiner = useGoldMinerContract()
+    const numberOfPools = useSingleCallResult(masterMiner, 'poolLength', undefined, NEVER_RELOAD)
 
     const args = useMemo(
         () =>
@@ -18,7 +18,7 @@ export function useAllPendingGoldNugget(): number {
         [numberOfPools, account]
     )
 
-    const data = useSingleContractMultipleData(masterChef, 'pendingGoldNugget', args)
+    const data = useSingleContractMultipleData(masterMiner, 'pendingGoldNugget', args)
 
     return useMemo(
         () =>

@@ -1,6 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 
-import { ReactComponent as AlpineLogo } from 'assets/goldvein/bento-symbol.svg'
+import { ReactComponent as AlpineLogo } from 'assets/goldvein/alp-symbol.svg'
 import GoldVeinLogo from 'assets/goldvein/logo.png'
 import React from 'react'
 import { Zero } from '@ethersproject/constants'
@@ -28,7 +28,7 @@ export default function Layout({
         <div className="container mx-auto px-0 sm:px-4">
             <div className={`mb-2 grid grid-cols-12 gap-4`}>
                 <div className="flex justify-center col-span-12 xl:col-span-3 lg:justify-start">
-                    <Link to="/bento/goldvein/borrow" className="flex justify-center xl:justify-start xl:mx-8">
+                    <Link to="/alp/goldvein/borrow" className="flex justify-center xl:justify-start xl:mx-8">
                         <img src={GoldVeinLogo} alt="" className="object-scale-down h-16 w-1/2 md:w-1/3 xl:w-full" />
                     </Link>
                 </div>
@@ -36,13 +36,13 @@ export default function Layout({
                     <nav className="flex justify-between items-center w-full">
                         <div className="flex">
                             <NavLink
-                                to="/bento/goldvein/lend"
+                                to="/alp/goldvein/lend"
                                 className="border-transparent pl-4 pr-2 sm:pl-8 sm:pr-4 border-b-2"
                             >
                                 <div
                                     className={
                                         'flex items-center font-medium ' +
-                                        (location.pathname.startsWith('/bento/goldvein/lend')
+                                        (location.pathname.startsWith('/alp/goldvein/lend')
                                             ? 'text-high-emphesis'
                                             : 'text-secondary hover:text-primary')
                                     }
@@ -50,11 +50,11 @@ export default function Layout({
                                     <div className="whitespace-nowrap text-base">Lend</div>
                                 </div>
                             </NavLink>
-                            <NavLink to="/bento/goldvein/borrow" className="border-transparent px-2 sm:px-4 border-b-2">
+                            <NavLink to="/alp/goldvein/borrow" className="border-transparent px-2 sm:px-4 border-b-2">
                                 <div
                                     className={
                                         'flex items-center font-medium ' +
-                                        (location.pathname.startsWith('/bento/goldvein/borrow')
+                                        (location.pathname.startsWith('/alp/goldvein/borrow')
                                             ? 'text-high-emphesis'
                                             : 'text-secondary hover:text-primary')
                                     }
@@ -63,11 +63,11 @@ export default function Layout({
                                 </div>
                             </NavLink>
 
-                            <NavLink to="/bento/goldvein/create" className="border-transparent px-2 sm:px-4 border-b-2">
+                            <NavLink to="/alp/goldvein/create" className="border-transparent px-2 sm:px-4 border-b-2">
                                 <div
                                     className={
                                         'flex items-center font-medium ' +
-                                        (location.pathname.startsWith('/bento/goldvein/create')
+                                        (location.pathname.startsWith('/alp/goldvein/create')
                                             ? 'text-high-emphesis'
                                             : 'text-secondary hover:text-primary')
                                     }
@@ -78,9 +78,9 @@ export default function Layout({
                         </div>
                         <div className="flex pr-2 sm:pr-4">
                             <NavLink
-                                to="/bento/balances"
+                                to="/alp/balances"
                                 className={`border-transparent px-2 sm:px-4 border-b-2 flex justify-end items-center font-medium ${
-                                    location.pathname === '/bento/balances'
+                                    location.pathname === '/alp/balances'
                                         ? 'text-high-emphesis'
                                         : 'text-secondary hover:text-primary'
                                 }`}
@@ -91,7 +91,7 @@ export default function Layout({
                                     {formattedNum(
                                         balances
                                             ?.reduce((previousValue, currentValue) => {
-                                                return previousValue.add(currentValue.bento.usdValue)
+                                                return previousValue.add(currentValue.alp.usdValue)
                                             }, Zero)
                                             .toFixed(getCurrency(chainId).decimals),
                                         true

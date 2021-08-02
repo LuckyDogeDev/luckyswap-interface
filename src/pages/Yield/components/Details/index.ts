@@ -1,3 +1,3 @@
-export { default as MasterChefV1Details } from './masterchefv1'
-export { default as MasterChefV2Details } from './masterchefv2'
-export { default as MiniChefDetails } from './minichef'
+export { default as GoldMinerV1Details } from './goldminerv1'
+export { default as GoldMinerV2Details } from './goldminerv2'
+export { default as MiniMinerDetails } from './miniminer'

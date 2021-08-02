@@ -126,7 +126,7 @@ export class GoldVeinCooker {
         return this
     }
 
-    bentoDepositCollateral(amount: BigNumber): GoldVeinCooker {
+    alpDepositCollateral(amount: BigNumber): GoldVeinCooker {
         const useNative = this.pair.collateral.address === WETH[this.chainId].address
 
         this.add(
@@ -141,7 +141,7 @@ export class GoldVeinCooker {
         return this
     }
 
-    bentoWithdrawCollateral(amount: BigNumber, share: BigNumber): GoldVeinCooker {
+    alpWithdrawCollateral(amount: BigNumber, share: BigNumber): GoldVeinCooker {
         const useNative = this.pair.collateral.address === WETH[this.chainId].address
 
         this.add(
@@ -156,7 +156,7 @@ export class GoldVeinCooker {
         return this
     }
 
-    bentoTransferCollateral(share: BigNumber, toAddress: string): GoldVeinCooker {
+    alpTransferCollateral(share: BigNumber, toAddress: string): GoldVeinCooker {
         this.add(
             Action.ALP_TRANSFER,
             defaultAbiCoder.encode(['address', 'address', 'int256'], [this.pair.collateral.address, toAddress, share])

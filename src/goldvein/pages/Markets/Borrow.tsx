@@ -105,7 +105,7 @@ export default function BorrowMarkets(): JSX.Element {
                                     return (
                                         <div key={pair.address}>
                                             <Link
-                                                to={'/bento/goldvein/borrow/' + pair.address}
+                                                to={'/alp/goldvein/borrow/' + pair.address}
                                                 className="block text-high-emphesis"
                                             >
                                                 <div className="grid gap-4 grid-cols-4 md:grid-cols-6 lg:grid-cols-7 py-4 px-4 items-center align-center  text-sm  rounded bg-dark-800 hover:bg-dark-pink">
@@ -207,7 +207,7 @@ export default function BorrowMarkets(): JSX.Element {
                             return (
                                 <div key={pair.address}>
                                     <Link
-                                        to={'/bento/goldvein/borrow/' + String(pair.address).toLowerCase()}
+                                        to={'/alp/goldvein/borrow/' + String(pair.address).toLowerCase()}
                                         className="block text-high-emphesis"
                                     >
                                         <div className="grid gap-4 grid-cols-4 md:grid-cols-6 lg:grid-cols-7 py-4 px-4 items-center align-center text-sm  rounded bg-dark-800 hover:bg-dark-pink">

@@ -38,7 +38,7 @@ export default function BorrowPair({
         addTransaction(result.tx, { summary: `Update ${pair.collateral.symbol}/${pair.asset.symbol} exchange rate` })
     }, [pair])
 
-    if (!pair) return info && info.blockTimeStamp.isZero() ? null : <Redirect to="/bento/goldvein/borrow"></Redirect>
+    if (!pair) return info && info.blockTimeStamp.isZero() ? null : <Redirect to="/alp/goldvein/borrow"></Redirect>
 
     const symbol = 'ETH'
     return (
@@ -123,7 +123,7 @@ export default function BorrowPair({
                 header={
                     <BorrowCardHeader>
                         <div className="flex items-center">
-                            <BackButton className="hidden md:flex" defaultRoute="/bento/goldvein/borrow" />
+                            <BackButton className="hidden md:flex" defaultRoute="/alp/goldvein/borrow" />
                             <div className="flex items-center space-x-2 mr-4">
                                 {pair && (
                                     <>

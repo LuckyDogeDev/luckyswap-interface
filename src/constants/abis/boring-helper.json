@@ -1,7 +1,7 @@
 [
   {
     "inputs": [
-      { "internalType": "contract IMasterChef", "name": "chef_", "type": "address" },
+      { "internalType": "contract IGoldMiner", "name": "miner_", "type": "address" },
       { "internalType": "address", "name": "smelter_", "type": "address" },
       { "internalType": "contract IERC20", "name": "goln_", "type": "address" },
       { "internalType": "contract IERC20", "name": "WETH_", "type": "address" },
@@ -44,8 +44,8 @@
   },
   {
     "inputs": [],
-    "name": "chef",
-    "outputs": [{ "internalType": "contract IMasterChef", "name": "", "type": "address" }],
+    "name": "miner",
+    "outputs": [{ "internalType": "contract IGoldMiner", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -60,7 +60,7 @@
         "components": [
           { "internalType": "contract IERC20", "name": "token", "type": "address" },
           { "internalType": "uint256", "name": "balance", "type": "uint256" },
-          { "internalType": "uint256", "name": "bentoBalance", "type": "uint256" }
+          { "internalType": "uint256", "name": "alpBalance", "type": "uint256" }
         ],
         "internalType": "struct BoringHelperV1.Balance[]",
         "name": "",
@@ -102,11 +102,11 @@
           { "internalType": "contract IERC20", "name": "token", "type": "address" },
           { "internalType": "uint256", "name": "totalSupply", "type": "uint256" },
           { "internalType": "uint256", "name": "balance", "type": "uint256" },
-          { "internalType": "uint256", "name": "bentoBalance", "type": "uint256" },
-          { "internalType": "uint256", "name": "bentoAllowance", "type": "uint256" },
+          { "internalType": "uint256", "name": "alpBalance", "type": "uint256" },
+          { "internalType": "uint256", "name": "alpAllowance", "type": "uint256" },
           { "internalType": "uint256", "name": "nonce", "type": "uint256" },
-          { "internalType": "uint128", "name": "bentoAmount", "type": "uint128" },
-          { "internalType": "uint128", "name": "bentoShare", "type": "uint128" },
+          { "internalType": "uint128", "name": "alpAmount", "type": "uint128" },
+          { "internalType": "uint128", "name": "alpShare", "type": "uint128" },
           { "internalType": "uint256", "name": "rate", "type": "uint256" }
         ],
         "internalType": "struct BoringHelperV1.BalanceFull[]",
@@ -366,7 +366,7 @@
   },
   {
     "inputs": [
-      { "internalType": "contract IMasterChef", "name": "chef_", "type": "address" },
+      { "internalType": "contract IGoldMiner", "name": "miner_", "type": "address" },
       { "internalType": "address", "name": "smelter_", "type": "address" },
       { "internalType": "contract IERC20", "name": "goln_", "type": "address" },
       { "internalType": "contract IERC20", "name": "WETH_", "type": "address" },

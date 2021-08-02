@@ -1,4 +1,4 @@
-import { exchange, masterchef } from 'apollo/client'
+import { exchange, goldminer } from 'apollo/client'
 import { liquidityPositionSubsetQuery, pairSubsetQuery, poolsQuery } from 'apollo/queries'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -21,7 +21,7 @@ const useFarms = (address: string) => {
 
     const fetchAllFarms = useCallback(async () => {
         const results = await Promise.all([
-            masterchef.query({
+            goldminer.query({
                 // results[0]
                 query: poolsQuery
             }),

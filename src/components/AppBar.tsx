@@ -281,7 +281,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`${process.env.PUBLIC_URL}/images/tokens/sushi-square.jpg`}
+                                                                src={`${process.env.PUBLIC_URL}/images/tokens/goln-square.jpg`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -384,13 +384,13 @@ function AppBar(): JSX.Element {
                                 )} */ }
                                 { /* {chainId &&
                                     [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                                        <NavLink id={`goldvein-nav-link`} to={'/bento/goldvein/lend'}>
+                                        <NavLink id={`goldvein-nav-link`} to={'/alp/goldvein/lend'}>
                                             {i18n._(t`GoldVein Lending`)}
                                         </NavLink>
                                     )}
                                 {chainId &&
                                     [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                                        <NavLink id={`bento-nav-link`} to={'/bento'}>
+                                        <NavLink id={`alp-nav-link`} to={'/alp'}>
                                             {i18n._(t`Alpine`)}
                                         </NavLink>
                                     )} */ }

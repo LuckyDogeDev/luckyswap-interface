@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { Button } from 'components'
 import { ThemeContext } from 'styled-components'
 
-import AlpSquare from '../../../assets/images/bento-square.png'
+import AlpSquare from '../../../assets/images/alp-square.png'
 //import BaoSquare from '../../../assets/images/bao-square.png'
 import AaveSquare from '../../../assets/images/aave-square.png'
 import CreamSquare from '../../../assets/images/aave-square.png'

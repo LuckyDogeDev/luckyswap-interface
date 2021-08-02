@@ -27,7 +27,7 @@ import { MIGRATOR_ABI, MIGRATOR_ADDRESS } from '../constants/abis/migrator'
 import { MULTICALL_ABI, MULTICALL_NETWORKS } from '../constants/multicall'
 import { V1_EXCHANGE_ABI, V1_FACTORY_ABI, V1_FACTORY_ADDRESSES } from '../constants/v1'
 
-import ALCHEMYBENCH_ABI from '../constants/abis/bar.json'
+import ALCHEMYBENCH_ABI from '../constants/abis/bench.json'
 import BASE_SWAPPER_ABI from '../constants/abis/swapper.json'
 import ALPINE_ABI from '../constants/abis/alpine.json'
 import BORING_HELPER_ABI from '../constants/abis/boring-helper.json'
@@ -43,17 +43,17 @@ import FACTORY_ABI from '../constants/abis/factory.json'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import GOLDVEINPAIR_ABI from '../constants/abis/goldveinpair.json'
 import SMELTER_ABI from '../constants/abis/smelter.json'
-import GOLDMINERV2_ABI from '../constants/abis/masterchefv2.json'
-import GOLDMINER_ABI from '../constants/abis/masterchef.json'
+import GOLDMINERV2_ABI from '../constants/abis/goldminerv2.json'
+import GOLDMINER_ABI from '../constants/abis/goldminer.json'
 import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
-import MINIMINERV2_ABI from '../constants/abis/miniChefV2.json'
+import MINIMINERV2_ABI from '../constants/abis/miniMinerV2.json'
 import PENDING_ABI from '../constants/abis/pending.json'
 import ROUTER_ABI from '../constants/abis/router.json'
 import SAAVE_ABI from '../constants/abis/saave.json'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
 import GOLNROLL_ABI from '@luckyfinance/core/abi/Ingot.json'
 import LUCKYSWAP_MULTISWAPPER_ABI from '../constants/abis/luckyswapmultiswapper.json'
-import GOLN_ABI from '../constants/abis/sushi.json'
+import GOLN_ABI from '../constants/abis/goln.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
 import { abi as UNI_ABI } from '@uniswap/governance/build/Uni.json'
 import { abi as UNI_FACTORY_ABI } from '@uniswap/v2-core/build/UniswapV2Factory.json'
@@ -170,12 +170,12 @@ export function useGoldNuggetContract(withSignerIfPossible = true): Contract | n
     return useContract(chainId && GOLN_ADDRESS[chainId], GOLN_ABI, withSignerIfPossible)
 }
 
-export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {
+export function useGoldMinerContract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && GOLDMINER_ADDRESS[chainId], GOLDMINER_ABI, withSignerIfPossible)
 }
 
-export function useMasterChefV2Contract(withSignerIfPossible?: boolean): Contract | null {
+export function useGoldMinerV2Contract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
     let address: string | undefined
     if (chainId) {
@@ -188,7 +188,7 @@ export function useMasterChefV2Contract(withSignerIfPossible?: boolean): Contrac
     return useContract(address, GOLDMINERV2_ABI, withSignerIfPossible)
 }
 
-export function useMiniChefV2Contract(withSignerIfPossible?: boolean): Contract | null {
+export function useMiniMinerV2Contract(withSignerIfPossible?: boolean): Contract | null {
     const { chainId } = useActiveWeb3React()
     let address: string | undefined
     if (chainId) {
@@ -216,7 +216,7 @@ export function useAlchemyBenchContract(withSignerIfPossible?: boolean): Contrac
     return useContract(chainId && ALCHEMYBENCH_ADDRESS[chainId], ALCHEMYBENCH_ABI, withSignerIfPossible)
 }
 
-export function useMakerContract(): Contract | null {
+export function useSmelterContract(): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && SMELTER_ADDRESS[chainId], SMELTER_ABI, false)
 }

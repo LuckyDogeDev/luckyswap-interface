@@ -34,7 +34,7 @@ export default function Borrow({ pair }: BorrowProps) {
     const info = useContext(GoldVeinContext).state.info
 
     // State
-    const [useAlpCollateral, setUseAlpCollateral] = useState<boolean>(pair.collateral.bentoBalance.gt(0))
+    const [useAlpCollateral, setUseAlpCollateral] = useState<boolean>(pair.collateral.alpBalance.gt(0))
     const [useAlpBorrow, setUseAlpBorrow] = useState<boolean>(true)
     const [collateralValue, setCollateralValue] = useState('')
     const [borrowValue, setBorrowValue] = useState('')
@@ -51,7 +51,7 @@ export default function Borrow({ pair }: BorrowProps) {
     console.log({ assetNative: assetNative })
 
     const collateralBalance = useAlpCollateral
-        ? pair.collateral.bentoBalance
+        ? pair.collateral.alpBalance
         : assetNative
         ? info?.ethBalance
         : pair.collateral.balance
@@ -235,7 +235,7 @@ export default function Borrow({ pair }: BorrowProps) {
             }
 
             if (swap && !useAlpCollateral) {
-                cooker.bentoDepositCollateral(collateralValue.toBigNumber(pair.collateral.decimals))
+                cooker.alpDepositCollateral(collateralValue.toBigNumber(pair.collateral.decimals))
             }
 
             cooker.borrow(

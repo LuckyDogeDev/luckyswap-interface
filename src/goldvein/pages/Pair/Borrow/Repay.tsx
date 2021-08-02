@@ -31,7 +31,7 @@ export default function Repay({ pair }: RepayProps) {
     const info = useContext(GoldVeinContext).state.info
 
     // State
-    const [useAlpRepay, setUseAlpRepay] = useState<boolean>(pair.asset.bentoBalance.gt(0))
+    const [useAlpRepay, setUseAlpRepay] = useState<boolean>(pair.asset.alpBalance.gt(0))
     const [useAlpRemove, setUseAlpRemoveCollateral] = useState<boolean>(true)
 
     const [repayValue, setRepayAssetValue] = useState('')
@@ -48,7 +48,7 @@ export default function Repay({ pair }: RepayProps) {
     const assetNative = WETH[chainId || 1].address === pair.asset.address
 
     const balance = useAlpRepay
-        ? toAmount(pair.asset, pair.asset.bentoBalance)
+        ? toAmount(pair.asset, pair.asset.alpBalance)
         : assetNative
         ? info?.ethBalance
         : pair.asset.balance
@@ -210,7 +210,7 @@ export default function Repay({ pair }: RepayProps) {
             console.log({ share, userCollateralShare: pair.userCollateralShare })
 
             cooker.removeCollateral(pair.userCollateralShare, true)
-            cooker.bentoTransferCollateral(
+            cooker.alpTransferCollateral(
                 pair.userCollateralShare,
                 LUCKYSWAP_MULTI_EXACT_SWAPPER_ADDRESS[chainId || 1]
             )
@@ -255,7 +255,7 @@ export default function Repay({ pair }: RepayProps) {
             cooker.repayPart(pair.userBorrowPart, true)
 
             if (!useAlpRemove) {
-                cooker.bentoWithdrawCollateral(ZERO, BigNumber.from(-1))
+                cooker.alpWithdrawCollateral(ZERO, BigNumber.from(-1))
             }
 
             summary = 'Repay All'

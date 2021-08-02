@@ -1,19 +1,19 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { useCallback, useEffect, useState } from 'react'
 import { useActiveWeb3React } from './useActiveWeb3React'
-import { useMasterChefContract, usePendingContract } from './useContract'
+import { useGoldMinerContract, usePendingContract } from './useContract'
 import { useBlockNumber } from '../state/application/hooks'
 
 const useAllPending = () => {
     const [balance, setBalance] = useState<number | undefined>()
     const { account } = useActiveWeb3React()
 
-    const masterChefContract = useMasterChefContract()
+    const masterMinerContract = useGoldMinerContract()
     const pendingContract = usePendingContract()
     const currentBlockNumber = useBlockNumber()
 
     const fetchAllPending = useCallback(async () => {
-        const numberOfPools = await masterChefContract?.poolLength()
+        const numberOfPools = await masterMinerContract?.poolLength()
         const pids = [...Array(parseInt(numberOfPools)).keys()]
         const results = await pendingContract?.functions.getPendingGoldNugget(account, pids)
         const allPending = results[1]
@@ -25,13 +25,13 @@ const useAllPending = () => {
                 .div(BigNumber.from(10).pow(18))
                 .toNumber()
         )
-    }, [account, masterChefContract, pendingContract])
+    }, [account, masterMinerContract, pendingContract])
 
     useEffect(() => {
-        if (account && masterChefContract && pendingContract) {
+        if (account && masterMinerContract && pendingContract) {
             fetchAllPending()
         }
-    }, [account, currentBlockNumber, fetchAllPending, masterChefContract, pendingContract])
+    }, [account, currentBlockNumber, fetchAllPending, masterMinerContract, pendingContract])
 
     return balance
 }

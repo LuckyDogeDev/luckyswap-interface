@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { useFuse, useSortableData } from 'hooks'
 
 import AsyncTokenIcon from '../../../goldvein/components/AsyncTokenIcon'
-import AlpineImage from 'assets/goldvein/bento-illustration.png'
+import AlpineImage from 'assets/goldvein/alp-illustration.png'
 import Deposit from './Deposit'
 import { Helmet } from 'react-helmet'
 import { Paper } from 'components'
@@ -105,8 +105,8 @@ const TokenBalance = ({ balance }: { balance: AlpBalance }) => {
                 </div>
                 <div className="flex justify-end items-center">
                     <div>
-                        <div className="text-right">{formattedNum(balance.bento.string)} </div>
-                        <div className="text-secondary text-right">{formattedNum(balance.bento.usd, true)}</div>
+                        <div className="text-right">{formattedNum(balance.alp.string)} </div>
+                        <div className="text-secondary text-right">{formattedNum(balance.alp.usd, true)}</div>
                     </div>
                 </div>
             </div>

@@ -58,7 +58,7 @@ function Alpine(): JSX.Element {
                             <div className="relative w-full">
                                 <img alt="" src={GoldVeinNeonSign} className="block m-auto w-full h-auto mb-4" />
                                 {account ? (
-                                    <Link to={'/bento/goldvein/borrow'}>
+                                    <Link to={'/alp/goldvein/borrow'}>
                                         <div
                                             className="w-full border-gradient py-2 text-center"
                                             // className="w-full rounded text-lg text-high-emphesis px-4 py-2"

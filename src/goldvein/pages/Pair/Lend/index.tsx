@@ -29,7 +29,7 @@ export default function LendingPair({
     const pair = useGoldVeinPair(pairAddress)
     const info = useContext(GoldVeinContext).state.info
 
-    if (!pair) return info && info.blockTimeStamp.isZero() ? null : <Redirect to="/bento/goldvein/lend"></Redirect>
+    if (!pair) return info && info.blockTimeStamp.isZero() ? null : <Redirect to="/alp/goldvein/lend"></Redirect>
 
     return (
         <Layout
@@ -132,7 +132,7 @@ export default function LendingPair({
                     <LendCardHeader>
                         <div className="flex items-center">
                             <div className="flex items-center space-x-2 mr-4">
-                                <BackButton className="hidden md:flex" defaultRoute="/bento/goldvein/lend" />
+                                <BackButton className="hidden md:flex" defaultRoute="/alp/goldvein/lend" />
                                 {pair && (
                                     <>
                                         <AsyncTokenIcon

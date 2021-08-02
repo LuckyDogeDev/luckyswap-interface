@@ -20,7 +20,7 @@ export default function LendWithdrawAction({ pair }: any): JSX.Element {
     const pendingApprovalMessage = useGoldVeinApprovalPending()
 
     // State
-    const [useAlp, setUseAlp] = useState<boolean>(pair.asset.bentoBalance.gt(0))
+    const [useAlp, setUseAlp] = useState<boolean>(pair.asset.alpBalance.gt(0))
     const [value, setValue] = useState('')
     const [pinMax, setPinMax] = useState(false)
 

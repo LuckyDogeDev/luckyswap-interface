@@ -8,7 +8,7 @@ import { BalanceProps } from './useTokenBalance'
 
 const { BigNumber } = ethers
 
-const useMaker = () => {
+const useSmelter = () => {
     const { account } = useActiveWeb3React()
 
     const addTransaction = useTransactionAdder()
@@ -66,4 +66,4 @@ const useMaker = () => {
     return { allowance, approve, saave }
 }
 
-export default useMaker
+export default useSmelter

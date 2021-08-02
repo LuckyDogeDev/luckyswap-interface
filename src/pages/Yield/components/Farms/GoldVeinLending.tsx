@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { formattedNum, formattedPercent } from '../../../../utils'
 import { DoubleLogo, Paper } from '../../components'
-import { MasterChefV1Details } from '../Details'
+import { GoldMinerV1Details } from '../Details'
 import { getTokenIconUrl } from '../../../../goldvein/functions'
 
 const GoldVeinLending = ({ farm }: any) => {
@@ -69,7 +69,7 @@ const GoldVeinLending = ({ farm }: any) => {
                         </div>
                     </div>
                     {expand && (
-                        <MasterChefV1Details
+                        <GoldMinerV1Details
                             pid={farm.pid}
                             pairAddress={farm.pairAddress}
                             pairSymbol={farm.symbol}

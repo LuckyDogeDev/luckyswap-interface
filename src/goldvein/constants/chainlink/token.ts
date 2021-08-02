@@ -95,7 +95,7 @@ export const CHAINLINK_TOKENS: { [chainId in ChainId]?: ChainlinkToken[] } = {
             decimals: 18
         },
         { symbol: 'MATIC', name: 'Matic Token', address: '0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0', decimals: 18 },
-        { symbol: 'MKR', name: 'Maker', address: '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', decimals: 18 },
+        { symbol: 'MKR', name: 'Smelter', address: '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', decimals: 18 },
         { symbol: 'MLN', name: 'Melon Token', address: '0xec67005c4E498Ec7f55E092bd1d35cbC47C91892', decimals: 18 },
         { symbol: 'MTA', name: 'Meta', address: '0xa3BeD4E1c75D00fa6f4E5E6922DB7261B5E9AcD2', decimals: 18 },
         { symbol: 'NMR', name: 'Numeraire', address: '0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671', decimals: 18 },

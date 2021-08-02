@@ -100,7 +100,7 @@ export default function LendingMarkets(): JSX.Element | null {
                                     return (
                                         <div key={pair.address}>
                                             <Link
-                                                to={'/bento/goldvein/lend/' + pair.address}
+                                                to={'/alp/goldvein/lend/' + pair.address}
                                                 className="block text-high-emphesis"
                                             >
                                                 <div className="grid gap-4 grid-flow-col grid-cols-4 md:grid-cols-6 lg:grid-cols-7 py-4 px-4 items-center align-center text-sm rounded bg-dark-800 hover:bg-dark-blue">
@@ -207,7 +207,7 @@ export default function LendingMarkets(): JSX.Element | null {
                                 return (
                                     <div key={pair.address}>
                                         <Link
-                                            to={'/bento/goldvein/lend/' + String(pair.address).toLowerCase()}
+                                            to={'/alp/goldvein/lend/' + String(pair.address).toLowerCase()}
                                             className="block text-high-emphesis"
                                         >
                                             <div className="grid gap-4 grid-flow-col grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 py-4 px-4 items-center align-center text-sm rounded bg-dark-800 hover:bg-dark-blue">
@@ -263,7 +263,7 @@ export default function LendingMarkets(): JSX.Element | null {
                     </div>
                 </div>
                 <div className="w-full py-6 text-center">
-                    <Link to="/bento/goldvein/create" className="text-lg">
+                    <Link to="/alp/goldvein/create" className="text-lg">
                         {i18n._(t`+ Create a new market`)}
                     </Link>
                 </div>

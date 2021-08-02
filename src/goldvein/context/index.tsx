@@ -31,13 +31,13 @@ interface State {
         | {
               ethBalance: BigNumber
               golnBalance: BigNumber
-              sushiBarBalance: BigNumber
+              alchemyBenchBalance: BigNumber
               planBalance: BigNumber
               planSupply: BigNumber
-              sushiBarAllowance: BigNumber
+              alchemyBenchAllowance: BigNumber
               factories: {}[]
               ethRate: BigNumber
-              sushiRate: BigNumber
+              golnRate: BigNumber
               btcRate: BigNumber
               pendingGoldNugget: BigNumber
               blockTimeStamp: BigNumber
@@ -51,13 +51,13 @@ const initialState: State = {
     info: {
         ethBalance: ZERO,
         golnBalance: ZERO,
-        sushiBarBalance: ZERO,
+        alchemyBenchBalance: ZERO,
         planBalance: ZERO,
         planSupply: ZERO,
-        sushiBarAllowance: ZERO,
+        alchemyBenchAllowance: ZERO,
         factories: [],
         ethRate: ZERO,
-        sushiRate: ZERO,
+        golnRate: ZERO,
         btcRate: ZERO,
         pendingGoldNugget: ZERO,
         blockTimeStamp: ZERO,
