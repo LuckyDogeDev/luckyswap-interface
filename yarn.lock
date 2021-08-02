@@ -2668,10 +2668,10 @@
     subscriptions-transport-ws "0.9.16"
     ws "7.2.0"
 
-"@luckyfinance/sdk@^3.1.0":
-  version "3.1.10"
-  resolved "https://registry.yarnpkg.com/@luckyfinance/sdk/-/sdk-3.1.10.tgz#131a1080a87f27b9493f04521913620493657156"
-  integrity sha512-2fkvKP1Q4SL3Y+1xttOXv45eu604Z+1LdN95KdU6ymrbU2hbHpePykLFcZJ/GdBoRpQ8KY8HBWNb1oxE56EobA==
+"@luckyfinance/sdk@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@luckyfinance/sdk/-/sdk-3.2.0.tgz#558b6374f523e7a85df42a6b2ac9a88c59a55ebe"
+  integrity sha512-9rc4WLW5rn6sxRVis3AylN3Drbmq8MvkVSvtGNQcD8Mz4V8Tpj815DLyle7v8wmVReEzdZBTUN5hIzfgASPusA==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
