@@ -2646,15 +2646,15 @@
   resolved "https://registry.yarnpkg.com/@luckyfinance/core/-/core-1.5.0.tgz#fd877bf73eedce7189c3bac21a7f070020b591aa"
   integrity sha512-MJKJzu/f13rE0Llyc4SLL/WLWePaHyV9LDW7WFPLhSb0K1Be4RbW5k1PC2xVVnO2U/RfrIJcInrGI74OlBDOsw==
 
-"@luckyfinance/default-token-list@^11.3.2":
-  version "11.3.2"
-  resolved "https://registry.yarnpkg.com/@luckyfinance/default-token-list/-/default-token-list-11.3.2.tgz#0a716c19f0c7b99573fffb8dbf1f464b2769098c"
-  integrity sha512-KUFC7MRDrOdWq9zx7OCRMmzceiIOqTSmQZ0eqWEwsNvCt6MFZmBx4wCxM8jgIeMnx5NdjCITBjaEy3OK1dMfjg==
+"@luckyfinance/default-token-list@^11.3.3":
+  version "11.3.3"
+  resolved "https://registry.yarnpkg.com/@luckyfinance/default-token-list/-/default-token-list-11.3.3.tgz#1699cffeebd603dab7164c904ff59f7f6a75566d"
+  integrity sha512-Nvsfs+QeOTkDBErUPVsvHttvpQbXojsKpSoll8TPBONarBIkZVQTKlKjY0C3AfWxLaDALu+OEubOeZnWsjnvEw==
 
-"@luckyfinance/lucky-data@^1.1.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@luckyfinance/lucky-data/-/lucky-data-1.1.1.tgz#4194ec808e585fbe40db857c8672a34cc6a5c878"
-  integrity sha512-xLFYZ42ENLy/6iYWzSPo9yiEbD89tns2y4HcNQzqSvQY3Lu5/9ekLQyHCmqAGphKl9/KqgUCxtIWslygdoWbEA==
+"@luckyfinance/lucky-data@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@luckyfinance/lucky-data/-/lucky-data-1.2.1.tgz#1a45ec09d3ae47bc6e26fe98ba4824ee068013e4"
+  integrity sha512-aXHNxizjOpP3cg8EPnarugtxPJENMX3VhYdWdI2BrbPazOVub/aIpKnHxTyudv9LG3BSt+a7zHppdJtXI4VOww==
   dependencies:
     bluebird "^3.7.2"
     commander "6.1.0"
@@ -2664,9 +2664,9 @@
     graphql "14.5.8"
     graphql-request "^3.4.0"
     isomorphic-ws "^4.0.1"
-    node-fetch "2.6.0"
+    node-fetch "^2.6.1"
     subscriptions-transport-ws "0.9.16"
-    ws "7.2.0"
+    ws "^7.5.3"
 
 "@luckyfinance/sdk@^3.2.0":
   version "3.2.0"
@@ -4814,7 +4814,7 @@ async-eventemitter@^0.2.2:
   dependencies:
     async "^2.4.0"
 
-async-limiter@^1.0.0, async-limiter@~1.0.0:
+async-limiter@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
@@ -13972,11 +13972,6 @@ node-fetch@2.1.2:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
   integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
 
-node-fetch@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
-
 node-fetch@2.6.1, node-fetch@^2.6.0, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
@@ -20779,13 +20774,6 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.0.tgz#422eda8c02a4b5dba7744ba66eebbd84bcef0ec7"
-  integrity sha512-+SqNqFbwTm/0DC18KYzIsMTnEWpLwJsiasW/O17la4iDRRIO9uaHbvKiAS3AHgTiuuWerK/brj4O6MYZkei9xg==
-  dependencies:
-    async-limiter "^1.0.0"
-
 ws@7.2.3:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.3.tgz#a5411e1fb04d5ed0efee76d26d5c46d830c39b46"
@@ -20823,6 +20811,11 @@ ws@^7.4.4:
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.4.tgz#383bc9742cb202292c9077ceab6f6047b17f2d59"
   integrity sha512-Qm8k8ojNQIMx7S+Zp8u/uHOx7Qazv3Yv4q68MiWWWOJhiwG5W3x7iqmRtJo8xxrciZUY4vRxUTJCKuRnF28ZZw==
+
+ws@^7.5.3:
+  version "7.5.3"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.3.tgz#160835b63c7d97bfab418fc1b8a9fced2ac01a74"
+  integrity sha512-kQ/dHIzuLrS6Je9+uv81ueZomEwH0qVYstcAQ4/Z93K8zeko9gtAbttJWzoC5ukqXY1PpoouV3+VSOqEAFt5wg==
 
 x-is-string@^0.1.0:
   version "0.1.0"

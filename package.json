@@ -33,7 +33,7 @@
         "@luckyfinance/core": "^1.5.0",
         "@luckyfinance/default-token-list": "^11.3.3",
         "@luckyfinance/sdk": "^3.2.0",
-        "@luckyfinance/lucky-data": "^1.1.0",
+        "@luckyfinance/lucky-data": "^1.2.1",
         "@tailwindcss/aspect-ratio": "^0.2.0",
         "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/line-clamp": "^0.2.0",
