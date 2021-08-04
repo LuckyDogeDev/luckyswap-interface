@@ -4,9 +4,9 @@
 
 An open source interface for LuckySwap -- a protocol for decentralized exchange of Ethereum tokens.
 
-- Website: [sushi.com](https://sushi.com/)
-- Interface: [app.sushi.com](https://app.sushi.com)
-- Docs: [sushiswap.gitbook.io](https://sushiswap.gitbook.io)
+- Website: 
+- Interface: 
+- Docs: 
 - Twitter: [@LuckySwap](https://twitter.com/sushiswap)
 - Reddit: [/r/LuckySwap](https://www.reddit.com/r/LuckySwap)
 - Discord: [LuckySwap](https://discord.gg/Y7TF6QA)
@@ -14,8 +14,8 @@ An open source interface for LuckySwap -- a protocol for decentralized exchange 
 ## Accessing the LuckyFinance Interface
 
 To access the Luckyswap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/sushiswap/sushiswap-interface/releases/latest),
-or visit [app.sushi.com](https://app.sushi.com).
+,
+or visit .
 
 ## Listing a token
 
@@ -38,7 +38,7 @@ yarn start
 ```
 
 Note that the interface only works on networks where both
-[(Uni|GoldNugget)swap V2](https://github.com/sushiswap/sushiswap/tree/master/contracts/uniswapv2) and
+[(Uni|GoldNugget)swap V2](https://github.com/sushiswap/LuckyDogeDev/tree/master/contracts/uniswapv2) and
 [multicall](https://github.com/makerdao/multicall) are deployed.
 The interface will not work on other networks.
 
