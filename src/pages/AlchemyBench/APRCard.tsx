@@ -9,9 +9,9 @@ export default function APRCard() {
     useEffect(() => {
         const fetchData = async () => {
             const results = await Promise.all([
-                //golnData.alchemybench.info(),
-                //golnData.exchange.dayData(),
-                //golnData.goln.priceUSD()
+                golnData.alchemybench.info(),
+                golnData.exchange.dayData(),
+                golnData.goln.priceUSD()
             ])
             const APR =
                 (((results[1][1].volumeUSD * 0.05) / results[0].totalSupply) * 365) / (results[0].ratio * results[2])
