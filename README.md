@@ -4,18 +4,18 @@
 
 An open source interface for LuckySwap -- a protocol for decentralized exchange of Ethereum tokens.
 
-- Website: 
-- Interface: 
-- Docs: 
-- Twitter: [@LuckySwap](https://twitter.com/sushiswap)
+- Website: [luckydoge.finance](https://luckydoge.finance/)
+- Interface: [app.luckydoge.finance](https://app.luckydoge.finance)
+- Docs: [luckyfinance.gitbook.io](https://luckyfinance.gitbook.io)
+- Twitter: [@LuckySwap](https://twitter.com/LuckyFinance)
 - Reddit: [/r/LuckySwap](https://www.reddit.com/r/LuckySwap)
 - Discord: [LuckySwap](https://discord.gg/Y7TF6QA)
 
 ## Accessing the LuckyFinance Interface
 
 To access the Luckyswap Interface, use an IPFS gateway link from the
-,
-or visit .
+[latest release](https://github.com/LuckyDogeDoge/luckyswap-interface/releases/latest),
+or visit [app.luckydoge.finance](https://app.luckydoge.finance).
 
 ## Listing a token
 
