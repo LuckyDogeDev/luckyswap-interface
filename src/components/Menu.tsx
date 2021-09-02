@@ -12,12 +12,12 @@ const items = (i18n: I18n) => [
     {
         name: i18n._(t`Docs`),
         description: i18n._(t`Documentation for users of LuckyFinance.`),
-        href: 'https://docs.sushi.com'
+        href: 'https://docs.luckydoge.finance'
     },
     {
         name: i18n._(t`Dev`),
         description: i18n._(t`Documentation for developers of LuckyFinance.`),
-        href: 'https://dev.sushi.com'
+        href: 'https://dev.luckyfinance.finance'
     },
     {
         name: i18n._(t`Open Source`),
