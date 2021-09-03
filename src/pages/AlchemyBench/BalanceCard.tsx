@@ -71,7 +71,7 @@ export default function BalanceCard({
                     </div> */}
                     {account && (
                         <a
-                            href={`https://analytics.sushi.com/users/${account}`}
+                            href={`https://analytics.luckydoge.finance/users/${account}`}
                             target="_blank"
                             rel="noreferrer noopener"
                             className={`
