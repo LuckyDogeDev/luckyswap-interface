@@ -2668,10 +2668,10 @@
     subscriptions-transport-ws "0.9.16"
     ws "^7.5.3"
 
-"@luckyfinance/sdk@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@luckyfinance/sdk/-/sdk-3.2.0.tgz#558b6374f523e7a85df42a6b2ac9a88c59a55ebe"
-  integrity sha512-9rc4WLW5rn6sxRVis3AylN3Drbmq8MvkVSvtGNQcD8Mz4V8Tpj815DLyle7v8wmVReEzdZBTUN5hIzfgASPusA==
+"@luckyfinance/sdk@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@luckyfinance/sdk/-/sdk-3.2.1.tgz#5a7bfba6694d52438d54c4d760cde3afc38e4c1e"
+  integrity sha512-P1s2zxqZdzb2t/R++q/kQvWZRxeW562sHQKhcb+ILW5x7HNDHpccc8VKY6VfKQqXtedkHue2ab7/Dp9NL7SwNQ==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
@@ -2680,6 +2680,7 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
+    user "^0.0.0"
 
 "@metamask/safe-event-emitter@2.0.0", "@metamask/safe-event-emitter@^2.0.0":
   version "2.0.0"
@@ -19535,6 +19536,11 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
+
+user@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/user/-/user-0.0.0.tgz#f27f1b23fc511f2a8efa40db55cfba123824e02a"
+  integrity sha1-8n8bI/xRHyqO+kDbVc+6Ejgk4Co=
 
 utf-8-validate@^5.0.2:
   version "5.0.4"
