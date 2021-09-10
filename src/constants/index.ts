@@ -61,7 +61,7 @@ export const MERKLE_DISTRIBUTOR_ADDRESS: { [chainId in ChainId]?: string } = {
 }
 
 // TODO: update weekly with new constant
-export const MERKLE_ROOT
+export const MERKLE_ROOT =
     'https://raw.githubusercontent.com/LuckyDogeDev/lucky-vesting/master/merkle/week-13/merkle-10959148-11550728.json'
 
 // TODO: SDK should have two maps, WETH map and WNATIVE map.
