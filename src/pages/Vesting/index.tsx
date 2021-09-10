@@ -118,7 +118,7 @@ export default function ClaimModal() {
     useEffect(() => {
         const fetchLockup = async () => {
             if (account) {
-                fetch('https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/amounts-10959148-12171394.json')
+                fetch('https://raw.githubusercontent.com/LuckyDogeDev/lucky-vesting/master/amounts-10959148-12171394.json')
                     .then(response => response.json())
                     .then(data => {
                         //console.log('vesting:', data)

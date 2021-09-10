@@ -38,7 +38,7 @@ yarn start
 ```
 
 Note that the interface only works on networks where both
-[(Uni|GoldNugget)swap V2](https://github.com/sushiswap/LuckyDogeDev/tree/master/contracts/uniswapv2) and
+[(Uni|GoldNugget)swap V2](https://github.com/LuckyDogeDev/luckyswap/tree/master/contracts/uniswapv2) and
 [multicall](https://github.com/makerdao/multicall) are deployed.
 The interface will not work on other networks.
 

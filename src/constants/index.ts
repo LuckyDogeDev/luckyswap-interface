@@ -61,20 +61,8 @@ export const MERKLE_DISTRIBUTOR_ADDRESS: { [chainId in ChainId]?: string } = {
 }
 
 // TODO: update weekly with new constant
-export const MERKLE_ROOT =
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-01/merkle-10959148-11003985.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-02/merkle-10959148-11049116.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-03/merkle-10959148-11094829.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-04/merkle-10959148-11140426.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-05/merkle-10959148-11185970.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-06/merkle-10959148-11231587.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-07/merkle-10959148-11277295.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-08/merkle-10959148-11322822.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-09/merkle-10959148-11368459.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-10/merkle-10959148-11413917.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-11/merkle-10959148-11459483.json'
-    //'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-12/merkle-10959148-11505104.json'
-    'https://raw.githubusercontent.com/sushiswap/lucky-vesting/master/merkle/week-13/merkle-10959148-11550728.json'
+export const MERKLE_ROOT
+    'https://raw.githubusercontent.com/LuckyDogeDev/lucky-vesting/master/merkle/week-13/merkle-10959148-11550728.json'
 
 // TODO: SDK should have two maps, WETH map and WNATIVE map.
 const WRAPPED_NATIVE_ONLY: ChainTokenList = {

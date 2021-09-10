@@ -22,7 +22,7 @@ const items = (i18n: I18n) => [
     {
         name: i18n._(t`Open Source`),
         description: i18n._(t`LuckyFinance is a supporter of Open Source.`),
-        href: 'https://github.com/sushiswap'
+        href: 'https://github.com/LuckyDogeDev'
     },
     {
         name: i18n._(t`Tools`),
