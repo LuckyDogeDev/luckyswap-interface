@@ -139,7 +139,7 @@ export default function StakeCard({ golnBalance, PlatinumNuggetBalance }: StakeC
 
     const [approvalState, approve] = useApproveCallback(
         new TokenAmount(
-            new Token(1, '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', 18, 'GOLN', ''),
+            new Token(1, '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E', 18, 'GOLN', ''),
             parsedInput.value.toString()
         ),
         ALCHEMYBENCH_ADDRESS[1]

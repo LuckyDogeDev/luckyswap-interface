@@ -126,7 +126,7 @@ const useFarms = () => {
                     llpBalance: pool.llpBalance,
                     liquidityPair: pair,
                     rewardTokens: [
-                        '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', //GOLN on Mainnet
+                        '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E', //GOLN on Mainnet
                         '0xdBdb4d16EdA451D0503b854CF79D55697F90c8DF' // ALCX on Mainnet
                     ],
                     golnRewardPerDay: rewardPerDay,

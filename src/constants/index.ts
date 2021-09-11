@@ -25,7 +25,7 @@ export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 export const GOLN: ChainTokenMap = {
     [ChainId.MAINNET]: new Token(
         ChainId.MAINNET,
-        '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2',
+        '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E',
         18,
         'GOLN',
         'GoldNugget'
@@ -210,7 +210,7 @@ export const PLAN_CALL = new Token(
     'PLAN 25 Call [31 May 2021]'
 )
 
-export const PLAN = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'PLAN', 'AlchemyBench')
+export const PLAN = new Token(ChainId.MAINNET, '0x210e8B3600aea3943D2e45a913723931c97895Fe', 18, 'PLAN', 'AlchemyBench')
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
     ChainId.MAINNET,

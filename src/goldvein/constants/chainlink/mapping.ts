@@ -601,14 +601,14 @@ export const CHAINLINK_MAPPING: { [chainId in ChainId]?: ChainlinkMappingList } 
             toDecimals: 18
         },
         '0xe572CeF69f43c2E488b33924AF04BDacE19079cf': {
-            from: '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2',
+            from: '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E',
             to: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
             decimals: 18,
             fromDecimals: 18,
             toDecimals: 18
         },
         '0xAE51d1f913eDB0f80562F270017806f3e9566029': {
-            from: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
+            from: '0x210e8B3600aea3943D2e45a913723931c97895Fe',
             to: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
             decimals: 18,
             fromDecimals: 18,

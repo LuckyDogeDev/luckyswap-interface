@@ -51,7 +51,7 @@ import PENDING_ABI from '../constants/abis/pending.json'
 import ROUTER_ABI from '../constants/abis/router.json'
 import SAAVE_ABI from '../constants/abis/saave.json'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
-import GOLNROLL_ABI from '@luckyfinance/core/abi/Ingot.json'
+import INGOT_ABI from '@luckyfinance/core/abi/Ingot.json'
 import LUCKYSWAP_MULTISWAPPER_ABI from '../constants/abis/luckyswapmultiswapper.json'
 import GOLN_ABI from '../constants/abis/goln.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
@@ -393,15 +393,15 @@ export function useIngotContract(version: 'v1' | 'v2' = 'v2'): Contract | null {
                 break
         }
     }
-    return useContract(address, GOLNROLL_ABI, true)
+    return useContract(address, INGOT_ABI, true)
 }
 
 // export function usePancakeRollV1Contract(): Contract | null {
-//     return useContract('0x677978dE066b3f5414eeA56644d9fCa3c75482a1', GOLNROLL_ABI, true)
+//     return useContract('0x677978dE066b3f5414eeA56644d9fCa3c75482a1', INGOT_ABI, true)
 // }
 
 // export function usePancakeRollV2Contract(): Contract | null {
-//     return useContract('', GOLNROLL_ABI, true)
+//     return useContract('', INGOT_ABI, true)
 // }
 
 export function useDashboardContract(): Contract | null {
