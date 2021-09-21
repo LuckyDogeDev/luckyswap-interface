@@ -144,7 +144,7 @@ export default function CurrencyInputPanel({
 
     const { allowance, approve, saave } = useSaave()
 
-    const golnBalanceBigInt = useTokenBalance('0x6b3595068778dd592e39a122f4f5a5cf09c90fe2')
+    const golnBalanceBigInt = useTokenBalance('0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E')
     const golnBalance = formatFromBalance(golnBalanceBigInt?.value, golnBalanceBigInt?.decimals)
     const decimals = golnBalanceBigInt?.decimals
 
