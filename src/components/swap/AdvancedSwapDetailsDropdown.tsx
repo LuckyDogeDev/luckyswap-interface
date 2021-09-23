@@ -14,7 +14,7 @@ const AdvancedDetailsFooter = styled.div<{ show: boolean }>`
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     color: ${({ theme }) => theme.text2};
-    background-color: #202231;
+    background-color: #e7f7ef;
     // background-color: ${({ theme }) => theme.advancedBG};
     z-index: -1;
     padding-right: 10px;
