@@ -4,7 +4,7 @@ import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'
 
 const SEVERITY = {
-    0: 'text-green',
+    0: 'text-purple',
     1: 'text-high-emphesis',
     2: 'text-yellow',
     3: 'text-red',
