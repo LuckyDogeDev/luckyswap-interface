@@ -122,7 +122,7 @@ function AppBar(): JSX.Element {
                                                                         break
                                                                     case ChainId.MATIC:
                                                                         address =
-                                                                            '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'
+                                                                            ''
                                                                         break
                                                                 }
                                                                 const params: any = {
@@ -258,7 +258,7 @@ function AppBar(): JSX.Element {
                                                                         break
                                                                     case ChainId.MATIC:
                                                                         address =
-                                                                            '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'
+                                                                            '0x994a0349cc542cd8D61d337D755D22Df72E83A4b'
                                                                         break
                                                                 }
                                                                 const params: any = {
