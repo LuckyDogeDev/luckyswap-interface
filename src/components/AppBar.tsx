@@ -122,7 +122,7 @@ function AppBar(): JSX.Element {
                                                                         break
                                                                     case ChainId.MATIC:
                                                                         address =
-                                                                            ''
+                                                                            '0x6F9F164A8D2fcd1EcB43Bb0A2f0FB656f172667e'
                                                                         break
                                                                 }
                                                                 const params: any = {
