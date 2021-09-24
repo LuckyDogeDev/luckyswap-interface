@@ -95,7 +95,7 @@ export default function Pool() {
                         <AutoColumn gap="md">
                             <RowBetween>
                                 <TYPE.white fontWeight={600} color={theme.text1}>
-                                    {i18n._(t`Helpful GoldNugget Tools`)}
+                                    {i18n._(t`Helpful LuckyFinance Tools`)}
                                 </TYPE.white>
                             </RowBetween>
                             <RowBetween>
