@@ -102,7 +102,7 @@ function AppBar(): JSX.Element {
                                 <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-700 lg:relative lg:p-0 lg:bg-transparent">
                                     <div className="flex items-center justify-between sm:justify-end space-x-2 w-full">
                                         {chainId &&
-                                            [ChainId.MAINNET].includes(chainId) &&
+                                            [ChainId.MAINNET, ChainId.BSC].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
@@ -110,6 +110,21 @@ function AppBar(): JSX.Element {
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
+                                                                let address: string | undefined
+                                                                switch (chainId) {
+                                                                    case ChainId.MAINNET:
+                                                                        address =
+                                                                            '0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18'
+                                                                        break
+                                                                    case ChainId.BSC:
+                                                                        address =
+                                                                            '0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18'
+                                                                        break
+                                                                    case ChainId.MATIC:
+                                                                        address =
+                                                                            '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'
+                                                                        break
+                                                                }
                                                                 const params: any = {
                                                                     type: 'ERC20',
                                                                     options: {
@@ -239,7 +254,7 @@ function AppBar(): JSX.Element {
                                                                         break
                                                                     case ChainId.BSC:
                                                                         address =
-                                                                            '0x947950BcC74888a40Ffa2593C5798F11Fc9124C4'
+                                                                            '0xc6D69475f115F61B1e8C4e78c20C49201c869DB4'
                                                                         break
                                                                     case ChainId.MATIC:
                                                                         address =
