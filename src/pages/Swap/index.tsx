@@ -340,7 +340,7 @@ export default function Swap() {
                                 <div className="flex justify-between items-center">
                                     <div>
                                         <div className="text-primary">New Yield Farms: ibBTC, BIFI, dTOP </div>
-                                        <div className="text-purple text-sm">Add liquidity and stake now</div>
+                                        <div className="text-darkgreen text-sm">Add liquidity and stake now</div>
                                     </div>
                                     <div className=""></div>
                                     <Link
