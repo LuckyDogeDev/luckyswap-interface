@@ -80,7 +80,8 @@ function Routes(): JSX.Element {
             )}
 
             {/* AlchemyBench Staking */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/alchemybench" component={AlchemyBench} />}
+            {chainId &&
+            [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) && <Route exact strict path="/alchemybench" component={AlchemyBench} />}
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/alchemybench/transactions" component={AlchemyBenchTransactions} />
             )}

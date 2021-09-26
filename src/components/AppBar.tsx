@@ -67,7 +67,11 @@ function AppBar(): JSX.Element {
                                                 {i18n._(t`Pool`)}
                                             </NavLink>
 
-                                            {chainId === ChainId.MAINNET && (
+                                            {chainId &&
+                                            [
+                                                ChainId.MAINNET,
+                                                ChainId.BSC,
+                                            ].includes(chainId) && (
                                                 <NavLink id={`alchemybench-nav-link`} to={'/alchemybench'}>
                                                     {i18n._(t`AlchemyBench`)}
                                                 </NavLink>
@@ -409,7 +413,8 @@ function AppBar(): JSX.Element {
                                             {i18n._(t`Alpine`)}
                                         </NavLink>
                                     )} */ }
-                                {chainId === ChainId.MAINNET && (
+                                {chainId &&
+                                [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
                                     <NavLink id={`stake-nav-link`} to={'/alchemybench'}>
                                         {i18n._(t`AlchemyBench`)}
                                     </NavLink>
