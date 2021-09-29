@@ -147,7 +147,6 @@ export default function NetworkModal(): JSX.Element | null {
                     ChainId.MATIC,
                     ChainId.FANTOM,
                     ChainId.HECO,
-                    ChainId.MOONBASE
                     /* ChainId.XDAI,
                     ChainId.HARMONY,
                     ChainId.AVALANCHE,
