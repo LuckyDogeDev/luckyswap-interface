@@ -147,10 +147,10 @@ export default function NetworkModal(): JSX.Element | null {
                     ChainId.MATIC,
                     ChainId.FANTOM,
                     ChainId.HECO,
+                    ChainId.OKEX
                     /* ChainId.XDAI,
                     ChainId.HARMONY,
-                    ChainId.AVALANCHE,
-                    ChainId.OKEX */
+                    ChainId.AVALANCHE */
                 ].map((key: ChainId, i: number) => {
                     if (chainId === key) {
                         return (
