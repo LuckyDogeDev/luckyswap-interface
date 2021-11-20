@@ -8,14 +8,12 @@ An open source interface for LuckySwap -- a protocol for decentralized exchange 
 - Interface: [app.luckydoge.finance](https://app.luckydoge.finance)
 - Docs: [luckyfinance.gitbook.io](https://luckyfinance.gitbook.io)
 - Twitter: [@LuckySwap](https://twitter.com/LuckyFinance)
-- Reddit: [/r/LuckySwap](https://www.reddit.com/r/LuckySwap)
 - Discord: [LuckySwap](https://discord.gg/Y7TF6QA)
 
 ## Accessing the LuckyFinance Interface
 
 To access the Luckyswap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/LuckyDogeDoge/luckyswap-interface/releases/latest),
-or visit [app.luckydoge.finance](https://app.luckydoge.finance).
+Visit [app.luckydoge.finance](https://app.luckydoge.finance).
 
 ## Listing a token
 
@@ -38,7 +36,7 @@ yarn start
 ```
 
 Note that the interface only works on networks where both
-[(Uni|GoldNugget)swap V2](https://github.com/LuckyDogeDev/luckyswap/tree/master/contracts/uniswapv2) and
+[(Uni|Lucky)swap V2](https://github.com/LuckyDogeDev/luckyswap/tree/master/contracts/uniswapv2) and
 [multicall](https://github.com/makerdao/multicall) are deployed.
 The interface will not work on other networks.
 
