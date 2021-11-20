@@ -40,7 +40,7 @@ export default function PLatinumNugget() {
                         </div>
                          <div>
                             <StakeCard golnBalance={golnBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
-                        </div>
+                             </div>
                     </div>
                     <div className="hidden md:block w-72 ml-6">
                         <BalanceCard
