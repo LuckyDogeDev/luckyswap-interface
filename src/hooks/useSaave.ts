@@ -8,11 +8,11 @@ import { BalanceProps } from './useTokenBalance'
 
 const { BigNumber } = ethers
 
-const useMaker = () => {
+const useSmelter = () => {
     const { account } = useActiveWeb3React()
 
     const addTransaction = useTransactionAdder()
-    const sushiContract = useGoldNuggetContract(true) // withSigner
+    const golnContract = useGoldNuggetContract(true) // withSigner
     const saaveContract = useSaaveContract(true) // withSigner
 
     // Allowance
@@ -20,7 +20,7 @@ const useMaker = () => {
     const fetchAllowance = useCallback(async () => {
         if (account) {
             try {
-                const allowance = await sushiContract?.allowance(account, saaveContract?.address)
+                const allowance = await golnContract?.allowance(account, saaveContract?.address)
                 console.log('allowance', allowance)
                 const formatted = Fraction.from(BigNumber.from(allowance), BigNumber.from(10).pow(18)).toString()
                 setAllowance(formatted)
@@ -29,24 +29,24 @@ const useMaker = () => {
                 throw error
             }
         }
-    }, [account, saaveContract?.address, sushiContract])
+    }, [account, saaveContract?.address, golnContract])
     useEffect(() => {
-        if (account && saaveContract && sushiContract) {
+        if (account && saaveContract && golnContract) {
             fetchAllowance()
         }
         const refreshInterval = setInterval(fetchAllowance, 10000)
         return () => clearInterval(refreshInterval)
-    }, [account, fetchAllowance, saaveContract, sushiContract])
+    }, [account, fetchAllowance, saaveContract, golnContract])
 
     // Approve
     const approve = useCallback(async () => {
         try {
-            const tx = await sushiContract?.approve(saaveContract?.address, ethers.constants.MaxUint256.toString())
+            const tx = await golnContract?.approve(saaveContract?.address, ethers.constants.MaxUint256.toString())
             return addTransaction(tx, { summary: 'Approve' })
         } catch (e) {
             return e
         }
-    }, [addTransaction, saaveContract?.address, sushiContract])
+    }, [addTransaction, saaveContract?.address, golnContract])
 
     // Saave GoldNugget - PLAN - aPLAN
     const saave = useCallback(
@@ -66,4 +66,4 @@ const useMaker = () => {
     return { allowance, approve, saave }
 }
 
-export default useMaker
+export default useSmelter

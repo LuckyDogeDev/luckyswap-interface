@@ -1,7 +1,7 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import { ArrowDown, Plus } from 'react-feather'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
-import { ChainId, Currency, ETHER, Percent, WETH, currencyEquals } from '@sushiswap/sdk'
+import { ChainId, Currency, ETHER, Percent, WETH, currencyEquals } from '@luckyfinance/sdk'
 import React, { useCallback, useContext, useMemo, useState } from 'react'
 import Row, { AutoRow, RowBetween, RowFixed } from '../../components/Row'
 import { Trans, t } from '@lingui/macro'
@@ -138,7 +138,7 @@ export default function RemoveLiquidity({
                 { name: 'verifyingContract', type: 'address' }
             ]
             const domain = {
-                name: 'LuckySwap LP Token',
+                name: 'LuckyFinance LP',
                 version: '1',
                 chainId: chainId,
                 verifyingContract: pair.liquidityToken.address

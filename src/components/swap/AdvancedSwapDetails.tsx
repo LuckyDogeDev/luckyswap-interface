@@ -1,4 +1,4 @@
-import { Trade, TradeType, ChainId } from '@sushiswap/sdk'
+import { Trade, TradeType, ChainId } from '@luckyfinance/sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
@@ -124,7 +124,7 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
                                     href={`${
                                         chainId && ANALYTICS_URL[chainId]
                                             ? ANALYTICS_URL[chainId]
-                                            : 'https://analytics.sushi.com'
+                                            : 'https://analytics.luckydoge.finance'
                                     }/pairs/${trade.route.pairs[0].liquidityToken.address}`}
                                 >
                                     {i18n._(t`View pair analytics`)}

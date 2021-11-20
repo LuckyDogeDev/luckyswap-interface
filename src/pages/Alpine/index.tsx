@@ -1,9 +1,9 @@
-import AlpineHero from '../../assets/kashi/bentobox-hero.jpg'
-import AlpineLogo from '../../assets/kashi/bentobox-logo.svg'
-import { Card } from 'kashi/components'
-import ComingSoon from '../../assets/kashi/coming-soon.png'
+import AlpineHero from '../../assets/goldvein/alpine-hero.jpg'
+import AlpineLogo from '../../assets/goldvein/alpine-logo.svg'
+import { Card } from 'goldvein/components'
+import ComingSoon from '../../assets/goldvein/coming-soon.png'
 import { Helmet } from 'react-helmet'
-import KashiNeonSign from '../../assets/kashi/kashi-neon.png'
+import GoldVeinNeonSign from '../../assets/goldvein/goldvein-neon.png'
 import { Link } from 'react-router-dom'
 import React from 'react'
 import Web3Status from 'components/Web3Status'
@@ -56,9 +56,9 @@ function Alpine(): JSX.Element {
                     <div className="grid gap-4 sm:gap-12 grid-flow-auto grid-cols-4">
                         <Card className="col-span-2 md:col-span-1 w-full bg-dark-800 hover:bg-dark-900 cursor-pointer rounded shadow-pink-glow hover:shadow-pink-glow-hovered">
                             <div className="relative w-full">
-                                <img alt="" src={KashiNeonSign} className="block m-auto w-full h-auto mb-4" />
+                                <img alt="" src={GoldVeinNeonSign} className="block m-auto w-full h-auto mb-4" />
                                 {account ? (
-                                    <Link to={'/bento/kashi/borrow'}>
+                                    <Link to={'/alp/goldvein/borrow'}>
                                         <div
                                             className="w-full border-gradient py-2 text-center"
                                             // className="w-full rounded text-lg text-high-emphesis px-4 py-2"

@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@sushiswap/sdk'
+import { ChainId, Pair, Token } from '@luckyfinance/sdk'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import ReactGA from 'react-ga'
@@ -198,15 +198,15 @@ export function useURLWarningToggle(): () => void {
  * @param tokenB the other token
  */
 export function toV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
-    return new Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'Uniswap V2')
+    return new Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'LF-LP', 'LuckyFinance LP')
 }
 
 // export function toPancakeV1LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
-//     return new Token(tokenA.chainId, PancakeV1Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'Uniswap V2')
+//     return new Token(tokenA.chainId, PancakeV1Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'LuckyFinance LP')
 // }
 
 // export function toPancakeV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
-//     return new Token(tokenA.chainId, PancakeV2Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'Uniswap V2')
+//     return new Token(tokenA.chainId, PancakeV2Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'LuckyFinance LP')
 // }
 
 /**

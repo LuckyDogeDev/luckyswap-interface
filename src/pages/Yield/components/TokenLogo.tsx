@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import PlaceHolder from 'assets/images/placeholder.png'
-import KashiLogo from 'assets/kashi/kashi-neon.png'
+import GoldVeinLogo from 'assets/goldvein/goldvein-neon.png'
 import { getAddress } from '@ethersproject/address'
 import styled from 'styled-components'
 //import EthereumLogo from "../../assets/img/eth.png";
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@luckyfinance/sdk'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
 import { getMaticTokenLogoURL } from '../../../constants/maticTokenMapping'
 
 const getTokenLogoURL = (address: string, chainId: any) => {
     let imageURL
     if (chainId === ChainId.MAINNET) {
-        imageURL = `https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/${isAddress(
+        imageURL = `https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/${isAddress(
             address
         )}/logo.png`
     } else if (chainId === ChainId.BSC) {
@@ -19,7 +19,7 @@ const getTokenLogoURL = (address: string, chainId: any) => {
     } else if (chainId === ChainId.MATIC) {
         imageURL = getMaticTokenLogoURL(address)
     } else {
-        imageURL = `https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/${isAddress(
+        imageURL = `https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/${isAddress(
             address
         )}/logo.png`
     }
@@ -69,10 +69,10 @@ export default function TokenLogo({ address, header = false, size, ...rest }: an
         )
     }
 
-    if (address === 'kashiLogo') {
+    if (address === 'goldveinLogo') {
         return (
             <Inline>
-                <Image {...rest} alt={''} src={KashiLogo} size={size} />
+                <Image {...rest} alt={''} src={GoldVeinLogo} size={size} />
             </Inline>
         )
     }

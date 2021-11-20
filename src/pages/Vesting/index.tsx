@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { TokenAmount } from '@sushiswap/sdk'
+import { TokenAmount } from '@luckyfinance/sdk'
 import { ButtonPrimary } from 'components/ButtonLegacy'
 import { LightCard } from 'components/CardLegacy'
 import { AutoColumn } from 'components/Column'
@@ -118,7 +118,7 @@ export default function ClaimModal() {
     useEffect(() => {
         const fetchLockup = async () => {
             if (account) {
-                fetch('https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/amounts-10959148-12171394.json')
+                fetch('https://raw.githubusercontent.com/LuckyDogeDev/lucky-vesting/master/amounts-10959148-12171394.json')
                     .then(response => response.json())
                     .then(data => {
                         //console.log('vesting:', data)
@@ -144,11 +144,11 @@ export default function ClaimModal() {
 
     let VaultImage
     if (!pendingTreasurySignature && Number(unclaimedAmount?.toFixed(8)) > 0) {
-        VaultImage = 'https://raw.githubusercontent.com/sushiswap/sushi-content/master/images/sushi-vault-reverse.png'
+        VaultImage = 'https://raw.githubusercontent.com/LuckyDogeDev/lucky-content/master/images/sushi-vault-reverse.png'
     } else if (!pendingTreasurySignature && Number(unclaimedAmount?.toFixed(8)) <= 0) {
-        VaultImage = 'https://raw.githubusercontent.com/sushiswap/sushi-content/master/images/vesting-safe-off.png'
+        VaultImage = 'https://raw.githubusercontent.com/LuckyDogeDev/lucky-content/master/images/vesting-safe-off.png'
     } else if (pendingTreasurySignature) {
-        VaultImage = 'https://raw.githubusercontent.com/sushiswap/sushi-content/master/images/vesting-safe-closed.png'
+        VaultImage = 'https://raw.githubusercontent.com/LuckyDogeDev/lucky-content/master/images/vesting-safe-closed.png'
     }
 
     return (
@@ -178,33 +178,22 @@ export default function ClaimModal() {
                                         style={{ maxWidth: '300px', minHeight: '150px' }}
                                     >
                                         <Trans>
-                                            Vesting is executed within the guidelines selected by the community in{' '}
+                                            Vesting will be executed within the guidelines selected by the community in{' '}
                                             <a
-                                                target="_blank"
+                                                /*target="_blank"
                                                 rel="noreferrer noopener"
-                                                href="https://snapshot.org/#/sushi/proposal/QmPwBGy98NARoEcUfuWPgzMdJdiaZub1gVic67DcSs6NZQ"
+                                                href="https://snapshot.org/#/sushi/proposal/QmPwBGy98NARoEcUfuWPgzMdJdiaZub1gVic67DcSs6NZQ"*/
                                             >
-                                                SIMP3
+                                                LIMP3
                                             </a>
                                             .
-                                            <br />
-                                            <br />
-                                            Please refer to the{' '}
-                                            <a
-                                                target="_blank"
-                                                rel="noreferrer noopener"
-                                                href="https://forum.sushiswapclassic.org/t/simp-3-vesting-and-the-future-of-sushiswap/1794"
-                                            >
-                                                forum discussion
-                                            </a>{' '}
-                                            for deliberations on additional points.
                                             <br />
                                             <br />
                                             Additional records and weekly merkle updates can be found on{' '}
                                             <a
                                                 target="_blank"
                                                 rel="noreferrer noopener"
-                                                href="https://github.com/sushiswap/sushi-vesting"
+                                                href="https://github.com/LuckyDogeDev/lucky-vesting"
                                             >
                                                 Github
                                             </a>
@@ -299,11 +288,7 @@ export default function ClaimModal() {
                                             </RowBetween>
                                         </AutoColumn>
                                     </LightCard>
-                                    <LightCard
-                                        as={Link}
-                                        to={`/saave`}
-                                        style={{ color: 'inherit', textDecoration: 'none' }}
-                                    >
+                                    { /* <LightCard style={{ color: 'inherit', textDecoration: 'none' }}>
                                         <AutoColumn gap="12px">
                                             <RowBetween>
                                                 <AutoRow>
@@ -314,15 +299,15 @@ export default function ClaimModal() {
                                                     </AutoRow>
                                                     <AutoRow>
                                                         <TYPE.darkGray fontSize=".75rem">
-                                                            {t`Stake into PLAN add collateral as aPLAN on Aave all in
+                                                            {t` (COMING SOON) Stake into PLAN add collateral as aPLAN on Aave all in
                                                             one click`}
                                                         </TYPE.darkGray>
                                                     </AutoRow>
                                                 </AutoRow>
-                                                <ChevronRight />
+                                                { /* <ChevronRight />
                                             </RowBetween>
                                         </AutoColumn>
-                                    </LightCard>
+                                    </LightCard> */ }
                                     <LightCard style={{ color: 'inherit', textDecoration: 'none' }}>
                                         <AutoColumn gap="12px">
                                             <RowBetween>

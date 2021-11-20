@@ -3,7 +3,7 @@ import { ThemeContext } from 'styled-components'
 import BalanceCard from './BalanceCard'
 import { Button } from '../../components'
 import { ChevronLeft } from 'react-feather'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@luckyfinance/sdk'
 import { GOLN, PLAN } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 import { useHistory } from 'react-router-dom'
@@ -17,7 +17,7 @@ const mock = {
 export default function AlchemyBenchTransactions() {
     const theme = useContext(ThemeContext)
 
-    const sushiBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
+    const golnBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
     const PlatinumNuggetBalance = useTokenBalance(PLAN?.address ?? '')
 
     const history = useHistory()
@@ -34,7 +34,7 @@ export default function AlchemyBenchTransactions() {
                     </div>
 
                     <div className="md:hidden w-full max-w-xl mb-10">
-                        <BalanceCard sushiBalance={sushiBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
+                        <BalanceCard golnBalance={golnBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
                     </div>
 
                     <div className="text-h5 mb-5 md:mb-3 text-high-emphesis">Your History</div>
@@ -43,7 +43,7 @@ export default function AlchemyBenchTransactions() {
             </div>
             <div className="flex flex-nowrap justify-center flex-row-reverse w-full">
                 <div className="hidden md:block h-full w-72 mb-10 ml-6 mt-16">
-                    <BalanceCard sushiBalance={sushiBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
+                    <BalanceCard golnBalance={golnBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
                 </div>
 
                 <div className="flex flex-1 max-w-screen-md flex-col mb-20 md:mb-0">

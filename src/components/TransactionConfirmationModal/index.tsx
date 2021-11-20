@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@luckyfinance/sdk'
 import React, { useContext } from 'react'
 import { AlertTriangle, ArrowUpCircle } from 'react-feather'
 import { Text } from 'rebass'
@@ -21,7 +21,7 @@ const Section = styled(AutoColumn)`
 `
 
 const BottomSection = styled(Section)`
-    background-color: ${({ theme }) => theme.bg2};
+    background-color: ${({ theme }) => theme.bg5};
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 `

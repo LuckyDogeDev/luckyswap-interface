@@ -1,10 +1,10 @@
-import { Percent } from '@sushiswap/sdk'
+import { Percent } from '@luckyfinance/sdk'
 import React from 'react'
 import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'
 
 const SEVERITY = {
-    0: 'text-green',
+    0: 'text-darkgreen',
     1: 'text-high-emphesis',
     2: 'text-yellow',
     3: 'text-red',

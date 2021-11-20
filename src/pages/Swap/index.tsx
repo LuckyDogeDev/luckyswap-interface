@@ -3,7 +3,7 @@ import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper } from '../../
 import { AutoRow, RowBetween } from '../../components/Row'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
 import Card, { DarkCard, GreyCard } from '../../components/CardLegacy'
-import { ChainId, CurrencyAmount, JSBI, Token, Trade } from '@sushiswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, Trade } from '@luckyfinance/sdk'
 import Column, { AutoColumn } from '../../components/Column'
 import { LinkStyledButton, TYPE } from '../../theme'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
@@ -339,8 +339,8 @@ export default function Swap() {
                             <DarkCard>
                                 <div className="flex justify-between items-center">
                                     <div>
-                                        <div className="text-primary">New Yield Farms: ibBTC, BIFI, dTOP </div>
-                                        <div className="text-purple text-sm">Add liquidity and stake now</div>
+                                        <div className="text-primary">New Yield Farms: GOLN</div>
+                                        <div className="text-darkgreen text-sm">Add liquidity and stake now</div>
                                     </div>
                                     <div className=""></div>
                                     <Link

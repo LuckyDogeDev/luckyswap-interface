@@ -16,13 +16,13 @@ import { useModalOpen, useToggleModal } from '../../state/application/hooks'
 import { useLanguageData } from '../../language/hooks'
 
 const ExtendedStyledMenuButton = styled(StyledMenuButton)`
-    border: 2px solid rgb(23, 21, 34);
+    border: 2px solid dark-700;
     border-radius: 10px;
     font-size: 1.25rem;
     height: 40px;
 
     &:hover {
-        border-color: rgb(33, 34, 49);
+        border-color: dark-600;
     }
 `
 
@@ -65,6 +65,7 @@ const MenuButtonFlag = styled.img`
     width: 22px;
     height: 22px;
     vertical-align: middle;
+    border: dark-1000;
 `
 
 // Use https://onlineunicodetools.com/convert-unicode-to-image to convert

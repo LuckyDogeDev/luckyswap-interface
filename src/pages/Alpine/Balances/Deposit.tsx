@@ -1,6 +1,6 @@
-import { Token, TokenAmount, WETH } from '@sushiswap/sdk'
+import { Token, TokenAmount, WETH } from '@luckyfinance/sdk'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
-import { BENTOBOX_ADDRESS } from 'kashi'
+import { ALPINE_ADDRESS } from 'goldvein'
 import { Button } from 'components'
 import React, { useState } from 'react'
 import useAlpine from 'hooks/useAlpine'
@@ -35,7 +35,7 @@ export default function Deposit({
             new Token(chainId || 1, tokenAddress, balance.decimals, tokenSymbol, ''),
             value.toBigNumber(balance.decimals).toString()
         ),
-        chainId && BENTOBOX_ADDRESS[chainId]
+        chainId && ALPINE_ADDRESS[chainId]
     )
 
     const showApprove =

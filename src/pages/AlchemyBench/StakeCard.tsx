@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Input as NumericalInput } from '../../components/NumericalInput'
 import ErrorTriangle from '../../assets/images/error-triangle.svg'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BAR_ADDRESS, Token, TokenAmount } from '@sushiswap/sdk'
+import { ALCHEMYBENCH_ADDRESS, Token, TokenAmount } from '@luckyfinance/sdk'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { BalanceProps } from '../../hooks/useTokenBalance'
@@ -13,7 +13,7 @@ import TransactionFailedModal from './TransactionFailedModal'
 import { Button, Dots } from '../../components'
 import { t } from '@lingui/macro'
 
-import sushiData from '@sushiswap/sushi-data'
+import golnData from '@luckyfinance/lucky-data'
 import { useLingui } from '@lingui/react'
 
 const INPUT_CHAR_LIMIT = 18
@@ -49,11 +49,11 @@ const buttonStyleDisabled = `${buttonStyle} text-secondary bg-dark-700`
 const buttonStyleConnectWallet = `${buttonStyle} text-high-emphesis bg-cyan-blue hover:bg-opacity-90`
 
 interface StakeCardProps {
-    sushiBalance: BalanceProps
+    golnBalance: BalanceProps
     PlatinumNuggetBalance: BalanceProps
 }
 
-export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: StakeCardProps) {
+export default function StakeCard({ golnBalance, PlatinumNuggetBalance }: StakeCardProps) {
     const { i18n } = useLingui()
     const { account } = useActiveWeb3React()
 
@@ -62,7 +62,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
     const [exchangeRate, setExchangeRate] = useState<any>()
     useEffect(() => {
         const fetchData = async () => {
-            const results = await Promise.all([sushiData.bar.info()])
+            const results = await Promise.all([golnData.alchemybench.info()])
             setExchangeRate(results[0].ratio)
         }
         fetchData()
@@ -76,7 +76,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
     const [activeTab, setActiveTab] = useState(0)
     const [modalOpen, setModalOpen] = useState(false)
 
-    const balance: BalanceProps = activeTab === 0 ? sushiBalance : PlatinumNuggetBalance
+    const balance: BalanceProps = activeTab === 0 ? golnBalance : PlatinumNuggetBalance
     const formattedBalance = formatFromBalance(balance.value)
 
     const [input, setInput] = useState<string>('')
@@ -93,7 +93,7 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
         setUsingBalance(true)
     }
 
-    const insufficientFunds = (activeTab === 0 ? sushiBalance : PlatinumNuggetBalance).value.lt(parsedInput.value)
+    const insufficientFunds = (activeTab === 0 ? golnBalance : PlatinumNuggetBalance).value.lt(parsedInput.value)
     const inputError = insufficientFunds
 
     const [pendingTx, setPendingTx] = useState(false)
@@ -139,10 +139,10 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
 
     const [approvalState, approve] = useApproveCallback(
         new TokenAmount(
-            new Token(1, '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', 18, 'GOLN', ''),
+            new Token(1, '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E', 18, 'GOLN', ''),
             parsedInput.value.toString()
         ),
-        BAR_ADDRESS[1]
+        ALCHEMYBENCH_ADDRESS[1]
     )
 
     console.log('approvalState:', approvalState, parsedInput.value.toString())
@@ -207,7 +207,9 @@ export default function StakeCard({ sushiBalance, PlatinumNuggetBalance }: Stake
                                     input ? 'text-high-emphesis' : 'text-secondary'
                                 }`}
                             >
-                                {`${input ? input : '0'} ${activeTab === 0 ? '' : 'x'}GOLN`}
+                                {`${input ? input : "0"} ${
+                                    activeTab === 0 ? "GOLN" : "PLAN"
+                                }`}
                             </p>
                         </div>
                         <div className="flex items-center text-secondary text-caption2 md:text-caption">

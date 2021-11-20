@@ -1,10 +1,10 @@
-import { ChainId, Token } from '@sushiswap/sdk'
+import { ChainId, Token } from '@luckyfinance/sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 
 import { AppState } from '../index'
-import DEFAULT_TOKEN_LIST from '@sushiswap/default-token-list'
+import DEFAULT_TOKEN_LIST from '@luckyfinance/default-token-list'
 import { UNSUPPORTED_LIST_URLS } from './../../constants/lists'
-import UNSUPPORTED_TOKEN_LIST from '../../constants/token-lists/sushiswap-v2-unsupported.tokenlist.json'
+import UNSUPPORTED_TOKEN_LIST from '../../constants/token-lists/luckyswap-v2-unsupported.tokenlist.json'
 import sortByListPriority from 'utils/listSort'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
@@ -79,7 +79,7 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
                     })
                     ?.filter((x): x is TagInfo => Boolean(x)) ?? []
             const token = new WrappedTokenInfo(tokenInfo, tags)
-            if (tokenMap[token.chainId][token.address] !== undefined) throw Error('Duplicate tokens.')
+//            if (tokenMap[token.chainId][token.address] !== undefined) throw Error('Duplicate tokens.')
             return {
                 ...tokenMap,
                 [token.chainId]: {

@@ -1,17 +1,17 @@
-import { AlpBalance, useAlpBalances } from 'state/bentobox/hooks'
-import { Card, CardHeader, Layout, Search } from '../../../kashi/components'
+import { AlpBalance, useAlpBalances } from 'state/alpine/hooks'
+import { Card, CardHeader, Layout, Search } from '../../../goldvein/components'
 import React, { useState } from 'react'
 import { useFuse, useSortableData } from 'hooks'
 
-import AsyncTokenIcon from '../../../kashi/components/AsyncTokenIcon'
-import AlpineImage from 'assets/kashi/bento-illustration.png'
+import AsyncTokenIcon from '../../../goldvein/components/AsyncTokenIcon'
+import AlpineImage from 'assets/goldvein/alp-illustration.png'
 import Deposit from './Deposit'
 import { Helmet } from 'react-helmet'
 import { Paper } from 'components'
 import Withdraw from './Withdraw'
-import { ZERO } from 'kashi/functions/math'
+import { ZERO } from 'goldvein/functions/math'
 import { formattedNum } from '../../../utils'
-import { getCurrency } from 'kashi'
+import { getCurrency } from 'goldvein'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
@@ -42,7 +42,7 @@ export default function AlpBalances(): JSX.Element {
                         backgroundImage={AlpineImage}
                         title={i18n._(t`Deposit tokens into Alpine for all the yields`)}
                         description={i18n._(
-                            t`Alpine provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets`
+                            t`Alpine provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like GoldVein markets`
                         )}
                     />
                 }
@@ -105,8 +105,8 @@ const TokenBalance = ({ balance }: { balance: AlpBalance }) => {
                 </div>
                 <div className="flex justify-end items-center">
                     <div>
-                        <div className="text-right">{formattedNum(balance.bento.string)} </div>
-                        <div className="text-secondary text-right">{formattedNum(balance.bento.usd, true)}</div>
+                        <div className="text-right">{formattedNum(balance.alp.string)} </div>
+                        <div className="text-secondary text-right">{formattedNum(balance.alp.usd, true)}</div>
                     </div>
                 </div>
             </div>

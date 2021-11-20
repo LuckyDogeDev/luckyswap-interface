@@ -4,7 +4,7 @@ import useAlpine from 'hooks/useAlpine'
 import { formattedNum } from 'utils'
 import { Input as NumericalInput } from 'components/NumericalInput'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import { useAlpBalance } from 'state/bentobox/hooks'
+import { useAlpBalance } from 'state/alpine/hooks'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 

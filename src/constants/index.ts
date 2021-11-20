@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token, WETH } from '@sushiswap/sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from '@luckyfinance/sdk'
 import { fortmatic, injected, lattice, portis, torus, walletconnect, walletlink } from '../connectors'
 
 import { AbstractConnector } from '@web3-react/abstract-connector'
@@ -25,7 +25,7 @@ export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 export const GOLN: ChainTokenMap = {
     [ChainId.MAINNET]: new Token(
         ChainId.MAINNET,
-        '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2',
+        '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E',
         18,
         'GOLN',
         'GoldNugget'
@@ -62,19 +62,7 @@ export const MERKLE_DISTRIBUTOR_ADDRESS: { [chainId in ChainId]?: string } = {
 
 // TODO: update weekly with new constant
 export const MERKLE_ROOT =
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-01/merkle-10959148-11003985.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-02/merkle-10959148-11049116.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-03/merkle-10959148-11094829.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-04/merkle-10959148-11140426.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-05/merkle-10959148-11185970.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-06/merkle-10959148-11231587.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-07/merkle-10959148-11277295.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-08/merkle-10959148-11322822.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-09/merkle-10959148-11368459.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-10/merkle-10959148-11413917.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-11/merkle-10959148-11459483.json'
-    //'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-12/merkle-10959148-11505104.json'
-    'https://raw.githubusercontent.com/sushiswap/sushi-vesting/master/merkle/week-13/merkle-10959148-11550728.json'
+    'https://raw.githubusercontent.com/LuckyDogeDev/lucky-vesting/master/merkle/week-13/merkle-10959148-11550728.json'
 
 // TODO: SDK should have two maps, WETH map and WNATIVE map.
 const WRAPPED_NATIVE_ONLY: ChainTokenList = {
@@ -222,7 +210,7 @@ export const PLAN_CALL = new Token(
     'PLAN 25 Call [31 May 2021]'
 )
 
-export const PLAN = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'PLAN', 'AlchemyBench')
+export const PLAN = new Token(ChainId.MAINNET, '0x210e8B3600aea3943D2e45a913723931c97895Fe', 18, 'PLAN', 'AlchemyBench')
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
     ChainId.MAINNET,
@@ -433,9 +421,9 @@ export const BASE_SWAPPER: { [chainId in ChainId]?: string } = {
 // export const BORING_HELPER_ADDRESS = '0x11Ca5375AdAfd6205E41131A4409f182677996E6'
 
 export const ANALYTICS_URL: { [chainId in ChainId]?: string } = {
-    [ChainId.MAINNET]: 'https://analytics.sushi.com',
-    [ChainId.MATIC]: 'https://analytics-polygon.sushi.com',
-    [ChainId.FANTOM]: 'https://analytics-ftm.sushi.com',
-    [ChainId.BSC]: 'https://analytics-bsc.sushi.com',
-    [ChainId.XDAI]: 'https://analytics-xdai.sushi.com'
+    [ChainId.MAINNET]: 'https://analytics.luckydoge.finance',
+    [ChainId.MATIC]: 'https://analytics-polygon.luckydoge.finance',
+    [ChainId.FANTOM]: 'https://analytics-ftm.luckydoge.finance',
+    [ChainId.BSC]: 'https://analytics-bsc.luckydoge.finance',
+    [ChainId.XDAI]: 'https://analytics-xdai.luckydoge.finance'
 }

@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { formattedNum } from '../../../../utils'
 import { DoubleLogo, Paper } from '../../components'
-import { MasterChefV1Details, MasterChefV2Details, MiniChefDetails } from '../Details'
+import { GoldMinerV1Details, GoldMinerV2Details, MiniMinerDetails } from '../Details'
 
 const LiquidityPosition = ({ farm }: any) => {
     const [expand, setExpand] = useState<boolean>(false)
     return (
         <>
-            {farm.type === 'SLP' && (
+            {farm.type === 'LLP' && (
                 <Paper className="bg-dark-800">
                     <div
                         className="grid grid-cols-3 py-4 px-4 cursor-pointer select-none rounded text-sm"
@@ -30,7 +30,7 @@ const LiquidityPosition = ({ farm }: any) => {
                             <div>
                                 <div className="text-right">{formattedNum(farm.depositedUSD, true)} </div>
                                 <div className="text-secondary text-right">
-                                    {formattedNum(farm.depositedLP, false)} SLP
+                                    {formattedNum(farm.depositedLP, false)} LLP
                                 </div>
                             </div>
                         </div>
@@ -41,8 +41,8 @@ const LiquidityPosition = ({ farm }: any) => {
                             </div>
                         </div>
                     </div>
-                    {expand && farm.contract === 'masterchefv1' && (
-                        <MasterChefV1Details
+                    {expand && farm.contract === 'goldminerv1' && (
+                        <GoldMinerV1Details
                             pid={farm.pid}
                             pairAddress={farm.pairAddress}
                             pairSymbol={farm.symbol}
@@ -51,8 +51,8 @@ const LiquidityPosition = ({ farm }: any) => {
                             type={'LP'}
                         />
                     )}
-                    {expand && farm.contract === 'masterchefv2' && (
-                        <MasterChefV2Details
+                    {expand && farm.contract === 'goldminerv2' && (
+                        <GoldMinerV2Details
                             pid={farm.pid}
                             pairAddress={farm.pairAddress}
                             pairSymbol={farm.symbol}
@@ -61,8 +61,8 @@ const LiquidityPosition = ({ farm }: any) => {
                             type={'LP'}
                         />
                     )}
-                    {expand && farm.contract === 'minichef' && (
-                        <MiniChefDetails
+                    {expand && farm.contract === 'miniminer' && (
+                        <MiniMinerDetails
                             pid={farm.pid}
                             pairAddress={farm.pairAddress}
                             pairSymbol={farm.symbol}

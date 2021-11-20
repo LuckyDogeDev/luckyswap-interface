@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { formattedNum, formattedPercent } from '../../../../utils'
 import { DoubleLogo, Paper } from '../../components'
-import { MasterChefV1Details, MasterChefV2Details, MiniChefDetails } from '../Details'
+import { GoldMinerV1Details, GoldMinerV2Details, MiniMinerDetails } from '../Details'
 import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'
-import { ChainId } from '@sushiswap/sdk'
-import AsyncTokenIcon from '../../../../kashi/components/AsyncTokenIcon'
+import { ChainId } from '@luckyfinance/sdk'
+import AsyncTokenIcon from '../../../../goldvein/components/AsyncTokenIcon'
 
 const LiquidityPosition = ({ farm }: any) => {
     const [expand, setExpand] = useState<boolean>(false)
@@ -12,7 +12,7 @@ const LiquidityPosition = ({ farm }: any) => {
 
     return (
         <>
-            {farm.type === 'SLP' && (
+            {farm.type === 'LLP' && (
                 <Paper className="bg-dark-800">
                     {process.env.NODE_ENV === 'development' && (
                         <div className="text-xs">
@@ -29,7 +29,7 @@ const LiquidityPosition = ({ farm }: any) => {
                         </div>
                         <div className="hidden md:block text-sm sm:text-base ml-4 text-gray-500 text-right">
                             {/* TODO: remove hard coding */}
-                            {farm && farm.contract === 'masterchefv2' ? 'GOLN & ALCX' : 'GOLN'}
+                            {farm && farm.contract === 'goldminerv2' ? 'GOLN & ALCX' : 'GOLN'}
                         </div>
                         <div className="text-gray-500 text-sm sm:text-base text-right">
                             {formattedNum(farm.tvl, true)}
@@ -76,30 +76,30 @@ const LiquidityPosition = ({ farm }: any) => {
                         <div className="md:col-span-1 hidden md:flex flex-row space-x-2 justify-end items-center ml-4">
                             <div>
                                 {/* TODO: remove hard coding */}
-                                {farm && farm.contract === 'minichef' && (
+                                {farm && farm.contract === 'miniminer' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
-                                            {formattedNum(farm.sushiRewardPerDay)} GOLN per day
+                                            {formattedNum(farm.golnRewardPerDay)} GOLN per day
                                         </div>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
                                             {formattedNum(farm.secondaryRewardPerDay)} WMATIC per day
                                         </div>
                                     </>
                                 )}
-                                {farm && farm.contract === 'masterchefv2' && (
+                                {farm && farm.contract === 'goldminerv2' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
-                                            {formattedNum(farm.sushiRewardPerDay)} GOLN per day
+                                            {formattedNum(farm.golnRewardPerDay)} GOLN per day
                                         </div>
                                         <div className="text-gray-500 text-right font-semibold text-xs">
                                             {formattedNum(farm.secondaryRewardPerDay)} ALCX per day
                                         </div>
                                     </>
                                 )}
-                                {farm && farm.contract === 'masterchefv1' && (
+                                {farm && farm.contract === 'goldminerv1' && (
                                     <>
                                         <div className="text-gray-500 text-right font-semibold text-sm sm:text-sm">
-                                            {formattedNum(farm.sushiRewardPerDay)} GOLN
+                                            {formattedNum(farm.golnRewardPerDay)} GOLN
                                         </div>
                                         <div className="text-gray-500 text-right text-xs">per day</div>
                                     </>
@@ -110,7 +110,7 @@ const LiquidityPosition = ({ farm }: any) => {
                             <div>
                                 {/* <div className="text-right">{formattedNum(farm.tvl, true)} </div> */}
                                 <div className="text-gray-500 text-right font-semibold text-sm sm:text-sm">
-                                    {formattedNum(farm.slpBalance / 1e18, false)} SLP
+                                    {formattedNum(farm.llpBalance / 1e18, false)} LLP
                                 </div>
                                 <div className="text-gray-500 text-right text-xs">Market Staked</div>
                             </div>
@@ -127,8 +127,8 @@ const LiquidityPosition = ({ farm }: any) => {
                         </div>
                     </div>
 
-                    {expand && farm.contract === 'masterchefv1' && (
-                        <MasterChefV1Details
+                    {expand && farm.contract === 'goldminerv1' && (
+                        <GoldMinerV1Details
                             pid={farm.pid}
                             pairAddress={farm.pairAddress}
                             pairSymbol={farm.symbol}
@@ -137,24 +137,24 @@ const LiquidityPosition = ({ farm }: any) => {
                             type={'LP'}
                         />
                     )}
-                    {expand && farm.contract === 'masterchefv2' && (
-                        <MasterChefV2Details
+                    {expand && farm.contract === 'goldminerv2' && (
+                        <GoldMinerV2Details
                             pid={farm.pid}
                             pairAddress={farm.pairAddress}
                             pairSymbol={farm.symbol}
                             token0Address={farm.liquidityPair.token0.id}
                             token1Address={farm.liquidityPair.token1.id}
-                            type={'SLP'}
+                            type={'LLP'}
                         />
                     )}
-                    {expand && farm.contract === 'minichef' && (
-                        <MiniChefDetails
+                    {expand && farm.contract === 'miniminer' && (
+                        <MiniMinerDetails
                             pid={farm.pid}
                             pairAddress={farm.pairAddress}
                             pairSymbol={farm.symbol}
                             token0Address={farm.liquidityPair.token0.id}
                             token1Address={farm.liquidityPair.token1.id}
-                            type={'SLP'}
+                            type={'LLP'}
                         />
                     )}
                 </Paper>

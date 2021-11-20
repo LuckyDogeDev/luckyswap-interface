@@ -7,16 +7,16 @@ export const blocklytics = new ApolloClient({
     cache: new InMemoryCache()
 })
 
-export const masterchef = new ApolloClient({
+export const goldminer = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://api.thegraph.com/subgraphs/name/sushiswap/master-chef'
+        uri: 'https://api.thegraph.com/subgraphs/name/luckydogedev/goldminer'
     }),
     cache: new InMemoryCache()
 })
 
-export const masterchefv2 = new ApolloClient({
+export const goldminerv2 = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://api.thegraph.com/subgraphs/name/sushiswap/master-chefv2'
+        uri: 'https://api.thegraph.com/subgraphs/name/luckydogedev/goldminerv2'
     }),
     cache: new InMemoryCache(),
     defaultOptions: {
@@ -27,9 +27,9 @@ export const masterchefv2 = new ApolloClient({
     }
 })
 
-export const minichefv2_matic = new ApolloClient({
+export const miniminerv2_matic = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://api.thegraph.com/subgraphs/name/sushiswap/matic-minichef'
+        uri: 'https://api.thegraph.com/subgraphs/name/luckydogedev/matic-miniminer'
     }),
     cache: new InMemoryCache(),
     defaultOptions: {
@@ -42,7 +42,7 @@ export const minichefv2_matic = new ApolloClient({
 
 export const client = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://api.thegraph.com/subgraphs/name/jiro-ono/sushiswap-v1-exchange'
+        uri: 'https://api.thegraph.com/subgraphs/name/jiro-ono/luckyswap-v1-exchange'
     }),
     cache: new InMemoryCache()
 })
@@ -56,7 +56,7 @@ export const exchange = new ApolloClient({
 
 export const exchange_matic = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://api.thegraph.com/subgraphs/name/sushiswap/matic-exchange'
+        uri: 'https://api.thegraph.com/subgraphs/name/luckydogedev/matic-exchange'
     }),
     cache: new InMemoryCache(),
     defaultOptions: {

@@ -12,17 +12,17 @@ const items = (i18n: I18n) => [
     {
         name: i18n._(t`Docs`),
         description: i18n._(t`Documentation for users of LuckyFinance.`),
-        href: 'https://docs.sushi.com'
+        href: 'https://docs.luckydoge.finance'
     },
     {
         name: i18n._(t`Dev`),
         description: i18n._(t`Documentation for developers of LuckyFinance.`),
-        href: 'https://dev.sushi.com'
+        href: 'https://dev.luckyfinance.finance'
     },
     {
         name: i18n._(t`Open Source`),
         description: i18n._(t`LuckyFinance is a supporter of Open Source.`),
-        href: 'https://github.com/sushiswap'
+        href: 'https://github.com/LuckyDogeDev'
     },
     {
         name: i18n._(t`Tools`),
@@ -32,7 +32,17 @@ const items = (i18n: I18n) => [
     {
         name: i18n._(t`Discord`),
         description: i18n._(t`Join the community on Discord.`),
-        href: 'https://discord.gg/NVPXN4e'
+        href: 'https://discord.gg/kCuMCYzqTE'
+    },
+    {
+        name: i18n._(t`Telegram`),
+        description: i18n._(t`Join the community on Discord.`),
+        href: 'https://t.me/OfficialLuckyDoge'
+    },
+    {
+        name: i18n._(t`Twitter`),
+        description: i18n._(t`Join the community on Twitter.`),
+        href: 'https://twitter.com/LDOGEofficial?s=09'
     }
 ]
 

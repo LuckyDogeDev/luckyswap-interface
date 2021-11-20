@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { WETH } from '@sushiswap/sdk'
+import { WETH } from '@luckyfinance/sdk'
 import { ethers } from 'ethers'
 import { useCallback } from 'react'
 import { useActiveWeb3React } from './useActiveWeb3React'
@@ -33,7 +33,7 @@ function useAlpine() {
                         return addTransaction(tx, { summary: 'Deposit to Alpine' })
                     }
                 } catch (e) {
-                    console.log('bentobox deposit error:', e)
+                    console.log('alpine deposit error:', e)
                     return e
                 }
             }
@@ -54,7 +54,7 @@ function useAlpine() {
                     const tx = await alPineContract?.withdraw(tokenAddressChecksum, account, account, value, 0)
                     return addTransaction(tx, { summary: 'Withdraw from Alpine' })
                 } catch (e) {
-                    console.log('bentobox withdraw error:', e)
+                    console.log('alpine withdraw error:', e)
                     return e
                 }
             }

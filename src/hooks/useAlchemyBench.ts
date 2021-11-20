@@ -11,15 +11,15 @@ const { BigNumber } = ethers
 const useAlchemyBench = () => {
     const { account } = useActiveWeb3React()
     const addTransaction = useTransactionAdder()
-    const sushiContract = useGoldNuggetContract(true) // withSigner
-    const barContract = useAlchemyBenchContract(true) // withSigner
+    const golnContract = useGoldNuggetContract(true) // withSigner
+    const benchContract = useAlchemyBenchContract(true) // withSigner
 
     const [allowance, setAllowance] = useState('0')
 
     const fetchAllowance = useCallback(async () => {
         if (account) {
             try {
-                const allowance = await sushiContract?.allowance(account, barContract?.address)
+                const allowance = await golnContract?.allowance(account, benchContract?.address)
                 const formatted = Fraction.from(BigNumber.from(allowance), BigNumber.from(10).pow(18)).toString()
                 setAllowance(formatted)
             } catch (error) {
@@ -27,38 +27,38 @@ const useAlchemyBench = () => {
                 throw error
             }
         }
-    }, [account, barContract, sushiContract])
+    }, [account, benchContract, golnContract])
 
     useEffect(() => {
-        if (account && barContract && sushiContract) {
+        if (account && benchContract && golnContract) {
             fetchAllowance()
         }
         const refreshInterval = setInterval(fetchAllowance, 10000)
         return () => clearInterval(refreshInterval)
-    }, [account, barContract, fetchAllowance, sushiContract])
+    }, [account, benchContract, fetchAllowance, golnContract])
 
     const approve = useCallback(async () => {
         try {
-            const tx = await sushiContract?.approve(barContract?.address, ethers.constants.MaxUint256.toString())
+            const tx = await golnContract?.approve(benchContract?.address, ethers.constants.MaxUint256.toString())
             return addTransaction(tx, { summary: 'Approve' })
         } catch (e) {
             return e
         }
-    }, [addTransaction, barContract, sushiContract])
+    }, [addTransaction, benchContract, golnContract])
 
     const enter = useCallback(
         // todo: this should be updated with BigNumber as opposed to string
         async (amount: BalanceProps | undefined) => {
             if (amount?.value) {
                 try {
-                    const tx = await barContract?.enter(amount?.value)
+                    const tx = await benchContract?.enter(amount?.value)
                     return addTransaction(tx, { summary: 'Enter AlchemyBench' })
                 } catch (e) {
                     return e
                 }
             }
         },
-        [addTransaction, barContract]
+        [addTransaction, benchContract]
     )
 
     const leave = useCallback(
@@ -66,15 +66,15 @@ const useAlchemyBench = () => {
         async (amount: BalanceProps | undefined) => {
             if (amount?.value) {
                 try {
-                    const tx = await barContract?.leave(amount?.value)
-                    //const tx = await barContract?.leave(ethers.utils.parseUnits(amount)) // where amount is string
+                    const tx = await benchContract?.leave(amount?.value)
+                    //const tx = await benchContract?.leave(ethers.utils.parseUnits(amount)) // where amount is string
                     return addTransaction(tx, { summary: 'Leave AlchemyBench' })
                 } catch (e) {
                     return e
                 }
             }
         },
-        [addTransaction, barContract]
+        [addTransaction, benchContract]
     )
 
     return { allowance, approve, enter, leave }

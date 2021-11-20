@@ -325,7 +325,7 @@ export const getMaticTokenLogoURL = (address: string) => {
         uri = 'https://www.opucoin.io/wp-content/uploads/2021/04/opu-coiin-icon-border.svg'
     }
     if (address?.toLowerCase() === '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'.toLowerCase()) {
-        address = '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2'
+        address = '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E'
     }
     if (!uri) {
         uri = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`

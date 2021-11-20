@@ -1,11 +1,11 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { ChainId, JSBI } from '@sushiswap/sdk'
+import { ChainId, JSBI } from '@luckyfinance/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { formatUnits, parseUnits } from '@ethersproject/units'
 import useMigrateState, { MigrateState } from '../../hooks/useMigrateState'
 
 import { AddressZero } from '@ethersproject/constants'
-import Badge from 'kashi/components/Badge'
+import Badge from 'goldvein/components/Badge'
 import { Button } from '../../components'
 import { ButtonConfirmed } from '../../components/ButtonLegacy'
 import { ChevronRight } from 'react-feather'
@@ -312,7 +312,7 @@ const MigrateV2 = () => {
         <>
             <Helmet>
                 <title>Migrate LP tokens | LuckyFinance</title>
-                <meta name="description" content="Migrate LP tokens to GoldNugget LP tokens" />
+                <meta name="description" content="Migrate LP tokens to LuckySwap LP tokens" />
             </Helmet>
 
             <div className="text-2xl text-center mb-8">{i18n._(t`Migrate ${exchange} Liquidity`)}</div>

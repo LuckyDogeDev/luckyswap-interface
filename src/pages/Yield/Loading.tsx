@@ -1,7 +1,7 @@
 import React from 'react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { SimpleDots as Dots } from 'kashi/components'
+import { SimpleDots as Dots } from 'goldvein/components'
 
 const Loading = ({ term }: any) => {
     const { i18n } = useLingui()

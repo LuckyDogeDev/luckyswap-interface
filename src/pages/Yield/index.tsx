@@ -1,13 +1,13 @@
 import { Card, CardHeader, Search } from './components'
 import { ChevronDown, ChevronUp } from 'react-feather'
-import { Header, KashiLending, LiquidityPosition } from './components/Farms'
+import { Header, GoldVeinLending, LiquidityPosition } from './components/Farms'
 import React, { useEffect, useState } from 'react'
 import { formattedNum, formattedPercent } from '../../utils'
 import { useFuse, useSortableData } from 'hooks'
-import { useMasterChefContract, useMiniChefV2Contract } from '../../hooks/useContract'
+import { useGoldMinerContract, useMiniMinerV2Contract } from '../../hooks/useContract'
 
-import { ChainId } from '@sushiswap/sdk'
-import { SimpleDots as Dots } from 'kashi/components'
+import { ChainId } from '@luckyfinance/sdk'
+import { SimpleDots as Dots } from 'goldvein/components'
 import { Helmet } from 'react-helmet'
 import Menu from './Menu'
 import { RowBetween } from '../../components/Row'
@@ -16,9 +16,9 @@ import styled from 'styled-components'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
-import useMasterChefFarms from './hooks/masterchefv1/useFarms'
-import useMasterChefV2Farms from './hooks/masterchefv2/useFarms'
-import useMiniChefFarms from './hooks/minichef/useFarms'
+import useGoldMinerFarms from './hooks/goldminerv1/useFarms'
+import useGoldMinerV2Farms from './hooks/goldminerv2/useFarms'
+import useMiniMinerFarms from './hooks/miniminer/useFarms'
 import useStakedPending from './hooks/portfolio/useStakedPending'
 
 export const FixedHeightRow = styled(RowBetween)`
@@ -31,82 +31,82 @@ export default function Yield(): JSX.Element {
     const { account, chainId } = useActiveWeb3React()
 
     // Get Farms
-    const masterchefv1 = useMasterChefFarms()
-    const masterchefv2 = useMasterChefV2Farms()
-    const minichef = useMiniChefFarms()
+    const goldminerv1 = useGoldMinerFarms()
+    const goldminerv2 = useGoldMinerV2Farms()
+    const miniminer = useMiniMinerFarms()
     const allFarms = _.concat(
-        masterchefv2 ? masterchefv2 : [],
-        minichef ? minichef : [],
-        masterchefv1 ? masterchefv1 : []
+        goldminerv2 ? goldminerv2 : [],
+        miniminer ? miniminer : [],
+        goldminerv1 ? goldminerv1 : []
     )
 
-    console.log('masterchefv2:', masterchefv2)
+    console.log('goldminerv2:', goldminerv2)
 
     // Get Contracts
-    const masterchefContract = useMasterChefContract()
-    const minichefContract = useMiniChefV2Contract()
+    const goldminerContract = useGoldMinerContract()
+    const miniminerContract = useMiniMinerV2Contract()
 
     // Get Portfolios
     const [portfolio, setPortfolio] = useState<any[]>()
-    const masterchefv1Positions = useStakedPending(masterchefContract)
-    const minichefPositions = useStakedPending(minichefContract)
+    const goldminerv1Positions = useStakedPending(goldminerContract)
+    const miniminerPositions = useStakedPending(miniminerContract)
     useEffect(() => {
-        // determine masterchefv1 positions
-        let masterchefv1Portfolio
-        if (masterchefv1) {
-            const masterchefv1WithPids = masterchefv1Positions?.[0].map((position, index) => {
+        // determine goldminerv1 positions
+        let goldminerv1Portfolio
+        if (goldminerv1) {
+            const goldminerv1WithPids = goldminerv1Positions?.[0].map((position, index) => {
                 return {
                     pid: index,
                     pending_bn: position?.result?.[0],
-                    staked_bn: masterchefv1Positions?.[1][index].result?.amount
+                    staked_bn: goldminerv1Positions?.[1][index].result?.amount
                 }
             })
-            const masterchefv1Filtered = masterchefv1WithPids.filter(position => {
+            const goldminerv1Filtered = goldminerv1WithPids.filter(position => {
                 return position?.pending_bn?.gt(0) || position?.staked_bn?.gt(0)
             })
             // fetch any relevant details through pid
-            const masterchefv1PositionsWithDetails = masterchefv1Filtered.map(position => {
-                const pair = masterchefv1?.find((pair: any) => pair.pid === position.pid)
+            const goldminerv1PositionsWithDetails = goldminerv1Filtered.map(position => {
+                const pair = goldminerv1?.find((pair: any) => pair.pid === position.pid)
                 return {
                     ...pair,
                     ...position
                 }
             })
-            masterchefv1Portfolio = masterchefv1PositionsWithDetails
+            goldminerv1Portfolio = goldminerv1PositionsWithDetails
         }
 
-        let minichefPortfolio
-        if (minichef) {
-            // determine minichef positions
-            const minichefWithPids = minichefPositions?.[0].map((position, index) => {
+        let miniminerPortfolio
+        if (miniminer) {
+            // determine miniminer positions
+            const miniminerWithPids = miniminerPositions?.[0].map((position, index) => {
                 return {
                     pid: index,
                     pending: position?.result?.[0],
-                    staked: minichefPositions?.[1][index].result?.amount
+                    staked: miniminerPositions?.[1][index].result?.amount
                 }
             })
-            const minichefFiltered = minichefWithPids.filter((position: any) => {
+            const miniminerFiltered = miniminerWithPids.filter((position: any) => {
                 return position?.pending?.gt(0) || position?.staked?.gt(0)
             })
             // fetch any relevant details through pid
-            const minichefPositionsWithDetails = minichefFiltered.map(position => {
-                const pair = minichef?.find((pair: any) => pair.pid === position.pid)
+            const miniminerPositionsWithDetails = miniminerFiltered.map(position => {
+                const pair = miniminer?.find((pair: any) => pair.pid === position.pid)
                 return {
                     ...pair,
                     ...position
                 }
             })
-            minichefPortfolio = minichefPositionsWithDetails
+            miniminerPortfolio = miniminerPositionsWithDetails
         }
 
         setPortfolio(
-            _.concat(minichefPortfolio, masterchefv1Portfolio)[0]
-                ? _.concat(minichefPortfolio, masterchefv1Portfolio)
+            _.concat(miniminerPortfolio, goldminerv1Portfolio)[0]
+                ? _.concat(miniminerPortfolio, goldminerv1Portfolio)
                 : []
         )
-    }, [masterchefv1, masterchefv1Positions, minichef, minichefPositions])
+    }, [goldminerv1, goldminerv1Positions, miniminer, miniminerPositions])
 
-    // MasterChef v2
+    // GoldMiner v2
     const farms = allFarms
 
     //Search Setup
@@ -172,8 +172,8 @@ export default function Yield(): JSX.Element {
                                                 portfolio.map((farm: any, i: number) => {
                                                     console.log('portfolio farm:', farm, portfolio)
                                                     if (farm.type === 'KMP') {
-                                                        return <KashiLending key={farm.address + '_' + i} farm={farm} />
-                                                    } else if (farm.type === 'SLP') {
+                                                        return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
+                                                    } else if (farm.type === 'LLP') {
                                                         return (
                                                             <LiquidityPosition
                                                                 key={farm.address + '_' + i}
@@ -209,8 +209,8 @@ export default function Yield(): JSX.Element {
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
                                             if (farm.type === 'KMP') {
-                                                return <KashiLending key={farm.address + '_' + i} farm={farm} />
-                                            } else if (farm.type === 'SLP') {
+                                                return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
+                                            } else if (farm.type === 'LLP') {
                                                 return <LiquidityPosition key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null
@@ -236,7 +236,7 @@ export default function Yield(): JSX.Element {
                                 <div className="flex-col space-y-2">
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
-                                            if (farm.type === 'SLP') {
+                                            if (farm.type === 'LLP') {
                                                 return <LiquidityPosition key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null
@@ -263,7 +263,7 @@ export default function Yield(): JSX.Element {
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
                                             if (farm.type === 'KMP') {
-                                                return <KashiLending key={farm.address + '_' + i} farm={farm} />
+                                                return <GoldVeinLending key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null
                                             }
@@ -288,7 +288,7 @@ export default function Yield(): JSX.Element {
                                 <div className="flex-col space-y-2">
                                     {items && items.length > 0 ? (
                                         items.map((farm: any, i: number) => {
-                                            if (farm.type === 'SLP' && farm.contract === 'masterchefv2') {
+                                            if (farm.type === 'LLP' && farm.contract === 'goldminerv2') {
                                                 return <LiquidityPosition key={farm.address + '_' + i} farm={farm} />
                                             } else {
                                                 return null

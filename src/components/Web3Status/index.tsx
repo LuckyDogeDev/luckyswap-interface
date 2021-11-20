@@ -19,7 +19,7 @@ import { shortenAddress } from '../../utils'
 import { ButtonSecondary } from '../ButtonLegacy'
 import Loader from '../Loader'
 import WalletModal from '../WalletModal'
-import { ReactComponent as Chef } from '../../assets/images/chef.svg'
+import { ReactComponent as Miner } from '../../assets/images/miner.svg'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 
@@ -132,7 +132,7 @@ const SOCK = (
 // eslint-disable-next-line react/prop-types
 function StatusIcon({ connector }: { connector: AbstractConnector }) {
     if (connector === injected) {
-        return <Chef width={20} height={20} />
+        return <Miner width={20} height={20} />
         // return <Identicon />
     } else if (connector === walletconnect) {
         return (
@@ -191,7 +191,7 @@ function Web3StatusInner() {
         return (
             <div
                 id="web3-status-connected"
-                className="flex items-center rounded-lg bg-dark-1000 text-sm text-secondary py-2 px-3"
+                className="flex items-center rounded-lg bg-dark-700 text-sm text-secondary py-2 px-3"
                 onClick={toggleWalletModal}
             >
                 {hasPendingTransactions ? (

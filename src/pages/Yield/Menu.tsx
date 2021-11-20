@@ -54,7 +54,7 @@ const Menu = ({ section, setSection }: any) => {
                 {/* <Card
                 className="h-full bg-dark-900"
                 backgroundImage={DepositGraphic}
-                title={'Create a new Kashi Market'}
+                title={'Create a new GoldVein Market'}
                 description={
                     'If you want to supply to a market that is not listed yet, you can use this tool to create a new pair.'
                 }

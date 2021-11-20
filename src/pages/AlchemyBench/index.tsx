@@ -1,24 +1,24 @@
 import React from 'react'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { Helmet } from 'react-helmet'
-import PLatinumNuggetSign from '../../assets/images/xsushi-text-sign.png'
+import PLatinumNuggetSign from '../../assets/images/plan-text-sign.png'
 import InfoCard from './InfoCard'
 import APRCard from './APRCard'
 import StakeCard from './StakeCard'
 import BalanceCard from './BalanceCard'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@luckyfinance/sdk'
 import { GOLN, PLAN } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 
 const mockData = {
-    sushiEarnings: 345.27898,
+    golnEarnings: 345.27898,
     weightedApr: 15.34
 }
 
 export default function PLatinumNugget() {
     const { account, chainId } = useActiveWeb3React()
 
-    const sushiBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
+    const golnBalance = useTokenBalance(GOLN[ChainId.MAINNET]?.address ?? '')
     const PlatinumNuggetBalance = useTokenBalance(PLAN?.address ?? '')
 
     return (
@@ -30,7 +30,7 @@ export default function PLatinumNugget() {
                 <div className="flex mb-6 justify-center">
                     <InfoCard />
                     <div className="hidden md:flex justify-center align-center w-72 ml-6">
-                        <img src={PLatinumNuggetSign} alt={'xsushi sign'} />
+                        <img src={PLatinumNuggetSign} alt={'plan sign'} />
                     </div>
                 </div>
                 <div className="flex justify-center">
@@ -38,15 +38,15 @@ export default function PLatinumNugget() {
                         <div className="mb-4">
                             <APRCard />
                         </div>
-                        <div>
-                            <StakeCard sushiBalance={sushiBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
-                        </div>
+                         <div>
+                            <StakeCard golnBalance={golnBalance} PlatinumNuggetBalance={PlatinumNuggetBalance} />
+                             </div>
                     </div>
                     <div className="hidden md:block w-72 ml-6">
                         <BalanceCard
-                            sushiEarnings={mockData.sushiEarnings}
+                            golnEarnings={mockData.golnEarnings}
                             PlatinumNuggetBalance={PlatinumNuggetBalance}
-                            sushiBalance={sushiBalance}
+                            golnBalance={golnBalance}
                             weightedApr={mockData.weightedApr}
                         />
                     </div>
@@ -54,9 +54,9 @@ export default function PLatinumNugget() {
                 <div className="flex justify-center w-full">
                     <div className="md:hidden flex justify-center w-full max-w-xl mt-6 mb-20">
                         <BalanceCard
-                            sushiEarnings={mockData.sushiEarnings}
+                            golnEarnings={mockData.golnEarnings}
                             PlatinumNuggetBalance={PlatinumNuggetBalance}
-                            sushiBalance={sushiBalance}
+                            golnBalance={golnBalance}
                             weightedApr={mockData.weightedApr}
                         />
                     </div>

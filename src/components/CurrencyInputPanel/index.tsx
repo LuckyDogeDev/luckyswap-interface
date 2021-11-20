@@ -1,4 +1,4 @@
-import { Currency, Pair, ChainId } from '@sushiswap/sdk'
+import { Currency, Pair, ChainId } from '@luckyfinance/sdk'
 import { darken } from 'polished'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
@@ -282,7 +282,7 @@ export default function CurrencyInputPanel({
                                 <Button
                                     onClick={onMax}
                                     size="small"
-                                    className="bg-transparent hover:bg-dark-700 border border-low-emphesis rounded-full text-secondary text-xs font-medium whitespace-nowrap"
+                                    className="bg-transparent hover:bg-dark-700 border border-high-emphesis rounded-full text-primary text-xs font-medium whitespace-nowrap"
                                 >
                                     {i18n._(t`Max`)}
                                 </Button>

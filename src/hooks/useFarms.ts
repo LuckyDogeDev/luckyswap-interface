@@ -1,4 +1,4 @@
-import { exchange, masterchef } from 'apollo/client'
+import { exchange, goldminer } from 'apollo/client'
 import { liquidityPositionSubsetQuery, pairSubsetQuery, poolsQuery } from 'apollo/queries'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -9,7 +9,7 @@ import concat from 'lodash/concat'
 import { getAverageBlockTime } from 'apollo/getAverageBlockTime'
 import orderBy from 'lodash/orderBy'
 import range from 'lodash/range'
-import sushiData from '@sushiswap/sushi-data'
+import golnData from '@luckyfinance/lucky-data'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useBoringHelperContract } from 'hooks/useContract'
 
@@ -21,7 +21,7 @@ const useFarms = () => {
 
     const fetchAllFarms = useCallback(async () => {
         const results = await Promise.all([
-            masterchef.query({
+            goldminer.query({
                 // results[0]
                 query: poolsQuery
             }),
@@ -31,8 +31,8 @@ const useFarms = () => {
                 variables: { user: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd' }
             }),
             getAverageBlockTime(), // results[2]
-            sushiData.sushi.priceUSD(), // results[3]
-            sushiData.bentobox.kashiStakedInfo() //results[4]
+            golnData.goln.priceUSD(), // results[3]
+            golnData.alpine.goldveinStakedInfo() //results[4]
         ])
         const pools = results[0]?.data.pools
         const pairAddresses = pools
@@ -47,13 +47,13 @@ const useFarms = () => {
 
         const liquidityPositions = results[1]?.data.liquidityPositions
         const averageBlockTime = results[2]
-        const sushiPrice = results[3]
-        const kashiPairs = results[4].filter(result => result !== undefined) // filter out undefined (not in onsen) from all kashiPairs
+        const golnPrice = results[3]
+        const goldveinPairs = results[4].filter(result => result !== undefined) // filter out undefined (not in onsen) from all goldveinPairs
 
         const pairs = pairsQuery?.data.pairs
-        const KASHI_PAIRS = pools
+        const GOLDVEIN_PAIRS = pools
             .filter((pool: any) => {
-                const hasPair = kashiPairs.find((kashiPair: any) => kashiPair?.id === pool?.pair)
+                const hasPair = goldveinPairs.find((goldveinPair: any) => goldveinPair?.id === pool?.pair)
                 console.log('pool.pair:', pool.pair, pool.id, hasPair)
 
                 return hasPair
@@ -61,20 +61,20 @@ const useFarms = () => {
             .map((pool: any) => {
                 return Number(pool.id)
             })
-        //const KASHI_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // kashiPair pids 190-229, 245-249
-        //console.log('kashiPairs:', KASHI_PAIRS.length, kashiPairs.length, kashiPairs, KASHI_PAIRS)
+        //const GOLDVEIN_PAIRS = concat(range(190, 230, 1), range(245, 250, 1), range(264, 268, 1)) // goldveinPair pids 190-229, 245-249
+        //console.log('goldveinPairs:', GOLDVEIN_PAIRS.length, goldveinPairs.length, goldveinPairs, GOLDVEIN_PAIRS)
 
         const farms = pools
             .filter((pool: any) => {
-                //console.log(KASHI_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
+                //console.log(GOLDVEIN_PAIRS.includes(Number(pool.id)), pool, Number(pool.id))
                 return (
                     !POOL_DENY.includes(pool?.id) &&
-                    (pairs.find((pair: any) => pair?.id === pool?.pair) || KASHI_PAIRS.includes(Number(pool?.id)))
+                    (pairs.find((pair: any) => pair?.id === pool?.pair) || GOLDVEIN_PAIRS.includes(Number(pool?.id)))
                 )
             })
             .map((pool: any) => {
-                if (KASHI_PAIRS.includes(Number(pool?.id))) {
-                    const pair = kashiPairs.find((pair: any) => pair?.id === pool?.pair)
+                if (GOLDVEIN_PAIRS.includes(Number(pool?.id))) {
+                    const pair = goldveinPairs.find((pair: any) => pair?.id === pool?.pair)
                     //console.log('kpair:', pair, pool)
                     return {
                         ...pool,
@@ -108,8 +108,8 @@ const useFarms = () => {
                     const reserveUSD = pair.reserveUSD > 0 ? pair.reserveUSD : 0.1
                     const balanceUSD = (balance / Number(totalSupply)) * Number(reserveUSD)
                     const rewardPerBlock =
-                        ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.sushiPerBlock) / 1e18
-                    const roiPerBlock = (rewardPerBlock * sushiPrice) / balanceUSD
+                        ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.golnPerBlock) / 1e18
+                    const roiPerBlock = (rewardPerBlock * golnPrice) / balanceUSD
                     const roiPerHour = roiPerBlock * blocksPerHour
                     const roiPerDay = roiPerHour * 24
                     const roiPerMonth = roiPerDay * 30
@@ -125,26 +125,26 @@ const useFarms = () => {
                     //         poolBalance: pool.balance,
                     //         roiPerBlock: roiPerBlock,
                     //         rewardPerBlock: rewardPerBlock,
-                    //         sushiPrice: sushiPrice,
+                    //         golnPrice: golnPrice,
                     //         balanceUSD: balanceUSD
                     //     })
                     // }
 
                     return {
                         ...pool,
-                        type: 'SLP',
+                        type: 'LLP',
                         symbol: pair.token0.symbol + '-' + pair.token1.symbol,
                         name: pair.token0.name + ' ' + pair.token1.name,
                         pid: Number(pool.id),
                         pairAddress: pair.id,
-                        slpBalance: pool.balance,
+                        llpBalance: pool.balance,
                         liquidityPair: pair,
                         roiPerBlock,
                         roiPerHour,
                         roiPerDay,
                         roiPerMonth,
                         roiPerYear,
-                        rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                        rewardPerThousand: 1 * roiPerDay * (1000 / golnPrice),
                         tvl: liquidityPosition?.liquidityTokenBalance
                             ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                             : 0.1
@@ -187,15 +187,15 @@ const useFarms = () => {
                     } else {
                         deposited = Fraction.from(farm.balance, BigNumber.from(10).pow(18)).toString(18)
                         depositedUSD =
-                            farmDetails.slpBalance && Number(farmDetails.slpBalance / 1e18) > 0
-                                ? (Number(deposited) * Number(farmDetails.tvl)) / (farmDetails.slpBalance / 1e18)
+                            farmDetails.llpBalance && Number(farmDetails.llpBalance / 1e18) > 0
+                                ? (Number(deposited) * Number(farmDetails.tvl)) / (farmDetails.llpBalance / 1e18)
                                 : 0
                     }
                     const pending = Fraction.from(farm.pending, BigNumber.from(10).pow(18)).toString(18)
 
                     return {
                         ...farmDetails,
-                        type: farmDetails.type, // KMP or SLP
+                        type: farmDetails.type, // KMP or LLP
                         depositedLP: deposited,
                         depositedUSD: depositedUSD,
                         pendingGoldNugget: pending

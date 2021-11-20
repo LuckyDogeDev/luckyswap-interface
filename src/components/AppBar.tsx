@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@sushiswap/sdk'
+import { ChainId, Currency } from '@luckyfinance/sdk'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Logo from '../assets/images/logo.png'
@@ -24,7 +24,7 @@ function AppBar(): JSX.Element {
     const { pathname } = useLocation()
 
     const [navClassList, setNavClassList] = useState(
-        'w-screen bg-transparent gradiant-border-bottom z-10 backdrop-filter backdrop-blur'
+        'w-screen bg-transparent gradient-border-bottom z-10 backdrop-filter backdrop-blur'
     )
 
     const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
@@ -33,7 +33,7 @@ function AppBar(): JSX.Element {
         if (pathname === '/trade') {
             setNavClassList('w-screen bg-transparent z-10 backdrop-filter backdrop-blur')
         } else {
-            setNavClassList('w-screen bg-transparent gradiant-border-bottom z-10 backdrop-filter backdrop-blur')
+            setNavClassList('w-screen bg-transparent gradient-border-bottom z-10 backdrop-filter backdrop-blur')
         }
     }, [pathname])
 
@@ -66,43 +66,25 @@ function AppBar(): JSX.Element {
                                             >
                                                 {i18n._(t`Pool`)}
                                             </NavLink>
-                                            {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
-                                                <NavLink id={`yield-nav-link`} to={'/yield'}>
-                                                    {i18n._(t`Yield`)}
-                                                </NavLink>
-                                            )}
-                                            {chainId === ChainId.MAINNET && (
-                                                <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
+
+                                            {chainId &&
+                                            [
+                                                ChainId.MAINNET,
+                                                ChainId.BSC,
+                                            ].includes(chainId) && (
+                                                <NavLink id={`alchemybench-nav-link`} to={'/alchemybench'}>
                                                     {i18n._(t`AlchemyBench`)}
                                                 </NavLink>
                                             )}
-                                            {chainId &&
-                                                [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(
-                                                    chainId
-                                                ) && (
-                                                    <NavLink id={`kashi-nav-link`} to={'/bento/kashi/lend'}>
-                                                        {i18n._(t`Lend`)}
-                                                    </NavLink>
-                                                )}
-                                            {chainId &&
-                                                [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(
-                                                    chainId
-                                                ) && (
-                                                    <NavLink id={`bento-nav-link`} to={'/bento'}>
-                                                        {i18n._(t`Alpine`)}
-                                                    </NavLink>
-                                                )}
-                                            {chainId === ChainId.MAINNET && (
-                                                <ExternalLink id={`stake-nav-link`} href={'https://miso.sushi.com'}>
-                                                    {i18n._(t`Miso`)}
-                                                </ExternalLink>
-                                            )}
+
+
+
                                             {chainId === ChainId.MAINNET && (
                                                 <NavLink id={`vesting-nav-link`} to={'/vesting'}>
                                                     {i18n._(t`Vesting`)}
                                                 </NavLink>
                                             )}
-                                            {chainId &&
+                                            { /*  {chainId &&
                                                 [
                                                     ChainId.MAINNET,
                                                     ChainId.BSC,
@@ -112,35 +94,50 @@ function AppBar(): JSX.Element {
                                                 ].includes(chainId) && (
                                                     <ExternalLink
                                                         id={`analytics-nav-link`}
-                                                        href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
+                                                        href={ANALYTICS_URL[chainId] || 'https://analytics.luckydoge.finance'}
                                                     >
                                                         {i18n._(t`Analytics`)}
                                                     </ExternalLink>
-                                                )}
+                                                )} */ }
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
+                                <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-700 lg:relative lg:p-0 lg:bg-transparent">
                                     <div className="flex items-center justify-between sm:justify-end space-x-2 w-full">
                                         {chainId &&
-                                            [ChainId.MAINNET].includes(chainId) &&
+                                            [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
-                                                    <QuestionHelper text={i18n._(t`Add SAK3 to your Metamask wallet`)}>
+                                                    <QuestionHelper text={i18n._(t`Add LuckyDoge to your Metamask wallet`)}>
                                                         <div
-                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer border border-gray-400"
+                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
+                                                                let address: string | undefined
+                                                                switch (chainId) {
+                                                                    case ChainId.MAINNET:
+                                                                        address =
+                                                                            '0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18'
+                                                                        break
+                                                                    case ChainId.BSC:
+                                                                        address =
+                                                                            '0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18'
+                                                                        break
+                                                                    case ChainId.MATIC:
+                                                                        address =
+                                                                            '0x6F9F164A8D2fcd1EcB43Bb0A2f0FB656f172667e'
+                                                                        break
+                                                                }
                                                                 const params: any = {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address:
-                                                                            '0xe9F84dE264E91529aF07Fa2C746e934397810334',
-                                                                        symbol: 'SAK3',
-                                                                        decimals: 18,
+                                                                            '0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18',
+                                                                        symbol: 'LDOGE',
+                                                                        decimals: 9,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0xe9F84dE264E91529aF07Fa2C746e934397810334/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xf1a949cb4b08a96ddbaec9ffa4125b681a51be18/logo.png'
                                                                     }
                                                                 }
 
@@ -157,7 +154,7 @@ function AppBar(): JSX.Element {
                                                                         .then(success => {
                                                                             if (success) {
                                                                                 console.log(
-                                                                                    'Successfully added SAK3 to MetaMask'
+                                                                                    'Successfully added LDOGE to MetaMask'
                                                                                 )
                                                                             } else {
                                                                                 throw new Error('Something went wrong.')
@@ -168,7 +165,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0xe9F84dE264E91529aF07Fa2C746e934397810334/logo.png`}
+                                                                src={`${process.env.PUBLIC_URL}/images/tokens/ldoge-square.jpg`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -197,11 +194,11 @@ function AppBar(): JSX.Element {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address:
-                                                                            '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
+                                                                            '0x210e8B3600aea3943D2e45a913723931c97895Fe',
                                                                         symbol: 'PLAN',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0x210e8B3600aea3943D2e45a913723931c97895Fe/logo.png'
                                                                     }
                                                                 }
 
@@ -229,7 +226,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`${process.env.PUBLIC_URL}/images/tokens/xsushi-square.jpg`}
+                                                                src={`${process.env.PUBLIC_URL}/images/tokens/plan-square.jpg`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -257,15 +254,15 @@ function AppBar(): JSX.Element {
                                                                 switch (chainId) {
                                                                     case ChainId.MAINNET:
                                                                         address =
-                                                                            '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2'
+                                                                            '0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E'
                                                                         break
                                                                     case ChainId.BSC:
                                                                         address =
-                                                                            '0x947950BcC74888a40Ffa2593C5798F11Fc9124C4'
+                                                                            '0xc6D69475f115F61B1e8C4e78c20C49201c869DB4'
                                                                         break
                                                                     case ChainId.MATIC:
                                                                         address =
-                                                                            '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'
+                                                                            '0x994a0349cc542cd8D61d337D755D22Df72E83A4b'
                                                                         break
                                                                 }
                                                                 const params: any = {
@@ -275,7 +272,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'GOLN',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png'
+                                                                            'https://raw.githubusercontent.com/LuckyDogeDev/assets/master/blockchains/ethereum/assets/0xd0fb6753E4A2dFfA6033836327e23Ec2e417446E/logo.png'
                                                                     }
                                                                 }
 
@@ -303,7 +300,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`${process.env.PUBLIC_URL}/images/tokens/sushi-square.jpg`}
+                                                                src={`${process.env.PUBLIC_URL}/images/tokens/goln-square.jpg`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -325,7 +322,7 @@ function AppBar(): JSX.Element {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <div className="grid grid-flow-col auto-cols-max items-center rounded-lg bg-dark-1000 text-sm text-secondary py-2 px-3 pointer-events-auto">
+                                                    <div className="grid grid-flow-col auto-cols-max items-center rounded-lg bg-dark-700 text-sm text-secondary py-2 px-3 pointer-events-auto">
                                                         <div className="text-primary">{i18n._(t`Bridge Assets`)}</div>
                                                     </div>
                                                 </a>
@@ -375,12 +372,12 @@ function AppBar(): JSX.Element {
                         <Disclosure.Panel className="sm:hidden">
                             <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">
                                 {/* Current: "bg-gray-900 text-primary", Default: "text-gray-300 hover:bg-gray-700 hover:text-primary" */}
-                                {/* <a
+                                 <a
                                 href="#"
                                 className="bg-gray-1000 text-primary block px-3 py-2 rounded-md text-base font-medium"
                             >
-                                Dashboard
-                            </a> */}
+
+                            </a>
 
                                 <NavLink id={`swap-nav-link`} to={'/swap'}>
                                     {i18n._(t`Swap`)}
@@ -399,39 +396,40 @@ function AppBar(): JSX.Element {
                                     {i18n._(t`Pool`)}
                                 </NavLink>
 
-                                {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
+                                { /* {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
                                     <NavLink id={`yield-nav-link`} to={'/yield'}>
                                         {i18n._(t`Yield`)}
                                     </NavLink>
-                                )}
-                                {chainId &&
+                                )} */ }
+                                { /* {chainId &&
                                     [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                                        <NavLink id={`kashi-nav-link`} to={'/bento/kashi/lend'}>
-                                            {i18n._(t`Kashi Lending`)}
+                                        <NavLink id={`goldvein-nav-link`} to={'/alp/goldvein/lend'}>
+                                            {i18n._(t`GoldVein Lending`)}
                                         </NavLink>
                                     )}
                                 {chainId &&
                                     [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                                        <NavLink id={`bento-nav-link`} to={'/bento'}>
+                                        <NavLink id={`alp-nav-link`} to={'/alp'}>
                                             {i18n._(t`Alpine`)}
                                         </NavLink>
-                                    )}
-                                {chainId === ChainId.MAINNET && (
-                                    <NavLink id={`stake-nav-link`} to={'/sushibar'}>
+                                    )} */ }
+                                {chainId &&
+                                [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
+                                    <NavLink id={`stake-nav-link`} to={'/alchemybench'}>
                                         {i18n._(t`AlchemyBench`)}
                                     </NavLink>
                                 )}
-                                {chainId === ChainId.MAINNET && (
+                                { /*{chainId === ChainId.MAINNET && (
                                     <ExternalLink id={`stake-nav-link`} href={'https://miso.sushi.com'}>
                                         {i18n._(t`Miso`)}
                                     </ExternalLink>
-                                )}
+                                )}*/ }
                                 {chainId === ChainId.MAINNET && (
                                     <NavLink id={`vesting-nav-link`} to={'/vesting'}>
                                         {i18n._(t`Vesting`)}
                                     </NavLink>
                                 )}
-                                {chainId &&
+                                { /* {chainId &&
                                     [
                                         ChainId.MAINNET,
                                         ChainId.BSC,
@@ -441,11 +439,11 @@ function AppBar(): JSX.Element {
                                     ].includes(chainId) && (
                                         <ExternalLink
                                             id={`analytics-nav-link`}
-                                            href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
+                                            href={ANALYTICS_URL[chainId] || 'https://analytics.luckydoge.finance'}
                                         >
                                             {i18n._(t`Analytics`)}
                                         </ExternalLink>
-                                    )}
+                                    )} */ }
                             </div>
                         </Disclosure.Panel>
                     </>

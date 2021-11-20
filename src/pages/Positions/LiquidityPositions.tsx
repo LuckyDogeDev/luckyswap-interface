@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { ChainId, JSBI, Pair } from '@sushiswap/sdk'
+import { ChainId, JSBI, Pair } from '@luckyfinance/sdk'
 import { Button, Dots } from 'components'
 import { StyledInternalLink } from '../../theme'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'

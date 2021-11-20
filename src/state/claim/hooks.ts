@@ -1,5 +1,5 @@
 import { TransactionResponse } from '@ethersproject/providers'
-import { ChainId, JSBI, TokenAmount } from '@sushiswap/sdk'
+import { ChainId, JSBI, TokenAmount } from '@luckyfinance/sdk'
 import { useEffect, useState } from 'react'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useMerkleDistributorContract } from '../../hooks/useContract'
@@ -86,19 +86,19 @@ export function useUserUnclaimedAmount(account: string | null | undefined): Toke
     const userClaimData = useUserClaimData(account)
     const canClaim = useUserHasAvailableClaim(account)
 
-    const sushi = chainId ? GOLN[chainId] : undefined
+    const goln = chainId ? GOLN[chainId] : undefined
 
     // console.log('claimStats:', {
     //   canClaim: canClaim,
     //   userClaimData: userClaimData,
-    //   sushi: sushi
+    //   goln: goln
     // })
 
-    if (!sushi) return undefined
+    if (!goln) return undefined
     if (!canClaim || !userClaimData) {
-        return new TokenAmount(sushi, JSBI.BigInt(0))
+        return new TokenAmount(goln, JSBI.BigInt(0))
     }
-    return new TokenAmount(sushi, JSBI.BigInt(userClaimData.amount))
+    return new TokenAmount(goln, JSBI.BigInt(userClaimData.amount))
 }
 
 export function useClaimCallback(

@@ -1,18 +1,18 @@
 import { DocumentNode } from 'graphql/language/ast'
 import gql from 'graphql-tag'
 //import { FACTORY_ADDRESS, BUNDLE_ID } from '../constants'
-const FACTORY_ADDRESS = '0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac'
+const FACTORY_ADDRESS = '0x12a7FD816401d75F4a76915d3a9a9E4AF0EcBb0D'
 const BUNDLE_ID = '1'
 
-export const masterchefv2PoolsQuery = gql`
+export const goldminerv2PoolsQuery = gql`
     {
         pools {
             id
             pair
             allocPoint
-            slpBalance
+            llpBalance
             rewarder
-            masterChef {
+            masterMiner {
                 totalAllocPoint
             }
         }
@@ -44,7 +44,7 @@ export const tokenQuery = gql`
     ${tokenFieldsQuery}
 `
 
-export const miniChefPoolQuery = gql`
+export const miniMinerPoolQuery = gql`
     query poolsQuery(
         $first: Int! = 1000
         $skip: Int! = 0
@@ -62,11 +62,11 @@ export const miniChefPoolQuery = gql`
             allocPoint
             lastRewardTime
             accGoldNuggetPerShare
-            slpBalance
+            llpBalance
             userCount
-            miniChef {
+            miniMiner {
                 id
-                sushiPerSecond
+                golnPerSecond
                 totalAllocPoint
             }
         }
@@ -90,7 +90,7 @@ export const poolsQuery = gql`
             userCount
             owner {
                 id
-                sushiPerBlock
+                golnPerBlock
                 totalAllocPoint
             }
         }
@@ -202,7 +202,7 @@ export const liquidityPositionSubsetQuery = gql`
     }
 `
 
-export const SUSHI_PAIRS = (ids: string[], masterChefAddress: string): DocumentNode => {
+export const SUSHI_PAIRS = (ids: string[], masterMinerAddress: string): DocumentNode => {
     const queryString = `query pools {
     pairs(where: {id_in: ${JSON.stringify(ids)}}) {
         id
@@ -226,7 +226,7 @@ export const SUSHI_PAIRS = (ids: string[], masterChefAddress: string): DocumentN
         trackedReserveETH
     }
 
-    liquidityPositions(where: {user: ${JSON.stringify(masterChefAddress)}, pair_in: ${JSON.stringify(ids)}}) {
+    liquidityPositions(where: {user: ${JSON.stringify(masterMinerAddress)}, pair_in: ${JSON.stringify(ids)}}) {
         pair {
           id
         }
@@ -237,7 +237,7 @@ export const SUSHI_PAIRS = (ids: string[], masterChefAddress: string): DocumentN
     return gql(queryString)
 }
 
-// patch masterchef queries
+// patch goldminer queries
 const poolUserFragment = gql`
     fragment PoolUser on User {
         id
@@ -253,10 +253,10 @@ const poolUserFragment = gql`
         rewardDebt
         entryUSD
         exitUSD
-        sushiHarvested
-        sushiHarvestedUSD
-        sushiHarvestedSinceLockup
-        sushiHarvestedSinceLockupUSD
+        golnHarvested
+        golnHarvestedUSD
+        golnHarvestedSinceLockup
+        golnHarvestedSinceLockupUSD
     }
 `
 

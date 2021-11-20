@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { Button } from 'components'
 import { ThemeContext } from 'styled-components'
 
-import AlpSquare from '../../../assets/images/bento-square.png'
+import AlpSquare from '../../../assets/images/alp-square.png'
 //import BaoSquare from '../../../assets/images/bao-square.png'
 import AaveSquare from '../../../assets/images/aave-square.png'
 import CreamSquare from '../../../assets/images/aave-square.png'
@@ -24,7 +24,7 @@ const tips: readonly Tip[] = [
         title: 'Deposit into Alpine',
         image: AlpSquare,
         description:
-            'Deposit your PLAN into Alpine to passively earn yield through an PLAN investment strategy, or use as collateral within Kashi and future Alp dapps.',
+            'Deposit your PLAN into Alpine to passively earn yield through an PLAN investment strategy, or use as collateral within GoldVein and future Alp dapps.',
         href: '#'
     },
     {

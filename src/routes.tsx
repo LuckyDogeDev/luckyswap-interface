@@ -1,13 +1,13 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@luckyfinance/sdk'
 import React from 'react'
 import { Redirect, Route, RouteComponentProps, useLocation, Switch } from 'react-router-dom'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import Connect from './kashi/pages/Connect'
-import BorrowMarkets from './kashi/pages/Markets/Borrow'
-import CreateMarkets from './kashi/pages/Markets/Create'
-import LendMarkets from './kashi/pages/Markets/Lending'
-import BorrowPair from './kashi/pages/Pair/Borrow'
-import LendPair from './kashi/pages/Pair/Lend'
+import Connect from './goldvein/pages/Connect'
+import BorrowMarkets from './goldvein/pages/Markets/Borrow'
+import CreateMarkets from './goldvein/pages/Markets/Create'
+import LendMarkets from './goldvein/pages/Markets/Lending'
+import BorrowPair from './goldvein/pages/Pair/Borrow'
+import LendPair from './goldvein/pages/Pair/Lend'
 import AddLiquidity from './pages/AddLiquidity'
 import {
     RedirectDuplicateTokenIds,
@@ -36,9 +36,9 @@ import {
 import Tools from './pages/Tools'
 import Vesting from './pages/Vesting'
 import Yield from './pages/Yield'
-//import MasterChefV1 from './pages/Yield/masterchefv1'
-//import MasterChefV1Debug from './pages/Yield/masterchefv1/debug'
-//import MiniChefV2 from './pages/Yield/minichefv2'
+//import GoldMinerV1 from './pages/Yield/goldminerv1'
+//import GoldMinerV1Debug from './pages/Yield/goldminerv1/debug'
+//import MiniMinerV2 from './pages/Yield/miniminerv2'
 import Positions from './pages/Positions'
 import Transactions from './pages/Transactions'
 
@@ -48,21 +48,21 @@ function Routes(): JSX.Element {
         <Switch>
             <PublicRoute exact path="/connect" component={Connect} />
             {/* AlpApps */}
-            <Route exact strict path="/bento" component={Alp} />
-            <WalletRoute exact strict path="/bento/balances" component={AlpBalances} />
+            <Route exact strict path="/alp" component={Alp} />
+            <WalletRoute exact strict path="/alp/balances" component={AlpBalances} />
 
-            {/* Kashi */}
+            {/* GoldVein */}
             <Route
                 exact
                 strict
-                path="/bento/kashi"
-                render={props => <Redirect to="/bento/kashi/borrow" {...props} />}
+                path="/alp/goldvein"
+                render={props => <Redirect to="/alp/goldvein/borrow" {...props} />}
             />
-            <WalletRoute exact strict path="/bento/kashi/lend" component={LendMarkets} />
-            <WalletRoute exact strict path="/bento/kashi/borrow" component={BorrowMarkets} />
-            <WalletRoute exact strict path="/bento/kashi/create" component={CreateMarkets} />
-            <WalletRoute exact strict path="/bento/kashi/lend/:pairAddress" component={LendPair} />
-            <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} />
+            <WalletRoute exact strict path="/alp/goldvein/lend" component={LendMarkets} />
+            <WalletRoute exact strict path="/alp/goldvein/borrow" component={BorrowMarkets} />
+            <WalletRoute exact strict path="/alp/goldvein/create" component={CreateMarkets} />
+            <WalletRoute exact strict path="/alp/goldvein/lend/:pairAddress" component={LendPair} />
+            <WalletRoute exact strict path="/alp/goldvein/borrow/:pairAddress" component={BorrowPair} />
 
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
@@ -70,7 +70,7 @@ function Routes(): JSX.Element {
             {chainId === ChainId.MAINNET && <Route exact strict path="/yield" component={Yield} />}
             {chainId === ChainId.MATIC && <Route exact strict path="/yield" component={Yield} />}
             {/* {chainId === ChainId.MAINNET && (
-                <Route exact strict path="/yield/debug/:address" component={MasterChefV1Debug} />
+                <Route exact strict path="/yield/debug/:address" component={GoldMinerV1Debug} />
             )} */}
             {chainId === ChainId.MAINNET && <Route exact strict path="/vesting" component={Vesting} />}
 
@@ -80,11 +80,12 @@ function Routes(): JSX.Element {
             )}
 
             {/* AlchemyBench Staking */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={AlchemyBench} />}
+            {chainId &&
+            [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) && <Route exact strict path="/alchemybench" component={AlchemyBench} />}
             {chainId === ChainId.MAINNET && (
-                <Route exact strict path="/sushibar/transactions" component={AlchemyBenchTransactions} />
+                <Route exact strict path="/alchemybench/transactions" component={AlchemyBenchTransactions} />
             )}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={AlchemyBenchTips} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/alchemybench/tips" component={AlchemyBenchTips} />}
             {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={AlchemyBench} />}
             {/* Tools */}
             {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}
